@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "MFCore"
-  s.version      = "1.1.3"
+  s.version      = "1.1.4"
   s.summary      = "Movalys Framework MFCore."
   s.homepage     = "http://nansrvintc1.adeuza.fr/mfdocs-4.0/"
   s.license      = {
@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   }
 
   s.author       = "Sopra Group"
-  s.source       = { :git => "gitmovalys@git.ptx.fr.sopra:mfcore.git", :tag => "1.1.3" }
+  s.source       = { :git => "", :tag => "1.1.4" }
   s.platform     = :ios, '5.1'
 
   s.dependency 'JSONKit', '~>1.6'
