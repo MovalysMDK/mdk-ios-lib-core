@@ -25,6 +25,18 @@
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
+	<organization>
+	    <name>Sopra</name>
+	</organization>
+
+	<licenses>
+		<license>
+			<name>GNU LGPL 3</name>
+			<url>http://www.gnu.org/licenses/lgpl.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
 	<build>
 		<plugins>
 			<plugin>
