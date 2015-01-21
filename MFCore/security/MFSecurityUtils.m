@@ -18,9 +18,9 @@
 //  field-text
 //
 //
+#import "MFCoreBean.h"
 
 #import "MFSecurityUtils.h"
-#import "MFCoreBean.h"
 #import "MFSecurityHelperProtocol.h"
 #import <CocoaSecurity/CocoaSecurity.h>
 #import "KeychainItemWrapper.h"

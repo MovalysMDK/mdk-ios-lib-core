@@ -27,8 +27,8 @@
 		B0374CBE19D445AC00211BA9 /* MFKeychainRunInit.m in Sources */ = {isa = PBXBuildFile; fileRef = B0374CB419D445AC00211BA9 /* MFKeychainRunInit.m */; };
 		B0374CBF19D445AC00211BA9 /* MFSecurityHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B0374CB719D445AC00211BA9 /* MFSecurityHelper.m */; };
 		B0374CC019D445AC00211BA9 /* MFSecurityUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B0374CBA19D445AC00211BA9 /* MFSecurityUtils.m */; };
-		B0374CC119D445AC00211BA9 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = B0374CBD19D445AC00211BA9 /* KeychainItemWrapper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B04D218F194851D300679ABD /* MFApplication+MFRestUserConnectionConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = B04D218E194851D300679ABD /* MFApplication+MFRestUserConnectionConfig.m */; };
+		B05DC1091A5EE38E00976565 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = B05DC1081A5EE38E00976565 /* KeychainItemWrapper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B0812C461A1B98D400685BAA /* MFTestAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = B0812C451A1B98D400685BAA /* MFTestAssembly.m */; };
 		B0812C4C1A1B9ED900685BAA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B0812C481A1B9ED900685BAA /* InfoPlist.strings */; };
 		B0812C4D1A1B9ED900685BAA /* Localizable-project.strings in Resources */ = {isa = PBXBuildFile; fileRef = B0812C4A1A1B9ED900685BAA /* Localizable-project.strings */; };
@@ -189,7 +189,7 @@
 /* Begin PBXFileReference section */
 		0D3E636916A83F33002FEC95 /* MFCore.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MFCore.podspec; sourceTree = "<group>"; };
 		12B067BF60504492846E6728 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		43D85D0CFE1C4C07B16165EE /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		342B0CA8ACBA02E83580743A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		4B93F34B17034D3D002E9C82 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		4E11BCED18897C1E00D16923 /* MFColumnDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFColumnDescriptor.h; sourceTree = "<group>"; };
 		4E11BCEE18897C1E00D16923 /* MFColumnDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFColumnDescriptor.m; sourceTree = "<group>"; };
@@ -199,6 +199,7 @@
 		4E11BCF418897C2F00D16923 /* MFReaderColumn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFReaderColumn.m; sourceTree = "<group>"; };
 		4E11BCF518897C2F00D16923 /* MFReaderWorkspace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFReaderWorkspace.h; sourceTree = "<group>"; };
 		4E11BCF618897C2F00D16923 /* MFReaderWorkspace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFReaderWorkspace.m; sourceTree = "<group>"; };
+		6675A2B28709EB405C36A426 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		761277A5188EDADC00EFA820 /* MFEnumHelperProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFEnumHelperProtocol.h; sourceTree = "<group>"; };
 		8F1DB52E18BE557700520824 /* MFSyncBusiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFSyncBusiness.h; sourceTree = "<group>"; };
 		8F1DB52F18BE557700520824 /* MFSynchronisationResponseTreatmentInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFSynchronisationResponseTreatmentInformation.h; sourceTree = "<group>"; };
@@ -312,16 +313,16 @@
 		B0374CB219D445AC00211BA9 /* deps */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = deps; sourceTree = "<group>"; };
 		B0374CB319D445AC00211BA9 /* MFKeychainRunInit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFKeychainRunInit.h; sourceTree = "<group>"; };
 		B0374CB419D445AC00211BA9 /* MFKeychainRunInit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFKeychainRunInit.m; sourceTree = "<group>"; };
-		B0374CB519D445AC00211BA9 /* MFSecurity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFSecurity.h; sourceTree = "<group>"; };
 		B0374CB619D445AC00211BA9 /* MFSecurityHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFSecurityHelper.h; sourceTree = "<group>"; };
 		B0374CB719D445AC00211BA9 /* MFSecurityHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFSecurityHelper.m; sourceTree = "<group>"; };
 		B0374CB819D445AC00211BA9 /* MFSecurityHelperProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFSecurityHelperProtocol.h; sourceTree = "<group>"; };
 		B0374CB919D445AC00211BA9 /* MFSecurityUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFSecurityUtils.h; sourceTree = "<group>"; };
 		B0374CBA19D445AC00211BA9 /* MFSecurityUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFSecurityUtils.m; sourceTree = "<group>"; };
-		B0374CBC19D445AC00211BA9 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
-		B0374CBD19D445AC00211BA9 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 		B04D218D194851D300679ABD /* MFApplication+MFRestUserConnectionConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MFApplication+MFRestUserConnectionConfig.h"; sourceTree = "<group>"; };
 		B04D218E194851D300679ABD /* MFApplication+MFRestUserConnectionConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MFApplication+MFRestUserConnectionConfig.m"; sourceTree = "<group>"; };
+		B05DC1061A5EE12800976565 /* MFCoreSecurity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MFCoreSecurity.h; sourceTree = "<group>"; };
+		B05DC1071A5EE38E00976565 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
+		B05DC1081A5EE38E00976565 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 		B0812C441A1B98D400685BAA /* MFTestAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFTestAssembly.h; sourceTree = "<group>"; };
 		B0812C451A1B98D400685BAA /* MFTestAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFTestAssembly.m; sourceTree = "<group>"; };
 		B0812C491A1B9ED900685BAA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
@@ -607,6 +608,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		572400E6A29A8D73C121FAFA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				342B0CA8ACBA02E83580743A /* Pods.debug.xcconfig */,
+				6675A2B28709EB405C36A426 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		8F1DB52C18BE557700520824 /* synchro */ = {
 			isa = PBXGroup;
 			children = (
@@ -833,26 +843,18 @@
 			isa = PBXGroup;
 			children = (
 				B0374CB219D445AC00211BA9 /* deps */,
+				B05DC1071A5EE38E00976565 /* KeychainItemWrapper.h */,
+				B05DC1081A5EE38E00976565 /* KeychainItemWrapper.m */,
+				B05DC1061A5EE12800976565 /* MFCoreSecurity.h */,
 				B0374CB319D445AC00211BA9 /* MFKeychainRunInit.h */,
 				B0374CB419D445AC00211BA9 /* MFKeychainRunInit.m */,
-				B0374CB519D445AC00211BA9 /* MFSecurity.h */,
 				B0374CB619D445AC00211BA9 /* MFSecurityHelper.h */,
 				B0374CB719D445AC00211BA9 /* MFSecurityHelper.m */,
 				B0374CB819D445AC00211BA9 /* MFSecurityHelperProtocol.h */,
 				B0374CB919D445AC00211BA9 /* MFSecurityUtils.h */,
 				B0374CBA19D445AC00211BA9 /* MFSecurityUtils.m */,
-				B0374CBB19D445AC00211BA9 /* wrapper */,
 			);
 			path = security;
-			sourceTree = "<group>";
-		};
-		B0374CBB19D445AC00211BA9 /* wrapper */ = {
-			isa = PBXGroup;
-			children = (
-				B0374CBC19D445AC00211BA9 /* KeychainItemWrapper.h */,
-				B0374CBD19D445AC00211BA9 /* KeychainItemWrapper.m */,
-			);
-			path = wrapper;
 			sourceTree = "<group>";
 		};
 		B0812C381A1B960B00685BAA /* resources */ = {
@@ -880,8 +882,8 @@
 				C7890AEF1624673A007B93E7 /* MFCore */,
 				0D3E636916A83F33002FEC95 /* MFCore.podspec */,
 				E4F9BC0119E80BE50030D764 /* MFCoreTests */,
-				43D85D0CFE1C4C07B16165EE /* Pods.xcconfig */,
 				C7890AEB1624673A007B93E7 /* Products */,
+				572400E6A29A8D73C121FAFA /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1501,7 +1503,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1558,6 +1560,7 @@
 				E4367C941861F82F002916D2 /* MFBusinessError.m in Sources */,
 				E4367CB518620782002916D2 /* MFCoreDataHelper.m in Sources */,
 				E4FCE88C19E8223300E05383 /* MFAuthHelper.m in Sources */,
+				B05DC1091A5EE38E00976565 /* KeychainItemWrapper.m in Sources */,
 				E42E82CD187C428500DE58B5 /* MFCSVParser.m in Sources */,
 				E4FCE88319E8221800E05383 /* APLAppDelegate.m in Sources */,
 				E4FCE89519E8226400E05383 /* MFDomRequestWriter.m in Sources */,
@@ -1566,7 +1569,6 @@
 				E4B8182B187D62B300F902BD /* MFBeansKeys.m in Sources */,
 				E423F65E1862E5BE00D87132 /* MFAbstractConfiguration.m in Sources */,
 				E4B818EE187D633A00F902BD /* MFLoadFormRunInit.m in Sources */,
-				B0374CC119D445AC00211BA9 /* KeychainItemWrapper.m in Sources */,
 				E4237DDC1858C6D100B7CFF3 /* NSString+Utilities.m in Sources */,
 				4E11BCF718897C2F00D16923 /* MFReaderColumn.m in Sources */,
 				E423F6A518633A5800D87132 /* MFStack.m in Sources */,
@@ -1699,6 +1701,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -1729,6 +1732,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -1750,7 +1754,7 @@
 		};
 		C7890B101624673A007B93E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 43D85D0CFE1C4C07B16165EE /* Pods.xcconfig */;
+			baseConfigurationReference = 342B0CA8ACBA02E83580743A /* Pods.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				DSTROOT = /tmp/MFCore.dst;
@@ -1759,7 +1763,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MFCore/MFCore-Prefix.pch";
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				VALID_ARCHS = "arm64 armv7 armv7s";
@@ -1768,7 +1772,7 @@
 		};
 		C7890B111624673A007B93E7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 43D85D0CFE1C4C07B16165EE /* Pods.xcconfig */;
+			baseConfigurationReference = 6675A2B28709EB405C36A426 /* Pods.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				DSTROOT = /tmp/MFCore.dst;
@@ -1777,7 +1781,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MFCore/MFCore-Prefix.pch";
 				ONLY_ACTIVE_ARCH = NO;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				VALID_ARCHS = "arm64 armv7 armv7s";
@@ -1786,7 +1790,7 @@
 		};
 		E4F9BC0D19E80BE50030D764 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 43D85D0CFE1C4C07B16165EE /* Pods.xcconfig */;
+			baseConfigurationReference = 342B0CA8ACBA02E83580743A /* Pods.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -1826,7 +1830,7 @@
 		};
 		E4F9BC0E19E80BE50030D764 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 43D85D0CFE1C4C07B16165EE /* Pods.xcconfig */;
+			baseConfigurationReference = 6675A2B28709EB405C36A426 /* Pods.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;

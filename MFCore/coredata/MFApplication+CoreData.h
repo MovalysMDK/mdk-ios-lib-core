@@ -21,7 +21,7 @@
 
 #import <MagicalRecord/CoreData+MagicalRecord.h>
 
-#import "MFApplication.h"
+#import "MFCoreApplication.h"
 
 /**
  * @class MFApplication+CoreData

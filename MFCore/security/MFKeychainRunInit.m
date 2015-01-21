@@ -22,7 +22,7 @@
 #import "MFKeychainRunInit.h"
 #import "KeychainItemWrapper.h"
 #import "MFSecurityUtils.h"
-#import "MFCoreLogging.h"
+#import "MFCoreLog.h"
 
 @interface MFKeychainRunInit ()
 

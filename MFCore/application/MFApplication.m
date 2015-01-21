@@ -25,7 +25,7 @@
 
 #import "MFApplication.h"
 #import "MFSettingsValidationManager.h"
-#import "MFSecurityUtils.h"
+#import "MFCoreSecurity.h"
 
 @interface MFApplication()
 

@@ -23,7 +23,7 @@
 
 #import "MFCoreBean.h"
 
-#import "MFApplication+CoreData.h"
+#import "MFCoreCoredata.h"
 
 #import "MFContextFactory.h"
 #import "MFContextProtocol.h"

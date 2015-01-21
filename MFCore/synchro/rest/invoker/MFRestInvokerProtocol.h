@@ -20,15 +20,16 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MFSyncRestResponseProtocol.h"
 #import "MFActionProtocol.h"
 #import "MFContext.h"
 
 @class MFRestInvocationConfig;
 @class MFRestResponse;
 @class MFRestConnectionConfig;
+@protocol MFSyncRestResponseProtocol;
 
-@protocol MFRestInvokerProtocol <NSObject>
+
+@protocol MFRestInvokerProtocol <NSObject>;
 
 @property (nonatomic, retain) Class ResponseClass;
 @property (nonatomic, retain) NSString *urlProtocol;

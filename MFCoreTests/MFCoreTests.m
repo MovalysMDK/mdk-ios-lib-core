@@ -28,7 +28,7 @@
 #import "MFBuilderForm.h"
 #import "MFFormBuilderProtocol.h"
 #import "MFLocalizedString.h"
-#import "MFSecurity.h"
+#import "MFCoreSecurity.h"
 #import "MFBeanLoader.h"
 #import "MFTestAssembly.h"
 #import "MFURL.h"

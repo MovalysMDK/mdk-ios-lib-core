@@ -8,7 +8,7 @@
  * (at your option) any later version.
  * Movalys MDK is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See theLOG_LEVEL_ERROR
  * GNU Lesser General Public License for more details.
  * You should have received a copy of the GNU Lesser General Public License
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
@@ -19,7 +19,7 @@
 //
 //
 
-#import <DDLog.h>
+#import <CocoaLumberjack/DDLog.h>
 
 // Define LOG LEVEL for this file based on Xcode Configuration
 //#ifdef DEBUG

@@ -19,7 +19,7 @@
 //
 //
 
-@interface MFBeanLoader : NSObject
+@interface MFBeanLoaderWithTyphoon : NSObject
 
 /*!
  * @brief donne l'unique instance du starter

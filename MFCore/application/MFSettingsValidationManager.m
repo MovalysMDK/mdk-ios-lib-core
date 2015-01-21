@@ -26,7 +26,7 @@
 
 #import "MFSettingsValidationManager.h"
 #import "MFStarter.h"
-#import "MFSecurityUtils.h"
+#import "MFCoreSecurity.h"
 
 const int TAG_FOR_SETTINGS_UNCOMPLETE_ALERT = 2 ;
 

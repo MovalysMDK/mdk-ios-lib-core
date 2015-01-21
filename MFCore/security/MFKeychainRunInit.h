@@ -20,7 +20,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MFRunInitProtocol.h"
+#import "MFCoreInit.h"
 
 /*!
  * @brief This RunInit class intializes keychain and the salt value used to encrypt and
