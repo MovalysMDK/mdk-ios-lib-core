@@ -29,3 +29,6 @@ derivedDataDirectory
 test-reports/
 objects
 junit-report.xml
+MFCore/objc_dep.py
+MFCore/MFCore.dot
+

@@ -19,7 +19,7 @@
 //
 //
 
-#import <DDFileLogger.h>
+#import <CocoaLumberjack/DDFileLogger.h>
 
 #import "MFCoreLogging.h"
 

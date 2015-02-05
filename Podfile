@@ -1,4 +1,4 @@
-platform :ios, '6.1'
+platform :ios, '6.0'
 
 pod 'CocoaLumberjack', '~>1.7'
 pod 'MagicalRecord', '2.2'
