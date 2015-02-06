@@ -14,17 +14,14 @@ Pod::Spec.new do |s|
   s.source       = { :git => "gitmovalys@git.ptx.fr.sopra:mfcore.git", :tag => "1.1.6" }
   s.platform     = :ios, '6.0'
 
-  s.dependency 'JSONKit', '>= 1.6'
-  s.dependency 'CocoaLumberjack', '~>1.7'
-  s.dependency 'MagicalRecord', '~>2.2'
-  s.dependency 'CocoaSecurity', '~>1.2.4'
-  s.frameworks   =  'CoreText'
+
   
   s.header_mappings_dir = '.'
   s.requires_arc = true
   s.source_files = 'MFCore/*.{h,m}'
   s.xcconfig = { 'OTHER_LDFLAGS' => '-lz' }
- 
+  s.frameworks   =  'CoreText'
+
   s.subspec 'FoundationExt' do |foundationExt|
     foundationExt.source_files = 'MFCore/foundationExt'
     foundationExt.compiler_flags = '-lz'
@@ -225,6 +222,14 @@ Pod::Spec.new do |s|
     securitywrapper.source_files = 'MFCore/security/KeychainItemWrapper.{h,m}'
     securitywrapper.requires_arc = false
   end
+
+  s.subspec 'Dependencies' do|dep| 
+    dep.dependency 'JSONKit', '>= 1.6'
+    dep.dependency 'CocoaLumberjack', '~>1.7'
+    dep.dependency 'MagicalRecord', '~>2.2'
+    dep.dependency 'CocoaSecurity', '~>1.2.4'
+  end
+
 
 
 end
