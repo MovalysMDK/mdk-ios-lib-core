@@ -66,22 +66,6 @@
  */
 @property(nonatomic) NSString *noLabel;
 
-/*
- Name uses to define ui element style.
- Warning: if the class doesn't come from configuration file, it is calculated by the system.
- Rule to calculate the CSS class name:
- 1) Check if configuration contains a CSS class name.
- 2) If configuration doesn't contain any CSS class name then return the name of element.
- */
-@property(nonatomic, strong) NSString *classCSS;
-
-/*
- Return YES if CSS class name is defined in configuration files (screen description, configuration file, storyboard, ...).
- Return NO in other cases.
- */
-@property(nonatomic, readonly) BOOL hasRealClassCSS;
-
-
 @property(nonatomic, strong) NSString *fileName;
 
 @end

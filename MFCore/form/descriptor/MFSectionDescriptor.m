@@ -94,7 +94,6 @@
         copy.uitype = self.uitype;
         copy.configurationName = self.configurationName;
         copy.visible = self.visible;
-        copy.classCSS = self.classCSS;
         copy.fileName = self.fileName;
         [copy addGroups:self.orderedGroups];
         copy.height = self.height;
@@ -105,7 +104,7 @@
 
 -(NSString *) description
 {
-    return [NSString stringWithFormat:@"MFSectionDescriptor:<name: %@, uitype: %@, configurationName: %@, visible: %@, classCSS: %@, height: %@,\n parent: %@,\n groups:%@>", self.name, self.uitype, self.configurationName, [MFHelperBOOL asString:self.visible], self.classCSS, self.height, self.parent.name, self.orderedGroups];
+    return [NSString stringWithFormat:@"MFSectionDescriptor:<name: %@, uitype: %@, configurationName: %@, visible: %@, height: %@,\n parent: %@,\n groups:%@>", self.name, self.uitype, self.configurationName, [MFHelperBOOL asString:self.visible], self.height, self.parent.name, self.orderedGroups];
 }
 
 @end

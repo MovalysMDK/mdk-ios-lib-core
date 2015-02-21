@@ -27,7 +27,7 @@
 -(NSString *) description
 {
     //return [super description];
-    return [NSString stringWithFormat:@"MFWorkspaceDescriptor:<name: %@, uitype: %@, configurationName: %@, visible: %@, classCSS: %@, parent: %@, \ncolumns:%@>", self.name, self.uitype, self.configurationName, [MFHelperBOOL asString:self.visible], self.classCSS, self.parent.name, self.columns];
+    return [NSString stringWithFormat:@"MFWorkspaceDescriptor:<name: %@, uitype: %@, configurationName: %@, visible: %@, parent: %@, \ncolumns:%@>", self.name, self.uitype, self.configurationName, [MFHelperBOOL asString:self.visible], self.parent.name, self.columns];
 }
 
 @end

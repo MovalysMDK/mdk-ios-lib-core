@@ -26,7 +26,7 @@
 
 -(NSString *) description
 {
-    return [NSString stringWithFormat:@"MFColumnDescriptor:<name: %@, uitype: %@, configurationName: %@, visible: %@, classCSS: %@,\n parent: %@>", self.name, self.uitype, self.configurationName, [MFHelperBOOL asString:self.visible], self.classCSS,  self.parent.name];
+    return [NSString stringWithFormat:@"MFColumnDescriptor:<name: %@, uitype: %@, configurationName: %@, visible: %@ \n parent: %@>", self.name, self.uitype, self.configurationName, [MFHelperBOOL asString:self.visible], self.parent.name];
 }
 
 @end

@@ -41,8 +41,6 @@ static NSString *REGISTER_CLASS_OPTION = @"Class";
         copy.uitype = self.uitype;
         copy.configurationName = self.configurationName;
         copy.visible = self.visible;
-        copy.classCSS = self.classCSS;
-//        copy.sections = copy.sections;
         copy.fileName = self.fileName;
     }
     return copy;
@@ -51,7 +49,7 @@ static NSString *REGISTER_CLASS_OPTION = @"Class";
 -(NSString *) description
 {
     //return [super description];
-    return [NSString stringWithFormat:@"MFFormDescriptor:<name: %@, uitype: %@, configurationName: %@, visible: %@, classCSS: %@, parent: %@, \nsections:%@>", self.name, self.uitype, self.configurationName, [MFHelperBOOL asString:self.visible], self.classCSS, self.parent.name, self.sections];
+    return [NSString stringWithFormat:@"MFFormDescriptor:<name: %@, uitype: %@, configurationName: %@, visible: %@, parent: %@, \nsections:%@>", self.name, self.uitype, self.configurationName, [MFHelperBOOL asString:self.visible], self.parent.name, self.sections];
 }
 
 /**

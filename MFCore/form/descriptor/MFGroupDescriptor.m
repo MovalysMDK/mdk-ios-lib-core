@@ -119,7 +119,6 @@
         copy.uitype = self.uitype;
         copy.configurationName = self.configurationName;
         copy.visible = self.visible;
-        copy.classCSS = self.classCSS;
         copy.height = self.height;
         copy.heightNoLabel = self.heightNoLabel;
         [copy addFields:self.fields];
@@ -130,7 +129,7 @@
 
 -(NSString *) description
 {
-    return [NSString stringWithFormat:@"MFGroupDescriptor:<name: %@, uitype: %@, configurationName: %@, visible: %@, classCSS: %@, height: %@, \nparent: %@,\nfields: %@>", self.name, self.uitype, self.configurationName, [MFHelperBOOL asString:self.visible], self.classCSS, self.height, self.parent.name, self.fields];
+    return [NSString stringWithFormat:@"MFGroupDescriptor:<name: %@, uitype: %@, configurationName: %@, visible: %@, height: %@, \nparent: %@,\nfields: %@>", self.name, self.uitype, self.configurationName, [MFHelperBOOL asString:self.visible], self.height, self.parent.name, self.fields];
 }
 
 @end

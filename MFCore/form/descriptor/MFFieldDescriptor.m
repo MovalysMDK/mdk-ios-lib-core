@@ -54,7 +54,6 @@
         copy.uitype = self.uitype;
         copy.configurationName = self.configurationName;
         copy.visible = self.visible;
-        copy.classCSS = self.classCSS;
         copy.mandatory = self.mandatory;
         copy.bindingKey = self.bindingKey;
         copy.vmValueChangedMethodName = self.vmValueChangedMethodName;
@@ -77,7 +76,7 @@
 
 -(NSString *) description
 {
-    return [NSString stringWithFormat:@"MFFieldDescriptor:<name: %@, uitype: %@, configurationName: %@, visible: %@, classCSS: %@, mandatory: %@,parent: %@, bindingKey : %@, methode custom pour changement dans View model : %@, converter :%@, backgroundColor : %@, editable : %@", self.name, self.uitype, self.configurationName, [MFHelperBOOL asString:self.visible], self.classCSS, ((self.mandatory) ? @"OUI" : @"NON"), self.parent.name, self.bindingKey,
+    return [NSString stringWithFormat:@"MFFieldDescriptor:<name: %@, uitype: %@, configurationName: %@, visible: %@, mandatory: %@,parent: %@, bindingKey : %@, methode custom pour changement dans View model : %@, converter :%@, backgroundColor : %@, editable : %@", self.name, self.uitype, self.configurationName, [MFHelperBOOL asString:self.visible], ((self.mandatory) ? @"OUI" : @"NON"), self.parent.name, self.bindingKey,
             self.vmValueChangedMethodName, self.converter, self.backgroundColor, self.editable];
 }
 

@@ -1,4 +1,4 @@
-platform :ios, '6.0'
+platform :ios, '6.1'
 
 source 'gitmovalys@git.ptx.fr.sopra:podspecs.git'
 source 'https://github.com/CocoaPods/Specs.git'
