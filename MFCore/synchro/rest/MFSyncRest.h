@@ -23,8 +23,6 @@
     /* AES */
 #import "MFAESUtil.h"
 #import "NSData+AES256.h"
-    /* base64 */
-#import "Base64.h"
     /* MD5 */
 #import "MFmd5.h"
 
