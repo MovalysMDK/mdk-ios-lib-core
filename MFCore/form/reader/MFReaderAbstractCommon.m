@@ -213,73 +213,76 @@
 -(void) processKey:(NSString *) key ofDescriptor:(NSObject<MFDescriptorCommonProtocol> *) descriptor
              named:(NSString *) name withValue:(id) stuff
 {
-    BOOL affect = NO;
-    NSArray *stuffArray = nil;
-    NSString *keyAfterMapping = nil;
-    NSObject<MFDescriptorCommonProtocol> *child = nil;
-    keyAfterMapping = [self mapKey:key];
-    MFCoreLogVerbose(@"Process key '%@' of element named '%@'", key, name);
-    MFCoreLogVerbose(@"Stuff of key named '%@' is : %@", key, stuff);
-    
-    if(nil != stuff)
-    {
-        // If we find a collection type then this is a new object
-        if([stuff isKindOfClass:[NSDictionary class]])
+    if(![key hasPrefix:@"_"] && ![key hasPrefix:@"@"]) {
+        
+        BOOL affect = NO;
+        NSArray *stuffArray = nil;
+        NSString *keyAfterMapping = nil;
+        NSObject<MFDescriptorCommonProtocol> *child = nil;
+        keyAfterMapping = [self mapKey:key];
+        MFCoreLogVerbose(@"Process key '%@' of element named '%@'", key, name);
+        MFCoreLogVerbose(@"Stuff of key named '%@' is : %@", key, stuff);
+        
+        if(nil != stuff)
         {
-            // This is a dictionary : a complex new descriptor. We need the appropriate reader to process it.
-            MFCoreLogVerbose(@"stuff of key named '%@' is kind of NSDictionary", key);
-            affect = YES;
-            if(self.delegate != nil)
+            // If we find a collection type then this is a new object
+            if([stuff isKindOfClass:[NSDictionary class]])
             {
-                affect = [self.delegate processKey:key WithDictionaryValue:stuff  ForCurrentDescriptor:descriptor];
+                // This is a dictionary : a complex new descriptor. We need the appropriate reader to process it.
+                MFCoreLogVerbose(@"stuff of key named '%@' is kind of NSDictionary", key);
+                affect = YES;
+                if(self.delegate != nil)
+                {
+                    affect = [self.delegate processKey:key WithDictionaryValue:stuff  ForCurrentDescriptor:descriptor];
+                }
+                if(affect)
+                {
+                    child = [self findAndExecuteReaderFromDictionary:stuff andParentDescriptor:descriptor];
+                    if(child)
+                        [descriptor setValue:child forKey:keyAfterMapping];
+                    else
+                        [descriptor setValue:stuff forKey:key];
+                    
+                }
             }
-            if(affect)
+            else if([stuff isKindOfClass:[NSArray class]])
             {
-                child = [self findAndExecuteReaderFromDictionary:stuff andParentDescriptor:descriptor];
-                if(child)
-                    [descriptor setValue:child forKey:keyAfterMapping];
-                else
-                    [descriptor setValue:stuff forKey:key];
-                
+                // This is an array : each item is new complex object.
+                stuffArray = stuff;
+                MFCoreLogVerbose(@"stuff of key named '%@' is kind of NSArray (length : %lu)", key, (unsigned long)stuffArray.count);
+                NSMutableArray *newArray = [[NSMutableArray alloc] initWithCapacity:((NSArray *) stuff).count];
+                [self readDescriptorDataFromArray:stuff toNewArray:newArray withParentDescriptor:descriptor];
+                MFCoreLogVerbose(@"stuff of key named '%@' new array length is %lu", key, (unsigned long)newArray.count);
+                affect = YES;
+                if(self.delegate != nil)
+                {
+                    affect = [self.delegate processKey:key withArrayValue:newArray  forCurrentDescriptor:descriptor];
+                }
+                if(affect)
+                {
+                    [descriptor setValue:newArray forKey:keyAfterMapping];
+                }
+            }
+            else
+            {
+                // This isn't a collection type
+                MFCoreLogVerbose(@"stuff of key named '%@' isn't kind of NSDictionary or NSArray", key);
+                affect = YES;
+                if(self.delegate != nil)
+                {
+                    affect = [self.delegate processKey:key withSimpleValue:stuff forCurrentDescriptor:descriptor];
+                }
+                if(affect)
+                {
+                    [descriptor setValue:stuff forKey:keyAfterMapping];
+                }
             }
         }
-        else if([stuff isKindOfClass:[NSArray class]])
+        if(!affect)
         {
-            // This is an array : each item is new complex object.
-            stuffArray = stuff;
-            MFCoreLogVerbose(@"stuff of key named '%@' is kind of NSArray (length : %lu)", key, (unsigned long)stuffArray.count);
-            NSMutableArray *newArray = [[NSMutableArray alloc] initWithCapacity:((NSArray *) stuff).count];
-            [self readDescriptorDataFromArray:stuff toNewArray:newArray withParentDescriptor:descriptor];
-            MFCoreLogVerbose(@"stuff of key named '%@' new array length is %lu", key, (unsigned long)newArray.count);
-            affect = YES;
-            if(self.delegate != nil)
-            {
-                affect = [self.delegate processKey:key withArrayValue:newArray  forCurrentDescriptor:descriptor];
-            }
-            if(affect)
-            {
-                [descriptor setValue:newArray forKey:keyAfterMapping];
-            }
+            MFCoreLogWarn(@"The system can not use property named '%@' on element named '%@' with value '%@'",key, name, stuff);
+            self.numberOfErrors++;
         }
-        else
-        {
-            // This isn't a collection type
-            MFCoreLogVerbose(@"stuff of key named '%@' isn't kind of NSDictionary or NSArray", key);
-            affect = YES;
-            if(self.delegate != nil)
-            {
-                affect = [self.delegate processKey:key withSimpleValue:stuff forCurrentDescriptor:descriptor];
-            }
-            if(affect)
-            {
-                [descriptor setValue:stuff forKey:keyAfterMapping];
-            }
-        }
-    }
-    if(!affect)
-    {
-        MFCoreLogWarn(@"The system can not use property named '%@' on element named '%@' with value '%@'",key, name, stuff);
-        self.numberOfErrors++;
     }
     
 }
