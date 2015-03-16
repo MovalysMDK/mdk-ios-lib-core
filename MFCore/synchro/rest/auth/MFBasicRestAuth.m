@@ -20,9 +20,11 @@
 //
 
 #import "MFBasicRestAuth.h"
-#import "Base64.h"
+#import <CocoaSecurity/Base64.h>
+
 
 @implementation MFBasicRestAuth
+
 
 -(NSDictionary *) getAuthHeadersWithLogin:(NSString *) login withPassword:(NSString *) password withUrl:(NSString *) url withEntrypoint:(NSString *) entryPoint
 {

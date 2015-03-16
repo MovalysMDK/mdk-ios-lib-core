@@ -99,9 +99,6 @@
 		B06484061A70F5CB0077A855 /* MFAESUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = B06482791A70F5CB0077A855 /* MFAESUtil.m */; };
 		B06484071A70F5CB0077A855 /* NSData+AES256.h in Headers */ = {isa = PBXBuildFile; fileRef = B064827A1A70F5CB0077A855 /* NSData+AES256.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06484081A70F5CB0077A855 /* NSData+AES256.m in Sources */ = {isa = PBXBuildFile; fileRef = B064827B1A70F5CB0077A855 /* NSData+AES256.m */; };
-		B06484091A70F5CB0077A855 /* Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = B064827D1A70F5CB0077A855 /* Base64.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B064840A1A70F5CB0077A855 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = B064827E1A70F5CB0077A855 /* Base64.m */; };
-		B064840B1A70F5CB0077A855 /* LICENCE.md in Sources */ = {isa = PBXBuildFile; fileRef = B064827F1A70F5CB0077A855 /* LICENCE.md */; };
 		B064840C1A70F5CB0077A855 /* MFmd5.h in Headers */ = {isa = PBXBuildFile; fileRef = B06482811A70F5CB0077A855 /* MFmd5.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B064840D1A70F5CB0077A855 /* MFmd5.m in Sources */ = {isa = PBXBuildFile; fileRef = B06482821A70F5CB0077A855 /* MFmd5.m */; };
 		B064840E1A70F5CB0077A855 /* MFAbstractRestAuth.h in Headers */ = {isa = PBXBuildFile; fileRef = B06482831A70F5CB0077A855 /* MFAbstractRestAuth.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -483,9 +480,6 @@
 		B06482791A70F5CB0077A855 /* MFAESUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFAESUtil.m; sourceTree = "<group>"; };
 		B064827A1A70F5CB0077A855 /* NSData+AES256.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+AES256.h"; sourceTree = "<group>"; };
 		B064827B1A70F5CB0077A855 /* NSData+AES256.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+AES256.m"; sourceTree = "<group>"; };
-		B064827D1A70F5CB0077A855 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
-		B064827E1A70F5CB0077A855 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
-		B064827F1A70F5CB0077A855 /* LICENCE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENCE.md; sourceTree = "<group>"; };
 		B06482811A70F5CB0077A855 /* MFmd5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFmd5.h; sourceTree = "<group>"; };
 		B06482821A70F5CB0077A855 /* MFmd5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFmd5.m; sourceTree = "<group>"; };
 		B06482831A70F5CB0077A855 /* MFAbstractRestAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFAbstractRestAuth.h; sourceTree = "<group>"; };
@@ -831,27 +825,27 @@
 		B04172481A70F5350045C268 /* MFCore */ = {
 			isa = PBXGroup;
 			children = (
-				B06482171A70F5CB0077A855 /* log */,
-				B06482211A70F5CB0077A855 /* MFCore-Prefix.pch */,
 				B06482221A70F5CB0077A855 /* action */,
-				B06482311A70F5CB0077A855 /* business */,
-				B064823C1A70F5CB0077A855 /* context */,
-				B06482451A70F5CB0077A855 /* security */,
-				B06482511A70F5CB0077A855 /* synchro */,
 				B06482CF1A70F5CB0077A855 /* application */,
 				B06482D81A70F5CB0077A855 /* bean */,
+				B06482311A70F5CB0077A855 /* business */,
 				B06482E21A70F5CB0077A855 /* config */,
+				B064823C1A70F5CB0077A855 /* context */,
 				B06482ED1A70F5CB0077A855 /* coredata */,
 				B06482FC1A70F5CB0077A855 /* csvloader */,
 				B064830E1A70F5CB0077A855 /* dataloader */,
 				B064831C1A70F5CB0077A855 /* error */,
+				B064835B1A70F5CB0077A855 /* form */,
 				B06483361A70F5CB0077A855 /* foundationExt */,
 				B064834A1A70F5CB0077A855 /* i18n */,
 				B064834F1A70F5CB0077A855 /* init */,
+				B06482171A70F5CB0077A855 /* log */,
 				B06483551A70F5CB0077A855 /* message */,
-				B064835B1A70F5CB0077A855 /* form */,
+				B06482211A70F5CB0077A855 /* MFCore-Prefix.pch */,
 				B041724B1A70F5350045C268 /* MFCore.h */,
+				B06482451A70F5CB0077A855 /* security */,
 				B04172491A70F5350045C268 /* Supporting Files */,
+				B06482511A70F5CB0077A855 /* synchro */,
 			);
 			path = MFCore;
 			sourceTree = "<group>";
@@ -1050,7 +1044,6 @@
 			isa = PBXGroup;
 			children = (
 				B06482771A70F5CB0077A855 /* AES */,
-				B064827C1A70F5CB0077A855 /* Base64 */,
 				B06482801A70F5CB0077A855 /* MD5 */,
 				B06482831A70F5CB0077A855 /* MFAbstractRestAuth.h */,
 				B06482841A70F5CB0077A855 /* MFAbstractRestAuth.m */,
@@ -1075,16 +1068,6 @@
 				B064827B1A70F5CB0077A855 /* NSData+AES256.m */,
 			);
 			path = AES;
-			sourceTree = "<group>";
-		};
-		B064827C1A70F5CB0077A855 /* Base64 */ = {
-			isa = PBXGroup;
-			children = (
-				B064827D1A70F5CB0077A855 /* Base64.h */,
-				B064827E1A70F5CB0077A855 /* Base64.m */,
-				B064827F1A70F5CB0077A855 /* LICENCE.md */,
-			);
-			path = Base64;
 			sourceTree = "<group>";
 		};
 		B06482801A70F5CB0077A855 /* MD5 */ = {
@@ -1723,7 +1706,6 @@
 				B06483CC1A70F5CB0077A855 /* MFExportLogsAction.h in Headers */,
 				B06484341A70F5CB0077A855 /* MFAbstractRestResponse.h in Headers */,
 				B064842D1A70F5CB0077A855 /* MFAbstractDomEntityRequestBuilder.h in Headers */,
-				B06484091A70F5CB0077A855 /* Base64.h in Headers */,
 				B06484071A70F5CB0077A855 /* NSData+AES256.h in Headers */,
 				B06483E91A70F5CB0077A855 /* MFSynchronizationAction.h in Headers */,
 				B06484321A70F5CB0077A855 /* MFRestRequestProtocol.h in Headers */,
@@ -1966,7 +1948,6 @@
 				B064843B1A70F5CB0077A855 /* MFAckDomRequestBuilder.m in Sources */,
 				B06484E91A70F5CB0077A855 /* MFConfigurationGroupDescriptor.m in Sources */,
 				B06485201A70F5CB0077A855 /* MFValidatorDescriptorFactory.m in Sources */,
-				B064840A1A70F5CB0077A855 /* Base64.m in Sources */,
 				B06484011A70F5CB0077A855 /* MFReachability.m in Sources */,
 				B06484E41A70F5CB0077A855 /* MFProperty+Forms.m in Sources */,
 				B06484751A70F5CB0077A855 /* MFCoreDataHelper.m in Sources */,
@@ -2020,7 +2001,6 @@
 				B064842B1A70F5CB0077A855 /* MFJsonReader.m in Sources */,
 				B06484521A70F5CB0077A855 /* MObjectToSynchronize+Factory.m in Sources */,
 				B06484061A70F5CB0077A855 /* MFAESUtil.m in Sources */,
-				B064840B1A70F5CB0077A855 /* LICENCE.md in Sources */,
 				B06484AC1A70F5CB0077A855 /* MFKeyNotFound.m in Sources */,
 				B064845C1A70F5CB0077A855 /* MFStarter.m in Sources */,
 				B06484411A70F5CB0077A855 /* MFEntityAcks.m in Sources */,
