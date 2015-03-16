@@ -21,3 +21,4 @@
 
 #import "MFLogging.h"
 #import "MFLoggingHelper.h"
+#import "MFCoreLogging.h"
