@@ -20,7 +20,7 @@
 //
 
 #import <CocoaLumberjack/CocoaLumberjack.h>
-#import <CocoaLumberJack/DDLegacyMacros.h>
+//#import <CocoaLumberJack/DDLegacyMacros.h>
 
 // Define LOG LEVEL for this file based on Xcode Configuration
 //#ifdef DEBUG
