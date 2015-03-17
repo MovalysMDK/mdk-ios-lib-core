@@ -44,7 +44,7 @@ static DDFileLogger *fileLogger;
     // Use Registered Dynamic Logging to setup Log level for all classes
     // Loop through all registered classes and set default Log Level
     [[DDLog registeredClasses] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        [DDLog setLogLevel:loglevel forClass:obj];
+        [DDLog setLevel:loglevel forClass:obj];
     }];
     
     // Setup 2 MFLoggingFormatter (one for each logger) because they are not thread safe
@@ -140,19 +140,19 @@ static DDFileLogger *fileLogger;
         ddLogLevel = mfStartLogLevel;
     }
     else if ([MFLOG_LEVEL_VERBOSE isEqualToString:logLevel]) {
-        ddLogLevel = LOG_LEVEL_VERBOSE;
+        ddLogLevel = DDLogLevelVerbose;
     }
     else if ([MFLOG_LEVEL_WARNING isEqualToString:logLevel]) {
-        ddLogLevel = LOG_LEVEL_WARN;
+        ddLogLevel = DDLogLevelWarning;
     }
     else if ([MFLOG_LEVEL_DEBUG isEqualToString:logLevel]) {
-        ddLogLevel = LOG_LEVEL_VERBOSE;
+        ddLogLevel = DDLogLevelVerbose;
     }
     else if ([MFLOG_LEVEL_INFO isEqualToString:logLevel]) {
-        ddLogLevel = LOG_LEVEL_INFO;
+        ddLogLevel = DDLogLevelInfo;
     }
     else if ([MFLOG_LEVEL_ERROR isEqualToString:logLevel]) {
-        ddLogLevel = LOG_LEVEL_ERROR;
+        ddLogLevel = DDLogLevelError;
     }
 }
 

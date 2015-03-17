@@ -45,15 +45,15 @@
     
     NSString *logLevel;
     
-    switch (logMessage->logFlag) {
-        case LOG_FLAG_ERROR : logLevel = @"ERROR"; break;
-        case LOG_FLAG_WARN  : logLevel = @"WARN"; break;
-        case LOG_FLAG_INFO  : logLevel = @"INFO"; break;
+    switch (logMessage->_flag) {
+        case DDLogLevelError : logLevel = @"ERROR"; break;
+        case DDLogLevelWarning  : logLevel = @"WARN"; break;
+        case DDLogLevelInfo  : logLevel = @"INFO"; break;
         default             : logLevel = @"VERBOSE"; break;
     }
     
-    NSString *dateAndTime = [threadUnsafeDateFormatter stringFromDate:(logMessage->timestamp)];
-    NSString *logMsg = logMessage->logMsg;
+    NSString *dateAndTime = [threadUnsafeDateFormatter stringFromDate:(logMessage->_timestamp)];
+    NSString *logMsg = logMessage->_message;
     
     return [NSString stringWithFormat:@"%@ - %@: %@", dateAndTime, logLevel, logMsg];
 }

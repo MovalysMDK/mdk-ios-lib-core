@@ -19,7 +19,7 @@
 //
 //
 
-#import <CocoaLumberjack/DDLog.h>
+#import <CocoaLumberjack/CocoaLumberjack.h>
 
 @interface MFLoggingFormatter : NSObject <DDLogFormatter>
 

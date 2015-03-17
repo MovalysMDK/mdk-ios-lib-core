@@ -23,8 +23,9 @@
 
 #define MF_CORE_LOG_CONTEXT 1
 
-#define MFCoreLogError(frmt, ...)     SYNC_LOG_OBJC_MAYBE(ddLogLevel, LOG_FLAG_ERROR,   MF_CORE_LOG_CONTEXT, frmt, ##__VA_ARGS__)
-#define MFCoreLogWarn(frmt, ...)     SYNC_LOG_OBJC_MAYBE(ddLogLevel, LOG_FLAG_WARN,    MF_CORE_LOG_CONTEXT, frmt, ##__VA_ARGS__)
-#define MFCoreLogInfo(frmt, ...)     SYNC_LOG_OBJC_MAYBE(ddLogLevel, LOG_FLAG_INFO,    MF_CORE_LOG_CONTEXT, frmt, ##__VA_ARGS__)
-#define MFCoreLogVerbose(frmt, ...)  SYNC_LOG_OBJC_MAYBE(ddLogLevel, LOG_FLAG_VERBOSE, MF_CORE_LOG_CONTEXT, frmt, ##__VA_ARGS__)
+#define MFCoreLogError(frmt, ...)       LOG_OBJC_MAYBE(LOG_ASYNC_ERROR, ddLogLevel, DDLogLevelError,   MF_CORE_LOG_CONTEXT, frmt, ##__VA_ARGS__)
+#define MFCoreLogWarn(frmt, ...)        LOG_OBJC_MAYBE(LOG_ASYNC_WARN, ddLogLevel, DDLogLevelWarning,    MF_CORE_LOG_CONTEXT, frmt, ##__VA_ARGS__)
+#define MFCoreLogInfo(frmt, ...)        LOG_OBJC_MAYBE(LOG_ASYNC_INFO, ddLogLevel, DDLogLevelInfo,    MF_CORE_LOG_CONTEXT, frmt, ##__VA_ARGS__)
+#define MFCoreLogVerbose(frmt, ...)     LOG_OBJC_MAYBE(LOG_ASYNC_VERBOSE, ddLogLevel, DDLogLevelVerbose, MF_CORE_LOG_CONTEXT, frmt, ##__VA_ARGS__)
 
+//                                        LOG_OBJC_MAYBE(LOG_ASYNC_ERROR,   LOG_LEVEL_DEF, LOG_FLAG_ERROR,   0, frmt, ##__VA_ARGS__)

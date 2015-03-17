@@ -19,13 +19,14 @@
 //
 //
 
-#import <CocoaLumberjack/DDLog.h>
+#import <CocoaLumberjack/CocoaLumberjack.h>
+#import <CocoaLumberJack/DDLegacyMacros.h>
 
 // Define LOG LEVEL for this file based on Xcode Configuration
 //#ifdef DEBUG
 //static const int mfStartLogLevel = LOG_LEVEL_VERBOSE;
 //#else
-static const int mfStartLogLevel = LOG_LEVEL_ERROR;
+static const int mfStartLogLevel = DDLogLevelError;
 //#endif
 
 // active log level
