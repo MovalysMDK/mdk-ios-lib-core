@@ -20,6 +20,8 @@
 //
 
 #import "MFLogging.h"
+#import <CocoaLumberjack/DDLog.h>
+#import <CocoaLumberjack/DDLogMacros.h>
 
 #define MF_CORE_LOG_CONTEXT 1
 

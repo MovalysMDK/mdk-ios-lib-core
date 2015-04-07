@@ -19,8 +19,7 @@
 //
 //
 
-#import <DDTTYLogger.h>
-#import <DDFileLogger.h>
+#import <CocoaLumberjack/DDLog.h>
 
 #import "MFLoggingHelper.h"
 #import "MFLoggingFormatter.h"

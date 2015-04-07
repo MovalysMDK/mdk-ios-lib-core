@@ -8,33 +8,27 @@
  * (at your option) any later version.
  * Movalys MDK is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See theLOG_LEVEL_ERROR
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU Lesser General Public License for more details.
  * You should have received a copy of the GNU Lesser General Public License
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
-// Define LOG LEVEL for this file based on Xcode Configuration
-//  MFLogging.h
-//  Step2
 //
+//  MFTestAssembly.h
+//  lemon
+//
+//  Created by Movalys MDK.
+//  Copyright (c) 2014 Sopra Consulting. All rights reserved.
 //
 
-#import <CocoaLumberjack/DDLog.h>
-//#import <CocoaLumberJack/DDLegacyMacros.h>
+#import "MFBeansAssemblyProtocol.h"
 
-// Define LOG LEVEL for this file based on Xcode Configuration
-//#ifdef DEBUG
-//static const int mfStartLogLevel = LOG_LEVEL_VERBOSE;
-//#else
-static const int mfStartLogLevel = DDLogLevelError;
-//#endif
+/**
+ * @brief Class containing the beans managed by Typhoon used in MDK
+ *
+ * DO NOT MODIFIED THIS CLASS : You must overload this class in MFFrameworkExtendedComponentsAssembly
+ *
+ **/
+@interface MFTestAssembly : NSObject <MFBeansAssemblyProtocol>
 
-// active log level
-extern int ddLogLevel;
-
-#define MFLOG_LEVEL_VERBOSE @"verbose"
-#define MFLOG_LEVEL_DEBUG @"debug"
-#define MFLOG_LEVEL_INFO @"info"
-#define MFLOG_LEVEL_WARNING @"warning"
-#define MFLOG_LEVEL_ERROR @"error"
-
+@end
