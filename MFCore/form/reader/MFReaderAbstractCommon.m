@@ -213,7 +213,7 @@
 -(void) processKey:(NSString *) key ofDescriptor:(NSObject<MFDescriptorCommonProtocol> *) descriptor
              named:(NSString *) name withValue:(id) stuff
 {
-    if(![key hasPrefix:@"_"] && ![key hasPrefix:@"@"]) {
+    if(![key hasPrefix:@"_"] && ![key hasPrefix:@"@"] && ![key hasPrefix:@"#"]) {
         
         BOOL affect = NO;
         NSArray *stuffArray = nil;
