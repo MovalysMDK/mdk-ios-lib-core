@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B041724C1A70F5350045C268 /* MFCore.h in Headers */ = {isa = PBXBuildFile; fileRef = B041724B1A70F5350045C268 /* MFCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B04A9EEC1AD56995009FA89E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B04A9EEB1AD56995009FA89E /* Pods.framework */; };
 		B06483B01A70F5CB0077A855 /* deps in Resources */ = {isa = PBXBuildFile; fileRef = B06482181A70F5CB0077A855 /* deps */; };
 		B06483B11A70F5CB0077A855 /* MFCoreLog.h in Headers */ = {isa = PBXBuildFile; fileRef = B06482191A70F5CB0077A855 /* MFCoreLog.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06483B21A70F5CB0077A855 /* MFCoreLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = B064821A1A70F5CB0077A855 /* MFCoreLogging.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -381,9 +382,7 @@
 		B0AAFB6C1AD41A7200463F7F /* Pods.debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B0AAFB6A1AD41A7200463F7F /* Pods.debug.xcconfig */; };
 		B0AAFB6D1AD41A7200463F7F /* Pods.release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B0AAFB6B1AD41A7200463F7F /* Pods.release.xcconfig */; };
 		B0AAFB7A1AD41C4500463F7F /* MFCoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0AAFB791AD41C4500463F7F /* MFCoreTests.m */; };
-		B0B0258B1AD42A4D00153AF4 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0B0258A1AD42A4D00153AF4 /* Pods.framework */; };
 		B0B0258C1AD42AB100153AF4 /* MFCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B04172461A70F5350045C268 /* MFCore.framework */; };
-		B0B0258E1AD42AB500153AF4 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0B0258D1AD42AB500153AF4 /* Pods.framework */; };
 		B0B025911AD42B6500153AF4 /* MFTestAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = B0B025901AD42B6500153AF4 /* MFTestAssembly.m */; };
 /* End PBXBuildFile section */
 
@@ -402,6 +401,7 @@
 		B04172461A70F5350045C268 /* MFCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MFCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B041724A1A70F5350045C268 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B041724B1A70F5350045C268 /* MFCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MFCore.h; sourceTree = "<group>"; };
+		B04A9EEB1AD56995009FA89E /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "Pods/../build/Debug-iphoneos/Pods.framework"; sourceTree = "<group>"; };
 		B06482181A70F5CB0077A855 /* deps */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = deps; sourceTree = "<group>"; };
 		B06482191A70F5CB0077A855 /* MFCoreLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFCoreLog.h; sourceTree = "<group>"; };
 		B064821A1A70F5CB0077A855 /* MFCoreLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFCoreLogging.h; sourceTree = "<group>"; };
@@ -777,8 +777,6 @@
 		B0AAFB751AD41C4500463F7F /* MFCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MFCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0AAFB781AD41C4500463F7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0AAFB791AD41C4500463F7F /* MFCoreTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MFCoreTests.m; sourceTree = "<group>"; };
-		B0B0258A1AD42A4D00153AF4 /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "Pods/../build/Debug-iphoneos/Pods.framework"; sourceTree = "<group>"; };
-		B0B0258D1AD42AB500153AF4 /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "Pods/../build/Debug-iphoneos/Pods.framework"; sourceTree = "<group>"; };
 		B0B0258F1AD42B6500153AF4 /* MFTestAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFTestAssembly.h; sourceTree = "<group>"; };
 		B0B025901AD42B6500153AF4 /* MFTestAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFTestAssembly.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -788,7 +786,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0B0258B1AD42A4D00153AF4 /* Pods.framework in Frameworks */,
+				B04A9EEC1AD56995009FA89E /* Pods.framework in Frameworks */,
 				B06485251A70F6C40077A855 /* libz.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -797,7 +795,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0B0258E1AD42AB500153AF4 /* Pods.framework in Frameworks */,
 				B0B0258C1AD42AB100153AF4 /* MFCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -808,8 +805,7 @@
 		029BD8BC2DAF199DE7FC54A6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B0B0258D1AD42AB500153AF4 /* Pods.framework */,
-				B0B0258A1AD42A4D00153AF4 /* Pods.framework */,
+				B04A9EEB1AD56995009FA89E /* Pods.framework */,
 				B0093A611AC5B799009027E9 /* Foundation.framework */,
 				B06485241A70F6C40077A855 /* libz.dylib */,
 			);
@@ -1788,7 +1784,7 @@
 				B0AAFB711AD41C4500463F7F /* Sources */,
 				B0AAFB721AD41C4500463F7F /* Frameworks */,
 				B0AAFB731AD41C4500463F7F /* Resources */,
-				B0AAFB831AD41C9C00463F7F /* "${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh" */,
+				B0AAFB831AD41C9C00463F7F /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1920,14 +1916,14 @@
 			shellPath = /bin/sh;
 			shellScript = "echo \"Creating derivedDataDirectory file\"\necho \"${OBJECT_FILE_DIR_normal}/${CURRENT_ARCH}\" > ${PROJECT_DIR}/derivedDataDirectory\n\n#--------------------\necho 'SRCROOT: '${SRCROOT}\ncd \"${SRCROOT}\"\n\necho 'Copying Headers preserving hierarchy'\nfor H in `find ./MFCore -name \"*.h\"`; do\necho \"$H\"\nditto \"${H}\" \"${BUILT_PRODUCTS_DIR}/${H}\"\ndone\n#--------------------";
 		};
-		B0AAFB831AD41C9C00463F7F /* "${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh" */ = {
+		B0AAFB831AD41C9C00463F7F /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"";
+			name = "Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
