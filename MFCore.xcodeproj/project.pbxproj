@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		B041724C1A70F5350045C268 /* MFCore.h in Headers */ = {isa = PBXBuildFile; fileRef = B041724B1A70F5350045C268 /* MFCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B04A9EEC1AD56995009FA89E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B04A9EEB1AD56995009FA89E /* Pods.framework */; };
 		B06483B11A70F5CB0077A855 /* MFCoreLog.h in Headers */ = {isa = PBXBuildFile; fileRef = B06482191A70F5CB0077A855 /* MFCoreLog.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06483B21A70F5CB0077A855 /* MFCoreLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = B064821A1A70F5CB0077A855 /* MFCoreLogging.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06483B31A70F5CB0077A855 /* MFLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = B064821B1A70F5CB0077A855 /* MFLogging.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -357,9 +356,10 @@
 		B06485221A70F5CB0077A855 /* MFValidatorGroupDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483AE1A70F5CB0077A855 /* MFValidatorGroupDescriptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06485231A70F5CB0077A855 /* MFValidatorGroupDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = B06483AF1A70F5CB0077A855 /* MFValidatorGroupDescriptor.m */; };
 		B06485251A70F6C40077A855 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B06485241A70F6C40077A855 /* libz.dylib */; };
-		B06868DD1AD6645800D6B529 /* MFCore.framework in Copy Shared Frameworks */ = {isa = PBXBuildFile; fileRef = B04172461A70F5350045C268 /* MFCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B06868E81AD684D600D6B529 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B06868E71AD684D600D6B529 /* Pods.framework */; };
+		B06868EA1AD6853900D6B529 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B06868E91AD6853900D6B529 /* Pods.framework */; };
+		B06868EB1AD6854900D6B529 /* MFCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B04172461A70F5350045C268 /* MFCore.framework */; };
 		B0AAFB7A1AD41C4500463F7F /* MFCoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0AAFB791AD41C4500463F7F /* MFCoreTests.m */; };
-		B0B0258C1AD42AB100153AF4 /* MFCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B04172461A70F5350045C268 /* MFCore.framework */; };
 		B0B025911AD42B6500153AF4 /* MFTestAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = B0B025901AD42B6500153AF4 /* MFTestAssembly.m */; };
 /* End PBXBuildFile section */
 
@@ -372,20 +372,6 @@
 			remoteInfo = MFCore;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		B06868DA1AD6633500D6B529 /* Copy Shared Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 12;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				B06868DD1AD6645800D6B529 /* MFCore.framework in Copy Shared Frameworks */,
-			);
-			name = "Copy Shared Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B0093A611AC5B799009027E9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -763,6 +749,8 @@
 		B06483AE1A70F5CB0077A855 /* MFValidatorGroupDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFValidatorGroupDescriptor.h; sourceTree = "<group>"; };
 		B06483AF1A70F5CB0077A855 /* MFValidatorGroupDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFValidatorGroupDescriptor.m; sourceTree = "<group>"; };
 		B06485241A70F6C40077A855 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		B06868E71AD684D600D6B529 /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "Pods/../build/Debug-iphoneos/Pods.framework"; sourceTree = "<group>"; };
+		B06868E91AD6853900D6B529 /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "Pods/../build/Debug-iphoneos/Pods.framework"; sourceTree = "<group>"; };
 		B0AAFB6A1AD41A7200463F7F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B0AAFB6B1AD41A7200463F7F /* Pods.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B0AAFB751AD41C4500463F7F /* MFCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MFCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -777,7 +765,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B04A9EEC1AD56995009FA89E /* Pods.framework in Frameworks */,
+				B06868E81AD684D600D6B529 /* Pods.framework in Frameworks */,
 				B06485251A70F6C40077A855 /* libz.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -786,7 +774,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0B0258C1AD42AB100153AF4 /* MFCore.framework in Frameworks */,
+				B06868EB1AD6854900D6B529 /* MFCore.framework in Frameworks */,
+				B06868EA1AD6853900D6B529 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -796,6 +785,8 @@
 		029BD8BC2DAF199DE7FC54A6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B06868E91AD6853900D6B529 /* Pods.framework */,
+				B06868E71AD684D600D6B529 /* Pods.framework */,
 				B04A9EEB1AD56995009FA89E /* Pods.framework */,
 				B0093A611AC5B799009027E9 /* Foundation.framework */,
 				B06485241A70F6C40077A855 /* libz.dylib */,
@@ -1754,10 +1745,9 @@
 				B04172411A70F5350045C268 /* Sources */,
 				B04172421A70F5350045C268 /* Frameworks */,
 				B04172431A70F5350045C268 /* Headers */,
-				B0CBAADC1AD585AA00D2709B /* Copy Embed Frameworks */,
-				B04172441A70F5350045C268 /* Resources */,
 				4348EC409F9A7DA53E5018C6 /* Copy Pods Resources */,
 				B02BB7B01A83CD16008ACD2A /* Run End Script */,
+				B06868E61AD683E100D6B529 /* Copy Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1772,11 +1762,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B0AAFB7E1AD41C4500463F7F /* Build configuration list for PBXNativeTarget "MFCoreTests" */;
 			buildPhases = (
-				B06868DA1AD6633500D6B529 /* Copy Shared Frameworks */,
 				B0AAFB711AD41C4500463F7F /* Sources */,
 				B0AAFB721AD41C4500463F7F /* Frameworks */,
-				B0CBAADB1AD5859E00D2709B /* Copy Embed Frameworks */,
 				B0AAFB731AD41C4500463F7F /* Resources */,
+				B06868E11AD67C1700D6B529 /* ShellScript */,
+				B06868E51AD683B900D6B529 /* Copy Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1824,13 +1814,6 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		B04172441A70F5350045C268 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B0AAFB731AD41C4500463F7F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1870,7 +1853,20 @@
 			shellPath = /bin/sh;
 			shellScript = "echo \"Creating derivedDataDirectory file\"\necho \"${OBJECT_FILE_DIR_normal}/${CURRENT_ARCH}\" > ${PROJECT_DIR}/derivedDataDirectory\n\n#--------------------\necho 'SRCROOT: '${SRCROOT}\ncd \"${SRCROOT}\"\n\necho 'Copying Headers preserving hierarchy'\nfor H in `find ./MFCore -name \"*.h\"`; do\necho \"$H\"\nditto \"${H}\" \"${BUILT_PRODUCTS_DIR}/${H}\"\ndone\n#--------------------";
 		};
-		B0CBAADB1AD5859E00D2709B /* Copy Embed Frameworks */ = {
+		B06868E11AD67C1700D6B529 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+		};
+		B06868E51AD683B900D6B529 /* Copy Embed Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1884,7 +1880,7 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"";
 		};
-		B0CBAADC1AD585AA00D2709B /* Copy Embed Frameworks */ = {
+		B06868E61AD683E100D6B529 /* Copy Embed Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2183,19 +2179,24 @@
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				DYLIB_INSTALL_NAME_BASE = "@rpath/";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos/Pods-MFCore",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Pods",
 				);
 				GCC_PREFIX_HEADER = "MFCore/MFCore-Prefix.pch";
 				INFOPLIST_FILE = MFCore/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_DYLIB_INSTALL_NAME = "$(DYLIB_INSTALL_NAME_BASE:standardizepath)/$(EXECUTABLE_PATH)";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
+				MACH_O_TYPE = mh_dylib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -2209,19 +2210,24 @@
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				DYLIB_INSTALL_NAME_BASE = "@rpath/";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos/Pods-MFCore",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Pods",
 				);
 				GCC_PREFIX_HEADER = "MFCore/MFCore-Prefix.pch";
 				INFOPLIST_FILE = MFCore/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_DYLIB_INSTALL_NAME = "$(DYLIB_INSTALL_NAME_BASE:standardizepath)/$(EXECUTABLE_PATH)";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
+				MACH_O_TYPE = mh_dylib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -2234,8 +2240,10 @@
 				CLANG_ENABLE_MODULES = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos/Pods-MFUI",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -2243,6 +2251,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = MFCoreTests/Info.plist;
+				LD_DYLIB_INSTALL_NAME = "";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2258,11 +2267,14 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos/Pods-MFUI",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = MFCoreTests/Info.plist;
+				LD_DYLIB_INSTALL_NAME = "";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
