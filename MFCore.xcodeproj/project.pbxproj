@@ -367,6 +367,7 @@
 		B06869141AD6BE5700D6B529 /* MFBuilderForm.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483601A70F5CB0077A855 /* MFBuilderForm.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06869161AD6BF4900D6B529 /* MFBuilderForm.m in Sources */ = {isa = PBXBuildFile; fileRef = B06483611A70F5CB0077A855 /* MFBuilderForm.m */; };
 		B068691A1AD6C40400D6B529 /* MFCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B04172461A70F5350045C268 /* MFCore.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		B068691D1AD6C53900D6B529 /* MFTestAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = B068691C1AD6C53900D6B529 /* MFTestAssembly.m */; };
 		B0AAFB7A1AD41C4500463F7F /* MFCoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0AAFB791AD41C4500463F7F /* MFCoreTests.m */; };
 /* End PBXBuildFile section */
 
@@ -761,6 +762,8 @@
 		B068690A1AD6BBAE00D6B529 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		B068690C1AD6BBC600D6B529 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		B068690E1AD6BBEB00D6B529 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		B068691B1AD6C53900D6B529 /* MFTestAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFTestAssembly.h; sourceTree = "<group>"; };
+		B068691C1AD6C53900D6B529 /* MFTestAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFTestAssembly.m; sourceTree = "<group>"; };
 		B0AAFB6A1AD41A7200463F7F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B0AAFB6B1AD41A7200463F7F /* Pods.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B0AAFB751AD41C4500463F7F /* MFCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MFCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1516,6 +1519,8 @@
 		B0AAFB761AD41C4500463F7F /* MFCoreTests */ = {
 			isa = PBXGroup;
 			children = (
+				B068691B1AD6C53900D6B529 /* MFTestAssembly.h */,
+				B068691C1AD6C53900D6B529 /* MFTestAssembly.m */,
 				B0AAFB791AD41C4500463F7F /* MFCoreTests.m */,
 				B0AAFB771AD41C4500463F7F /* Supporting Files */,
 			);
@@ -2072,6 +2077,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B068691D1AD6C53900D6B529 /* MFTestAssembly.m in Sources */,
 				B06869161AD6BF4900D6B529 /* MFBuilderForm.m in Sources */,
 				B0AAFB7A1AD41C4500463F7F /* MFCoreTests.m in Sources */,
 			);

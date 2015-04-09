@@ -24,9 +24,8 @@
 #import <XCTest/XCTest.h>
 
 //MF Imports
-//#import "MFTestAssembly.h"
-#import "MFBuilderForm.h"
-#import "MFLocalizedString.h"
+#import "MFTestAssembly.h"
+#import <MFCore/MFCore.h>
 
 extern void __gcov_flush();
 
@@ -62,21 +61,25 @@ extern void __gcov_flush();
     XCTAssertEqual(MFLocalizedStringFromKey(@"BasicTest"), @"BasicTest");
 }
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 -(void) testBeanSingleton {
-//    MFBeanLoader *beanLoaderInstance = [MFBeanLoader getInstance];
-//    [beanLoaderInstance performSelector:@selector(registerComponentsFromAssembly:) withObject:[MFTestAssembly class]];
-//
-//    MFCsvLoaderHelper *singletonTest = [beanLoaderInstance getBeanWithKey:@"csvLoaderHelper"];
-//    XCTAssertNotNil(singletonTest);
-//    
-//    MFCsvLoaderHelper *singletonBadTest = nil;
-//    @try {
-//        singletonBadTest = [beanLoaderInstance getBeanWithKey:@"pasDeBean"];
-//    }
-//    @catch (NSException *exception) {
-//        XCTAssertNil(singletonBadTest);
-//    }
+    MFBeanLoader *beanLoaderInstance = [MFBeanLoader getInstance];
+    [beanLoaderInstance performSelector:@selector(registerComponentsFromAssembly:) withObject:[MFTestAssembly class]];
+
+    MFCsvLoaderHelper *singletonTest = [beanLoaderInstance getBeanWithKey:@"csvLoaderHelper"];
+    XCTAssertNotNil(singletonTest);
+    
+    MFCsvLoaderHelper *singletonBadTest = nil;
+    @try {
+        singletonBadTest = [beanLoaderInstance getBeanWithKey:@"pasDeBean"];
+    }
+    @catch (NSException *exception) {
+        XCTAssertNil(singletonBadTest);
+    }
 }
+#pragma clang diagnostic pop
+
 
 -(void) testURL {
     
@@ -84,7 +87,7 @@ extern void __gcov_flush();
 }
 
 //Impossible sur un simulateur...
--(void) testSecurity {
+//-(void) testSecurity {
 //    MFBeanLoader *beanLoaderInstance = [MFBeanLoader getInstance];
 //    [beanLoaderInstance performSelector:@selector(registerComponentsFromAssembly:) withObject:[MFTestAssembly class]];
 //    [MFKeychain storePasswordInKeychain:@"MyPasswordForTest"];
@@ -94,7 +97,7 @@ extern void __gcov_flush();
 //    [MFKeychain storeValueInKeychain:[testDictionary description] forKey:@"tester"];
 //    
 //    XCTAssertEqualObjects([testDictionary description] , [MFKeychain retrieveValueFromKeychainForKey:@"tester"]);
-}
+//}
 
 
 
