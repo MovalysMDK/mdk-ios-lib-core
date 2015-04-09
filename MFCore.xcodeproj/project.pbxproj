@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		B041724C1A70F5350045C268 /* MFCore.h in Headers */ = {isa = PBXBuildFile; fileRef = B041724B1A70F5350045C268 /* MFCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B04A9EEC1AD56995009FA89E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B04A9EEB1AD56995009FA89E /* Pods.framework */; };
-		B06483B01A70F5CB0077A855 /* deps in Resources */ = {isa = PBXBuildFile; fileRef = B06482181A70F5CB0077A855 /* deps */; };
 		B06483B11A70F5CB0077A855 /* MFCoreLog.h in Headers */ = {isa = PBXBuildFile; fileRef = B06482191A70F5CB0077A855 /* MFCoreLog.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06483B21A70F5CB0077A855 /* MFCoreLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = B064821A1A70F5CB0077A855 /* MFCoreLogging.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06483B31A70F5CB0077A855 /* MFLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = B064821B1A70F5CB0077A855 /* MFLogging.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -19,7 +18,6 @@
 		B06483B71A70F5CB0077A855 /* MFLoggingHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = B064821F1A70F5CB0077A855 /* MFLoggingHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06483B81A70F5CB0077A855 /* MFLoggingHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B06482201A70F5CB0077A855 /* MFLoggingHelper.m */; };
 		B06483B91A70F5CB0077A855 /* MFCore-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = B06482211A70F5CB0077A855 /* MFCore-Prefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
-		B06483BA1A70F5CB0077A855 /* deps in Resources */ = {isa = PBXBuildFile; fileRef = B06482231A70F5CB0077A855 /* deps */; };
 		B06483BB1A70F5CB0077A855 /* MFActionLauncher.h in Headers */ = {isa = PBXBuildFile; fileRef = B06482241A70F5CB0077A855 /* MFActionLauncher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06483BC1A70F5CB0077A855 /* MFActionLauncher.m in Sources */ = {isa = PBXBuildFile; fileRef = B06482251A70F5CB0077A855 /* MFActionLauncher.m */; };
 		B06483BD1A70F5CB0077A855 /* MFActionNotFound.h in Headers */ = {isa = PBXBuildFile; fileRef = B06482261A70F5CB0077A855 /* MFActionNotFound.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -33,7 +31,6 @@
 		B06483C51A70F5CB0077A855 /* MFActionQualifier.m in Sources */ = {isa = PBXBuildFile; fileRef = B064822E1A70F5CB0077A855 /* MFActionQualifier.m */; };
 		B06483C61A70F5CB0077A855 /* MFActionQualifierProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B064822F1A70F5CB0077A855 /* MFActionQualifierProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06483C71A70F5CB0077A855 /* MFCoreAction.h in Headers */ = {isa = PBXBuildFile; fileRef = B06482301A70F5CB0077A855 /* MFCoreAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B06483C81A70F5CB0077A855 /* deps in Resources */ = {isa = PBXBuildFile; fileRef = B06482321A70F5CB0077A855 /* deps */; };
 		B06483C91A70F5CB0077A855 /* MFCoreBusiness.h in Headers */ = {isa = PBXBuildFile; fileRef = B06482331A70F5CB0077A855 /* MFCoreBusiness.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06483CA1A70F5CB0077A855 /* MFExportDatabaseAction.h in Headers */ = {isa = PBXBuildFile; fileRef = B06482341A70F5CB0077A855 /* MFExportDatabaseAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06483CB1A70F5CB0077A855 /* MFExportDatabaseAction.m in Sources */ = {isa = PBXBuildFile; fileRef = B06482351A70F5CB0077A855 /* MFExportDatabaseAction.m */; };
@@ -43,7 +40,6 @@
 		B06483CF1A70F5CB0077A855 /* MFImportDatabaseAction.m in Sources */ = {isa = PBXBuildFile; fileRef = B06482391A70F5CB0077A855 /* MFImportDatabaseAction.m */; };
 		B06483D01A70F5CB0077A855 /* MFResetDatabaseAction.h in Headers */ = {isa = PBXBuildFile; fileRef = B064823A1A70F5CB0077A855 /* MFResetDatabaseAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06483D11A70F5CB0077A855 /* MFResetDatabaseAction.m in Sources */ = {isa = PBXBuildFile; fileRef = B064823B1A70F5CB0077A855 /* MFResetDatabaseAction.m */; };
-		B06483D21A70F5CB0077A855 /* deps in Resources */ = {isa = PBXBuildFile; fileRef = B064823D1A70F5CB0077A855 /* deps */; };
 		B06483D31A70F5CB0077A855 /* MFContext.h in Headers */ = {isa = PBXBuildFile; fileRef = B064823E1A70F5CB0077A855 /* MFContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06483D41A70F5CB0077A855 /* MFContext.m in Sources */ = {isa = PBXBuildFile; fileRef = B064823F1A70F5CB0077A855 /* MFContext.m */; };
 		B06483D51A70F5CB0077A855 /* MFContextFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = B06482401A70F5CB0077A855 /* MFContextFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -51,7 +47,6 @@
 		B06483D71A70F5CB0077A855 /* MFContextFactoryProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B06482421A70F5CB0077A855 /* MFContextFactoryProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06483D81A70F5CB0077A855 /* MFContextProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B06482431A70F5CB0077A855 /* MFContextProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06483D91A70F5CB0077A855 /* MFCoreContext.h in Headers */ = {isa = PBXBuildFile; fileRef = B06482441A70F5CB0077A855 /* MFCoreContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B06483DA1A70F5CB0077A855 /* deps in Resources */ = {isa = PBXBuildFile; fileRef = B06482461A70F5CB0077A855 /* deps */; };
 		B06483DB1A70F5CB0077A855 /* KeychainItemWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = B06482471A70F5CB0077A855 /* KeychainItemWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06483DC1A70F5CB0077A855 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = B06482481A70F5CB0077A855 /* KeychainItemWrapper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B06483DD1A70F5CB0077A855 /* MFCoreSecurity.h in Headers */ = {isa = PBXBuildFile; fileRef = B06482491A70F5CB0077A855 /* MFCoreSecurity.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -171,7 +166,6 @@
 		B06484521A70F5CB0077A855 /* MObjectToSynchronize+Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = B06482CC1A70F5CB0077A855 /* MObjectToSynchronize+Factory.m */; };
 		B06484531A70F5CB0077A855 /* MObjectToSynchronize.h in Headers */ = {isa = PBXBuildFile; fileRef = B06482CD1A70F5CB0077A855 /* MObjectToSynchronize.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06484541A70F5CB0077A855 /* MObjectToSynchronize.m in Sources */ = {isa = PBXBuildFile; fileRef = B06482CE1A70F5CB0077A855 /* MObjectToSynchronize.m */; };
-		B06484551A70F5CB0077A855 /* deps in Resources */ = {isa = PBXBuildFile; fileRef = B06482D01A70F5CB0077A855 /* deps */; };
 		B06484561A70F5CB0077A855 /* MFApplication.h in Headers */ = {isa = PBXBuildFile; fileRef = B06482D11A70F5CB0077A855 /* MFApplication.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06484571A70F5CB0077A855 /* MFApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = B06482D21A70F5CB0077A855 /* MFApplication.m */; };
 		B06484581A70F5CB0077A855 /* MFCoreApplication.h in Headers */ = {isa = PBXBuildFile; fileRef = B06482D31A70F5CB0077A855 /* MFCoreApplication.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -179,7 +173,6 @@
 		B064845A1A70F5CB0077A855 /* MFSettingsValidationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B06482D51A70F5CB0077A855 /* MFSettingsValidationManager.m */; };
 		B064845B1A70F5CB0077A855 /* MFStarter.h in Headers */ = {isa = PBXBuildFile; fileRef = B06482D61A70F5CB0077A855 /* MFStarter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B064845C1A70F5CB0077A855 /* MFStarter.m in Sources */ = {isa = PBXBuildFile; fileRef = B06482D71A70F5CB0077A855 /* MFStarter.m */; };
-		B064845D1A70F5CB0077A855 /* deps in Resources */ = {isa = PBXBuildFile; fileRef = B06482D91A70F5CB0077A855 /* deps */; };
 		B064845E1A70F5CB0077A855 /* MFBeanLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = B06482DA1A70F5CB0077A855 /* MFBeanLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B064845F1A70F5CB0077A855 /* MFBeanLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = B06482DB1A70F5CB0077A855 /* MFBeanLoader.m */; };
 		B06484601A70F5CB0077A855 /* MFBeanLoaderWithTyphoon.h in Headers */ = {isa = PBXBuildFile; fileRef = B06482DC1A70F5CB0077A855 /* MFBeanLoaderWithTyphoon.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -188,7 +181,6 @@
 		B06484631A70F5CB0077A855 /* MFBeansKeys.h in Headers */ = {isa = PBXBuildFile; fileRef = B06482DF1A70F5CB0077A855 /* MFBeansKeys.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06484641A70F5CB0077A855 /* MFBeansKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = B06482E01A70F5CB0077A855 /* MFBeansKeys.m */; };
 		B06484651A70F5CB0077A855 /* MFCoreBean.h in Headers */ = {isa = PBXBuildFile; fileRef = B06482E11A70F5CB0077A855 /* MFCoreBean.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B06484661A70F5CB0077A855 /* deps in Resources */ = {isa = PBXBuildFile; fileRef = B06482E31A70F5CB0077A855 /* deps */; };
 		B06484671A70F5CB0077A855 /* MFAbstractConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = B06482E41A70F5CB0077A855 /* MFAbstractConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06484681A70F5CB0077A855 /* MFAbstractConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = B06482E51A70F5CB0077A855 /* MFAbstractConfiguration.m */; };
 		B06484691A70F5CB0077A855 /* MFConfigurationHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = B06482E61A70F5CB0077A855 /* MFConfigurationHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -198,7 +190,6 @@
 		B064846D1A70F5CB0077A855 /* MFFwkProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = B06482EA1A70F5CB0077A855 /* MFFwkProperty.m */; };
 		B064846E1A70F5CB0077A855 /* MFProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = B06482EB1A70F5CB0077A855 /* MFProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B064846F1A70F5CB0077A855 /* MFProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = B06482EC1A70F5CB0077A855 /* MFProperty.m */; };
-		B06484701A70F5CB0077A855 /* deps in Resources */ = {isa = PBXBuildFile; fileRef = B06482EE1A70F5CB0077A855 /* deps */; };
 		B06484711A70F5CB0077A855 /* MFApplication+CoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = B06482EF1A70F5CB0077A855 /* MFApplication+CoreData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06484721A70F5CB0077A855 /* MFApplication+CoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = B06482F01A70F5CB0077A855 /* MFApplication+CoreData.m */; };
 		B06484731A70F5CB0077A855 /* MFCoreCoredata.h in Headers */ = {isa = PBXBuildFile; fileRef = B06482F11A70F5CB0077A855 /* MFCoreCoredata.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -212,7 +203,6 @@
 		B064847B1A70F5CB0077A855 /* NSManagedObject+MFCommonDao.m in Sources */ = {isa = PBXBuildFile; fileRef = B06482F91A70F5CB0077A855 /* NSManagedObject+MFCommonDao.m */; };
 		B064847C1A70F5CB0077A855 /* NSPredicate+MFPredicateHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = B06482FA1A70F5CB0077A855 /* NSPredicate+MFPredicateHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B064847D1A70F5CB0077A855 /* NSPredicate+MFPredicateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B06482FB1A70F5CB0077A855 /* NSPredicate+MFPredicateHelper.m */; };
-		B064847E1A70F5CB0077A855 /* deps in Resources */ = {isa = PBXBuildFile; fileRef = B06482FD1A70F5CB0077A855 /* deps */; };
 		B064847F1A70F5CB0077A855 /* MFAbstractCsvLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = B06482FE1A70F5CB0077A855 /* MFAbstractCsvLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06484801A70F5CB0077A855 /* MFAbstractCsvLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = B06482FF1A70F5CB0077A855 /* MFAbstractCsvLoader.m */; };
 		B06484811A70F5CB0077A855 /* MFCoreCsvloader.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483001A70F5CB0077A855 /* MFCoreCsvloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -229,7 +219,6 @@
 		B064848C1A70F5CB0077A855 /* MFProjectCsvLoaderRunInit.m in Sources */ = {isa = PBXBuildFile; fileRef = B064830B1A70F5CB0077A855 /* MFProjectCsvLoaderRunInit.m */; };
 		B064848D1A70F5CB0077A855 /* MFUserCsvLoaderRunInit.h in Headers */ = {isa = PBXBuildFile; fileRef = B064830C1A70F5CB0077A855 /* MFUserCsvLoaderRunInit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B064848E1A70F5CB0077A855 /* MFUserCsvLoaderRunInit.m in Sources */ = {isa = PBXBuildFile; fileRef = B064830D1A70F5CB0077A855 /* MFUserCsvLoaderRunInit.m */; };
-		B064848F1A70F5CB0077A855 /* deps in Resources */ = {isa = PBXBuildFile; fileRef = B064830F1A70F5CB0077A855 /* deps */; };
 		B06484901A70F5CB0077A855 /* MFAbstractDataLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483101A70F5CB0077A855 /* MFAbstractDataLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06484911A70F5CB0077A855 /* MFAbstractDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = B06483111A70F5CB0077A855 /* MFAbstractDataLoader.m */; };
 		B06484921A70F5CB0077A855 /* MFCoreDataloader.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483121A70F5CB0077A855 /* MFCoreDataloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -242,7 +231,6 @@
 		B06484991A70F5CB0077A855 /* MFGenericLoadDataAction.m in Sources */ = {isa = PBXBuildFile; fileRef = B06483191A70F5CB0077A855 /* MFGenericLoadDataAction.m */; };
 		B064849A1A70F5CB0077A855 /* MFListEntitiesLoaderProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B064831A1A70F5CB0077A855 /* MFListEntitiesLoaderProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B064849B1A70F5CB0077A855 /* MFUpdatableFromDataLoaderProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B064831B1A70F5CB0077A855 /* MFUpdatableFromDataLoaderProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B064849C1A70F5CB0077A855 /* deps in Resources */ = {isa = PBXBuildFile; fileRef = B064831D1A70F5CB0077A855 /* deps */; };
 		B064849D1A70F5CB0077A855 /* MFBusinessError.h in Headers */ = {isa = PBXBuildFile; fileRef = B064831E1A70F5CB0077A855 /* MFBusinessError.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B064849E1A70F5CB0077A855 /* MFBusinessError.m in Sources */ = {isa = PBXBuildFile; fileRef = B064831F1A70F5CB0077A855 /* MFBusinessError.m */; };
 		B064849F1A70F5CB0077A855 /* MFBusinessTechnicalError.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483201A70F5CB0077A855 /* MFBusinessTechnicalError.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -267,7 +255,6 @@
 		B06484B21A70F5CB0077A855 /* MFTechnicalError.m in Sources */ = {isa = PBXBuildFile; fileRef = B06483331A70F5CB0077A855 /* MFTechnicalError.m */; };
 		B06484B31A70F5CB0077A855 /* MFUnexpectedTypeNameException.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483341A70F5CB0077A855 /* MFUnexpectedTypeNameException.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06484B41A70F5CB0077A855 /* MFUnexpectedTypeNameException.m in Sources */ = {isa = PBXBuildFile; fileRef = B06483351A70F5CB0077A855 /* MFUnexpectedTypeNameException.m */; };
-		B06484B51A70F5CB0077A855 /* deps in Resources */ = {isa = PBXBuildFile; fileRef = B06483371A70F5CB0077A855 /* deps */; };
 		B06484B61A70F5CB0077A855 /* MFCoreFoundationExt.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483381A70F5CB0077A855 /* MFCoreFoundationExt.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06484B71A70F5CB0077A855 /* MFEnumHelperProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483391A70F5CB0077A855 /* MFEnumHelperProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06484B81A70F5CB0077A855 /* MFHelperBOOL.h in Headers */ = {isa = PBXBuildFile; fileRef = B064833A1A70F5CB0077A855 /* MFHelperBOOL.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -286,28 +273,23 @@
 		B06484C51A70F5CB0077A855 /* NSData+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = B06483471A70F5CB0077A855 /* NSData+Utilities.m */; };
 		B06484C61A70F5CB0077A855 /* NSString+Utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483481A70F5CB0077A855 /* NSString+Utilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06484C71A70F5CB0077A855 /* NSString+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = B06483491A70F5CB0077A855 /* NSString+Utilities.m */; };
-		B06484C81A70F5CB0077A855 /* deps in Resources */ = {isa = PBXBuildFile; fileRef = B064834B1A70F5CB0077A855 /* deps */; };
 		B06484C91A70F5CB0077A855 /* MFCoreI18n.h in Headers */ = {isa = PBXBuildFile; fileRef = B064834C1A70F5CB0077A855 /* MFCoreI18n.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06484CA1A70F5CB0077A855 /* MFLocalizedString.h in Headers */ = {isa = PBXBuildFile; fileRef = B064834D1A70F5CB0077A855 /* MFLocalizedString.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06484CB1A70F5CB0077A855 /* MFLocalizedString.m in Sources */ = {isa = PBXBuildFile; fileRef = B064834E1A70F5CB0077A855 /* MFLocalizedString.m */; };
-		B06484CC1A70F5CB0077A855 /* deps in Resources */ = {isa = PBXBuildFile; fileRef = B06483501A70F5CB0077A855 /* deps */; };
 		B06484CD1A70F5CB0077A855 /* MFCoreInit.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483511A70F5CB0077A855 /* MFCoreInit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06484CE1A70F5CB0077A855 /* MFRunInitProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483521A70F5CB0077A855 /* MFRunInitProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06484CF1A70F5CB0077A855 /* MFWaitRunInit.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483531A70F5CB0077A855 /* MFWaitRunInit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06484D01A70F5CB0077A855 /* MFWaitRunInit.m in Sources */ = {isa = PBXBuildFile; fileRef = B06483541A70F5CB0077A855 /* MFWaitRunInit.m */; };
-		B06484D11A70F5CB0077A855 /* deps in Resources */ = {isa = PBXBuildFile; fileRef = B06483561A70F5CB0077A855 /* deps */; };
 		B06484D21A70F5CB0077A855 /* MFCoreMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483571A70F5CB0077A855 /* MFCoreMessage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06484D31A70F5CB0077A855 /* MFMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483581A70F5CB0077A855 /* MFMessage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06484D41A70F5CB0077A855 /* MFMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = B06483591A70F5CB0077A855 /* MFMessage.m */; };
 		B06484D51A70F5CB0077A855 /* MFMessageProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B064835A1A70F5CB0077A855 /* MFMessageProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B06484D61A70F5CB0077A855 /* deps in Resources */ = {isa = PBXBuildFile; fileRef = B064835D1A70F5CB0077A855 /* deps */; };
 		B06484D71A70F5CB0077A855 /* MFBuilderFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = B064835E1A70F5CB0077A855 /* MFBuilderFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06484D81A70F5CB0077A855 /* MFBuilderFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = B064835F1A70F5CB0077A855 /* MFBuilderFactory.m */; };
 		B06484D91A70F5CB0077A855 /* MFBuilderForm.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483601A70F5CB0077A855 /* MFBuilderForm.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06484DA1A70F5CB0077A855 /* MFBuilderForm.m in Sources */ = {isa = PBXBuildFile; fileRef = B06483611A70F5CB0077A855 /* MFBuilderForm.m */; };
 		B06484DB1A70F5CB0077A855 /* MFCoreFormBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483621A70F5CB0077A855 /* MFCoreFormBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06484DC1A70F5CB0077A855 /* MFFormBuilderProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483631A70F5CB0077A855 /* MFFormBuilderProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B06484DD1A70F5CB0077A855 /* deps in Resources */ = {isa = PBXBuildFile; fileRef = B06483651A70F5CB0077A855 /* deps */; };
 		B06484DE1A70F5CB0077A855 /* MFConfigurationHandler+Forms.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483661A70F5CB0077A855 /* MFConfigurationHandler+Forms.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06484DF1A70F5CB0077A855 /* MFConfigurationHandler+Forms.m in Sources */ = {isa = PBXBuildFile; fileRef = B06483671A70F5CB0077A855 /* MFConfigurationHandler+Forms.m */; };
 		B06484E01A70F5CB0077A855 /* MFCoreFormConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483681A70F5CB0077A855 /* MFCoreFormConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -315,7 +297,6 @@
 		B06484E21A70F5CB0077A855 /* MFFormConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = B064836A1A70F5CB0077A855 /* MFFormConstants.m */; };
 		B06484E31A70F5CB0077A855 /* MFProperty+Forms.h in Headers */ = {isa = PBXBuildFile; fileRef = B064836B1A70F5CB0077A855 /* MFProperty+Forms.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06484E41A70F5CB0077A855 /* MFProperty+Forms.m in Sources */ = {isa = PBXBuildFile; fileRef = B064836C1A70F5CB0077A855 /* MFProperty+Forms.m */; };
-		B06484E51A70F5CB0077A855 /* deps in Resources */ = {isa = PBXBuildFile; fileRef = B064836E1A70F5CB0077A855 /* deps */; };
 		B06484E61A70F5CB0077A855 /* MFColumnDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = B064836F1A70F5CB0077A855 /* MFColumnDescriptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06484E71A70F5CB0077A855 /* MFColumnDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = B06483701A70F5CB0077A855 /* MFColumnDescriptor.m */; };
 		B06484E81A70F5CB0077A855 /* MFConfigurationGroupDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483711A70F5CB0077A855 /* MFConfigurationGroupDescriptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -341,13 +322,11 @@
 		B06484FC1A70F5CB0077A855 /* MFSectionDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = B06483851A70F5CB0077A855 /* MFSectionDescriptor.m */; };
 		B06484FD1A70F5CB0077A855 /* MFWorkspaceDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483861A70F5CB0077A855 /* MFWorkspaceDescriptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06484FE1A70F5CB0077A855 /* MFWorkspaceDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = B06483871A70F5CB0077A855 /* MFWorkspaceDescriptor.m */; };
-		B06484FF1A70F5CB0077A855 /* deps in Resources */ = {isa = PBXBuildFile; fileRef = B06483891A70F5CB0077A855 /* deps */; };
 		B06485001A70F5CB0077A855 /* MFCoreFormInit.h in Headers */ = {isa = PBXBuildFile; fileRef = B064838A1A70F5CB0077A855 /* MFCoreFormInit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06485011A70F5CB0077A855 /* MFLoadFormRunInit.h in Headers */ = {isa = PBXBuildFile; fileRef = B064838B1A70F5CB0077A855 /* MFLoadFormRunInit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06485021A70F5CB0077A855 /* MFLoadFormRunInit.m in Sources */ = {isa = PBXBuildFile; fileRef = B064838C1A70F5CB0077A855 /* MFLoadFormRunInit.m */; };
 		B06485031A70F5CB0077A855 /* MFLoadVisualConfigurationRunInit.h in Headers */ = {isa = PBXBuildFile; fileRef = B064838D1A70F5CB0077A855 /* MFLoadVisualConfigurationRunInit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06485041A70F5CB0077A855 /* MFLoadVisualConfigurationRunInit.m in Sources */ = {isa = PBXBuildFile; fileRef = B064838E1A70F5CB0077A855 /* MFLoadVisualConfigurationRunInit.m */; };
-		B06485051A70F5CB0077A855 /* deps in Resources */ = {isa = PBXBuildFile; fileRef = B06483901A70F5CB0077A855 /* deps */; };
 		B06485061A70F5CB0077A855 /* MFCoreFormReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483911A70F5CB0077A855 /* MFCoreFormReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06485071A70F5CB0077A855 /* MFReaderAbstractCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483921A70F5CB0077A855 /* MFReaderAbstractCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06485081A70F5CB0077A855 /* MFReaderAbstractCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = B06483931A70F5CB0077A855 /* MFReaderAbstractCommon.m */; };
@@ -371,7 +350,6 @@
 		B064851A1A70F5CB0077A855 /* MFReaderStackAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = B06483A51A70F5CB0077A855 /* MFReaderStackAttribute.m */; };
 		B064851B1A70F5CB0077A855 /* MFReaderWorkspace.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483A61A70F5CB0077A855 /* MFReaderWorkspace.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B064851C1A70F5CB0077A855 /* MFReaderWorkspace.m in Sources */ = {isa = PBXBuildFile; fileRef = B06483A71A70F5CB0077A855 /* MFReaderWorkspace.m */; };
-		B064851D1A70F5CB0077A855 /* deps in Resources */ = {isa = PBXBuildFile; fileRef = B06483A91A70F5CB0077A855 /* deps */; };
 		B064851E1A70F5CB0077A855 /* MFCoreFormValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483AA1A70F5CB0077A855 /* MFCoreFormValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B064851F1A70F5CB0077A855 /* MFValidatorDescriptorFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483AB1A70F5CB0077A855 /* MFValidatorDescriptorFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06485201A70F5CB0077A855 /* MFValidatorDescriptorFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = B06483AC1A70F5CB0077A855 /* MFValidatorDescriptorFactory.m */; };
@@ -379,8 +357,7 @@
 		B06485221A70F5CB0077A855 /* MFValidatorGroupDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483AE1A70F5CB0077A855 /* MFValidatorGroupDescriptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06485231A70F5CB0077A855 /* MFValidatorGroupDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = B06483AF1A70F5CB0077A855 /* MFValidatorGroupDescriptor.m */; };
 		B06485251A70F6C40077A855 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B06485241A70F6C40077A855 /* libz.dylib */; };
-		B0AAFB6C1AD41A7200463F7F /* Pods.debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B0AAFB6A1AD41A7200463F7F /* Pods.debug.xcconfig */; };
-		B0AAFB6D1AD41A7200463F7F /* Pods.release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B0AAFB6B1AD41A7200463F7F /* Pods.release.xcconfig */; };
+		B06868DD1AD6645800D6B529 /* MFCore.framework in Copy Shared Frameworks */ = {isa = PBXBuildFile; fileRef = B04172461A70F5350045C268 /* MFCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B0AAFB7A1AD41C4500463F7F /* MFCoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0AAFB791AD41C4500463F7F /* MFCoreTests.m */; };
 		B0B0258C1AD42AB100153AF4 /* MFCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B04172461A70F5350045C268 /* MFCore.framework */; };
 		B0B025911AD42B6500153AF4 /* MFTestAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = B0B025901AD42B6500153AF4 /* MFTestAssembly.m */; };
@@ -395,6 +372,20 @@
 			remoteInfo = MFCore;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B06868DA1AD6633500D6B529 /* Copy Shared Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B06868DD1AD6645800D6B529 /* MFCore.framework in Copy Shared Frameworks */,
+			);
+			name = "Copy Shared Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B0093A611AC5B799009027E9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -1763,10 +1754,10 @@
 				B04172411A70F5350045C268 /* Sources */,
 				B04172421A70F5350045C268 /* Frameworks */,
 				B04172431A70F5350045C268 /* Headers */,
+				B0CBAADC1AD585AA00D2709B /* Copy Embed Frameworks */,
 				B04172441A70F5350045C268 /* Resources */,
 				4348EC409F9A7DA53E5018C6 /* Copy Pods Resources */,
-				B02BB7B01A83CD16008ACD2A /* ShellScript */,
-				A4DC5CDD5C0DC558CCBA9DDD /* Embed Pods Frameworks */,
+				B02BB7B01A83CD16008ACD2A /* Run End Script */,
 			);
 			buildRules = (
 			);
@@ -1781,10 +1772,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B0AAFB7E1AD41C4500463F7F /* Build configuration list for PBXNativeTarget "MFCoreTests" */;
 			buildPhases = (
+				B06868DA1AD6633500D6B529 /* Copy Shared Frameworks */,
 				B0AAFB711AD41C4500463F7F /* Sources */,
 				B0AAFB721AD41C4500463F7F /* Frameworks */,
+				B0CBAADB1AD5859E00D2709B /* Copy Embed Frameworks */,
 				B0AAFB731AD41C4500463F7F /* Resources */,
-				B0AAFB831AD41C9C00463F7F /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1802,7 +1794,7 @@
 		B041723D1A70F5350045C268 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = Sopra;
 				TargetAttributes = {
 					B04172451A70F5350045C268 = {
@@ -1836,30 +1828,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B06484D61A70F5CB0077A855 /* deps in Resources */,
-				B06484D11A70F5CB0077A855 /* deps in Resources */,
-				B0AAFB6C1AD41A7200463F7F /* Pods.debug.xcconfig in Resources */,
-				B06484661A70F5CB0077A855 /* deps in Resources */,
-				B06483D21A70F5CB0077A855 /* deps in Resources */,
-				B064845D1A70F5CB0077A855 /* deps in Resources */,
-				B064848F1A70F5CB0077A855 /* deps in Resources */,
-				B06483DA1A70F5CB0077A855 /* deps in Resources */,
-				B06484551A70F5CB0077A855 /* deps in Resources */,
-				B0AAFB6D1AD41A7200463F7F /* Pods.release.xcconfig in Resources */,
-				B06485051A70F5CB0077A855 /* deps in Resources */,
-				B06484701A70F5CB0077A855 /* deps in Resources */,
-				B06484B51A70F5CB0077A855 /* deps in Resources */,
-				B06484E51A70F5CB0077A855 /* deps in Resources */,
-				B06484C81A70F5CB0077A855 /* deps in Resources */,
-				B064847E1A70F5CB0077A855 /* deps in Resources */,
-				B064851D1A70F5CB0077A855 /* deps in Resources */,
-				B064849C1A70F5CB0077A855 /* deps in Resources */,
-				B06484CC1A70F5CB0077A855 /* deps in Resources */,
-				B06484DD1A70F5CB0077A855 /* deps in Resources */,
-				B06484FF1A70F5CB0077A855 /* deps in Resources */,
-				B06483BA1A70F5CB0077A855 /* deps in Resources */,
-				B06483B01A70F5CB0077A855 /* deps in Resources */,
-				B06483C81A70F5CB0077A855 /* deps in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1888,42 +1856,42 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A4DC5CDD5C0DC558CCBA9DDD /* Embed Pods Frameworks */ = {
+		B02BB7B01A83CD16008ACD2A /* Run End Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B02BB7B01A83CD16008ACD2A /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
+			name = "Run End Script";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "echo \"Creating derivedDataDirectory file\"\necho \"${OBJECT_FILE_DIR_normal}/${CURRENT_ARCH}\" > ${PROJECT_DIR}/derivedDataDirectory\n\n#--------------------\necho 'SRCROOT: '${SRCROOT}\ncd \"${SRCROOT}\"\n\necho 'Copying Headers preserving hierarchy'\nfor H in `find ./MFCore -name \"*.h\"`; do\necho \"$H\"\nditto \"${H}\" \"${BUILT_PRODUCTS_DIR}/${H}\"\ndone\n#--------------------";
 		};
-		B0AAFB831AD41C9C00463F7F /* Embed Pods Frameworks */ = {
+		B0CBAADB1AD5859E00D2709B /* Copy Embed Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "Copy Embed Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"";
+		};
+		B0CBAADC1AD585AA00D2709B /* Copy Embed Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Embed Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2158,6 +2126,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -2200,6 +2169,7 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
