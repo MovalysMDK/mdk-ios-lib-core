@@ -39,7 +39,7 @@
 
 
 +(MFException *)getNotImplementedExceptionOfMethodName:(NSString *)methodName inClass:(Class)targetClass andUserInfo:(NSDictionary *)info {
-    MFException *exception = [[MFException alloc] initWithName:MFLocalizedStringFromKey(@"exception.not.implemented.name") reason:[NSString stringWithFormat:MFLocalizedStringFromKey(@"exception.not.implemented.reason"),methodName, [targetClass description]] userInfo:info];
+    MFException *exception = [[MFException alloc] initWithName:MFLocalizedStringFromKey(@"MFNotImplementedMethodTitle") reason:[NSString stringWithFormat:MFLocalizedStringFromKey(@"MFNotImplementedMethodMessage"),methodName, [targetClass description]] userInfo:info];
     return exception;
 }
 
