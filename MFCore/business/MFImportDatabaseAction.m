@@ -26,7 +26,7 @@
 #import "MFImportDatabaseAction.h"
 
 @implementation MFImportDatabaseAction
-/*!
+/**
  * @brief does the copy of sqlite database to the Documents directory share in Itunes. Use a file named NewZZZZ where ZZZZ is the name of database in the configuration properties list .
  */
 -(id) doAction:(id) parameterIn withContext: (id<MFContextProtocol>) context withQualifier:(id<MFActionQualifierProtocol>) qualifier withDispatcher:(MFActionProgressMessageDispatcher *) dispatch {

@@ -94,7 +94,7 @@
 }
 
 #pragma mark MFSynchronizationAction methods
-/*!
+/**
  * @brief effectue l'action de synchronisation
  */
 - (MFSynchronizationActionParameterOUT *) doSynchronization:(id) parameterIn withContext: (id<MFContextProtocol>) context withQualifier:(id<MFActionQualifierProtocol>) qualifier withDispatcher:(MFActionProgressMessageDispatcher*) dispatch
@@ -219,7 +219,7 @@
     return result;
 }
 
-/*!
+/**
  * @brief appelé en cas de synchronisation effectuée sans problème, en charge de mettre à jour les paramètres de connexion en base
  */
 - (MFSynchronizationActionParameterOUT *) doOnSuccesSynchroWithResponse:(id <MFSyncRestResponseProtocol>) response withConnectionConfig:(MFRestConnectionConfig *) connectionConfig withContext:(id<MFContextProtocol>) context
@@ -231,7 +231,7 @@
     return result;
 }
 
-/*!
+/**
  * @brief ajoute les paramètres de connexion à la configuration de la synchro
  */
 - (void) appendGetParameters:(id<MFRestInvokerProtocol>) restInvoker withConfig:(MFConfigurationHandler *) config
@@ -247,7 +247,7 @@
     [restInvoker.getParameters addObject:[loginHash stringValue]];
 }
 
-/*!
+/**
  * @brief invoque le serveur
  */
 - (id<MFSyncRestResponseProtocol>) doInvocationWithConfig:(MFRestInvocationConfig *) invocationConfig withConnectionConfig:(MFRestConnectionConfig *) connectionConfig withRestInvoker:(id<MFRestInvokerProtocol>) restInvoker withDispatcher:(MFActionProgressMessageDispatcher *) dispatch withContext: (id<MFContextProtocol>) context
@@ -262,7 +262,7 @@
     }
 }
 
-/*!
+/**
  * @brief met à jour la date de dernière synchro sur le client en cas de synchro réussie
  */
 - (void) doOnSuccessInvocationWithResponse:(id <MFSyncRestResponseProtocol>) response withInvocationConfig:(MFRestInvocationConfig *) invocationConfig withInformation:(MFSynchronisationResponseTreatmentInformation *) information withSynchedObjects:(NSArray *) synchedList withContext:(id<MFContextProtocol>) context
@@ -281,7 +281,7 @@
     [coreDataHelper saveContext:context];
 }
 
-/*!
+/**
  * @brief appelé en cas d'échec, traite les erreurs rencontrées
  */
 - (MFSynchronizationActionParameterOUT *) doOnFailedInvocationWithResponse:(id <MFSyncRestResponseProtocol>) response withContext:(id<MFContextProtocol>) context withQualifier:(id<MFActionQualifierProtocol>) qualifier withDispatcher:(MFActionProgressMessageDispatcher*) dispatch
@@ -325,7 +325,7 @@
     
 }
 
-/*!
+/**
  * @brief supprime les paramètres d'authentification en cas d'erreur retournée par le serveur
  */
 - (void) doOnAuthenticationFailedWithContext:(id<MFContextProtocol>) context
@@ -339,7 +339,7 @@
     [dispatch dispatchProgressMessage:@"Incompatible mobile time" withParam:nil andContext:context];
 }
 
-/*!
+/**
  * @brief appelé pour effectuer une authentification "locale" si la connexion n'est pas opérationnelle
  */
 - (id) doLocalProcessWithFirstFailure:(BOOL) firstFailure withContext:(id<MFContextProtocol>) context
@@ -367,7 +367,7 @@
     return result;
 }
 
-/*!
+/**
  * @brief Effectue les mêmes calculs que la méthode java.lang.String.hashCode()
  */
 - (long) hashCode:(NSString *) string

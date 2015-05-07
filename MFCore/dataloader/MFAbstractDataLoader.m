@@ -59,7 +59,7 @@ NSString *const MFAbstractDataLoader_MParametersTag              = @"parameters"
 
 
 #pragma mark -Searching/filter methods
-/*!
+/**
  * @brief Builds a dictionary containing the value of filters for depth 2 and 3.
  * Each value is put in a array, and this array is put in the returned dictionary.
  * @return A dictionary containing value of filters for depth 2 and 3
@@ -72,7 +72,7 @@ NSString *const MFAbstractDataLoader_MParametersTag              = @"parameters"
     return returnDictionary;
 }
 
-/*!
+/**
  * @brief Buils an array containing value of filters for a specific depth
  * @param depth A const String that indicates the value of the depth (2 or 3).
  * @return An array containing the an array containing value of filters for the specified depth

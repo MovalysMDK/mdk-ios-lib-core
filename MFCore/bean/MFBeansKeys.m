@@ -21,7 +21,7 @@
 
 #import "MFBeansKeys.h"
 
-/*!
+/**
  * Cette classe définit les clés utilisées pour la création des beans de l'application.
  * Il faut que les constantes de ce fichier correspondent à celles dans les fichiers 
  * Framework.xml et OverloadedFrameworl.xml

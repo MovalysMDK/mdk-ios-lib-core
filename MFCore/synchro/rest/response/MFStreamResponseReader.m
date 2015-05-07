@@ -74,7 +74,7 @@ NSMutableDictionary *processedEntities;
 }
 
 #pragma mark méthodes privées
-/*!
+/**
  * @brief traite un objet json dans la partie de la réponse indiquée
  * @param property : objet json à traiter
  * @param path : chemin en cours dans le flux json

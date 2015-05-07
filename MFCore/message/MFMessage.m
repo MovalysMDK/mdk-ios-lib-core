@@ -21,7 +21,7 @@
 
 #import "MFMessage.h"
 
-/*!
+/**
  * Implementation of MFMessageProtocol.
  */
 @implementation MFMessage

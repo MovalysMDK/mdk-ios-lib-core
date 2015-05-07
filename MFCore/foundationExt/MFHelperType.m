@@ -46,7 +46,7 @@
 }
 
 
-/*!
+/**
  * @brief Cette méthode permet de retourner sous forme d'une chaîne de caractère le nom d'une classe avec "Helper" à la fin
  * @param key Le nom de la classe
  * @return Un objet NSString contenant le nom de la classe avec "Helper" à la fin
@@ -56,7 +56,7 @@
 }
 
 
-/*!
+/**
  * @brief Cette méthode permet de retourner le type de l'object à partir du premier élément de ses attributs
  * retournées par la fonction @function property_getAttributes de la bibliothèque Runtime.h
  * @param typeAttribute Le premier attribut (celui du type de l'objet) retournée par property_getAttributes
@@ -76,7 +76,7 @@
 }
 
 
-/*!
+/**
  * @brief Dans le cas d'un type primitif, il est nécessaire de détecter quel type est représenté. 
  * Cette méthode permet de retourner le bon type de l'objet en fonction de son type extrait de la fonction
  * property_getAttributes.
@@ -110,7 +110,7 @@
     }
 }
 
-/*!
+/**
  * @brief Renvoie le type d'une vue sous forme d'une chaîne de caractère
  * @param primitiveTypeKey La clé du type primitf retournée par la fonction processTypeFromString
  * @return Le nom du type primitf (int, unsigned, float, double etc ...)
@@ -146,7 +146,7 @@
     return @"View";
 }
 
-/*!
+/**
  * @brief Renvoie le type élagué de tout préfixe Objective-C ou Framework
  */
 + (NSString *)primaryType:(NSString *)type {

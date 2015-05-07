@@ -25,7 +25,7 @@
 
 @interface MFWaitRunInit()
 
-/*!
+/**
  * @brief Une instance de ConfigurationHandler
  */
 @property (nonatomic, strong) MFConfigurationHandler *configurationHandler;

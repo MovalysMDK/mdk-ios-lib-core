@@ -30,7 +30,7 @@
 -(NSString *) prefixOfExportFiles{
     return @"yyyy'-'MM'-'dd'-'HH'-'mm'-'ss'-'" ;
 }
-/*!
+/**
   * @brief does the copy of the log file to the Documents directory share in Itunes
   * Return the date time prefix of the new files
  */

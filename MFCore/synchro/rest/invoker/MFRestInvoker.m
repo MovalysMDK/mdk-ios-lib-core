@@ -168,7 +168,7 @@ CFHTTPMessageRef httpResponse;
 }
 
 #pragma mark - Internal methods
-/*!
+/**
  * @brief récupère le flux json depuis la réponse reçue du serveur
  */
 -(NSString *) getMessageBodyFrom:(CFHTTPMessageRef) message
@@ -184,7 +184,7 @@ CFHTTPMessageRef httpResponse;
     return responseBody;
 }
 
-/*!
+/**
  * @brief construit une url depuis la configuration de l'application
  */
 -(CFURLRef) newUrl
@@ -202,7 +202,7 @@ CFHTTPMessageRef httpResponse;
     return CFURLCreateWithString(kCFAllocatorDefault, (__bridge CFStringRef)(sUrl), NULL);
 }
 
-/*!
+/**
  * @brief ajoute un chemin à une url, en tenant compte des caractères / qui doivent ou non être ajoutés
  */
 -(NSString *) concatenatePath:(NSString *) pPath toUrl:(NSString *) pUrl;
@@ -220,7 +220,7 @@ CFHTTPMessageRef httpResponse;
     return rPath;
 }
 
-/*!
+/**
  * @brief construit un objet de lecture de flux à partir de la requête, et ajoute les éventuels paramètres de connexion au proxy
  */
 -(CFReadStreamRef) newReadStream
@@ -243,7 +243,7 @@ CFHTTPMessageRef httpResponse;
     return rReadStream;
 }
 
-/*!
+/**
  * @brief fonction appelée quand un retour du serveur est reçu.
  * La lecture du retour serveur se fait sur un objet de type CFReadStreamRef, qu'on lie à un CFRunLoopRef.
  * Cette fonction est instancié quand des données ou des erreurs sont reçues, ou que la lecture est terminée

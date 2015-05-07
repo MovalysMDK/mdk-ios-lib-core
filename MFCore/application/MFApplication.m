@@ -34,7 +34,7 @@
 
 @implementation MFApplication
 
-/*! identifier of the connected resource */
+/** identifier of the connected resource */
 long currentUserResource;
 static NSTimeInterval startDate;
 NSString *synchroEntryPoint ;

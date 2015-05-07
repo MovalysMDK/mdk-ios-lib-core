@@ -82,7 +82,7 @@ BOOL firstOpener;
 }
 
 #pragma mark méthodes privéees
-/*!
+/**
  * @brief cherche à reconstituer un objet json
  */
 -(void) processObject
@@ -238,7 +238,7 @@ BOOL firstOpener;
     }
 }
 
-/*!
+/**
  * @brief lit un caractère et reconstitue le cas échéant le "chemin" en cours dans le flux json
  */
 -(char) read

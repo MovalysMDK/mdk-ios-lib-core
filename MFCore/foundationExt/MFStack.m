@@ -21,7 +21,7 @@
 
 #import "MFStack.h"
 
-/*!
+/**
  * Project's iSpares implementation
  *
  * Description: Stack's implementation
@@ -31,7 +31,7 @@
 
 @synthesize count;
 
-/*!
+/**
  * Initialize object
  *
  **/
@@ -46,7 +46,7 @@
     return self;
 }
 
-/*!
+/**
  * method used to push an object into the stack
  * 
  * @param object - the object to push
@@ -57,7 +57,7 @@
     [_array addObject:object];
 }
 
-/*!
+/**
  * Description: function used to pop out the top object from the stack and return it
  *
  * @return the top object of the stack
@@ -74,7 +74,7 @@
     return obj;
 }
 
-/*!
+/**
  * Function used to retrieve the top object from the stack without popping it out and return it
  *
  * @return the top object of the stack
@@ -89,14 +89,14 @@
     return obj;
 }
 
-/*!
+/**
  * Method used to clear the stack
  **/
 - (void)clear {
     [_array removeAllObjects];
 }
 
-/*!
+/**
  * Method used to count stack elements
  *
  * @return number of elements in stack

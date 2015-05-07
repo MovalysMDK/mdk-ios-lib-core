@@ -39,32 +39,32 @@ NSString *const mf_registerActionListener = @"mf_registerActionListener";
 
 //---------------------------------------------------------
 
-/*!
+/**
  * @brief permet de définir les attributs privés du notification center
  */
 @interface MFActionNotificationCenter_Private : NSObject
 
-/*!
+/**
  * @brief le compteur d'actions lancées nécessitant un sablier
  */
 @property (strong, nonatomic) NSNumber *launchedAction;
 
-/*!
+/**
  * @brief la queue d'exécution des actions
  */
 @property (nonatomic, readonly) dispatch_queue_t actionQueue;
 
-/*!
+/**
  * @brief la queue d'execution des notifications
  */
 @property (nonatomic, readonly) dispatch_queue_t notifQueue;
 
-/*!
+/**
  * @brief le cache de définition des classes
  */
 @property (strong, nonatomic, readonly) NSMutableDictionary *classCache;
 
-/*!
+/**
  * @brief contient les objets "listener" par évênement
  */
 @property (strong, nonatomic, readonly) NSMutableDictionary *registredElementsByEvent;
@@ -90,12 +90,12 @@ NSString *const mf_registerActionListener = @"mf_registerActionListener";
 
 //---------------------------------------------------------
 
-/*!
+/**
  * @brief permet de stocker des informations sur une méthode
  */
 @interface MFActionMethodDefinition : NSObject
 
-/*!
+/**
  * @brief la méthode donc on stocke des informations
  */
 @property (nonatomic) SEL selector;
@@ -110,17 +110,17 @@ NSString *const mf_registerActionListener = @"mf_registerActionListener";
 
 //---------------------------------------------------------
 
-/*!
+/**
  * @brief permet de sotcker des informations sur un évênement
  */
 @interface MFActionEventDefinition : NSObject
 
-/*!
+/**
  * @brief l'objet demandant le callback
  */
 @property (weak, nonatomic) id objectWithCallBack;
 
-/*!
+/**
  * @brief le callback a appeler
  */
 @property (copy) MFActionListenerBlock callBack;
@@ -129,17 +129,17 @@ NSString *const mf_registerActionListener = @"mf_registerActionListener";
 
 //---------------------------------------------------------
 
-/*!
+/**
  * @brief permet de stocker des informations sur une classe
  */
 @interface MFActionClassDefinition : NSObject
 
-/*!
+/**
  * @brief contient l'ensemble des informations de méthodes (listener) qui nous intéresse
  */
 @property (strong, nonatomic, readonly) NSMutableArray *methods;
 
-/*!
+/**
  * @brief l'ensemble des évênements supportés par une classe
  */
 @property (strong, nonatomic, readonly) NSMutableArray *events;
@@ -199,7 +199,7 @@ NSString *const mf_registerActionListener = @"mf_registerActionListener";
     return instance;
 }
 
-/*!
+/**
  * @brief permet de récuperer les attributs supplémentaires de la catégorie
  */
 -(MFActionNotificationCenter_Private *)extendANC {
@@ -211,7 +211,7 @@ NSString *const mf_registerActionListener = @"mf_registerActionListener";
     return ext;
 }
 
-/*!
+/**
  * @brief affecte les attributs supplémentaire de la catégorie
  */
 - (void) setExtendANC:(MFActionNotificationCenter_Private *) n {

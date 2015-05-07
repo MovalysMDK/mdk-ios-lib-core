@@ -25,7 +25,7 @@
 
 @interface MFDescriptorCommon ()
 
-/*!
+/**
  CSS class provided by framework.
  */
 @property(nonatomic, strong) NSString *privateClassCSS;
@@ -62,7 +62,7 @@
     return ![NSString isNilOrEmpty:self.privateClassCSS];
 }
 
-/*!
+/**
  * Copy the current instance.
  * Don't implement this function here.
  * Implement it in a subclass.

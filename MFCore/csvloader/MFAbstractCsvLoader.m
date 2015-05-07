@@ -25,28 +25,28 @@
 #import "MFAbstractCsvLoader.h"
 
 @interface MFAbstractCsvLoader()
-/*!
+/**
   * True is the read line is the first in the current file, False else
   */
 @property(nonatomic) BOOL isFirstLineOfTheFile  ;
-/*!
+/**
   * Contains the labels (NSString *) of the columns of the CSV file. The label is the key in the dictionary where are saved the data
   */
 @property(nonatomic,strong) NSMutableArray *headersLabel ;
-/*!
+/**
   * Contains the data (NSString *) parsed in the file in the same order than the headers labels
   */
 @property(nonatomic,strong) NSMutableArray *csvData ;
-/*!
+/**
  * Context of the creation : the linked entity context is used to create entities
  */
 @property(nonatomic,weak) id<MFContextProtocol> localContext ;
-/*!
+/**
  * Contains information about the treated file : class name and selector method, to use
  * These informations are created in the init phase.
  */
 @property(nonatomic,strong) MFCsvFileDescriptor *fileDescriptor ;
-/*!
+/**
  * Index of the passage when reading CSV file
  */
 @property(nonatomic) NSUInteger passageCounter  ;
@@ -102,7 +102,7 @@
     }
 }
 
-/*!
+/**
  * Delegates parsing methods
  */
 - (void) parser:(MFCSVParser *)parser parserDidBeginDocument:(NSString *)csvFile {
@@ -153,7 +153,7 @@
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-/*!
+/**
   * Transform the data and labels parsed in the file to create new entities
   */
 -(void) transformDataToObject:(NSDictionary*) p_datasDictionary {

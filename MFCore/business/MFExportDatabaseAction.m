@@ -27,7 +27,7 @@
 
 @implementation MFExportDatabaseAction
 
-/*!
+/**
   * @brief does the copy of sqlite database to the Documents directory share in Itunes
   * Delete the sqlite persistent store to write on fill (vacuum) and recreate a new persistent store  
   */

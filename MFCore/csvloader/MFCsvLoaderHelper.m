@@ -32,7 +32,7 @@ static NSUInteger const CONST_DATE_FORMAT_LENGTH = 10;
 
 static NSString *const CONST_DECIMAL_SEPARATOR = @".";
 static NSString *const CONST_GROUPING_SEPARATOR = @"";
-/*!
+/**
   * Initialize the formatter used to convert data from CSV
   * Decimal separator "." . International Date formats with '/' like @"yyyy'/'MM'/'dd"
   */

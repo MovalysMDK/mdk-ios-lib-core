@@ -27,13 +27,13 @@
 
 @implementation MFLoggingHelper
 
-static unsigned long long const MAXIMUM_FILE_SIZE = 512 * 1024; /*!< 512 KB */
+static unsigned long long const MAXIMUM_FILE_SIZE = 512 * 1024; /**< 512 KB */
 
-static NSTimeInterval const ROLLING_FREQUENCY = 60 * 60 * 24; /*!< 24 hour rolling */
+static NSTimeInterval const ROLLING_FREQUENCY = 60 * 60 * 24; /**< 24 hour rolling */
 
-static NSUInteger const MAXIMUM_NUMBER_OF_LOG_FILES = 7; /*!< We only keep the last 7 log files */
+static NSUInteger const MAXIMUM_NUMBER_OF_LOG_FILES = 7; /**< We only keep the last 7 log files */
 
-/*!
+/**
  * File used by the logger.
  */
 static DDFileLogger *fileLogger;
@@ -95,7 +95,7 @@ static DDFileLogger *fileLogger;
     return [data gzipDeflate];
 }
 
-/*!
+/**
  * Extract the n last file's lines.
  * if n == 0 then extract the entire file.
  *

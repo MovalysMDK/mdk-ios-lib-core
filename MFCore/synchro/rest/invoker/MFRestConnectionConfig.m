@@ -43,27 +43,27 @@ NSString * REST_CONNECTION_CONFIGURATION_CURRENT_KEY = @"currentConfiguration";
 
 @interface MFRestConnectionConfig()
 
-/*!
+/**
  *Connection timeout
  */
 @property (nonatomic, assign) NSInteger TIME_OUT;
 
-/*!
+/**
  *Timeout for receiving data
  */
 @property (nonatomic, assign) NSInteger SO_TIME_OUT;
 
-/*!
+/**
  *default web port
  */
 @property (nonatomic, assign) NSInteger DEFAULT_PORT;
 
-/*!
+/**
  *Reason status
  */
 @property (nonatomic, assign) NSDictionary *configuredValues;
 
-/*!
+/**
  * The name of the current configuration
  */
 @property (nonatomic, assign) NSString *currentConfiguration;

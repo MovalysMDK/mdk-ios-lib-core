@@ -48,17 +48,17 @@ NSString *const APPLICATION_COMPUTE_PARAMETER_PROXYURLSERVERPATH_KEY_PREFERENCE 
 
 @interface MFSettingsValidationManager()
 
-/*!
+/**
  * @brief A decimal formatter
  */
 @property(nonatomic, strong) NSNumberFormatter *decimalFormatter ;
 
-/*!
+/**
  * @brief An integer formatter
  */
 @property(nonatomic, strong) NSNumberFormatter *integerFormatter ;
 
-/*!
+/**
  * @brief A predicate to validates an email string
  */
 @property(nonatomic, strong) NSPredicate *emailValidationPredicate ;
@@ -67,7 +67,7 @@ NSString *const APPLICATION_COMPUTE_PARAMETER_PROXYURLSERVERPATH_KEY_PREFERENCE 
 
 @implementation MFSettingsValidationManager
 
-/*!
+/**
  * @brief The character n-duplicated to generate a fake password
  */
 NSString *FAKE_PASSWORD_MARKER = @"●";
@@ -136,7 +136,7 @@ NSString *FAKE_PASSWORD_MARKER = @"●";
 }
 
 #pragma mark - Data type and value Validators
-/*!
+/**
  * @brief verify that the value has a decimal format contains only true or false
  * @param value 
  * @param anItem
@@ -159,7 +159,7 @@ NSString *FAKE_PASSWORD_MARKER = @"●";
     return @"NO" ;
 }
 
-/*!
+/**
  * @brief verify that the value has is conformed to the string specification
  * @return ALWAYS YES
  */
@@ -192,7 +192,7 @@ NSString *FAKE_PASSWORD_MARKER = @"●";
     }
     return @"YES" ;
 }
-/*!
+/**
  * @brief verify that the value has is conformed with the regex "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
  * @return YES if OK , NO if not
  */
@@ -201,7 +201,7 @@ NSString *FAKE_PASSWORD_MARKER = @"●";
     
     return [MFHelperBOOL asString:[self.emailValidationPredicate evaluateWithObject:value] ];
 }
-/*!
+/**
  * @brief verify that the value is conformed to the URL specification that conforms to RFC 2396
  * @return ALWAYS YES
  */
@@ -213,7 +213,7 @@ NSString *FAKE_PASSWORD_MARKER = @"●";
     }
     return @"NO" ;
 }
-/*!
+/**
  * @brief verify that the value has a decimal format contains only numbers and a decimal sign
  * @return true if the value is valid
  */
@@ -248,7 +248,7 @@ NSString *FAKE_PASSWORD_MARKER = @"●";
     }
     return @"YES" ;
 }
-/*!
+/**
  * @brief verify that the value has a integer format , contains only numbers
  * @return true if the value is valid
  */
@@ -282,7 +282,7 @@ NSString *FAKE_PASSWORD_MARKER = @"●";
     }
     return @"YES" ;
 }
-/*!
+/**
  * @brief verify that the value is less than the max given
  * @return true if the value is valid
  */
@@ -294,7 +294,7 @@ NSString *FAKE_PASSWORD_MARKER = @"●";
     }
     return YES ;
 }
-/*!
+/**
  * @brief verify that the value is greater than the min given
  * @return true if the value is valid
  */
@@ -305,7 +305,7 @@ NSString *FAKE_PASSWORD_MARKER = @"●";
     }
     return YES ;
 }
-/*!
+/**
  * @brief verify that the value is less than the max given
  * @return true if the value is valid
  */
@@ -317,7 +317,7 @@ NSString *FAKE_PASSWORD_MARKER = @"●";
     }
     return YES ;
 }
-/*!
+/**
  * @brief verify that the value is greater than the min given
  * @return true if the value is valid
  */

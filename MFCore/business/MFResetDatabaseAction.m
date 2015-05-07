@@ -29,7 +29,7 @@
 
 @implementation MFResetDatabaseAction
 
-/*!
+/**
  * @brief reset the sqlite database and all the persistent store
  */
 -(id) doAction:(id) parameterIn withContext: (id<MFContextProtocol>) context withQualifier:(id<MFActionQualifierProtocol>) qualifier withDispatcher:(MFActionProgressMessageDispatcher *) dispatch {

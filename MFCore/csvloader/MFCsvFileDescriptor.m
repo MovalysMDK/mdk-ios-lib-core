@@ -32,7 +32,7 @@ static NSString *const CONST_CSV_DATAS_ATTRIBUTE_SEPARATOR = @"-";
 @synthesize isFileOK ;
 @synthesize isManyToManyAssociation ;
 
-/*!
+/**
   * Create the description of the parsed file thanks to its name
   * Find the class model to use
   * Find the selector to launch to create or fill the datas
@@ -71,7 +71,7 @@ static NSString *const CONST_CSV_DATAS_ATTRIBUTE_SEPARATOR = @"-";
     return self ;
 }
 
-/*!
+/**
  * Find the class with the file name given : M%@, if found modify the modelclass attribute 
  * @param p_sFileName containing a separator CONST_CSV_DATAS_FILE_NAME_SEPARATOR and after the name used to search the class
  */
@@ -97,7 +97,7 @@ static NSString *const CONST_CSV_DATAS_ATTRIBUTE_SEPARATOR = @"-";
         isFileOK = FALSE ;
     }
 }
-/*!
+/**
   * Find the class with the file name given : M%@
   * @param p_sFileName containing a separator CONST_CSV_DATAS_ATTRIBUTE_SEPARATOR and after the name used to search the class 
   * @return class found or else nil
@@ -118,7 +118,7 @@ static NSString *const CONST_CSV_DATAS_ATTRIBUTE_SEPARATOR = @"-";
     }
     return r_oModelClass ;
 }
-/*!
+/**
   * Return the selector to use for creating instance with the name of the class  (MF_create%@WithDictionary:inContext:)
   * @param p_sClassName class name of the searched selector
   */
@@ -131,7 +131,7 @@ static NSString *const CONST_CSV_DATAS_ATTRIBUTE_SEPARATOR = @"-";
         isFileOK  = false ;
     }
 }
-/*!
+/**
  * Find selector ("MF_completeAtt1WithDictionary:InContext:") with many to many association descriptor name
  * like : class1-att1
  * can be nil if not found
@@ -148,7 +148,7 @@ static NSString *const CONST_CSV_DATAS_ATTRIBUTE_SEPARATOR = @"-";
     }
     return r_selector ;
 }
-/*!
+/**
  * Find class (MClass1) in the many to many association descriptor name
  * like : Class1-att1
  * can be nil if not found
@@ -167,7 +167,7 @@ static NSString *const CONST_CSV_DATAS_ATTRIBUTE_SEPARATOR = @"-";
     }
     return nil ;
 }
-/*!
+/**
   * Description text of the instance object
   */
 -(NSString *)description{

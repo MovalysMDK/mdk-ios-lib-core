@@ -111,7 +111,7 @@ NSDictionary *entityBuilders;
     }
 }
 
-/*!
+/**
  * Pour que cette partie fonctionne, les propriétés destinées à être gérées comme des booléens devront :
  * - être de type NSNumber
  * - être alimentées avec les valeurs @(YES) ou @(NO)

@@ -25,7 +25,7 @@
 
 @implementation MFHelperIntrospection
 
-/*!
+/**
  * Return the property return type
  *
  * @see http://stackoverflow.com/questions/754824/get-an-object-attributes-list-in-objective-c

@@ -49,7 +49,7 @@
     return randomString;
 }
 
-/*!
+/**
  * @brief Returns the security helper from the bean factory
  * @return An id<MFSecurityHelperProtocol> that allows to custom security configuration
  */

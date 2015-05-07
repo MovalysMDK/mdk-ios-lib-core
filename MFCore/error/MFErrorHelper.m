@@ -23,12 +23,12 @@
 
 #import "MFErrorHelper.h"
 
-/*!
+/**
  * NSError helper which helps developper to handle and create NSError object.
  */
 @implementation MFErrorHelper
 
-/*!
+/**
  * Create an NSError instance.
  *
  * @param domain - NSError's domain
@@ -44,7 +44,7 @@
          NSLocalizedFailureReasonErrorKey : localizedFailureReasonErrorKey}];
 }
 
-/*!
+/**
  * Create an NSError instance.
  *
  * @param domain - NSError's domain
