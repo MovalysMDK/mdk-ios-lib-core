@@ -28,7 +28,7 @@
 
 @property(nonatomic,strong,readonly) NSMutableDictionary *entityIds ;
 @property(nonatomic,strong,readonly) NSPersistentStore *sqliteStore;
-/*@property(nonatomic,strong,readonly) NSPersistentStore *memoryStore;*/
+/* @property(nonatomic,strong,readonly) NSPersistentStore *memoryStore;*/
 @property(nonatomic, strong) NSError* lastSaveContextError;
 
 /*!

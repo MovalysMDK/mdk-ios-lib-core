@@ -137,11 +137,12 @@ NSString *FAKE_PASSWORD_MARKER = @"●";
 
 #pragma mark - Data type and value Validators
 /*!
- *@brief verify that the value has a decimal format contains only true or false
- *@return true if the value is valid
+ * @brief verify that the value has a decimal format contains only true or false
+ * @param value 
+ * @param anItem
+ * @return "YES" if the value is valid, "NO" otherwhise
  */
--(NSString *) validateBoolean:(NSString *) value item:(NSDictionary *) item {
-    //MFCoreLogVerbose(@"> validateBoolean value %@ item %@ " , value , item );
+-(NSString *) validateBoolean:(NSString *)value item:(NSDictionary *)anItem {
     
     NSString *upperValue = nil ;
     if ( [value isKindOfClass:[NSString class]] ) {
@@ -157,9 +158,10 @@ NSString *FAKE_PASSWORD_MARKER = @"●";
     }
     return @"NO" ;
 }
+
 /*!
- *@brief verify that the value has is conformed to the string specification
- *@return ALWAYS YES
+ * @brief verify that the value has is conformed to the string specification
+ * @return ALWAYS YES
  */
 -(NSString *) validateString:(NSString *) value item:(NSDictionary *) item  {
     //MFCoreLogVerbose(@"> validateString value %@ item %@ " , value , item );
@@ -191,8 +193,8 @@ NSString *FAKE_PASSWORD_MARKER = @"●";
     return @"YES" ;
 }
 /*!
- *@brief verify that the value has is conformed with the regex "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
- *@return YES if OK , NO if not
+ * @brief verify that the value has is conformed with the regex "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
+ * @return YES if OK , NO if not
  */
 -(NSString *) validateEmail:(NSString *) value item:(NSDictionary *) item  {
     //MFCoreLogVerbose(@"> validateEmail value %@ item %@ " , value , item );
@@ -200,8 +202,8 @@ NSString *FAKE_PASSWORD_MARKER = @"●";
     return [MFHelperBOOL asString:[self.emailValidationPredicate evaluateWithObject:value] ];
 }
 /*!
- *@brief verify that the value is conformed to the URL specification that conforms to RFC 2396
- *@return ALWAYS YES
+ * @brief verify that the value is conformed to the URL specification that conforms to RFC 2396
+ * @return ALWAYS YES
  */
 -(NSString *) validateUrl:(NSString *) value item:(NSDictionary *) item  {
     //MFCoreLogVerbose(@"> validateURL value %@ item %@ " , value , item );
@@ -212,8 +214,8 @@ NSString *FAKE_PASSWORD_MARKER = @"●";
     return @"NO" ;
 }
 /*!
- *@brief verify that the value has a decimal format contains only numbers and a decimal sign
- *@return true if the value is valid
+ * @brief verify that the value has a decimal format contains only numbers and a decimal sign
+ * @return true if the value is valid
  */
 -(NSString *) validateDecimal:(NSString *) value item:(NSDictionary *) item  {
     //MFCoreLogVerbose(@"> validateDecimal value %@ item %@ " , value , item );
@@ -247,8 +249,8 @@ NSString *FAKE_PASSWORD_MARKER = @"●";
     return @"YES" ;
 }
 /*!
- *@brief verify that the value has a integer format , contains only numbers
- *@return true if the value is valid
+ * @brief verify that the value has a integer format , contains only numbers
+ * @return true if the value is valid
  */
 -(NSString *) validateInteger:(NSString *) value item:(NSDictionary *) item  {
     //MFCoreLogVerbose(@"> validateInteger value %@ item %@ " , value , item );
@@ -281,8 +283,8 @@ NSString *FAKE_PASSWORD_MARKER = @"●";
     return @"YES" ;
 }
 /*!
- *@brief verify that the value is less than the max given
- *@return true if the value is valid
+ * @brief verify that the value is less than the max given
+ * @return true if the value is valid
  */
 -(BOOL) validateInteger:(NSNumber *) integerValue withMaximum:(NSString *) max{
     NSNumber *integerMax = [self.integerFormatter numberFromString:max] ;
@@ -293,8 +295,8 @@ NSString *FAKE_PASSWORD_MARKER = @"●";
     return YES ;
 }
 /*!
- *@brief verify that the value is greater than the min given
- *@return true if the value is valid
+ * @brief verify that the value is greater than the min given
+ * @return true if the value is valid
  */
 -(BOOL) validateInteger:(NSNumber *) integerValue withMinimum:(NSString *) min{
     NSNumber *integerMin = [self.integerFormatter numberFromString:min] ;
@@ -304,8 +306,8 @@ NSString *FAKE_PASSWORD_MARKER = @"●";
     return YES ;
 }
 /*!
- *@brief verify that the value is less than the max given
- *@return true if the value is valid
+ * @brief verify that the value is less than the max given
+ * @return true if the value is valid
  */
 -(BOOL) validateDecimal:(NSNumber *) decimalValue withMaximum:(NSString *) max{
     NSNumber *decimalMax = [self.decimalFormatter numberFromString:max] ;
@@ -316,8 +318,8 @@ NSString *FAKE_PASSWORD_MARKER = @"●";
     return YES ;
 }
 /*!
- *@brief verify that the value is greater than the min given
- *@return true if the value is valid
+ * @brief verify that the value is greater than the min given
+ * @return true if the value is valid
  */
 -(BOOL) validateDecimal:(NSNumber *) decimalValue withMinimum:(NSString *) min{
     NSNumber *decimalMin = [self.decimalFormatter numberFromString:min] ;

@@ -1,4 +1,5 @@
-/**
+
+ /**
  * Copyright (C) 2010 Sopra (support_movalys@sopra.com)
  *
  * This file is part of Movalys MDK.
@@ -13,11 +14,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
-//
-//  MFUIComponentConfiguration.h
-//  MFCore
-//
-//
+
 
 #import "MFCoreConfig.h"
 

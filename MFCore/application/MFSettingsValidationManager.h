@@ -44,7 +44,8 @@ FOUNDATION_EXPORT const int TAG_FOR_SETTINGS_UNCOMPLETE_ALERT;
 
 #pragma mark - Methods
 
-/*! @brief Notification reception of the change of settings when application is already launched
+/*! 
+ * @brief Notification reception of the change of settings when application is already launched
  * @param notification launched by the system
  */
 -(void) settingsUserChanged:(NSNotification *)notification ;
