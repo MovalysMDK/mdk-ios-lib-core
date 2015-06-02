@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
   s.subspec 'Dependencies' do|dep| 
     dep.dependency 'JSONKit', '>= 1.6'
     dep.dependency 'CocoaLumberjack', '~>2.0'
-    dep.dependency 'MagicalRecord', '~>2.2'
+    dep.dependency 'MagicalRecord', '2.2'
     dep.dependency 'CocoaSecurity', '~>1.2.4'
   end
 
