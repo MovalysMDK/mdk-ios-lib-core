@@ -34,12 +34,6 @@ FOUNDATION_EXPORT const unsigned char MFCoreVersionString[];
 #import <MFCore/MFCoreConfig.h>
 #import <MFCore/MFCoreInit.h>
 #import <MFCore/MFCoreCoredata.h>
-#import <MFCore/MFCoreFormDescriptor.h>
-#import <MFCore/MFCoreFormValidator.h>
-#import <MFCore/MFCoreFormReader.h>
-#import <MFCore/MFCoreFormConfig.h>
-#import <MFCore/MFCoreFormBuilder.h>
-#import <MFCore/MFCoreFormInit.h>
 #import <MFCore/MFCoreDataloader.h>
 #import <MFCore/MFCoreAction.h>
 #import <MFCore/MFCoreCsvloader.h>

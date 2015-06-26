@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		B041724C1A70F5350045C268 /* MFCore.h in Headers */ = {isa = PBXBuildFile; fileRef = B041724B1A70F5350045C268 /* MFCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B0585EF11B1E072200BA2647 /* MFCoreActionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0585EF01B1E072200BA2647 /* MFCoreActionTests.m */; };
+		B0585EF71B1E07A200BA2647 /* MFTestAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = B0585EF61B1E07A200BA2647 /* MFTestAssembly.m */; };
+		B0585EFA1B1E07C000BA2647 /* MFEmptyAction.m in Sources */ = {isa = PBXBuildFile; fileRef = B0585EF91B1E07C000BA2647 /* MFEmptyAction.m */; };
 		B06483B11A70F5CB0077A855 /* MFCoreLog.h in Headers */ = {isa = PBXBuildFile; fileRef = B06482191A70F5CB0077A855 /* MFCoreLog.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06483B21A70F5CB0077A855 /* MFCoreLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = B064821A1A70F5CB0077A855 /* MFCoreLogging.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06483B31A70F5CB0077A855 /* MFLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = B064821B1A70F5CB0077A855 /* MFLogging.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -283,79 +286,6 @@
 		B06484D31A70F5CB0077A855 /* MFMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483581A70F5CB0077A855 /* MFMessage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06484D41A70F5CB0077A855 /* MFMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = B06483591A70F5CB0077A855 /* MFMessage.m */; };
 		B06484D51A70F5CB0077A855 /* MFMessageProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B064835A1A70F5CB0077A855 /* MFMessageProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B06484D71A70F5CB0077A855 /* MFBuilderFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = B064835E1A70F5CB0077A855 /* MFBuilderFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B06484D81A70F5CB0077A855 /* MFBuilderFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = B064835F1A70F5CB0077A855 /* MFBuilderFactory.m */; };
-		B06484DA1A70F5CB0077A855 /* MFBuilderForm.m in Sources */ = {isa = PBXBuildFile; fileRef = B06483611A70F5CB0077A855 /* MFBuilderForm.m */; };
-		B06484DB1A70F5CB0077A855 /* MFCoreFormBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483621A70F5CB0077A855 /* MFCoreFormBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B06484DC1A70F5CB0077A855 /* MFFormBuilderProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483631A70F5CB0077A855 /* MFFormBuilderProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B06484DE1A70F5CB0077A855 /* MFConfigurationHandler+Forms.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483661A70F5CB0077A855 /* MFConfigurationHandler+Forms.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B06484DF1A70F5CB0077A855 /* MFConfigurationHandler+Forms.m in Sources */ = {isa = PBXBuildFile; fileRef = B06483671A70F5CB0077A855 /* MFConfigurationHandler+Forms.m */; };
-		B06484E01A70F5CB0077A855 /* MFCoreFormConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483681A70F5CB0077A855 /* MFCoreFormConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B06484E11A70F5CB0077A855 /* MFFormConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483691A70F5CB0077A855 /* MFFormConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B06484E21A70F5CB0077A855 /* MFFormConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = B064836A1A70F5CB0077A855 /* MFFormConstants.m */; };
-		B06484E31A70F5CB0077A855 /* MFProperty+Forms.h in Headers */ = {isa = PBXBuildFile; fileRef = B064836B1A70F5CB0077A855 /* MFProperty+Forms.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B06484E41A70F5CB0077A855 /* MFProperty+Forms.m in Sources */ = {isa = PBXBuildFile; fileRef = B064836C1A70F5CB0077A855 /* MFProperty+Forms.m */; };
-		B06484E61A70F5CB0077A855 /* MFColumnDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = B064836F1A70F5CB0077A855 /* MFColumnDescriptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B06484E71A70F5CB0077A855 /* MFColumnDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = B06483701A70F5CB0077A855 /* MFColumnDescriptor.m */; };
-		B06484E81A70F5CB0077A855 /* MFConfigurationGroupDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483711A70F5CB0077A855 /* MFConfigurationGroupDescriptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B06484E91A70F5CB0077A855 /* MFConfigurationGroupDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = B06483721A70F5CB0077A855 /* MFConfigurationGroupDescriptor.m */; };
-		B06484EA1A70F5CB0077A855 /* MFConfigurationKeyboardingRegularExpressionUIComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483731A70F5CB0077A855 /* MFConfigurationKeyboardingRegularExpressionUIComponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B06484EB1A70F5CB0077A855 /* MFConfigurationKeyboardingRegularExpressionUIComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = B06483741A70F5CB0077A855 /* MFConfigurationKeyboardingRegularExpressionUIComponent.m */; };
-		B06484EC1A70F5CB0077A855 /* MFConfigurationKeyboardingUIComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483751A70F5CB0077A855 /* MFConfigurationKeyboardingUIComponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B06484ED1A70F5CB0077A855 /* MFConfigurationKeyboardingUIComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = B06483761A70F5CB0077A855 /* MFConfigurationKeyboardingUIComponent.m */; };
-		B06484EE1A70F5CB0077A855 /* MFConfigurationUIComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483771A70F5CB0077A855 /* MFConfigurationUIComponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B06484EF1A70F5CB0077A855 /* MFConfigurationUIComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = B06483781A70F5CB0077A855 /* MFConfigurationUIComponent.m */; };
-		B06484F01A70F5CB0077A855 /* MFCoreFormDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483791A70F5CB0077A855 /* MFCoreFormDescriptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B06484F11A70F5CB0077A855 /* MFDescriptorAttributeNames.h in Headers */ = {isa = PBXBuildFile; fileRef = B064837A1A70F5CB0077A855 /* MFDescriptorAttributeNames.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B06484F21A70F5CB0077A855 /* MFDescriptorCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = B064837B1A70F5CB0077A855 /* MFDescriptorCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B06484F31A70F5CB0077A855 /* MFDescriptorCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = B064837C1A70F5CB0077A855 /* MFDescriptorCommon.m */; };
-		B06484F41A70F5CB0077A855 /* MFDescriptorCommonProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B064837D1A70F5CB0077A855 /* MFDescriptorCommonProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B06484F51A70F5CB0077A855 /* MFFieldDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = B064837E1A70F5CB0077A855 /* MFFieldDescriptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B06484F61A70F5CB0077A855 /* MFFieldDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = B064837F1A70F5CB0077A855 /* MFFieldDescriptor.m */; };
-		B06484F71A70F5CB0077A855 /* MFFormDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483801A70F5CB0077A855 /* MFFormDescriptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B06484F81A70F5CB0077A855 /* MFFormDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = B06483811A70F5CB0077A855 /* MFFormDescriptor.m */; };
-		B06484F91A70F5CB0077A855 /* MFGroupDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483821A70F5CB0077A855 /* MFGroupDescriptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B06484FA1A70F5CB0077A855 /* MFGroupDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = B06483831A70F5CB0077A855 /* MFGroupDescriptor.m */; };
-		B06484FB1A70F5CB0077A855 /* MFSectionDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483841A70F5CB0077A855 /* MFSectionDescriptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B06484FC1A70F5CB0077A855 /* MFSectionDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = B06483851A70F5CB0077A855 /* MFSectionDescriptor.m */; };
-		B06484FD1A70F5CB0077A855 /* MFWorkspaceDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483861A70F5CB0077A855 /* MFWorkspaceDescriptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B06484FE1A70F5CB0077A855 /* MFWorkspaceDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = B06483871A70F5CB0077A855 /* MFWorkspaceDescriptor.m */; };
-		B06485001A70F5CB0077A855 /* MFCoreFormInit.h in Headers */ = {isa = PBXBuildFile; fileRef = B064838A1A70F5CB0077A855 /* MFCoreFormInit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B06485011A70F5CB0077A855 /* MFLoadFormRunInit.h in Headers */ = {isa = PBXBuildFile; fileRef = B064838B1A70F5CB0077A855 /* MFLoadFormRunInit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B06485021A70F5CB0077A855 /* MFLoadFormRunInit.m in Sources */ = {isa = PBXBuildFile; fileRef = B064838C1A70F5CB0077A855 /* MFLoadFormRunInit.m */; };
-		B06485031A70F5CB0077A855 /* MFLoadVisualConfigurationRunInit.h in Headers */ = {isa = PBXBuildFile; fileRef = B064838D1A70F5CB0077A855 /* MFLoadVisualConfigurationRunInit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B06485041A70F5CB0077A855 /* MFLoadVisualConfigurationRunInit.m in Sources */ = {isa = PBXBuildFile; fileRef = B064838E1A70F5CB0077A855 /* MFLoadVisualConfigurationRunInit.m */; };
-		B06485061A70F5CB0077A855 /* MFCoreFormReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483911A70F5CB0077A855 /* MFCoreFormReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B06485071A70F5CB0077A855 /* MFReaderAbstractCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483921A70F5CB0077A855 /* MFReaderAbstractCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B06485081A70F5CB0077A855 /* MFReaderAbstractCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = B06483931A70F5CB0077A855 /* MFReaderAbstractCommon.m */; };
-		B06485091A70F5CB0077A855 /* MFReaderAttributeNameDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483941A70F5CB0077A855 /* MFReaderAttributeNameDictionary.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B064850A1A70F5CB0077A855 /* MFReaderAttributeNameDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = B06483951A70F5CB0077A855 /* MFReaderAttributeNameDictionary.m */; };
-		B064850B1A70F5CB0077A855 /* MFReaderColumn.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483961A70F5CB0077A855 /* MFReaderColumn.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B064850C1A70F5CB0077A855 /* MFReaderColumn.m in Sources */ = {isa = PBXBuildFile; fileRef = B06483971A70F5CB0077A855 /* MFReaderColumn.m */; };
-		B064850D1A70F5CB0077A855 /* MFReaderDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483981A70F5CB0077A855 /* MFReaderDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B064850E1A70F5CB0077A855 /* MFReaderFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483991A70F5CB0077A855 /* MFReaderFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B064850F1A70F5CB0077A855 /* MFReaderFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = B064839A1A70F5CB0077A855 /* MFReaderFactory.m */; };
-		B06485101A70F5CB0077A855 /* MFReaderField.h in Headers */ = {isa = PBXBuildFile; fileRef = B064839B1A70F5CB0077A855 /* MFReaderField.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B06485111A70F5CB0077A855 /* MFReaderField.m in Sources */ = {isa = PBXBuildFile; fileRef = B064839C1A70F5CB0077A855 /* MFReaderField.m */; };
-		B06485121A70F5CB0077A855 /* MFReaderForm.h in Headers */ = {isa = PBXBuildFile; fileRef = B064839D1A70F5CB0077A855 /* MFReaderForm.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B06485131A70F5CB0077A855 /* MFReaderForm.m in Sources */ = {isa = PBXBuildFile; fileRef = B064839E1A70F5CB0077A855 /* MFReaderForm.m */; };
-		B06485141A70F5CB0077A855 /* MFReaderGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = B064839F1A70F5CB0077A855 /* MFReaderGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B06485151A70F5CB0077A855 /* MFReaderGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = B06483A01A70F5CB0077A855 /* MFReaderGroup.m */; };
-		B06485161A70F5CB0077A855 /* MFReaderProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483A11A70F5CB0077A855 /* MFReaderProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B06485171A70F5CB0077A855 /* MFReaderSection.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483A21A70F5CB0077A855 /* MFReaderSection.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B06485181A70F5CB0077A855 /* MFReaderSection.m in Sources */ = {isa = PBXBuildFile; fileRef = B06483A31A70F5CB0077A855 /* MFReaderSection.m */; };
-		B06485191A70F5CB0077A855 /* MFReaderStackAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483A41A70F5CB0077A855 /* MFReaderStackAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B064851A1A70F5CB0077A855 /* MFReaderStackAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = B06483A51A70F5CB0077A855 /* MFReaderStackAttribute.m */; };
-		B064851B1A70F5CB0077A855 /* MFReaderWorkspace.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483A61A70F5CB0077A855 /* MFReaderWorkspace.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B064851C1A70F5CB0077A855 /* MFReaderWorkspace.m in Sources */ = {isa = PBXBuildFile; fileRef = B06483A71A70F5CB0077A855 /* MFReaderWorkspace.m */; };
-		B064851E1A70F5CB0077A855 /* MFCoreFormValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483AA1A70F5CB0077A855 /* MFCoreFormValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B064851F1A70F5CB0077A855 /* MFValidatorDescriptorFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483AB1A70F5CB0077A855 /* MFValidatorDescriptorFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B06485201A70F5CB0077A855 /* MFValidatorDescriptorFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = B06483AC1A70F5CB0077A855 /* MFValidatorDescriptorFactory.m */; };
-		B06485211A70F5CB0077A855 /* MFValidatorDescriptorProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483AD1A70F5CB0077A855 /* MFValidatorDescriptorProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B06485221A70F5CB0077A855 /* MFValidatorGroupDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483AE1A70F5CB0077A855 /* MFValidatorGroupDescriptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B06485231A70F5CB0077A855 /* MFValidatorGroupDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = B06483AF1A70F5CB0077A855 /* MFValidatorGroupDescriptor.m */; };
-		B06868EE1AD6AD8600D6B529 /* Pods.debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B0AAFB6A1AD41A7200463F7F /* Pods.debug.xcconfig */; };
-		B06868EF1AD6AD8600D6B529 /* Pods.release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B0AAFB6B1AD41A7200463F7F /* Pods.release.xcconfig */; };
 		B06868F71AD6AF4600D6B529 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B06868F61AD6AF4600D6B529 /* Foundation.framework */; };
 		B06868F91AD6AF4C00D6B529 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B06868F81AD6AF4C00D6B529 /* Pods.framework */; };
 		B06868FD1AD6AF9300D6B529 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B06868FC1AD6AF9300D6B529 /* libz.dylib */; };
@@ -364,10 +294,7 @@
 		B068690B1AD6BBAF00D6B529 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B068690A1AD6BBAE00D6B529 /* Security.framework */; };
 		B068690D1AD6BBC600D6B529 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B068690C1AD6BBC600D6B529 /* CFNetwork.framework */; };
 		B068690F1AD6BBEB00D6B529 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B068690E1AD6BBEB00D6B529 /* SystemConfiguration.framework */; };
-		B06869141AD6BE5700D6B529 /* MFBuilderForm.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483601A70F5CB0077A855 /* MFBuilderForm.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B06869161AD6BF4900D6B529 /* MFBuilderForm.m in Sources */ = {isa = PBXBuildFile; fileRef = B06483611A70F5CB0077A855 /* MFBuilderForm.m */; };
 		B068691A1AD6C40400D6B529 /* MFCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B04172461A70F5350045C268 /* MFCore.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		B068691D1AD6C53900D6B529 /* MFTestAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = B068691C1AD6C53900D6B529 /* MFTestAssembly.m */; };
 		B0AAFB7A1AD41C4500463F7F /* MFCoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0AAFB791AD41C4500463F7F /* MFCoreTests.m */; };
 /* End PBXBuildFile section */
 
@@ -385,6 +312,11 @@
 		B04172461A70F5350045C268 /* MFCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MFCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B041724A1A70F5350045C268 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B041724B1A70F5350045C268 /* MFCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MFCore.h; sourceTree = "<group>"; };
+		B0585EF01B1E072200BA2647 /* MFCoreActionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFCoreActionTests.m; sourceTree = "<group>"; };
+		B0585EF51B1E07A200BA2647 /* MFTestAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFTestAssembly.h; sourceTree = "<group>"; };
+		B0585EF61B1E07A200BA2647 /* MFTestAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFTestAssembly.m; sourceTree = "<group>"; };
+		B0585EF81B1E07C000BA2647 /* MFEmptyAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFEmptyAction.h; sourceTree = "<group>"; };
+		B0585EF91B1E07C000BA2647 /* MFEmptyAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFEmptyAction.m; sourceTree = "<group>"; };
 		B06482181A70F5CB0077A855 /* deps */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = deps; sourceTree = "<group>"; };
 		B06482191A70F5CB0077A855 /* MFCoreLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFCoreLog.h; sourceTree = "<group>"; };
 		B064821A1A70F5CB0077A855 /* MFCoreLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFCoreLogging.h; sourceTree = "<group>"; };
@@ -397,7 +329,7 @@
 		B06482211A70F5CB0077A855 /* MFCore-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MFCore-Prefix.pch"; sourceTree = "<group>"; };
 		B06482231A70F5CB0077A855 /* deps */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = deps; sourceTree = "<group>"; };
 		B06482241A70F5CB0077A855 /* MFActionLauncher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFActionLauncher.h; sourceTree = "<group>"; };
-		B06482251A70F5CB0077A855 /* MFActionLauncher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MFActionLauncher.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		B06482251A70F5CB0077A855 /* MFActionLauncher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MFActionLauncher.m; sourceTree = "<group>"; };
 		B06482261A70F5CB0077A855 /* MFActionNotFound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFActionNotFound.h; sourceTree = "<group>"; };
 		B06482271A70F5CB0077A855 /* MFActionNotFound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFActionNotFound.m; sourceTree = "<group>"; };
 		B06482281A70F5CB0077A855 /* MFActionPostTreatmentProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFActionPostTreatmentProtocol.h; sourceTree = "<group>"; };
@@ -676,84 +608,6 @@
 		B06483581A70F5CB0077A855 /* MFMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFMessage.h; sourceTree = "<group>"; };
 		B06483591A70F5CB0077A855 /* MFMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFMessage.m; sourceTree = "<group>"; };
 		B064835A1A70F5CB0077A855 /* MFMessageProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFMessageProtocol.h; sourceTree = "<group>"; };
-		B064835D1A70F5CB0077A855 /* deps */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = deps; sourceTree = "<group>"; };
-		B064835E1A70F5CB0077A855 /* MFBuilderFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFBuilderFactory.h; sourceTree = "<group>"; };
-		B064835F1A70F5CB0077A855 /* MFBuilderFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFBuilderFactory.m; sourceTree = "<group>"; };
-		B06483601A70F5CB0077A855 /* MFBuilderForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFBuilderForm.h; sourceTree = "<group>"; };
-		B06483611A70F5CB0077A855 /* MFBuilderForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFBuilderForm.m; sourceTree = "<group>"; };
-		B06483621A70F5CB0077A855 /* MFCoreFormBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFCoreFormBuilder.h; sourceTree = "<group>"; };
-		B06483631A70F5CB0077A855 /* MFFormBuilderProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFFormBuilderProtocol.h; sourceTree = "<group>"; };
-		B06483651A70F5CB0077A855 /* deps */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = deps; sourceTree = "<group>"; };
-		B06483661A70F5CB0077A855 /* MFConfigurationHandler+Forms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MFConfigurationHandler+Forms.h"; sourceTree = "<group>"; };
-		B06483671A70F5CB0077A855 /* MFConfigurationHandler+Forms.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MFConfigurationHandler+Forms.m"; sourceTree = "<group>"; };
-		B06483681A70F5CB0077A855 /* MFCoreFormConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFCoreFormConfig.h; sourceTree = "<group>"; };
-		B06483691A70F5CB0077A855 /* MFFormConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFFormConstants.h; sourceTree = "<group>"; };
-		B064836A1A70F5CB0077A855 /* MFFormConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFFormConstants.m; sourceTree = "<group>"; };
-		B064836B1A70F5CB0077A855 /* MFProperty+Forms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MFProperty+Forms.h"; sourceTree = "<group>"; };
-		B064836C1A70F5CB0077A855 /* MFProperty+Forms.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MFProperty+Forms.m"; sourceTree = "<group>"; };
-		B064836E1A70F5CB0077A855 /* deps */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = deps; sourceTree = "<group>"; };
-		B064836F1A70F5CB0077A855 /* MFColumnDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFColumnDescriptor.h; sourceTree = "<group>"; };
-		B06483701A70F5CB0077A855 /* MFColumnDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFColumnDescriptor.m; sourceTree = "<group>"; };
-		B06483711A70F5CB0077A855 /* MFConfigurationGroupDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFConfigurationGroupDescriptor.h; sourceTree = "<group>"; };
-		B06483721A70F5CB0077A855 /* MFConfigurationGroupDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFConfigurationGroupDescriptor.m; sourceTree = "<group>"; };
-		B06483731A70F5CB0077A855 /* MFConfigurationKeyboardingRegularExpressionUIComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFConfigurationKeyboardingRegularExpressionUIComponent.h; sourceTree = "<group>"; };
-		B06483741A70F5CB0077A855 /* MFConfigurationKeyboardingRegularExpressionUIComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFConfigurationKeyboardingRegularExpressionUIComponent.m; sourceTree = "<group>"; };
-		B06483751A70F5CB0077A855 /* MFConfigurationKeyboardingUIComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFConfigurationKeyboardingUIComponent.h; sourceTree = "<group>"; };
-		B06483761A70F5CB0077A855 /* MFConfigurationKeyboardingUIComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFConfigurationKeyboardingUIComponent.m; sourceTree = "<group>"; };
-		B06483771A70F5CB0077A855 /* MFConfigurationUIComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFConfigurationUIComponent.h; sourceTree = "<group>"; };
-		B06483781A70F5CB0077A855 /* MFConfigurationUIComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFConfigurationUIComponent.m; sourceTree = "<group>"; };
-		B06483791A70F5CB0077A855 /* MFCoreFormDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFCoreFormDescriptor.h; sourceTree = "<group>"; };
-		B064837A1A70F5CB0077A855 /* MFDescriptorAttributeNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDescriptorAttributeNames.h; sourceTree = "<group>"; };
-		B064837B1A70F5CB0077A855 /* MFDescriptorCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDescriptorCommon.h; sourceTree = "<group>"; };
-		B064837C1A70F5CB0077A855 /* MFDescriptorCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFDescriptorCommon.m; sourceTree = "<group>"; };
-		B064837D1A70F5CB0077A855 /* MFDescriptorCommonProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDescriptorCommonProtocol.h; sourceTree = "<group>"; };
-		B064837E1A70F5CB0077A855 /* MFFieldDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFFieldDescriptor.h; sourceTree = "<group>"; };
-		B064837F1A70F5CB0077A855 /* MFFieldDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFFieldDescriptor.m; sourceTree = "<group>"; };
-		B06483801A70F5CB0077A855 /* MFFormDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFFormDescriptor.h; sourceTree = "<group>"; };
-		B06483811A70F5CB0077A855 /* MFFormDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFFormDescriptor.m; sourceTree = "<group>"; };
-		B06483821A70F5CB0077A855 /* MFGroupDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFGroupDescriptor.h; sourceTree = "<group>"; };
-		B06483831A70F5CB0077A855 /* MFGroupDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFGroupDescriptor.m; sourceTree = "<group>"; };
-		B06483841A70F5CB0077A855 /* MFSectionDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFSectionDescriptor.h; sourceTree = "<group>"; };
-		B06483851A70F5CB0077A855 /* MFSectionDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFSectionDescriptor.m; sourceTree = "<group>"; };
-		B06483861A70F5CB0077A855 /* MFWorkspaceDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFWorkspaceDescriptor.h; sourceTree = "<group>"; };
-		B06483871A70F5CB0077A855 /* MFWorkspaceDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFWorkspaceDescriptor.m; sourceTree = "<group>"; };
-		B06483891A70F5CB0077A855 /* deps */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = deps; sourceTree = "<group>"; };
-		B064838A1A70F5CB0077A855 /* MFCoreFormInit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFCoreFormInit.h; sourceTree = "<group>"; };
-		B064838B1A70F5CB0077A855 /* MFLoadFormRunInit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFLoadFormRunInit.h; sourceTree = "<group>"; };
-		B064838C1A70F5CB0077A855 /* MFLoadFormRunInit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFLoadFormRunInit.m; sourceTree = "<group>"; };
-		B064838D1A70F5CB0077A855 /* MFLoadVisualConfigurationRunInit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFLoadVisualConfigurationRunInit.h; sourceTree = "<group>"; };
-		B064838E1A70F5CB0077A855 /* MFLoadVisualConfigurationRunInit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFLoadVisualConfigurationRunInit.m; sourceTree = "<group>"; };
-		B06483901A70F5CB0077A855 /* deps */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = deps; sourceTree = "<group>"; };
-		B06483911A70F5CB0077A855 /* MFCoreFormReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFCoreFormReader.h; sourceTree = "<group>"; };
-		B06483921A70F5CB0077A855 /* MFReaderAbstractCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFReaderAbstractCommon.h; sourceTree = "<group>"; };
-		B06483931A70F5CB0077A855 /* MFReaderAbstractCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFReaderAbstractCommon.m; sourceTree = "<group>"; };
-		B06483941A70F5CB0077A855 /* MFReaderAttributeNameDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFReaderAttributeNameDictionary.h; sourceTree = "<group>"; };
-		B06483951A70F5CB0077A855 /* MFReaderAttributeNameDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFReaderAttributeNameDictionary.m; sourceTree = "<group>"; };
-		B06483961A70F5CB0077A855 /* MFReaderColumn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFReaderColumn.h; sourceTree = "<group>"; };
-		B06483971A70F5CB0077A855 /* MFReaderColumn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFReaderColumn.m; sourceTree = "<group>"; };
-		B06483981A70F5CB0077A855 /* MFReaderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFReaderDelegate.h; sourceTree = "<group>"; };
-		B06483991A70F5CB0077A855 /* MFReaderFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFReaderFactory.h; sourceTree = "<group>"; };
-		B064839A1A70F5CB0077A855 /* MFReaderFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFReaderFactory.m; sourceTree = "<group>"; };
-		B064839B1A70F5CB0077A855 /* MFReaderField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFReaderField.h; sourceTree = "<group>"; };
-		B064839C1A70F5CB0077A855 /* MFReaderField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFReaderField.m; sourceTree = "<group>"; };
-		B064839D1A70F5CB0077A855 /* MFReaderForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFReaderForm.h; sourceTree = "<group>"; };
-		B064839E1A70F5CB0077A855 /* MFReaderForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFReaderForm.m; sourceTree = "<group>"; };
-		B064839F1A70F5CB0077A855 /* MFReaderGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFReaderGroup.h; sourceTree = "<group>"; };
-		B06483A01A70F5CB0077A855 /* MFReaderGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFReaderGroup.m; sourceTree = "<group>"; };
-		B06483A11A70F5CB0077A855 /* MFReaderProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFReaderProtocol.h; sourceTree = "<group>"; };
-		B06483A21A70F5CB0077A855 /* MFReaderSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFReaderSection.h; sourceTree = "<group>"; };
-		B06483A31A70F5CB0077A855 /* MFReaderSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFReaderSection.m; sourceTree = "<group>"; };
-		B06483A41A70F5CB0077A855 /* MFReaderStackAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFReaderStackAttribute.h; sourceTree = "<group>"; };
-		B06483A51A70F5CB0077A855 /* MFReaderStackAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFReaderStackAttribute.m; sourceTree = "<group>"; };
-		B06483A61A70F5CB0077A855 /* MFReaderWorkspace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFReaderWorkspace.h; sourceTree = "<group>"; };
-		B06483A71A70F5CB0077A855 /* MFReaderWorkspace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFReaderWorkspace.m; sourceTree = "<group>"; };
-		B06483A91A70F5CB0077A855 /* deps */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = deps; sourceTree = "<group>"; };
-		B06483AA1A70F5CB0077A855 /* MFCoreFormValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFCoreFormValidator.h; sourceTree = "<group>"; };
-		B06483AB1A70F5CB0077A855 /* MFValidatorDescriptorFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFValidatorDescriptorFactory.h; sourceTree = "<group>"; };
-		B06483AC1A70F5CB0077A855 /* MFValidatorDescriptorFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFValidatorDescriptorFactory.m; sourceTree = "<group>"; };
-		B06483AD1A70F5CB0077A855 /* MFValidatorDescriptorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFValidatorDescriptorProtocol.h; sourceTree = "<group>"; };
-		B06483AE1A70F5CB0077A855 /* MFValidatorGroupDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFValidatorGroupDescriptor.h; sourceTree = "<group>"; };
-		B06483AF1A70F5CB0077A855 /* MFValidatorGroupDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFValidatorGroupDescriptor.m; sourceTree = "<group>"; };
 		B06868F61AD6AF4600D6B529 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B06868F81AD6AF4C00D6B529 /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "Pods/../build/Debug-iphoneos/Pods.framework"; sourceTree = "<group>"; };
 		B06868FC1AD6AF9300D6B529 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -762,8 +616,6 @@
 		B068690A1AD6BBAE00D6B529 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		B068690C1AD6BBC600D6B529 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		B068690E1AD6BBEB00D6B529 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		B068691B1AD6C53900D6B529 /* MFTestAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFTestAssembly.h; sourceTree = "<group>"; };
-		B068691C1AD6C53900D6B529 /* MFTestAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFTestAssembly.m; sourceTree = "<group>"; };
 		B0AAFB6A1AD41A7200463F7F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B0AAFB6B1AD41A7200463F7F /* Pods.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B0AAFB751AD41C4500463F7F /* MFCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MFCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -855,7 +707,6 @@
 				B06482FC1A70F5CB0077A855 /* csvloader */,
 				B064830E1A70F5CB0077A855 /* dataloader */,
 				B064831C1A70F5CB0077A855 /* error */,
-				B064835B1A70F5CB0077A855 /* form */,
 				B06483361A70F5CB0077A855 /* foundationExt */,
 				B064834A1A70F5CB0077A855 /* i18n */,
 				B064834F1A70F5CB0077A855 /* init */,
@@ -876,6 +727,17 @@
 				B041724A1A70F5350045C268 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B0585EF41B1E07A200BA2647 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				B0585EF51B1E07A200BA2647 /* MFTestAssembly.h */,
+				B0585EF61B1E07A200BA2647 /* MFTestAssembly.m */,
+				B0585EF81B1E07C000BA2647 /* MFEmptyAction.h */,
+				B0585EF91B1E07C000BA2647 /* MFEmptyAction.m */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		B06482171A70F5CB0077A855 /* log */ = {
@@ -1383,144 +1245,11 @@
 			path = message;
 			sourceTree = "<group>";
 		};
-		B064835B1A70F5CB0077A855 /* form */ = {
-			isa = PBXGroup;
-			children = (
-				B064835C1A70F5CB0077A855 /* builder */,
-				B06483641A70F5CB0077A855 /* config */,
-				B064836D1A70F5CB0077A855 /* descriptor */,
-				B06483881A70F5CB0077A855 /* init */,
-				B064838F1A70F5CB0077A855 /* reader */,
-				B06483A81A70F5CB0077A855 /* validator */,
-			);
-			path = form;
-			sourceTree = "<group>";
-		};
-		B064835C1A70F5CB0077A855 /* builder */ = {
-			isa = PBXGroup;
-			children = (
-				B064835D1A70F5CB0077A855 /* deps */,
-				B064835E1A70F5CB0077A855 /* MFBuilderFactory.h */,
-				B064835F1A70F5CB0077A855 /* MFBuilderFactory.m */,
-				B06483601A70F5CB0077A855 /* MFBuilderForm.h */,
-				B06483611A70F5CB0077A855 /* MFBuilderForm.m */,
-				B06483621A70F5CB0077A855 /* MFCoreFormBuilder.h */,
-				B06483631A70F5CB0077A855 /* MFFormBuilderProtocol.h */,
-			);
-			path = builder;
-			sourceTree = "<group>";
-		};
-		B06483641A70F5CB0077A855 /* config */ = {
-			isa = PBXGroup;
-			children = (
-				B06483651A70F5CB0077A855 /* deps */,
-				B06483661A70F5CB0077A855 /* MFConfigurationHandler+Forms.h */,
-				B06483671A70F5CB0077A855 /* MFConfigurationHandler+Forms.m */,
-				B06483681A70F5CB0077A855 /* MFCoreFormConfig.h */,
-				B06483691A70F5CB0077A855 /* MFFormConstants.h */,
-				B064836A1A70F5CB0077A855 /* MFFormConstants.m */,
-				B064836B1A70F5CB0077A855 /* MFProperty+Forms.h */,
-				B064836C1A70F5CB0077A855 /* MFProperty+Forms.m */,
-			);
-			path = config;
-			sourceTree = "<group>";
-		};
-		B064836D1A70F5CB0077A855 /* descriptor */ = {
-			isa = PBXGroup;
-			children = (
-				B064836E1A70F5CB0077A855 /* deps */,
-				B064836F1A70F5CB0077A855 /* MFColumnDescriptor.h */,
-				B06483701A70F5CB0077A855 /* MFColumnDescriptor.m */,
-				B06483711A70F5CB0077A855 /* MFConfigurationGroupDescriptor.h */,
-				B06483721A70F5CB0077A855 /* MFConfigurationGroupDescriptor.m */,
-				B06483731A70F5CB0077A855 /* MFConfigurationKeyboardingRegularExpressionUIComponent.h */,
-				B06483741A70F5CB0077A855 /* MFConfigurationKeyboardingRegularExpressionUIComponent.m */,
-				B06483751A70F5CB0077A855 /* MFConfigurationKeyboardingUIComponent.h */,
-				B06483761A70F5CB0077A855 /* MFConfigurationKeyboardingUIComponent.m */,
-				B06483771A70F5CB0077A855 /* MFConfigurationUIComponent.h */,
-				B06483781A70F5CB0077A855 /* MFConfigurationUIComponent.m */,
-				B06483791A70F5CB0077A855 /* MFCoreFormDescriptor.h */,
-				B064837A1A70F5CB0077A855 /* MFDescriptorAttributeNames.h */,
-				B064837B1A70F5CB0077A855 /* MFDescriptorCommon.h */,
-				B064837C1A70F5CB0077A855 /* MFDescriptorCommon.m */,
-				B064837D1A70F5CB0077A855 /* MFDescriptorCommonProtocol.h */,
-				B064837E1A70F5CB0077A855 /* MFFieldDescriptor.h */,
-				B064837F1A70F5CB0077A855 /* MFFieldDescriptor.m */,
-				B06483801A70F5CB0077A855 /* MFFormDescriptor.h */,
-				B06483811A70F5CB0077A855 /* MFFormDescriptor.m */,
-				B06483821A70F5CB0077A855 /* MFGroupDescriptor.h */,
-				B06483831A70F5CB0077A855 /* MFGroupDescriptor.m */,
-				B06483841A70F5CB0077A855 /* MFSectionDescriptor.h */,
-				B06483851A70F5CB0077A855 /* MFSectionDescriptor.m */,
-				B06483861A70F5CB0077A855 /* MFWorkspaceDescriptor.h */,
-				B06483871A70F5CB0077A855 /* MFWorkspaceDescriptor.m */,
-			);
-			path = descriptor;
-			sourceTree = "<group>";
-		};
-		B06483881A70F5CB0077A855 /* init */ = {
-			isa = PBXGroup;
-			children = (
-				B06483891A70F5CB0077A855 /* deps */,
-				B064838A1A70F5CB0077A855 /* MFCoreFormInit.h */,
-				B064838B1A70F5CB0077A855 /* MFLoadFormRunInit.h */,
-				B064838C1A70F5CB0077A855 /* MFLoadFormRunInit.m */,
-				B064838D1A70F5CB0077A855 /* MFLoadVisualConfigurationRunInit.h */,
-				B064838E1A70F5CB0077A855 /* MFLoadVisualConfigurationRunInit.m */,
-			);
-			path = init;
-			sourceTree = "<group>";
-		};
-		B064838F1A70F5CB0077A855 /* reader */ = {
-			isa = PBXGroup;
-			children = (
-				B06483901A70F5CB0077A855 /* deps */,
-				B06483911A70F5CB0077A855 /* MFCoreFormReader.h */,
-				B06483921A70F5CB0077A855 /* MFReaderAbstractCommon.h */,
-				B06483931A70F5CB0077A855 /* MFReaderAbstractCommon.m */,
-				B06483941A70F5CB0077A855 /* MFReaderAttributeNameDictionary.h */,
-				B06483951A70F5CB0077A855 /* MFReaderAttributeNameDictionary.m */,
-				B06483961A70F5CB0077A855 /* MFReaderColumn.h */,
-				B06483971A70F5CB0077A855 /* MFReaderColumn.m */,
-				B06483981A70F5CB0077A855 /* MFReaderDelegate.h */,
-				B06483991A70F5CB0077A855 /* MFReaderFactory.h */,
-				B064839A1A70F5CB0077A855 /* MFReaderFactory.m */,
-				B064839B1A70F5CB0077A855 /* MFReaderField.h */,
-				B064839C1A70F5CB0077A855 /* MFReaderField.m */,
-				B064839D1A70F5CB0077A855 /* MFReaderForm.h */,
-				B064839E1A70F5CB0077A855 /* MFReaderForm.m */,
-				B064839F1A70F5CB0077A855 /* MFReaderGroup.h */,
-				B06483A01A70F5CB0077A855 /* MFReaderGroup.m */,
-				B06483A11A70F5CB0077A855 /* MFReaderProtocol.h */,
-				B06483A21A70F5CB0077A855 /* MFReaderSection.h */,
-				B06483A31A70F5CB0077A855 /* MFReaderSection.m */,
-				B06483A41A70F5CB0077A855 /* MFReaderStackAttribute.h */,
-				B06483A51A70F5CB0077A855 /* MFReaderStackAttribute.m */,
-				B06483A61A70F5CB0077A855 /* MFReaderWorkspace.h */,
-				B06483A71A70F5CB0077A855 /* MFReaderWorkspace.m */,
-			);
-			path = reader;
-			sourceTree = "<group>";
-		};
-		B06483A81A70F5CB0077A855 /* validator */ = {
-			isa = PBXGroup;
-			children = (
-				B06483A91A70F5CB0077A855 /* deps */,
-				B06483AA1A70F5CB0077A855 /* MFCoreFormValidator.h */,
-				B06483AB1A70F5CB0077A855 /* MFValidatorDescriptorFactory.h */,
-				B06483AC1A70F5CB0077A855 /* MFValidatorDescriptorFactory.m */,
-				B06483AD1A70F5CB0077A855 /* MFValidatorDescriptorProtocol.h */,
-				B06483AE1A70F5CB0077A855 /* MFValidatorGroupDescriptor.h */,
-				B06483AF1A70F5CB0077A855 /* MFValidatorGroupDescriptor.m */,
-			);
-			path = validator;
-			sourceTree = "<group>";
-		};
 		B0AAFB761AD41C4500463F7F /* MFCoreTests */ = {
 			isa = PBXGroup;
 			children = (
-				B068691B1AD6C53900D6B529 /* MFTestAssembly.h */,
-				B068691C1AD6C53900D6B529 /* MFTestAssembly.m */,
+				B0585EF41B1E07A200BA2647 /* Sources */,
+				B0585EF01B1E072200BA2647 /* MFCoreActionTests.m */,
 				B0AAFB791AD41C4500463F7F /* MFCoreTests.m */,
 				B0AAFB771AD41C4500463F7F /* Supporting Files */,
 			);
@@ -1543,21 +1272,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				B064843E1A70F5CB0077A855 /* MFDomResponseReader.h in Headers */,
-				B06485101A70F5CB0077A855 /* MFReaderField.h in Headers */,
 				B064842C1A70F5CB0077A855 /* MFSyncRest.h in Headers */,
 				B06484631A70F5CB0077A855 /* MFBeansKeys.h in Headers */,
 				B064842A1A70F5CB0077A855 /* MFJsonReader.h in Headers */,
 				B064845B1A70F5CB0077A855 /* MFStarter.h in Headers */,
-				B06485121A70F5CB0077A855 /* MFReaderForm.h in Headers */,
 				B06483E21A70F5CB0077A855 /* MFSecurityHelperProtocol.h in Headers */,
-				B06484DB1A70F5CB0077A855 /* MFCoreFormBuilder.h in Headers */,
 				B06483ED1A70F5CB0077A855 /* MFSynchronizationActionParameterOUT.h in Headers */,
 				B06483D91A70F5CB0077A855 /* MFCoreContext.h in Headers */,
 				B06483C31A70F5CB0077A855 /* MFActionProtocol.h in Headers */,
 				B06483E31A70F5CB0077A855 /* MFSecurityUtils.h in Headers */,
-				B06484DE1A70F5CB0077A855 /* MFConfigurationHandler+Forms.h in Headers */,
 				B06483B51A70F5CB0077A855 /* MFLoggingFormatter.h in Headers */,
-				B06484E81A70F5CB0077A855 /* MFConfigurationGroupDescriptor.h in Headers */,
 				B064848B1A70F5CB0077A855 /* MFProjectCsvLoaderRunInit.h in Headers */,
 				B06484AB1A70F5CB0077A855 /* MFKeyNotFound.h in Headers */,
 				B06484301A70F5CB0077A855 /* MFDomRequestWriter.h in Headers */,
@@ -1571,13 +1295,9 @@
 				B064848D1A70F5CB0077A855 /* MFUserCsvLoaderRunInit.h in Headers */,
 				B06484C01A70F5CB0077A855 /* MFStack.h in Headers */,
 				B064847F1A70F5CB0077A855 /* MFAbstractCsvLoader.h in Headers */,
-				B06485061A70F5CB0077A855 /* MFCoreFormReader.h in Headers */,
 				B06484AF1A70F5CB0077A855 /* MFRemoteDataAccessTechnicalError.h in Headers */,
 				B06483E51A70F5CB0077A855 /* MFRestError.h in Headers */,
-				B06484E01A70F5CB0077A855 /* MFCoreFormConfig.h in Headers */,
-				B06485191A70F5CB0077A855 /* MFReaderStackAttribute.h in Headers */,
 				B06483F31A70F5CB0077A855 /* MFLocalCredentialServiceProtocol.h in Headers */,
-				B06485031A70F5CB0077A855 /* MFLoadVisualConfigurationRunInit.h in Headers */,
 				B06484A91A70F5CB0077A855 /* MFException.h in Headers */,
 				B06484331A70F5CB0077A855 /* MFRestRequestWriterProtocol.h in Headers */,
 				B06483C01A70F5CB0077A855 /* MFActionPreTreatmentProtocol.h in Headers */,
@@ -1590,7 +1310,6 @@
 				B06484671A70F5CB0077A855 /* MFAbstractConfiguration.h in Headers */,
 				B06484D51A70F5CB0077A855 /* MFMessageProtocol.h in Headers */,
 				B064846C1A70F5CB0077A855 /* MFFwkProperty.h in Headers */,
-				B064851B1A70F5CB0077A855 /* MFReaderWorkspace.h in Headers */,
 				B064843C1A70F5CB0077A855 /* MFAckStreamRequestBuilder.h in Headers */,
 				B06484761A70F5CB0077A855 /* MFCoreDataRunInit.h in Headers */,
 				B064844F1A70F5CB0077A855 /* MObjectToSynchronize+Dao.h in Headers */,
@@ -1599,18 +1318,13 @@
 				B06483B91A70F5CB0077A855 /* MFCore-Prefix.pch in Headers */,
 				B06484651A70F5CB0077A855 /* MFCoreBean.h in Headers */,
 				B06484C21A70F5CB0077A855 /* MFURL.h in Headers */,
-				B06484F11A70F5CB0077A855 /* MFDescriptorAttributeNames.h in Headers */,
 				B06483BB1A70F5CB0077A855 /* MFActionLauncher.h in Headers */,
 				B06484B61A70F5CB0077A855 /* MFCoreFoundationExt.h in Headers */,
 				B064841E1A70F5CB0077A855 /* MFRestInvocationConfig.h in Headers */,
-				B06484D71A70F5CB0077A855 /* MFBuilderFactory.h in Headers */,
-				B06484F21A70F5CB0077A855 /* MFDescriptorCommon.h in Headers */,
 				B06484101A70F5CB0077A855 /* MFAESRestAuth.h in Headers */,
 				B06484B11A70F5CB0077A855 /* MFTechnicalError.h in Headers */,
 				B06484D31A70F5CB0077A855 /* MFMessage.h in Headers */,
 				B06484B71A70F5CB0077A855 /* MFEnumHelperProtocol.h in Headers */,
-				B06484FB1A70F5CB0077A855 /* MFSectionDescriptor.h in Headers */,
-				B06484DC1A70F5CB0077A855 /* MFFormBuilderProtocol.h in Headers */,
 				B06483CE1A70F5CB0077A855 /* MFImportDatabaseAction.h in Headers */,
 				B06483C91A70F5CB0077A855 /* MFCoreBusiness.h in Headers */,
 				B06483B11A70F5CB0077A855 /* MFCoreLog.h in Headers */,
@@ -1621,16 +1335,13 @@
 				B06484001A70F5CB0077A855 /* MFReachability.h in Headers */,
 				B06484261A70F5CB0077A855 /* MFJSonNode.h in Headers */,
 				B06484841A70F5CB0077A855 /* MFCsvLoaderHelper.h in Headers */,
-				B06485141A70F5CB0077A855 /* MFReaderGroup.h in Headers */,
 				B06484051A70F5CB0077A855 /* MFAESUtil.h in Headers */,
 				B06484441A70F5CB0077A855 /* MFRestResponseReaderProtocol.h in Headers */,
 				B06483D71A70F5CB0077A855 /* MFContextFactoryProtocol.h in Headers */,
 				B06483F11A70F5CB0077A855 /* MFLocalCredentialService.h in Headers */,
 				B06484251A70F5CB0077A855 /* MFJsonMapperServiceProtocol.h in Headers */,
-				B06484FD1A70F5CB0077A855 /* MFWorkspaceDescriptor.h in Headers */,
 				B06484A11A70F5CB0077A855 /* MFCoreError.h in Headers */,
 				B06483BD1A70F5CB0077A855 /* MFActionNotFound.h in Headers */,
-				B06484F71A70F5CB0077A855 /* MFFormDescriptor.h in Headers */,
 				B06484AD1A70F5CB0077A855 /* MFLocalDataAccessTechnicalError.h in Headers */,
 				B06484381A70F5CB0077A855 /* MFAck.h in Headers */,
 				B06484781A70F5CB0077A855 /* MFFetchOptions.h in Headers */,
@@ -1639,8 +1350,6 @@
 				B06484431A70F5CB0077A855 /* MFRestResponseProtocol.h in Headers */,
 				B064849B1A70F5CB0077A855 /* MFUpdatableFromDataLoaderProtocol.h in Headers */,
 				B06483F91A70F5CB0077A855 /* MParameter.h in Headers */,
-				B064850D1A70F5CB0077A855 /* MFReaderDelegate.h in Headers */,
-				B06485071A70F5CB0077A855 /* MFReaderAbstractCommon.h in Headers */,
 				B06484A41A70F5CB0077A855 /* MFError.h in Headers */,
 				B06484161A70F5CB0077A855 /* MFHmacRestAuth.h in Headers */,
 				B064849A1A70F5CB0077A855 /* MFListEntitiesLoaderProtocol.h in Headers */,
@@ -1653,29 +1362,23 @@
 				B06484021A70F5CB0077A855 /* MFSyncReachability.h in Headers */,
 				B06484221A70F5CB0077A855 /* MFRestInvokerProtocol.h in Headers */,
 				B06483C61A70F5CB0077A855 /* MFActionQualifierProtocol.h in Headers */,
-				B064850B1A70F5CB0077A855 /* MFReaderColumn.h in Headers */,
 				B06484731A70F5CB0077A855 /* MFCoreCoredata.h in Headers */,
-				B06485001A70F5CB0077A855 /* MFCoreFormInit.h in Headers */,
 				B06484861A70F5CB0077A855 /* MFCsvLoaderProtocol.h in Headers */,
 				B06483C41A70F5CB0077A855 /* MFActionQualifier.h in Headers */,
 				B06484901A70F5CB0077A855 /* MFAbstractDataLoader.h in Headers */,
-				B06485171A70F5CB0077A855 /* MFReaderSection.h in Headers */,
 				B06484141A70F5CB0077A855 /* MFBasicRestAuth.h in Headers */,
 				B06484581A70F5CB0077A855 /* MFCoreApplication.h in Headers */,
 				B06483B21A70F5CB0077A855 /* MFCoreLogging.h in Headers */,
 				B06484B81A70F5CB0077A855 /* MFHelperBOOL.h in Headers */,
-				B06485011A70F5CB0077A855 /* MFLoadFormRunInit.h in Headers */,
 				B06483F51A70F5CB0077A855 /* MParameter+Dao.h in Headers */,
 				B06484231A70F5CB0077A855 /* MFJSONKitService.h in Headers */,
 				B06484181A70F5CB0077A855 /* MFApplication+MFRestUserConnectionConfig.h in Headers */,
-				B06484E31A70F5CB0077A855 /* MFProperty+Forms.h in Headers */,
 				B06484461A70F5CB0077A855 /* MFStreamResponseReader.h in Headers */,
 				B06483E61A70F5CB0077A855 /* MFSyncBusiness.h in Headers */,
 				B064844D1A70F5CB0077A855 /* MFSyncTimestampService.h in Headers */,
 				B06484891A70F5CB0077A855 /* MFFwkCsvLoaderRunInit.h in Headers */,
 				B064845E1A70F5CB0077A855 /* MFBeanLoader.h in Headers */,
 				B06483F41A70F5CB0077A855 /* MFSyncCredentials.h in Headers */,
-				B06484EC1A70F5CB0077A855 /* MFConfigurationKeyboardingUIComponent.h in Headers */,
 				B06483CA1A70F5CB0077A855 /* MFExportDatabaseAction.h in Headers */,
 				B064849F1A70F5CB0077A855 /* MFBusinessTechnicalError.h in Headers */,
 				B06483D01A70F5CB0077A855 /* MFResetDatabaseAction.h in Headers */,
@@ -1684,8 +1387,6 @@
 				B06484691A70F5CB0077A855 /* MFConfigurationHandler.h in Headers */,
 				B064841A1A70F5CB0077A855 /* MFConnectionTimeout.h in Headers */,
 				B064847C1A70F5CB0077A855 /* NSPredicate+MFPredicateHelper.h in Headers */,
-				B06485211A70F5CB0077A855 /* MFValidatorDescriptorProtocol.h in Headers */,
-				B06484F41A70F5CB0077A855 /* MFDescriptorCommonProtocol.h in Headers */,
 				B06484481A70F5CB0077A855 /* MFSyncRestResponseProtocol.h in Headers */,
 				B06483B31A70F5CB0077A855 /* MFLogging.h in Headers */,
 				B06484CA1A70F5CB0077A855 /* MFLocalizedString.h in Headers */,
@@ -1693,10 +1394,7 @@
 				B06484451A70F5CB0077A855 /* MFStreamResponseProcessorProtocol.h in Headers */,
 				B064841C1A70F5CB0077A855 /* MFRestConnectionConfig.h in Headers */,
 				B06484BC1A70F5CB0077A855 /* MFHelperQueue.h in Headers */,
-				B064851E1A70F5CB0077A855 /* MFCoreFormValidator.h in Headers */,
 				B06483C71A70F5CB0077A855 /* MFCoreAction.h in Headers */,
-				B06485091A70F5CB0077A855 /* MFReaderAttributeNameDictionary.h in Headers */,
-				B06484F01A70F5CB0077A855 /* MFCoreFormDescriptor.h in Headers */,
 				B064846B1A70F5CB0077A855 /* MFCoreConfig.h in Headers */,
 				B064842F1A70F5CB0077A855 /* MFDomRequestBuilderProtocol.h in Headers */,
 				B06483D31A70F5CB0077A855 /* MFContext.h in Headers */,
@@ -1705,7 +1403,6 @@
 				B06483D51A70F5CB0077A855 /* MFContextFactory.h in Headers */,
 				B06484C61A70F5CB0077A855 /* NSString+Utilities.h in Headers */,
 				B064840C1A70F5CB0077A855 /* MFmd5.h in Headers */,
-				B064851F1A70F5CB0077A855 /* MFValidatorDescriptorFactory.h in Headers */,
 				B064840E1A70F5CB0077A855 /* MFAbstractRestAuth.h in Headers */,
 				B064844A1A70F5CB0077A855 /* MFObjectToSyncService.h in Headers */,
 				B06484421A70F5CB0077A855 /* MFRestResponseProcessorProtocol.h in Headers */,
@@ -1713,14 +1410,11 @@
 				B06484951A70F5CB0077A855 /* MFDataLoaderActionParameterProtocol.h in Headers */,
 				B06484BA1A70F5CB0077A855 /* MFHelperIntrospection.h in Headers */,
 				B06484281A70F5CB0077A855 /* MFJsonObject.h in Headers */,
-				B06484E11A70F5CB0077A855 /* MFFormConstants.h in Headers */,
 				B06483D81A70F5CB0077A855 /* MFContextProtocol.h in Headers */,
-				B06485161A70F5CB0077A855 /* MFReaderProtocol.h in Headers */,
 				B06484121A70F5CB0077A855 /* MFAuthHelper.h in Headers */,
 				B06483E01A70F5CB0077A855 /* MFSecurityHelper.h in Headers */,
 				B06484A21A70F5CB0077A855 /* MFDataAccessTechnicalError.h in Headers */,
 				B06484491A70F5CB0077A855 /* MFObjectToSyncProtocol.h in Headers */,
-				B064850E1A70F5CB0077A855 /* MFReaderFactory.h in Headers */,
 				B06484201A70F5CB0077A855 /* MFRestInvoker.h in Headers */,
 				B06484C41A70F5CB0077A855 /* NSData+Utilities.h in Headers */,
 				B06483EF1A70F5CB0077A855 /* MFSynchroProperty.h in Headers */,
@@ -1732,23 +1426,16 @@
 				B06484321A70F5CB0077A855 /* MFRestRequestProtocol.h in Headers */,
 				B06484601A70F5CB0077A855 /* MFBeanLoaderWithTyphoon.h in Headers */,
 				B06483EB1A70F5CB0077A855 /* MFSynchronizationActionParameterIN.h in Headers */,
-				B06484EE1A70F5CB0077A855 /* MFConfigurationUIComponent.h in Headers */,
 				B064847A1A70F5CB0077A855 /* NSManagedObject+MFCommonDao.h in Headers */,
-				B06484F51A70F5CB0077A855 /* MFFieldDescriptor.h in Headers */,
 				B06484531A70F5CB0077A855 /* MObjectToSynchronize.h in Headers */,
-				B06484EA1A70F5CB0077A855 /* MFConfigurationKeyboardingRegularExpressionUIComponent.h in Headers */,
-				B06869141AD6BE5700D6B529 /* MFBuilderForm.h in Headers */,
-				B06484F91A70F5CB0077A855 /* MFGroupDescriptor.h in Headers */,
 				B06484401A70F5CB0077A855 /* MFEntityAcks.h in Headers */,
 				B06483FB1A70F5CB0077A855 /* MFCoreSynchro.h in Headers */,
 				B06483FC1A70F5CB0077A855 /* APLAppDelegate.h in Headers */,
 				B06484D21A70F5CB0077A855 /* MFCoreMessage.h in Headers */,
-				B06484E61A70F5CB0077A855 /* MFColumnDescriptor.h in Headers */,
 				B06484031A70F5CB0077A855 /* Reachability.h in Headers */,
 				B06483DB1A70F5CB0077A855 /* KeychainItemWrapper.h in Headers */,
 				B064844C1A70F5CB0077A855 /* MFSyncService.h in Headers */,
 				B06484C91A70F5CB0077A855 /* MFCoreI18n.h in Headers */,
-				B06485221A70F5CB0077A855 /* MFValidatorGroupDescriptor.h in Headers */,
 				B06483F71A70F5CB0077A855 /* MParameter+Factory.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1803,7 +1490,7 @@
 		B041723D1A70F5350045C268 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = Sopra;
 				TargetAttributes = {
 					B04172451A70F5350045C268 = {
@@ -1837,8 +1524,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B06868EE1AD6AD8600D6B529 /* Pods.debug.xcconfig in Resources */,
-				B06868EF1AD6AD8600D6B529 /* Pods.release.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1931,15 +1616,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B06483BC1A70F5CB0077A855 /* MFActionLauncher.m in Sources */,
-				B06484F31A70F5CB0077A855 /* MFDescriptorCommon.m in Sources */,
 				B06483F81A70F5CB0077A855 /* MParameter+Factory.m in Sources */,
 				B064842E1A70F5CB0077A855 /* MFAbstractDomEntityRequestBuilder.m in Sources */,
-				B06484EF1A70F5CB0077A855 /* MFConfigurationUIComponent.m in Sources */,
 				B06484AE1A70F5CB0077A855 /* MFLocalDataAccessTechnicalError.m in Sources */,
 				B06484311A70F5CB0077A855 /* MFDomRequestWriter.m in Sources */,
 				B064848C1A70F5CB0077A855 /* MFProjectCsvLoaderRunInit.m in Sources */,
 				B064849E1A70F5CB0077A855 /* MFBusinessError.m in Sources */,
-				B06484D81A70F5CB0077A855 /* MFBuilderFactory.m in Sources */,
 				B06484151A70F5CB0077A855 /* MFBasicRestAuth.m in Sources */,
 				B064846F1A70F5CB0077A855 /* MFProperty.m in Sources */,
 				B06484B21A70F5CB0077A855 /* MFTechnicalError.m in Sources */,
@@ -1949,27 +1631,19 @@
 				B06484041A70F5CB0077A855 /* Reachability.m in Sources */,
 				B064845F1A70F5CB0077A855 /* MFBeanLoader.m in Sources */,
 				B06484941A70F5CB0077A855 /* MFDataLoaderActionParameter.m in Sources */,
-				B06484FE1A70F5CB0077A855 /* MFWorkspaceDescriptor.m in Sources */,
-				B064850F1A70F5CB0077A855 /* MFReaderFactory.m in Sources */,
 				B06484C31A70F5CB0077A855 /* MFURL.m in Sources */,
 				B06484271A70F5CB0077A855 /* MFJSonNode.m in Sources */,
 				B064840D1A70F5CB0077A855 /* MFmd5.m in Sources */,
 				B06483E41A70F5CB0077A855 /* MFSecurityUtils.m in Sources */,
 				B064843D1A70F5CB0077A855 /* MFAckStreamRequestBuilder.m in Sources */,
-				B06485021A70F5CB0077A855 /* MFLoadFormRunInit.m in Sources */,
 				B06484351A70F5CB0077A855 /* MFAbstractRestResponse.m in Sources */,
-				B064850A1A70F5CB0077A855 /* MFReaderAttributeNameDictionary.m in Sources */,
 				B06484081A70F5CB0077A855 /* NSData+AES256.m in Sources */,
 				B06484C51A70F5CB0077A855 /* NSData+Utilities.m in Sources */,
-				B06485181A70F5CB0077A855 /* MFReaderSection.m in Sources */,
-				B06485041A70F5CB0077A855 /* MFLoadVisualConfigurationRunInit.m in Sources */,
 				B06484B01A70F5CB0077A855 /* MFRemoteDataAccessTechnicalError.m in Sources */,
 				B06484CB1A70F5CB0077A855 /* MFLocalizedString.m in Sources */,
 				B06483FA1A70F5CB0077A855 /* MParameter.m in Sources */,
-				B064851A1A70F5CB0077A855 /* MFReaderStackAttribute.m in Sources */,
 				B06484851A70F5CB0077A855 /* MFCsvLoaderHelper.m in Sources */,
 				B06483C21A70F5CB0077A855 /* MFActionProgressMessageDispatcher.m in Sources */,
-				B06484DA1A70F5CB0077A855 /* MFBuilderForm.m in Sources */,
 				B06484C71A70F5CB0077A855 /* NSString+Utilities.m in Sources */,
 				B06484BD1A70F5CB0077A855 /* MFHelperQueue.m in Sources */,
 				B064843F1A70F5CB0077A855 /* MFDomResponseReader.m in Sources */,
@@ -1977,12 +1651,8 @@
 				B06483EE1A70F5CB0077A855 /* MFSynchronizationActionParameterOUT.m in Sources */,
 				B06484291A70F5CB0077A855 /* MFJsonObject.m in Sources */,
 				B06484191A70F5CB0077A855 /* MFApplication+MFRestUserConnectionConfig.m in Sources */,
-				B064850C1A70F5CB0077A855 /* MFReaderColumn.m in Sources */,
 				B064843B1A70F5CB0077A855 /* MFAckDomRequestBuilder.m in Sources */,
-				B06484E91A70F5CB0077A855 /* MFConfigurationGroupDescriptor.m in Sources */,
-				B06485201A70F5CB0077A855 /* MFValidatorDescriptorFactory.m in Sources */,
 				B06484011A70F5CB0077A855 /* MFReachability.m in Sources */,
-				B06484E41A70F5CB0077A855 /* MFProperty+Forms.m in Sources */,
 				B06484751A70F5CB0077A855 /* MFCoreDataHelper.m in Sources */,
 				B06484831A70F5CB0077A855 /* MFCsvFileDescriptor.m in Sources */,
 				B06483CB1A70F5CB0077A855 /* MFExportDatabaseAction.m in Sources */,
@@ -1994,7 +1664,6 @@
 				B064848A1A70F5CB0077A855 /* MFFwkCsvLoaderRunInit.m in Sources */,
 				B064846D1A70F5CB0077A855 /* MFFwkProperty.m in Sources */,
 				B06484D01A70F5CB0077A855 /* MFWaitRunInit.m in Sources */,
-				B06484E21A70F5CB0077A855 /* MFFormConstants.m in Sources */,
 				B06484881A70F5CB0077A855 /* MFCSVParser.m in Sources */,
 				B06484AA1A70F5CB0077A855 /* MFException.m in Sources */,
 				B064844B1A70F5CB0077A855 /* MFObjectToSyncService.m in Sources */,
@@ -2005,9 +1674,6 @@
 				B06484111A70F5CB0077A855 /* MFAESRestAuth.m in Sources */,
 				B06483DC1A70F5CB0077A855 /* KeychainItemWrapper.m in Sources */,
 				B06484571A70F5CB0077A855 /* MFApplication.m in Sources */,
-				B06485111A70F5CB0077A855 /* MFReaderField.m in Sources */,
-				B06485081A70F5CB0077A855 /* MFReaderAbstractCommon.m in Sources */,
-				B06484ED1A70F5CB0077A855 /* MFConfigurationKeyboardingUIComponent.m in Sources */,
 				B06483BE1A70F5CB0077A855 /* MFActionNotFound.m in Sources */,
 				B06483E81A70F5CB0077A855 /* MFSynchronisationResponseTreatmentInformation.m in Sources */,
 				B06484D41A70F5CB0077A855 /* MFMessage.m in Sources */,
@@ -2019,15 +1685,11 @@
 				B06483EA1A70F5CB0077A855 /* MFSynchronizationAction.m in Sources */,
 				B06483F01A70F5CB0077A855 /* MFSynchroProperty.m in Sources */,
 				B06483E11A70F5CB0077A855 /* MFSecurityHelper.m in Sources */,
-				B06484DF1A70F5CB0077A855 /* MFConfigurationHandler+Forms.m in Sources */,
 				B06484211A70F5CB0077A855 /* MFRestInvoker.m in Sources */,
-				B06484F81A70F5CB0077A855 /* MFFormDescriptor.m in Sources */,
 				B06483D11A70F5CB0077A855 /* MFResetDatabaseAction.m in Sources */,
-				B06485131A70F5CB0077A855 /* MFReaderForm.m in Sources */,
 				B06484BB1A70F5CB0077A855 /* MFHelperIntrospection.m in Sources */,
 				B06483C51A70F5CB0077A855 /* MFActionQualifier.m in Sources */,
 				B06484B41A70F5CB0077A855 /* MFUnexpectedTypeNameException.m in Sources */,
-				B06485231A70F5CB0077A855 /* MFValidatorGroupDescriptor.m in Sources */,
 				B06484771A70F5CB0077A855 /* MFCoreDataRunInit.m in Sources */,
 				B06484B91A70F5CB0077A855 /* MFHelperBOOL.m in Sources */,
 				B06484611A70F5CB0077A855 /* MFBeanLoaderWithTyphoon.m in Sources */,
@@ -2037,24 +1699,17 @@
 				B06484AC1A70F5CB0077A855 /* MFKeyNotFound.m in Sources */,
 				B064845C1A70F5CB0077A855 /* MFStarter.m in Sources */,
 				B06484411A70F5CB0077A855 /* MFEntityAcks.m in Sources */,
-				B06485151A70F5CB0077A855 /* MFReaderGroup.m in Sources */,
 				B06484991A70F5CB0077A855 /* MFGenericLoadDataAction.m in Sources */,
 				B06484641A70F5CB0077A855 /* MFBeansKeys.m in Sources */,
-				B06484E71A70F5CB0077A855 /* MFColumnDescriptor.m in Sources */,
 				B064847B1A70F5CB0077A855 /* NSManagedObject+MFCommonDao.m in Sources */,
-				B06484EB1A70F5CB0077A855 /* MFConfigurationKeyboardingRegularExpressionUIComponent.m in Sources */,
-				B06484FA1A70F5CB0077A855 /* MFGroupDescriptor.m in Sources */,
-				B06484F61A70F5CB0077A855 /* MFFieldDescriptor.m in Sources */,
 				B06484BF1A70F5CB0077A855 /* MFHelperType.m in Sources */,
 				B064847D1A70F5CB0077A855 /* NSPredicate+MFPredicateHelper.m in Sources */,
 				B06484471A70F5CB0077A855 /* MFStreamResponseReader.m in Sources */,
 				B06483DF1A70F5CB0077A855 /* MFKeychainRunInit.m in Sources */,
-				B064851C1A70F5CB0077A855 /* MFReaderWorkspace.m in Sources */,
 				B06484371A70F5CB0077A855 /* MFAbstractStreamProcessor.m in Sources */,
 				B06484171A70F5CB0077A855 /* MFHmacRestAuth.m in Sources */,
 				B06484541A70F5CB0077A855 /* MObjectToSynchronize.m in Sources */,
 				B06484131A70F5CB0077A855 /* MFAuthHelper.m in Sources */,
-				B06484FC1A70F5CB0077A855 /* MFSectionDescriptor.m in Sources */,
 				B06484791A70F5CB0077A855 /* MFFetchOptions.m in Sources */,
 				B06483F21A70F5CB0077A855 /* MFLocalCredentialService.m in Sources */,
 				B064841F1A70F5CB0077A855 /* MFRestInvocationConfig.m in Sources */,
@@ -2077,9 +1732,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B068691D1AD6C53900D6B529 /* MFTestAssembly.m in Sources */,
-				B06869161AD6BF4900D6B529 /* MFBuilderForm.m in Sources */,
 				B0AAFB7A1AD41C4500463F7F /* MFCoreTests.m in Sources */,
+				B0585EFA1B1E07C000BA2647 /* MFEmptyAction.m in Sources */,
+				B0585EF71B1E07A200BA2647 /* MFTestAssembly.m in Sources */,
+				B0585EF11B1E072200BA2647 /* MFCoreActionTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

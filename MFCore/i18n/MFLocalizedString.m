@@ -35,6 +35,10 @@ NSString *const CONST_PROJECT_LOCALIZED_STRING          = @"Localizable-project"
     }
     
     if ([string isEqualToString:key]) {
+        string = NSLocalizedString(key, nil);
+    }
+    
+    if ([string isEqualToString:key]) {
         string = key;
     }
     

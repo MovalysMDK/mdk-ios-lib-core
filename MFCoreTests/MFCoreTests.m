@@ -51,11 +51,6 @@ extern void __gcov_flush();
     [super tearDown];
 }
 
--(void) testFormBuilder {
-    MFBuilderForm *formBuilder = [[MFBuilderForm alloc] init];
-    XCTAssertNil([formBuilder buildFromPlistFileName:@"fakeFile"]);
-    XCTAssertTrue([formBuilder conformsToProtocol:@protocol(MFFormBuilderProtocol)]);
-}
 
 -(void) testLocalizedString {
     XCTAssertEqual(MFLocalizedStringFromKey(@"BasicTest"), @"BasicTest");
@@ -85,19 +80,6 @@ extern void __gcov_flush();
     
     XCTAssertEqual(MFLocalizedStringFromKey(@"BasicTest"), @"BasicTest");
 }
-
-//Impossible sur un simulateur...
-//-(void) testSecurity {
-//    MFBeanLoader *beanLoaderInstance = [MFBeanLoader getInstance];
-//    [beanLoaderInstance performSelector:@selector(registerComponentsFromAssembly:) withObject:[MFTestAssembly class]];
-//    [MFKeychain storePasswordInKeychain:@"MyPasswordForTest"];
-//    XCTAssertEqualObjects([MFKeychain retrievePasswordFromKeychain], @"MyPasswordForTest");
-//    
-//    NSDictionary *testDictionary = @{@"Nom" : @"DUPONT", @"Prenom" : @"Eric"};
-//    [MFKeychain storeValueInKeychain:[testDictionary description] forKey:@"tester"];
-//    
-//    XCTAssertEqualObjects([testDictionary description] , [MFKeychain retrieveValueFromKeychainForKey:@"tester"]);
-//}
 
 
 
