@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
     dep.dependency 'JSONKit', '>= 1.6'
     dep.dependency 'CocoaLumberjack', '2.0.0'
     dep.dependency 'MagicalRecord', '2.2'
-    dep.dependency 'CocoaSecurity', '2.4'
+    dep.dependency 'CocoaSecurity', '1.2.4'
   end
 
   s.subspec 'SecurityWrapper' do |securitywrapper|
