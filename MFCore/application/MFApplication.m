@@ -57,6 +57,24 @@ NSString *synchroEntryPoint ;
     return self;
 }
 
+- (id) getBeanWithKey:(NSString *) key{
+    @synchronized([MFBeanLoader getInstance]) {
+        return [[MFBeanLoader getInstance] getBeanWithKey:key];
+    }
+}
+
+- (id) getBeanWithType:(id)classOrProtocol {
+    @synchronized([MFBeanLoader getInstance]) {
+        return [[MFBeanLoader getInstance] getBeanWithType:classOrProtocol];
+    }
+}
+
+- (id) getOptionalBeanWithKey:(NSString *)key {
+    @synchronized([MFBeanLoader getInstance]) {
+        return [[MFBeanLoader getInstance] getOptionalBeanWithKey:key];
+    }
+}
+
 -(BOOL) isInMainQueue {
     return [MFHelperQueue isInMainQueue];
 }
