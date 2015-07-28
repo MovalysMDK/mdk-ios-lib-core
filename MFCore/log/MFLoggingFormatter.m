@@ -46,9 +46,11 @@
     NSString *logLevel;
     
     switch (logMessage->_flag) {
-        case DDLogLevelError : logLevel = @"ERROR"; break;
-        case DDLogLevelWarning  : logLevel = @"WARN"; break;
-        case DDLogLevelInfo  : logLevel = @"INFO"; break;
+        case DDLogFlagError : logLevel = @"ERROR"; break;
+        case DDLogFlagWarning  : logLevel = @"WARN"; break;
+        case DDLogFlagInfo  : logLevel = @"INFO"; break;
+        case DDLogFlagDebug  : logLevel = @"DEBUG"; break;
+        case DDLogFlagVerbose  : logLevel = @"VERBOSE"; break;
         default             : logLevel = @"VERBOSE"; break;
     }
     

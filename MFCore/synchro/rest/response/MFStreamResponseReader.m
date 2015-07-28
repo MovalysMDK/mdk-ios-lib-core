@@ -33,7 +33,7 @@ NSMutableDictionary *processedEntities;
 -(id) initForClass:(Class <MFRestResponseProtocol>)responseClass
 {
     if ((self = [super init])) {
-        self.ResponseClass = responseClass;
+        self.responseClass = responseClass;
         self.modelsDictionary = [[NSMutableDictionary alloc] init];
         self.mapStreamResponseProcessors = [[NSMutableDictionary alloc] init];
         self.jsonReader = [[MFJsonReader alloc] init];

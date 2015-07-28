@@ -27,7 +27,7 @@
 #import "MFSyncRestResponseProtocol.h"
 #import "MFRestError.h"
 #import "MFJsonMapperServiceProtocol.h"
-#import "MFApplication.h"
+#import "MFBeanLoader.h"
 #import "MFTechnicalError.h"
 #import "MFDomResponseReader.h"
 #import "MFStreamResponseReader.h"
@@ -103,8 +103,8 @@ CFHTTPMessageRef httpResponse;
     CFHTTPMessageSetHeaderFieldValue(request, CFSTR("Content-Type"), CFSTR("application/json"));
     
     // on ajoute les identifiants
-    MFAbstractRestAuth *restAuth = [[MFApplication getInstance] getBeanWithKey:@"MFAbstractRestAuth"];
-    NSDictionary *headers = [restAuth getAuthHeadersWithLogin:[self.connectionConfig user] withPassword:[self.connectionConfig password] withUrl:(__bridge NSString *)(url) withEntrypoint:[self.connectionConfig wsEntryPoint]];
+    MFAbstractRestAuth *restAuth = [[MFBeanLoader getInstance] getBeanWithKey:@"MFAbstractRestAuth"];
+    NSDictionary *headers = [restAuth getAuthHeadersWithLogin:[self.connectionConfig user] withPassword:[self.connectionConfig password] withUrl:[(__bridge NSURL *)(url) path] withEntrypoint:[self.connectionConfig wsEntryPoint]];
     for (NSString *key in headers) {
         CFHTTPMessageSetHeaderFieldValue(request, (__bridge CFStringRef)key, (__bridge CFStringRef)[headers objectForKey:key]);
     }

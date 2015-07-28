@@ -21,7 +21,7 @@
 
 #import "MObjectToSynchronize+Factory.h"
 #import "MFCsvLoaderHelper.h"
-#import "MFApplication.h"
+#import "MFBeanLoader.h"
 #import "MFBeansKeys.h"
 
 @implementation MObjectToSynchronize (Factory)
@@ -38,7 +38,7 @@
 
 + (MObjectToSynchronize *) MF_createMObjectToSynchronizeWithDictionary:(NSDictionary *)dictionary inContext:(id<MFContextProtocol>)context
 {
-    MFCsvLoaderHelper *csvHelper = [[MFApplication getInstance] getBeanWithKey:BEAN_KEY_CSV_LOADER_HELPER];
+    MFCsvLoaderHelper *csvHelper = [[MFBeanLoader getInstance] getBeanWithKey:BEAN_KEY_CSV_LOADER_HELPER];
     MObjectToSynchronize *newInstance = [self MF_createMObjectToSynchronizeInContext:context];
     
     // identifier attribute

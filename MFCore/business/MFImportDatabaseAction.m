@@ -43,7 +43,7 @@
     NSFileManager *fileManager = [NSFileManager defaultManager];
     if ( [fileManager fileExistsAtPath:destPath]) {
         
-        MFCoreDataHelper *coreDataHelper = [[MFApplication getInstance] getBeanWithKey:BEAN_KEY_CORE_DATA_HELPER];
+        MFCoreDataHelper *coreDataHelper = [[MFBeanLoader getInstance] getBeanWithKey:BEAN_KEY_CORE_DATA_HELPER];
         //coreDataHelper.sqliteStore
         if ( [fileManager removeItemAtPath:destPath error:&error]) {
             MFCoreLogVerbose(@" Delete KO  '%@' , '%@' , '%@'" , destPath , error.localizedDescription , error.localizedFailureReason ) ;
@@ -113,7 +113,7 @@
     NSString *documentsDirectory = [paths objectAtIndex:0] ;
     MFCoreLogVerbose(@" %@ documentsDirectory " , documentsDirectory ) ;
     
-    //MFConfigurationHandler *confHandler = [[MFApplication getInstance] getBeanWithKey:BEAN_KEY_CONFIGURATION_HANDLER];
+    //MFConfigurationHandler *confHandler = [[MFBeanLoader getInstance] getBeanWithKey:BEAN_KEY_CONFIGURATION_HANDLER];
 
     NSString *srcPath = [documentsDirectory stringByAppendingPathComponent:[@"New" stringByAppendingString:databaseName]];
     

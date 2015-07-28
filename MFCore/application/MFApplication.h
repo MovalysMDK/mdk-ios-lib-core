@@ -42,32 +42,6 @@
 +(instancetype) getInstance;
 
 /*!
- * @brief retourne un bean d'après la clé key
- * @param key : La clé du bean que l'on souhaite récupérer
- * @return un bean si le composant existe ou une exception si le composant n'est pas paramétré
- */
-- (id) getBeanWithKey:(NSString *)key;
-
-/*!
- * @brief retourne un bean d'après la clé key
- * @param key : La clé du bean que l'on souhaite récupérer
- * @return un bean si le composant existe ou 'nil' si le composant n'est pas paramétré
- */
-- (id) getOptionalBeanWithKey:(NSString *)key;
-
-/*!
- * @brief retourne un bean d'après un type de Classe ou Protocole
- * @param classOrProtocol : La classe ou le protocole dont oon souhaite récupérer un bean
- * @return un bean si le composant existe ou une exception si le composant n'est pas paramétré */
-- (id) getBeanWithType:(id)classOrProtocol;
-
-/*!
- * @brief retourne tous les beans d'après un type de Classe ou Protocole
- * @param classOrProtocol : La classe ou le protocole dont on souhaite récupérer un bean
- */
-- (NSArray*) getAllBeansWithType:(id)classOrProtocol;
-
-/*!
  * @brief indique si on est dans le queue principale
  * @return true si on est dans la queue principale
  */

@@ -105,11 +105,11 @@
     [dispatch dispatchProgressMessage:@"before prepare synchro" withParam:nil andContext:context];
     
     // initialise le service de sauvegarde de la dernière date de synchro
-    MFSyncTimestampService *syncTimestampService = [[MFApplication getInstance] getBeanWithKey:@"MFSyncTimestampService"];
+    MFSyncTimestampService *syncTimestampService = [[MFBeanLoader getInstance] getBeanWithKey:@"MFSyncTimestampService"];
     NSDictionary *syncTimestamps = [syncTimestampService getSyncTimestampsWithContext:context];
     
     // initialise le service de récupération des entités à synchroniser (ie les entités modifiées ou créées)
-    MFObjectToSyncService *objectToSyncService = [[MFApplication getInstance] getBeanWithKey:@"MFObjectToSyncService"];
+    MFObjectToSyncService *objectToSyncService = [[MFBeanLoader getInstance] getBeanWithKey:@"MFObjectToSyncService"];
     NSDictionary *currentObjectsToSync = [objectToSyncService getObjectsToSyncWithContext:context];
     
     // liste des invocations, méthode de récupération
@@ -117,7 +117,7 @@
     
     if ([invocationsList count] > 0) {
         // récupère la configuration
-        MFConfigurationHandler* config = [[MFApplication getInstance] getBeanWithKey:BEAN_KEY_CONFIGURATION_HANDLER];
+        MFConfigurationHandler* config = [[MFBeanLoader getInstance] getBeanWithKey:BEAN_KEY_CONFIGURATION_HANDLER];
         
         
         MFRestConnectionConfig *restConnectionConfig = [[MFBeanLoader getInstance] getBeanWithKey:@"MFRestConnectionConfig"];
@@ -138,7 +138,7 @@
         [restConnectionConfig setMockStatusCode:[[config getNumberProperty:sync_mock_testid] integerValue]];
         
         // initialise une instance de la classe invoquant le serveur
-        id<MFRestInvokerProtocol> restInvoker = [[MFApplication getInstance] getBeanWithKey:@"RestInvoker"];
+        id<MFRestInvokerProtocol> restInvoker = [[MFBeanLoader getInstance] getBeanWithKey:@"RestInvoker"];
         
         // réponse et réponse précédentes, lues en retour du serveur
         id<MFSyncRestResponseProtocol> response;
@@ -226,7 +226,7 @@
 {
     MFSynchronizationActionParameterOUT *result = [[MFSynchronizationActionParameterOUT alloc] init];
     
-    [[[MFApplication getInstance] getBeanWithKey:@"MFLocalCredentialService"] storeCredentialsWithLogin:connectionConfig.user withResource:response.resource withContext:context];
+    [[[MFBeanLoader getInstance] getBeanWithKey:@"MFLocalCredentialService"] storeCredentialsWithLogin:connectionConfig.user withResource:response.resource withContext:context];
     
     return result;
 }
@@ -273,11 +273,11 @@
         [responseProcessor processResponse:response withTimestamps:syncTimestamps withContext:context withInformation:information];
     }
     
-    [[[MFApplication getInstance] getBeanWithKey:@"MFSyncTimestampService"] saveSyncTimestamps:syncTimestamps withContext:context];
-    [[[MFApplication getInstance] getBeanWithKey:@"MFObjectToSyncService"] deleteObjectToSynchronize:synchedList withContext:context];
+    [[[MFBeanLoader getInstance] getBeanWithKey:@"MFSyncTimestampService"] saveSyncTimestamps:syncTimestamps withContext:context];
+    [[[MFBeanLoader getInstance] getBeanWithKey:@"MFObjectToSyncService"] deleteObjectToSynchronize:synchedList withContext:context];
     
     // on commit
-    MFCoreDataHelper *coreDataHelper = [[MFApplication getInstance] getBeanWithKey:BEAN_KEY_CORE_DATA_HELPER];
+    MFCoreDataHelper *coreDataHelper = [[MFBeanLoader getInstance] getBeanWithKey:BEAN_KEY_CORE_DATA_HELPER];
     [coreDataHelper saveContext:context];
 }
 
@@ -330,7 +330,7 @@
  */
 - (void) doOnAuthenticationFailedWithContext:(id<MFContextProtocol>) context
 {
-    [[[MFApplication getInstance] getBeanWithType:@protocol(MFLocalCredentialServiceProtocol)] deleteLocalCredentialsWithContext:context];
+    [[[MFBeanLoader getInstance] getBeanWithType:@protocol(MFLocalCredentialServiceProtocol)] deleteLocalCredentialsWithContext:context];
 }
 
 - (void) doOnIncompatibleMobileTimeWithContext:(id<MFContextProtocol>) context withDispatcher:(MFActionProgressMessageDispatcher *) dispatch
@@ -348,7 +348,7 @@
     
     NSString *user = [[MFApplication getInstance] userName];
     
-    int identitifyResult = [[[MFApplication getInstance] getBeanWithType:@protocol(MFLocalCredentialServiceProtocol)] doIdentifyWithLogin:user withContext:context];
+    int identitifyResult = [[[MFBeanLoader getInstance] getBeanWithType:@protocol(MFLocalCredentialServiceProtocol)] doIdentifyWithLogin:user withContext:context];
     
     if (identitifyResult == Identified_OK) {
         result = [[MFSynchronizationActionParameterOUT alloc] init];

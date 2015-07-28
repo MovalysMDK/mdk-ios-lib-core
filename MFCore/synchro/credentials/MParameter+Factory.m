@@ -22,7 +22,7 @@
 #import "MParameter+Factory.h"
 #import "MFCsvLoaderHelper.h"
 #import "MFBeansKeys.h"
-#import "MFApplication.h"
+#import "MFBeanLoader.h"
 
 @implementation MParameter (Factory)
 
@@ -39,7 +39,7 @@
 + (MParameter *) MF_createMParameterWithDictionary:(NSDictionary *)dictionary inContext:(id<MFContextProtocol>)context
 {
     if ([dictionary objectForKey:@"value" ] != nil) {
-        MFCsvLoaderHelper *csvHelper = [[MFApplication getInstance] getBeanWithKey:BEAN_KEY_CSV_LOADER_HELPER];
+        MFCsvLoaderHelper *csvHelper = [[MFBeanLoader getInstance] getBeanWithKey:BEAN_KEY_CSV_LOADER_HELPER];
         MParameter *newInstance = [self MF_createMParameterInContext:context];
         
         // identifier attribute

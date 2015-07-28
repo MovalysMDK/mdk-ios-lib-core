@@ -20,7 +20,7 @@
 //
 
 #import "MObjectToSynchronize.h"
-#import "MFApplication.h"
+#import "MFBeanLoader.h"
 #import "MFBeansKeys.h"
 #import "MFCoreDataHelper.h"
 
@@ -41,7 +41,7 @@ const struct MObjectToSynchronizeProperties_Struct MObjectToSynchronizePropertie
 {
     if ([self.identifier intValue] == -1) {
         self.identifier =
-        [(MFCoreDataHelper *)[[MFApplication getInstance] getBeanWithKey:BEAN_KEY_CORE_DATA_HELPER] nextIdForEntity:MObjectToSynchronizeProperties.EntityName];
+        [(MFCoreDataHelper *)[[MFBeanLoader getInstance] getBeanWithKey:BEAN_KEY_CORE_DATA_HELPER] nextIdForEntity:MObjectToSynchronizeProperties.EntityName];
     }
 }
 

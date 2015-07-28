@@ -53,7 +53,7 @@
     NSData *HMAC = [[NSData alloc] initWithBytes:cHMAC
                                           length:sizeof(cHMAC)];
     
-    return [HMAC base64Encoding];
+    return [HMAC base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
 }
 
 @end

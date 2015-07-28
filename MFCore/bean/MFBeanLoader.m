@@ -67,9 +67,7 @@
 -(void) registerComponentsFromAssembly:(Class)assemblyClass {
     NSMutableDictionary *mutableSingletons = [self.singletons mutableCopy];
     NSMutableDictionary *mutablePrototypes = [self.prototypes mutableCopy];
-//    if([assemblyClass conformsToProtocol:@protocol(MFBeansAssemblyProtocol)]) {
         [((id<MFBeansAssemblyProtocol>)[[assemblyClass alloc] init]) registerComponentsInPrototypes:mutablePrototypes andSingletons:mutableSingletons];
-//    }
     self.prototypes = mutablePrototypes;
     self.singletons = mutableSingletons;
 }
@@ -111,12 +109,5 @@
     }
     return returnObject;
 }
-
-//- (NSArray *) getAllBeansWithType:(id)classOrProtocol {
-//    if(classOrProtocol == nil || _beansFactory == nil)
-//        @throw([NSException exceptionWithName:@"Nil Key" reason:@"The beans factory or the Key of the bean is nil (getAllBeansWithType)" userInfo:nil]);
-//
-//    return [_beansFactory allComponentsForType:classOrProtocol];
-//}
 
 @end

@@ -137,7 +137,7 @@
             // on traite les données récupérées 
             [self transformDataToObject:datasDictionary];
             //if ( lineNumber%100 == 0 ) {
-                //[[[MFApplication getInstance] getBeanWithKey:BEAN_KEY_CORE_DATA_HELPER] saveContext:self.localContext];
+                //[[[MFBeanLoader getInstance] getBeanWithKey:BEAN_KEY_CORE_DATA_HELPER] saveContext:self.localContext];
                 //}
         } else if ( [self.csvData count] > 1 ){
             MFCoreLogWarn(@"Data Inconsistency Different count between datas %@ and headers %@ ", self.csvData, self.headersLabel );

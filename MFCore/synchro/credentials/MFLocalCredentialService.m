@@ -25,8 +25,9 @@
 #import "MParameter+Dao.h"
 #import "MParameter+Factory.h"
 #import "MFAESUtil.h"
-#import "MFApplication.h"
+#import "MFBeanLoader.h"
 #import "MFBeansKeys.h"
+#import "MFApplication.h"
 
 NSString *const PREVIOUS_LOGIN_PARAMETER  = @"previous-login" ;
 NSString *const PREVIOUS_RESOURCE_PARAMETER  = @"resourceId" ;
@@ -41,7 +42,7 @@ int const MILLISECONDS_IN_ONE_DAY  = 86400000 ;
     
     BOOL identified = false;
     
-    MFConfigurationHandler* config = [[MFApplication getInstance] getBeanWithKey:BEAN_KEY_CONFIGURATION_HANDLER];
+    MFConfigurationHandler* config = [[MFBeanLoader getInstance] getBeanWithKey:BEAN_KEY_CONFIGURATION_HANDLER];
     
     if ([config getBooleanProperty:sync_mock_mode withDefault:NO] && [[config getNumberProperty:sync_mock_testid] isEqualToNumber:[NSNumber numberWithInt:408]]) { // 408 : Request Timeout (HTTP/1.1 - RFC 2616)
         result = Identified_KOCauseDate;

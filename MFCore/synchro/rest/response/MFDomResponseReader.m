@@ -13,13 +13,10 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
-//
-//  MFDomResponseReader.m
-//  MFCore
-//
-//
-#import "MFApplication.h"
 
+
+#import "MFApplication.h"
+#import "MFBeanLoader.h"
 #import "MFDomResponseReader.h"
 #import "MFRestResponseProtocol.h"
 #import "MFStreamResponseProcessorProtocol.h"
@@ -47,7 +44,7 @@
 -(id) initForClass:(Class <MFRestResponseProtocol>)responseClass
 {
     if ((self = [super init])) {
-        self.ResponseClass = responseClass;
+        self.responseClass = responseClass;
         self.modelsDictionary = [[NSMutableDictionary alloc] init];
         self.mapStreamResponseProcessors = [[NSMutableDictionary alloc] init];
     }
@@ -75,7 +72,7 @@
         [(id <MFStreamResponseProcessorProtocol>)[self.mapStreamResponseProcessors objectForKey:key] initialize];
     }
     
-    id <MFJsonMapperServiceProtocol> jsonMapper = [[MFApplication getInstance] getBeanWithKey:@"MFJsonMapperServiceProtocol"];
+    id <MFJsonMapperServiceProtocol> jsonMapper = [[MFBeanLoader getInstance] getBeanWithKey:@"MFJsonMapperServiceProtocol"];
     id parsedResponse = [jsonMapper fromJson:resp];
     
     [self processJson:parsedResponse withPath:@"root" withContext:context];

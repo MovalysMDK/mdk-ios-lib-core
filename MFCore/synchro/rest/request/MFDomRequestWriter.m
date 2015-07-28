@@ -25,6 +25,7 @@
 #import "MFJsonMapperServiceProtocol.h"
 #import "MFCoreLogging.h"
 #import "MFApplication.h"
+#import "MFBeanLoader.h"
 
 @implementation MFDomRequestWriter
 
@@ -60,7 +61,7 @@
 
 -(NSString *) getHttpEntity
 {
-    NSObject<MFJsonMapperServiceProtocol> *jsonMapper = [[MFApplication getInstance] getBeanWithKey:@"MFJsonMapperServiceProtocol"];
+    NSObject<MFJsonMapperServiceProtocol> *jsonMapper = [[MFBeanLoader getInstance] getBeanWithKey:@"MFJsonMapperServiceProtocol"];
         
     NSString *json = [jsonMapper toJson:self.restRequest withEntityBuilders:self.entityRequestBuilders];
         

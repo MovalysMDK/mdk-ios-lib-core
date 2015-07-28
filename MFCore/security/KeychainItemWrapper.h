@@ -83,7 +83,4 @@
 - (void)setObject:(id)inObject forKey:(id)key;
 - (id)objectForKey:(id)key;
 
-// Initializes and resets the default generic keychain item data.
-- (void)resetKeychainItem;
-
 @end

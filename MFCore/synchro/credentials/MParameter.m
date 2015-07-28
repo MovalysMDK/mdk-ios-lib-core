@@ -20,7 +20,7 @@
 //
 
 #import "MParameter.h"
-#import "MFApplication.h"
+#import "MFBeanLoader.h"
 #import "MFBeansKeys.h"
 #import "MFCoreDataHelper.h"
 
@@ -41,7 +41,7 @@ const struct MParameterProperties_Struct MParameterProperties = {
 {
     if ([self.identifier intValue] == -1) {
         self.identifier =
-        [(MFCoreDataHelper *)[[MFApplication getInstance] getBeanWithKey:BEAN_KEY_CORE_DATA_HELPER] nextIdForEntity:MParameterProperties.EntityName];
+        [(MFCoreDataHelper *)[[MFBeanLoader getInstance] getBeanWithKey:BEAN_KEY_CORE_DATA_HELPER] nextIdForEntity:MParameterProperties.EntityName];
     }
 }
 

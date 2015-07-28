@@ -20,7 +20,7 @@
 //
 
 #import "MFJsonReader.h"
-#import "MFApplication.h"
+#import "MFBeanLoader.h"
 #import "MFJsonMapperServiceProtocol.h"
 
 @implementation MFJsonReader
@@ -44,7 +44,7 @@ BOOL firstOpener;
 {
     if (self = [super init]) {
         self.object = [[MFJsonObject alloc] init];
-        jsonMapper = [[MFApplication getInstance] getBeanWithKey:@"MFJsonMapperServiceProtocol"];
+        jsonMapper = [[MFBeanLoader getInstance] getBeanWithKey:@"MFJsonMapperServiceProtocol"];
         leftToProcess = [NSString string];
         lastReachedPosition = 0;
         currentPath = [NSMutableArray array];

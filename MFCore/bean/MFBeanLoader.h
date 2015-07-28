@@ -13,12 +13,14 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
-//
-//  BeanLoader.h
-//  MFCore
-//
-//
 
+/*!
+ * @class MFBeanLoader
+ * @brief This class is the bean loader used by all MFK iOS classes to
+ * retrieve some classes.
+ * @discussion Use the defined methods from an instance of the MFBeanLoader
+ * to retrieve any classes defined in the given assemblies.
+ */
 @interface MFBeanLoader : NSObject
 
 /*!
@@ -45,11 +47,5 @@
  * @param classOrProtocol : La classe ou le protocole dont oon souhaite récupérer un bean
  * @return un bean si le composant existe ou une exception si le composant n'est pas paramétré */
 - (id) getBeanWithType:(id)classOrProtocol;
-
-/*!
- * @brief retourne tous les beans d'après un type de Classe ou Protocole
- * @param classOrProtocol : La classe ou le protocole dont on souhaite récupérer un bean
- */
-- (NSArray*) getAllBeansWithType:(id)classOrProtocol;
 
 @end

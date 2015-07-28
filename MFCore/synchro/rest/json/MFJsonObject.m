@@ -53,7 +53,7 @@ const struct MFJSonObjectTypes_Struct JSonObjectTypes = {
 
 -(BOOL) isNew
 {
-    return !self.nameCompleted && !self.type != -1 && !self.contentCompleted;
+    return !self.nameCompleted && self.type != -1 && !self.contentCompleted;
 }
 
 -(BOOL) isInName
