@@ -182,7 +182,7 @@
 }
 
 +(void) setupPersistentStoreForMovalysWithDbName:(NSString *)dbName andMovalysDefaultModelName:(NSString *)movalysDefaultModelName withModel:(NSManagedObjectModel *)model {
-    NSPersistentStoreCoordinator *persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:model];
+    NSPersistentStoreCoordinator *persistentStoreCoordinator = nil;
     
     persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:model];
     NSError *error = nil;
