@@ -115,6 +115,7 @@
 	[self.wifiReachability startNotifier];
 	[self updateInterfaceWithReachability:self.wifiReachability];
     
+    [super viewDidLoad];
 }
 
 
