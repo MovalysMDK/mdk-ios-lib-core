@@ -40,8 +40,6 @@
         // Framework property file loading
         [self loadPropertyFromPlist:@"Framework-config"];
         // Framework property file loading
-        [self loadPropertyFromPlist:@"Framework-common-menu"];
-        // Framework property file loading
         [self loadPropertyFromPlist:@"Framework-screens-menu"];
         // Merge with custom property file
         [self loadPropertyFromPlist:@"Project"];
