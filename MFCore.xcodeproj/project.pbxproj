@@ -296,6 +296,8 @@
 		B068690F1AD6BBEB00D6B529 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B068690E1AD6BBEB00D6B529 /* SystemConfiguration.framework */; };
 		B068691A1AD6C40400D6B529 /* MFCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B04172461A70F5350045C268 /* MFCore.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		B0AAFB7A1AD41C4500463F7F /* MFCoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0AAFB791AD41C4500463F7F /* MFCoreTests.m */; };
+		B0D72C8E1B971EA300473993 /* MFPropertyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0D72C8D1B971EA300473993 /* MFPropertyTests.m */; };
+		B0D72C901B97249800473993 /* MFContextTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0D72C8F1B97249800473993 /* MFContextTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -621,6 +623,8 @@
 		B0AAFB751AD41C4500463F7F /* MFCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MFCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0AAFB781AD41C4500463F7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0AAFB791AD41C4500463F7F /* MFCoreTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MFCoreTests.m; sourceTree = "<group>"; };
+		B0D72C8D1B971EA300473993 /* MFPropertyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFPropertyTests.m; sourceTree = "<group>"; };
+		B0D72C8F1B97249800473993 /* MFContextTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFContextTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1248,9 +1252,11 @@
 		B0AAFB761AD41C4500463F7F /* MFCoreTests */ = {
 			isa = PBXGroup;
 			children = (
-				B0585EF41B1E07A200BA2647 /* Sources */,
+				B0D72C8F1B97249800473993 /* MFContextTests.m */,
 				B0585EF01B1E072200BA2647 /* MFCoreActionTests.m */,
 				B0AAFB791AD41C4500463F7F /* MFCoreTests.m */,
+				B0D72C8D1B971EA300473993 /* MFPropertyTests.m */,
+				B0585EF41B1E07A200BA2647 /* Sources */,
 				B0AAFB771AD41C4500463F7F /* Supporting Files */,
 			);
 			path = MFCoreTests;
@@ -1732,10 +1738,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0D72C901B97249800473993 /* MFContextTests.m in Sources */,
 				B0AAFB7A1AD41C4500463F7F /* MFCoreTests.m in Sources */,
 				B0585EFA1B1E07C000BA2647 /* MFEmptyAction.m in Sources */,
 				B0585EF71B1E07A200BA2647 /* MFTestAssembly.m in Sources */,
 				B0585EF11B1E072200BA2647 /* MFCoreActionTests.m in Sources */,
+				B0D72C8E1B971EA300473993 /* MFPropertyTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

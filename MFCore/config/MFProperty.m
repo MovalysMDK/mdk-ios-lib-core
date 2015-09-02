@@ -36,7 +36,7 @@
         return (NSNumber* )self.value;
     }
     else {
-        return [[NSNumber alloc] initWithInt:0];
+        return nil;
     }
 }
 
@@ -70,7 +70,7 @@
 
 -(BOOL) getBOOLValue
 {
-    return (BOOL) self.value;
+    return (BOOL) [self.value boolValue];
 }
 
 @end
