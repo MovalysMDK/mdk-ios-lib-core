@@ -187,7 +187,11 @@ NSString *const mf_registerActionListener = @"mf_registerActionListener";
 
 //---------------------------------------------------------
 
+
+
 @implementation MFActionLauncher
+
+#pragma mark - Singleton
 
 +(instancetype)getInstance{
     //Faire un singleton
@@ -199,6 +203,8 @@ NSString *const mf_registerActionListener = @"mf_registerActionListener";
     return instance;
 }
 
+
+#pragma mark - Category retained properties
 /**
  * @brief permet de récuperer les attributs supplémentaires de la catégorie
  */
@@ -218,6 +224,9 @@ NSString *const mf_registerActionListener = @"mf_registerActionListener";
     objc_setAssociatedObject(self, &extANCKey, n,  OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
+
+
+#pragma mark - Launch actions
 
 -(void) launchAction:(NSString *) actionName withCaller:(id) caller withInParameter:(id) parameterIn {
     [self launchAction:actionName withCaller:caller withInParameter:parameterIn andChainActions:nil];
@@ -268,6 +277,10 @@ NSString *const mf_registerActionListener = @"mf_registerActionListener";
 -(void) launchAction:(NSString *) actionName withCaller:(id) caller withInParameter:(id) parameterIn andContext:(id<MFContextProtocol>) context andChainActions:(NSArray*) chainActions andInOutTransformers:(NSArray*) chainTransformers andParameters:(NSMutableDictionary*) parameters{
     [self launchAction:actionName withCaller:caller withInParameter:parameterIn andContext:context andChainActions:chainActions andInOutTransformers:chainTransformers andParameters:parameters andQualifier:nil withWaitingView:YES];
 }
+
+
+
+#pragma mark - Launch Action method
 
 -(void) launchAction:(NSString *) actionName withCaller:(id) caller withInParameter:(id) parameterIn andContext:(id<MFContextProtocol>) context andChainActions:(NSArray*) chainActions andInOutTransformers:(NSArray*) chainTransformers andParameters:(NSMutableDictionary*) parameters andQualifier:(id<MFActionQualifierProtocol>)qualifier withWaitingView:(BOOL)showWaitingView {
     id<MFActionProtocol> action = [[MFBeanLoader getInstance] getBeanWithKey:actionName];
@@ -401,6 +414,8 @@ NSString *const mf_registerActionListener = @"mf_registerActionListener";
     }
 }
 
+
+#pragma mark - Manage waiting view
 -(void) startAction:(BOOL)showWaitingView {
     @synchronized([self extendANC].launchedAction){
         [self extendANC].launchedAction = [NSNumber numberWithInt:[[self extendANC].launchedAction intValue]+1];
@@ -433,7 +448,15 @@ NSString *const mf_registerActionListener = @"mf_registerActionListener";
     }
 }
 
+-(void) showWaitingView {
+    //overload in ui project
+}
 
+-(void) dismissWaitingView {
+    // overload in ui project
+}
+
+#pragma mark - Context
 - (id<MFContextProtocol>) createMFContext:(NSString *)actionName {
     
     id<MFContextFactoryProtocol> contextFactory = [[MFBeanLoader getInstance] getBeanWithType:@protocol(MFContextFactoryProtocol)];
@@ -447,13 +470,8 @@ NSString *const mf_registerActionListener = @"mf_registerActionListener";
 }
 
 
--(void) showWaitingView {
-    //overload in ui project
-}
 
--(void) dismissWaitingView {
-    // overload in ui project
-}
+#pragma mark - Register / Unregister Actions events
 
 - (void) MF_register:(id) elementToRegister withBlock:(MFActionListenerBlock) block andInitEventList:(NSNumber*) initEventList onEvent:(NSString *) eventName {
     if ((BOOL) initEventList){
@@ -503,9 +521,12 @@ NSString *const mf_registerActionListener = @"mf_registerActionListener";
     
 }
 
+
+#pragma mark - Notifying actions events
+
 //par defaut s'execute dans la queue action
 - (void) notifyListenerOnSuccessOfAction:(NSString *) actionName withResult: (id) result andCaller: (id) caller andContext:(id<MFContextProtocol>) context {
-    NSSet* listeners = [[self extendANC].registredElementsByEvent objectForKey:[self getSuccessEventNameForAction:actionName]];
+    NSSet* listeners = [[self extendANC].registredElementsByEvent objectForKey:[self getEventNameForAction:actionName ofType:MFActionEventTypeSuccess]];
     for(MFActionEventDefinition* eventDef in listeners) {
         dispatch_async([self extendANC].notifQueue, ^{
             if (eventDef && eventDef.callBack && eventDef.objectWithCallBack) {
@@ -517,22 +538,29 @@ NSString *const mf_registerActionListener = @"mf_registerActionListener";
 }
 
 - (void) notifyListenerOnFailedOfAction:(NSString *) actionName withResult: (id) result andCaller: (id) caller andContext:(id<MFContextProtocol>) context {
-    NSSet* listeners = [[self extendANC].registredElementsByEvent objectForKey:[self getFailedEventNameForAction:actionName]];
+    NSSet* listeners = [[self extendANC].registredElementsByEvent objectForKey:[self getEventNameForAction:actionName ofType:MFActionEventTypeFail]];
     for(MFActionEventDefinition* eventDef in listeners) {
         dispatch_async([self extendANC].notifQueue, ^{
-            eventDef.callBack(context, caller, result, nil);
+            if (eventDef && eventDef.callBack && eventDef.objectWithCallBack) {
+                eventDef.callBack(context, caller, result, nil);
+            }
         });
     }
 }
 
 -(void) notifyListenerOnProgressOfAction:(NSString *) actionName withStep: (NSString *) step withObject: (id) result andCaller: (id) caller andContext:(id<MFContextProtocol>) context {
-    NSSet* listeners = [[self extendANC].registredElementsByEvent objectForKey:[self getProgressEventNameForAction:actionName]];
+    NSSet* listeners = [[self extendANC].registredElementsByEvent objectForKey:[self getEventNameForAction:actionName ofType:MFActionEventTypeProgress]];
     for(MFActionEventDefinition* eventDef in listeners) {
         dispatch_async([self extendANC].notifQueue, ^{
-            eventDef.callBack(context, step, caller, result);
+            if (eventDef && eventDef.callBack && eventDef.objectWithCallBack) {
+                eventDef.callBack(context, caller, result, nil);
+            }
         });
     }
 }
+
+
+#pragma mark - Class Introspection
 
 - (void) objectToAnalyseByInstance:(id) elementToAnalyse {
     // Vérification si la classe à déjà été traité dans un cache
@@ -594,25 +622,30 @@ NSString *const mf_registerActionListener = @"mf_registerActionListener";
     free(methods);
 }
 
-- (NSString *) getSuccessEventNameForAction:(NSString *) actionName {
+
+#pragma mark - Context
+
+- (NSString *) getEventNameForAction:(NSString *) actionName ofType:(MFActionEventType) eventType{
     NSString *name = @"";
     name = [name stringByAppendingString:actionName];
-    name = [name stringByAppendingString:@"OnSuccess"];
+    
+    NSString *appendix = nil;
+    switch (eventType) {
+        case MFActionEventTypeFail:
+            appendix = @"OnFailed";
+            break;
+        case MFActionEventTypeSuccess:
+            appendix = @"OnSuccess";
+            break;
+        case MFActionEventTypeProgress:
+            appendix = @"OnProgress";
+            break;
+        default:
+            break;
+    }
+    name = [name stringByAppendingString:appendix];
     return name;
 }
 
-- (NSString *) getFailedEventNameForAction:(NSString *) actionName {
-    NSString *name = @"";
-    name = [name stringByAppendingString:actionName];
-    name = [name stringByAppendingString:@"OnFailed"];
-    return name;
-}
-
-- (NSString *) getProgressEventNameForAction:(NSString *) actionName {
-    NSString *name = @"";
-    name = [name stringByAppendingString:actionName];
-    name = [name stringByAppendingString:@"OnProgress"];
-    return name;
-}
 
 @end

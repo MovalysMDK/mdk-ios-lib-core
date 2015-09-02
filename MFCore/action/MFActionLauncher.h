@@ -36,7 +36,7 @@ dispatch_async(dispatch_get_main_queue(), ^{ \
 [self methodName1:p1 withCaller:p2 andResult:p3]; \
 }); \
 }; \
-NSString *name = [[MFActionLauncher getInstance] getSuccessEventNameForAction:actionName];\
+NSString *name = [[MFActionLauncher getInstance] getEventNameForAction:actionName ofType:MFActionEventTypeSuccess];\
 [[MFActionLauncher getInstance] MF_register:self withBlock:block andInitEventList:initEventList onEvent:name]; \
 if (false) {NSLog(@"%@",actionName);block(nil, nil, nil, nil);} \
 } \
@@ -51,7 +51,7 @@ dispatch_async(dispatch_get_main_queue(), ^{ \
 [self methodName1:p1 withCaller:p2 andResult:p3]; \
 }); \
 }; \
-NSString *name = [[MFActionLauncher getInstance] getSuccessEventNameForAction:actionName]; \
+NSString *name = [[MFActionLauncher getInstance] getEventNameForAction:actionName ofType:MFActionEventTypeSuccess]; \
 [[MFActionLauncher getInstance] MF_register:self withBlock:block andInitEventList:initEventList onEvent:name]; \
 if (false) {NSLog(@"%@",actionName);block(nil, nil, nil, nil);} \
 } \
@@ -65,7 +65,7 @@ dispatch_async(dispatch_get_main_queue(), ^{ \
 [self methodName1:p1 withCaller:p2 andResult:p3]; \
 }); \
 }; \
-NSString *name = [[MFActionLauncher getInstance] getFailedEventNameForAction:actionName];\
+NSString *name = [[MFActionLauncher getInstance] getEventNameForAction:actionName ofType:MFActionEventTypeFail];\
 [[MFActionLauncher getInstance] MF_register:self withBlock:block andInitEventList:initEventList onEvent:name]; \
 if (false) {NSLog(@"%@",actionName);block(nil, nil, nil, nil);} \
 } \
@@ -79,7 +79,7 @@ dispatch_async(dispatch_get_main_queue(), ^{ \
 [self methodName1:p1 withCaller:p2 andResult:p3]; \
 }); \
 }; \
-NSString *name = [[MFActionLauncher getInstance] getFailedEventNameForAction:actionName];\
+NSString *name = [[MFActionLauncher getInstance] getEventNameForAction:actionName ofType:MFActionEventTypeFail];\
 [[MFActionLauncher getInstance] MF_register:self withBlock:block andInitEventList:initEventList onEvent:name]; \
 if (false) {NSLog(@"%@",actionName);block(nil, nil, nil, nil);} \
 } \
@@ -93,7 +93,7 @@ dispatch_async(dispatch_get_main_queue(), ^{ \
 [self methodName1:p1 withStep:p2 andCaller:p3 andResult:p4]; \
 }); \
 }; \
-NSString *name = [[MFActionLauncher getInstance] getProgressEventNameForAction:actionName]; \
+NSString *name = [[MFActionLauncher getInstance] getEventNameForAction:actionName ofType:MFActionEventTypeProgress]; \
 [[MFActionLauncher getInstance] MF_register:self withBlock:block andInitEventList:initEventList onEvent:name]; \
 if (false) {NSLog(@"%@",actionName);block(nil, nil, nil, nil);} \
 } \
@@ -107,7 +107,7 @@ dispatch_async(dispatch_get_main_queue(), ^{ \
 [self methodName1:p1 withStep:p2 andCaller:p3 andResult:p4]; \
 }); \
 }; \
-NSString *name = [[MFApplication getInstance] getProgressEventNameForAction:actionName]; \
+NSString *name = [[MFApplication getInstance] getEventNameForAction:actionName ofType:MFActionEventTypeProgress]; \
 [[MFActionLauncher getInstance] MF_register:self withBlock:block andInitEventList:initEventList onEvent:name]; \
 if (false) {NSLog(@"%@",actionName);block(nil, nil, nil, nil);} \
 } \
@@ -132,6 +132,12 @@ typedef void (^MFActionListenerBlock)(id, id, id, id);
  * @return le pramètre d'entrée de la seconde action
  */
 typedef id (^ActionInOutTransformer)(NSMutableDictionary *dictionnary, id precResult);
+
+typedef NS_ENUM(NSInteger, MFActionEventType) {
+    MFActionEventTypeSuccess,
+    MFActionEventTypeFail,
+    MFActionEventTypeProgress
+};
 
 
 
@@ -317,23 +323,10 @@ typedef id (^ActionInOutTransformer)(NSMutableDictionary *dictionnary, id precRe
 /*!
  * @brief donne le nom d'un évènement de type success
  * @param le nom d'une action
+ * @param eventType Le type de l'évènement
  * @result le nom de l'évênement associé
  */
-- (NSString *) getSuccessEventNameForAction:(NSString *) actionName;
-
-/*!
- * @brief donne le nom d'un évènement de type failed
- * @param le nom d'une action
- * @result le nom de l'évênement associé
- */
-- (NSString *) getFailedEventNameForAction:(NSString *) actionName;
-
-/*!
- * @brief donne le nom d'un évènement de type progress
- * @param le nom d'une action
- * @result le nom de l'évênement associé
- */
-- (NSString *) getProgressEventNameForAction:(NSString *) actionName;
+- (NSString *) getEventNameForAction:(NSString *) actionName ofType:(MFActionEventType) eventType;
 
 /*!
  * @brief notify la progression d'une action
