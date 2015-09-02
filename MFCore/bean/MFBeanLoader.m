@@ -50,7 +50,8 @@
         NSArray *assemblies = @[
                                 @"MFFrameworkExtendedComponentsAssembly",
                                 @"MFProjectComponentsAssembly",
-                                @"MFProjectGeneratedComponentsAssembly"
+                                @"MFProjectGeneratedComponentsAssembly",
+                                @"MFTestAssembly"
                                 ];
         
         self.prototypes = [NSMutableDictionary dictionary];

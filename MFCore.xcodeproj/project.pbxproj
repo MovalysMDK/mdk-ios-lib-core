@@ -298,6 +298,7 @@
 		B0AAFB7A1AD41C4500463F7F /* MFCoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0AAFB791AD41C4500463F7F /* MFCoreTests.m */; };
 		B0D72C8E1B971EA300473993 /* MFPropertyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0D72C8D1B971EA300473993 /* MFPropertyTests.m */; };
 		B0D72C901B97249800473993 /* MFContextTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0D72C8F1B97249800473993 /* MFContextTests.m */; };
+		B0D72C911B97311A00473993 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B06869061AD6BB8100D6B529 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -647,6 +648,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0D72C911B97311A00473993 /* CoreData.framework in Frameworks */,
 				B068691A1AD6C40400D6B529 /* MFCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
