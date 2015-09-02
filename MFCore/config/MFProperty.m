@@ -70,7 +70,10 @@
 
 -(BOOL) getBOOLValue
 {
-    return (BOOL) [self.value boolValue];
+    if([self.value isKindOfClass:[NSNumber class]]) {
+        return (BOOL) [self.value boolValue];
+    }
+    return self.value;
 }
 
 @end
