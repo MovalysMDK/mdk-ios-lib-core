@@ -80,15 +80,10 @@ self.starterInitCallbackBlock(PARAM1); \
 
 
 - (void) start {
-    
     //Démarrage du framework en mode autonome
-    _startRunning = YES;
-    _started = NO;
-    _appFailure = NO;
-    _propertiesLoaded = NO;
+    [self initStarterProperties];
     
     [MFHelperQueue configureMainQueue];
-    
     StarterProgressCallbackBlock(STEP_INIT_PROPERTIES, STARTER_START)
     
     MFConfigurationHandler *registry = [[MFBeanLoader getInstance] getBeanWithKey:BEAN_KEY_CONFIGURATION_HANDLER];
@@ -99,16 +94,7 @@ self.starterInitCallbackBlock(PARAM1); \
     StarterProgressCallbackBlock(STEP_INIT_PROPERTIES, STARTER_END)
     
     NSString *databaseName = [registry getStringProperty: MFPROP_DATABASE_NAME];
-    
     MFCoreLogInfo(@"  database name: %@", databaseName);
-    /*
-     NSString *destPath =[[NSPersistentStore MR_urlForStoreName:databaseName] path];
-     NSFileManager *fileManager = [NSFileManager defaultManager];
-     if ( [fileManager fileExistsAtPath:destPath] == YES) {
-     _firstLaunching = NO ;
-     }else{
-     _firstLaunching = YES ;
-     }*/
     // Create MFContext for RunInit
     MFCoreLogInfo(@"starter: create mfContext (_firstLaunching=%d)" , _firstLaunching);
     id<MFContextProtocol> mfContext = [contextFactory createMFContext];
@@ -116,7 +102,6 @@ self.starterInitCallbackBlock(PARAM1); \
     //Démarrage des classes du framework
     NSArray *fwks = [[registry getProperty:MFPROP_STARTER_FWK] getArray];
     NSArray *users = [[registry getProperty:MFPROP_STARTER_PROJECT] getArray];
-    
     NSInteger count = 1;
     if (fwks!=nil) {
         count = count + [fwks count];
@@ -129,31 +114,19 @@ self.starterInitCallbackBlock(PARAM1); \
     
     StarterProgressCallbackBlock(STEP_INIT_CLASSES, STARTER_START)
     [self startSubStarter: fwks inContext:mfContext];
+    
     //Démarrage des classes
     [self startSubStarter: users  inContext:mfContext];
     StarterProgressCallbackBlock(STEP_INIT_CLASSES, STARTER_END)
     
-    MFCoreLogInfo(@"starter: save mfContext");
-    MFCoreDataHelper *coreDataHelper = [[MFBeanLoader getInstance] getBeanWithKey:BEAN_KEY_CORE_DATA_HELPER];
-    NSError* error = [coreDataHelper saveContext:mfContext];
-    if (error!=nil) {
-        [NSException raise:@"Failure saving context" format:@"error: %@", error];
-    }
+    //Save Core Data Context
+    [self saveCoreDataContext:mfContext];
+    
     _started = YES;
-    
     StarterEndCallbackBlock()
-    
+
     MFCoreLogInfo(@"starter: settings verification in main queue %@", [MFHelperQueue isInMainQueue]?@"YES":@"NO");
-    if ( _firstLaunching == YES ) {
-        // le lancement s'est bien déroulé , on cree le fichier de verif
-        
-        [self saveFirstLaunching];
-        [self.settingsValidationManager copyUserFwkSettingsToNotModifiableSettings];
-        _firstLaunching = NO ;
-    }else {
-        [self.settingsValidationManager verifyIfUserFwkSettingsHasChanged] ;
-    }
-    
+    [self checkFirstLaunch];
     _startRunning = NO;
 }
 
@@ -184,7 +157,6 @@ self.starterInitCallbackBlock(PARAM1); \
     self.starterEndCallbackBlock = endCallBack;
 }
 
-
 - (void) saveFirstLaunching {
     NSString *docsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
     NSString *filepath = [docsDirectory stringByAppendingString:@"/.first"];
@@ -202,4 +174,31 @@ self.starterInitCallbackBlock(PARAM1); \
     }
 }
 
+-(void) checkFirstLaunch {
+    if ( _firstLaunching == YES ) {
+        // le lancement s'est bien déroulé , on cree le fichier de verif
+        
+        [self saveFirstLaunching];
+        [self.settingsValidationManager copyUserFwkSettingsToNotModifiableSettings];
+        _firstLaunching = NO ;
+    }else {
+        [self.settingsValidationManager verifyIfUserFwkSettingsHasChanged] ;
+    }
+}
+
+-(void) initStarterProperties {
+    _startRunning = YES;
+    _started = NO;
+    _appFailure = NO;
+    _propertiesLoaded = NO;
+}
+
+-(void) saveCoreDataContext:(id<MFContextProtocol>)mfContext {
+    MFCoreLogInfo(@"starter: save mfContext");
+    MFCoreDataHelper *coreDataHelper = [[MFBeanLoader getInstance] getBeanWithKey:BEAN_KEY_CORE_DATA_HELPER];
+    NSError* error = [coreDataHelper saveContext:mfContext];
+    if (error!=nil) {
+        [NSException raise:@"Failure saving context" format:@"error: %@", error];
+    }
+}
 @end

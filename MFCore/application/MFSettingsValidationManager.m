@@ -170,7 +170,7 @@ NSString *FAKE_PASSWORD_MARKER = @"●";
     if ( maxLengthSetting == nil ) {
         maxLengthSetting = [item objectForKey:@"max length"];
     }
-    if ( maxLengthSetting && [value length] > [maxLengthSetting intValue] ) {
+    if (maxLengthSetting && [value length] > [maxLengthSetting intValue] ) {
         return @"NO" ;
     }
     
@@ -460,6 +460,7 @@ NSString *FAKE_PASSWORD_MARKER = @"●";
 
 NSString *const SUFFIX_NOT_MODIFIABLE_PREFERENCES = @"_notModifiableByInterface";
 
+
 -(void) copyUserFwkSettingsToNotModifiableSettings {
     MFCoreLogVerbose(@"> copyUserFwkSettingsToNotModifiableSettings");
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -475,22 +476,31 @@ NSString *const SUFFIX_NOT_MODIFIABLE_PREFERENCES = @"_notModifiableByInterface"
     [defaults synchronize];
     MFCoreLogVerbose(@"< copyUserFwkSettingsToNotModifiableSettings");
 }
+
+
+
 -(BOOL) isUserFwkSettingsHasChanged {
     MFCoreLogVerbose(@"isUserFwkSettingsHasChanged");
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults synchronize];
+    
+    //Username
     NSString *settings = [defaults stringForKey:APPLICATION_PARAMETER_USERNAME_KEY_PREFERENCE] ;
     NSString *notModifiableSettings = [defaults stringForKey:[APPLICATION_PARAMETER_USERNAME_KEY_PREFERENCE stringByAppendingString:SUFFIX_NOT_MODIFIABLE_PREFERENCES]] ;
     if ( settings != nil && [settings isEqualToString:notModifiableSettings] == NO){
         MFCoreLogVerbose(@"isUserFwkSettingsHasChanged YES username '%@' to '%@' "  , notModifiableSettings, settings);
         return YES ;
     }
+    
+    //Password
     settings = [defaults stringForKey:APPLICATION_PARAMETER_PASSWORD_KEY_PREFERENCE] ;
     notModifiableSettings = [defaults stringForKey:[APPLICATION_PARAMETER_PASSWORD_KEY_PREFERENCE stringByAppendingString:SUFFIX_NOT_MODIFIABLE_PREFERENCES]] ;
     if ( settings != nil &&  [settings isEqualToString:notModifiableSettings] == NO){
         MFCoreLogVerbose(@"isUserFwkSettingsHasChanged YES pwd '%@' to '%@' " , notModifiableSettings, settings);
         return YES ;
     }
+    
+    //Url server
     settings = [defaults stringForKey:APPLICATION_PARAMETER_URLSERVER_KEY_PREFERENCE] ;
     notModifiableSettings = [defaults stringForKey:[APPLICATION_PARAMETER_URLSERVER_KEY_PREFERENCE stringByAppendingString:SUFFIX_NOT_MODIFIABLE_PREFERENCES]] ;
     if ( settings != nil && [settings isEqualToString:notModifiableSettings] == NO){
