@@ -23,13 +23,6 @@
 
 @implementation MFAbstractConfiguration
 
--(id)init{
-    if (self=[super init]){
-        //NothingToDo
-    }
-    return self;
-}
-
 - (NSString *) getKey {
     NSMutableString *res = [[NSMutableString alloc]init];
     [res appendString:self.type];

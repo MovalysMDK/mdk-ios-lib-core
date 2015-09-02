@@ -48,7 +48,6 @@
     [datetimeFormatter setTimeZone:[NSTimeZone localTimeZone]];
     
     NSString *nowString = [datetimeFormatter stringFromDate:[[NSDate alloc] init] ] ;
-    
     documentsDirectory = [documentsDirectory stringByAppendingString:nowString];
     
     DDFileLogger *logger = [MFLoggingHelper getFileLogger];
@@ -57,9 +56,7 @@
         
         if ( [[NSFileManager defaultManager] copyItemAtPath:logFileInfo.filePath toPath:destPath error:&error] == YES) {
             MFCoreLogVerbose(@" Export Logs OK dans '%@'  " , destPath ) ;
-        
         } else {
-        
             NSString *errorText = [NSString stringWithFormat:@" Export Logs KO from '%@' to '%@' , '%@' , '%@'" , logFileInfo.filePath ,destPath , error.localizedDescription , error.localizedFailureReason ];
             NSError *error2 = [[NSError alloc] initWithDomain:@"com.sopragroup.movalys.exportLogs"
                                                      code:2

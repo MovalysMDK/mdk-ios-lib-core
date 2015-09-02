@@ -56,31 +56,36 @@
 -(id<MFContextProtocol>)createMFContextWithCoreDataContext:(NSManagedObjectContext *)entityContext {
     id<MFContextProtocol> mfContext = [__beanLoader getBeanWithType:@protocol(MFContextProtocol)];
     mfContext.entityContext = entityContext;
+    [mfContext.entityContext MR_setWorkingName: [entityContext MR_workingName]];
     return mfContext;
 }
 
 -(id<MFContextProtocol>) createMFContextWithCoreDataContextForCurrentThread {
     id<MFContextProtocol> mfContext = [__beanLoader getBeanWithType:@protocol(MFContextProtocol)];
     mfContext.entityContext = [[MFApplication getInstance] movalysContext];
+    [mfContext.entityContext MR_setWorkingName:@"Default MDK Context"];
     return mfContext;
 }
 
 -(id<MFContextProtocol>) createMFContextWithChildCoreDataContext {
     id<MFContextProtocol> mfContext = [__beanLoader getBeanWithType:@protocol(MFContextProtocol)];
     mfContext.entityContext = [NSManagedObjectContext MR_contextWithParent:
-                [[MFApplication getInstance] movalysContext]];
+                               [[MFApplication getInstance] movalysContext]];
+    [mfContext.entityContext MR_setWorkingName:@"Default MDK Context child"];
     return mfContext;
 }
 
 -(id<MFContextProtocol>) createMFContextWithChildCoreDataContextWithParent:(NSManagedObjectContext *)parentContext {
     id<MFContextProtocol> mfContext = [__beanLoader getBeanWithType:@protocol(MFContextProtocol)];
     mfContext.entityContext = [NSManagedObjectContext MR_contextWithParent:parentContext];
+    [mfContext.entityContext MR_setWorkingName:[NSString stringWithFormat:@"%@ child", [parentContext MR_workingName]]];
     return mfContext;
 }
 
 -(id<MFContextProtocol>) createMFContextWithDefaultCoreDataContext {
     id<MFContextProtocol> mfContext = [__beanLoader getBeanWithType:@protocol(MFContextProtocol)];
     mfContext.entityContext = [[MFApplication getInstance] movalysContext];
+    [mfContext.entityContext MR_setWorkingName:@"Default MDK Context"];
     return mfContext;
 }
 
