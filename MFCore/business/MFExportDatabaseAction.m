@@ -25,18 +25,24 @@
 
 #import "MFExportDatabaseAction.h"
 
+@interface MFExportDatabaseAction ()
+
+@property (nonatomic, strong) MFConfigurationHandler *registry;
+
+@end
+
 @implementation MFExportDatabaseAction
 
 /**
-  * @brief does the copy of sqlite database to the Documents directory share in Itunes
-  * Delete the sqlite persistent store to write on fill (vacuum) and recreate a new persistent store  
-  */
+ * @brief does the copy of sqlite database to the Documents directory share in Itunes
+ * Delete the sqlite persistent store to write on fill (vacuum) and recreate a new persistent store
+ */
 -(id) doAction:(id) parameterIn withContext: (id<MFContextProtocol>) context withQualifier:(id<MFActionQualifierProtocol>) qualifier withDispatcher:(MFActionProgressMessageDispatcher *) dispatch {
-
+    
     MFCoreLogVerbose(@" MFExportDatabaseAction.h doAction parameterIn '%@' ", parameterIn ) ;
     NSError *error;
     // on supprime le persistent store pour que le fichier sqlite ne soit plus ouvert et qu il soit complet
-
+    
     NSArray *persistentStores = [[NSPersistentStoreCoordinator MR_defaultStoreCoordinator] persistentStores] ;
     if ( [persistentStores count] > 0){
         NSPersistentStore  *persistentStore = [persistentStores objectAtIndex:0];
@@ -46,21 +52,13 @@
         }
     }
     
-    MFConfigurationHandler *confHandler = [[MFBeanLoader getInstance] getBeanWithKey:BEAN_KEY_CONFIGURATION_HANDLER];
-    NSString *databaseName = [confHandler getStringProperty:MFPROP_DATABASE_NAME];
+    NSString *destPath = [self destinationPathWithFileName:[self databaseFileName]];
     
-    NSString *fileFullPath = [self sourcePathFileName:databaseName];
-    
-    NSString *fileName = [fileFullPath substringFromIndex:[fileFullPath rangeOfString:@"/" options:NSBackwardsSearch].location +1];    
-    MFCoreLogVerbose(@"  short file Name '%@'" , fileName ) ;
-
-    NSString *destPath = [self destinationPathWithFileName:fileName];
-    
-    if ( [[NSFileManager defaultManager] copyItemAtPath:fileFullPath toPath:destPath error:&error] == YES) {
+    if ( [[NSFileManager defaultManager] copyItemAtPath:[self databaseFileFullPath] toPath:destPath error:&error] == YES) {
         MFCoreLogVerbose(@" Export OK dans '%@'  " , destPath ) ;
         
     } else {
-        NSString *errorText = [NSString stringWithFormat:@" Export KO from '%@' to '%@' , '%@' , '%@'" , fileFullPath ,destPath , error.localizedDescription , error.localizedFailureReason ];
+        NSString *errorText = [NSString stringWithFormat:@" Export KO from '%@' to '%@' , '%@' , '%@'" , [self databaseFileFullPath] ,destPath , error.localizedDescription , error.localizedFailureReason ];
         NSError *error2 = [[NSError alloc] initWithDomain:@"com.sopraconsulting.movalys.exportDatabase"
                                                      code:2
                                                  userInfo:@{NSLocalizedDescriptionKey : errorText}];
@@ -68,12 +66,12 @@
     }
     
     // On recree le persistent store pour retrouver les données
-    [[NSPersistentStoreCoordinator MR_defaultStoreCoordinator] MR_addAutoMigratingSqliteStoreNamed:databaseName];
+    [[NSPersistentStoreCoordinator MR_defaultStoreCoordinator] MR_addAutoMigratingSqliteStoreNamed:[self databaseName]];
     
     return nil ;
 }
 -(NSString *) sourcePathFileName:databaseName {
-    // find the source file to copy   
+    // find the source file to copy
     NSString *fileFullPath =[[NSPersistentStore MR_urlForStoreName:databaseName] path];
     MFCoreLogVerbose(@" %@ fileFullPath " , fileFullPath ) ;
     return fileFullPath ;
@@ -95,6 +93,26 @@
     
     MFCoreLogVerbose(@" %@ destPath " , destPath ) ;
     return destPath ;
+}
+
+-(NSString *)databaseFileName {
+    NSString *databaseName = [self databaseName];
+    NSString *fileName = [[self databaseFileFullPath] substringFromIndex:[[self databaseFileFullPath] rangeOfString:@"/" options:NSBackwardsSearch].location +1];
+    MFCoreLogVerbose(@"  short file Name '%@'" , fileName ) ;
+    return fileName;
+}
+
+-(NSString *) databaseName {
+    if(!self.registry) {
+        self.registry = [[MFBeanLoader getInstance] getBeanWithKey:BEAN_KEY_CONFIGURATION_HANDLER];
+    }
+    NSString *databaseName = [self.registry getStringProperty:MFPROP_DATABASE_NAME];
+    return databaseName;
+}
+
+-(NSString *)databaseFileFullPath {
+    NSString *fileFullPath = [self sourcePathFileName:[self databaseName]];
+    return fileFullPath;
 }
 
 @end

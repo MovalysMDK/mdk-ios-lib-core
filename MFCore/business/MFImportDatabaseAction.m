@@ -25,6 +25,13 @@
 
 #import "MFImportDatabaseAction.h"
 
+@interface MFImportDatabaseAction ()
+
+@property (nonatomic, strong) MFConfigurationHandler *registry;
+
+@end
+
+
 @implementation MFImportDatabaseAction
 /**
  * @brief does the copy of sqlite database to the Documents directory share in Itunes. Use a file named NewZZZZ where ZZZZ is the name of database in the configuration properties list .
@@ -32,33 +39,8 @@
 -(id) doAction:(id) parameterIn withContext: (id<MFContextProtocol>) context withQualifier:(id<MFActionQualifierProtocol>) qualifier withDispatcher:(MFActionProgressMessageDispatcher *) dispatch {
     
     MFCoreLogVerbose(@" MFImportDatabaseAction doAction %@ ", parameterIn ) ;
-    MFConfigurationHandler *confHandler = [[MFBeanLoader getInstance] getBeanWithKey:BEAN_KEY_CONFIGURATION_HANDLER];
-    NSString *databaseName = [confHandler getStringProperty:MFPROP_DATABASE_NAME];
-
-    NSString *fileFullPath = [self sourcePathFileName:databaseName];
+    NSString *destPath = [self destinationPathWithFileName:[self databaseName]];
     
-    NSString *destPath = [self destinationPathWithFileName:databaseName];
-    /*
-    NSError *error;
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    if ( [fileManager fileExistsAtPath:destPath]) {
-        
-        MFCoreDataHelper *coreDataHelper = [[MFBeanLoader getInstance] getBeanWithKey:BEAN_KEY_CORE_DATA_HELPER];
-        //coreDataHelper.sqliteStore
-        if ( [fileManager removeItemAtPath:destPath error:&error]) {
-            MFCoreLogVerbose(@" Delete KO  '%@' , '%@' , '%@'" , destPath , error.localizedDescription , error.localizedFailureReason ) ;
-        }else {
-            MFCoreLogVerbose(@" Delete OK  '%@' " , destPath );
-        }
-    }
-    if ( [fileManager copyItemAtPath:fileFullPath toPath:destPath error:&error] == YES) {
-        MFCoreLogVerbose(@" Export OK dans '%@'  " , destPath ) ;
-    } else {
-        MFCoreLogVerbose(@" Export KO from '%@' to '%@' , '%@' , '%@'" , fileFullPath ,destPath , error.localizedDescription , error.localizedFailureReason ) ;
-    }
-     
-    [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed: databaseName]; 
-    */
     NSError* error ;
     NSArray* persistenceStores =[[NSPersistentStoreCoordinator MR_defaultStoreCoordinator] persistentStores];
     for ( NSPersistentStore *store in persistenceStores ){
@@ -77,10 +59,10 @@
         }
     }
     
-    if ( [fileManager copyItemAtPath:fileFullPath toPath:destPath error:&error] == YES) {
+    if ( [fileManager copyItemAtPath:[self databaseFileFullPath] toPath:destPath error:&error] == YES) {
         MFCoreLogVerbose(@" Copy OK in '%@'  " , destPath ) ;
     } else {
-        NSString *errorText = [NSString stringWithFormat:@" Copy KO from '%@' to '%@' , '%@' , '%@'" , fileFullPath ,destPath , error.localizedDescription , error.localizedFailureReason ] ;
+        NSString *errorText = [NSString stringWithFormat:@" Copy KO from '%@' to '%@' , '%@' , '%@'" , [self databaseFileFullPath] ,destPath , error.localizedDescription , error.localizedFailureReason ] ;
         NSError *error2 = [[NSError alloc] initWithDomain:@"com.sopraconsulting.movalys.importDatabase"
                                            code:2
                                        userInfo:@{NSLocalizedDescriptionKey : errorText}];
@@ -88,23 +70,8 @@
     }
     
     // On recree le persistent store pour retrouver les données
-    [[NSPersistentStoreCoordinator MR_defaultStoreCoordinator] MR_addAutoMigratingSqliteStoreNamed:databaseName];
+    [[NSPersistentStoreCoordinator MR_defaultStoreCoordinator] MR_addAutoMigratingSqliteStoreNamed:[self databaseName]];
     [[NSPersistentStoreCoordinator MR_defaultStoreCoordinator] MR_addInMemoryStore];
-    
-
-    /*
-    // then update
-    NSURL *applicationDocumentsDirectory = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-    NSURL *storeURL = [applicationDocumentsDirectory URLByAppendingPathComponent: @"NewAppDatabase.sqlite"];
-    
-    // add clean store file back by adding a new persistent store with the same store URL
-    if (![[NSPersistentStoreCoordinator defaultStoreCoordinator] addPersistentStoreWithType:NSSQLiteStoreType
-                                                       configuration:nil
-                                                                 URL:storeURL
-                                                             options:nil
-                                                               error:&error]) {
-        MFCoreLogError(@"failed to add db file, error %@, %@", error, [error userInfo]);
-    }*/
     
     return nil ;
 }
@@ -133,5 +100,26 @@
 - (BOOL)isReadOnly {
     return NO;
 }
+
+-(NSString *)databaseFileName {
+    NSString *databaseName = [self databaseName];
+    NSString *fileName = [[self databaseFileFullPath] substringFromIndex:[[self databaseFileFullPath] rangeOfString:@"/" options:NSBackwardsSearch].location +1];
+    MFCoreLogVerbose(@"  short file Name '%@'" , fileName ) ;
+    return fileName;
+}
+
+-(NSString *) databaseName {
+    if(!self.registry) {
+        self.registry = [[MFBeanLoader getInstance] getBeanWithKey:BEAN_KEY_CONFIGURATION_HANDLER];
+    }
+    NSString *databaseName = [self.registry getStringProperty:MFPROP_DATABASE_NAME];
+    return databaseName;
+}
+
+-(NSString *)databaseFileFullPath {
+    NSString *fileFullPath = [self sourcePathFileName:[self databaseName]];
+    return fileFullPath;
+}
+
 
 @end
