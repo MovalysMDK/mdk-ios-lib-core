@@ -41,7 +41,23 @@ NSString *const CONST_PROJECT_LOCALIZED_STRING          = @"Localizable-project"
     if ([string isEqualToString:key]) {
         string = key;
     }
+    return string;
+}
+
++(NSString *)localizableStringFromKey:(NSString *)key forClass:(Class)aClass{
+    NSString *string = [[NSBundle bundleForClass:aClass] localizedStringForKey:(key) value:@"" table:(CONST_PROJECT_LOCALIZED_STRING)];
     
+    if ([string isEqualToString:key]) {
+        string = [[NSBundle bundleForClass:aClass] localizedStringForKey:(key) value:@"" table:(CONST_FRAMEWORK_LOCALIZED_STRING)];
+    }
+    
+    if ([string isEqualToString:key]) {
+        string = NSLocalizedString(key, nil);
+    }
+    
+    if ([string isEqualToString:key]) {
+        string = key;
+    }
     return string;
 }
 

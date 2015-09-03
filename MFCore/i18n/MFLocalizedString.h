@@ -28,7 +28,11 @@ FOUNDATION_EXPORT NSString *const CONST_PROJECT_LOCALIZED_STRING;
 #define MFLocalizedStringFromKey(key)                   \
 [MFLocalizedString localizableStringFromKey:key]        \
 
-
+/*!
+ * Cette macro permet d'appeller MFLocalizedString de la même manière que NSLocalizedString (TEST ONLY)
+ */
+#define TestLocalizedStringFromKey(key,aClass)                   \
+[MFLocalizedString localizableStringFromKey:key forClass:aClass]        \
 
 @interface MFLocalizedString : NSObject
 
@@ -39,4 +43,13 @@ FOUNDATION_EXPORT NSString *const CONST_PROJECT_LOCALIZED_STRING;
  * @return La chaîne de caractère trouvée, ou la clé elle-même si aucune chaîne n'a été trouvée 
  */
 +(NSString *)localizableStringFromKey:(NSString *)key;
+
+/*!
+ * @brief Cette méthode permet de recherche un chaîne de caractère dans les différentes tables
+ * (Framework et Project) des Localizable-string.
+ * @param key La clé de la chaîne à rechercher
+ * @param class The class that class the MFLocalizedKey macro
+ * @return La chaîne de caractère trouvée, ou la clé elle-même si aucune chaîne n'a été trouvée
+ */
++(NSString *)localizableStringFromKey:(NSString *)key forClass:(Class)aClass;
 @end

@@ -304,6 +304,10 @@
 		B088005A1B983C9000A49B59 /* MFCoreDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B08800591B983C9000A49B59 /* MFCoreDataTests.m */; };
 		B088005B1B983FBE00A49B59 /* Model.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = B088004F1B983BB500A49B59 /* Model.xcdatamodeld */; };
 		B0D72C911B97311A00473993 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B06869061AD6BB8100D6B529 /* CoreData.framework */; };
+		B0F0F8BA1B989C9900DB30B0 /* MFI18nTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F0F8B91B989C9900DB30B0 /* MFI18nTests.m */; };
+		B0F0F8C01B98A42C00DB30B0 /* Localizable-framework.strings in Resources */ = {isa = PBXBuildFile; fileRef = B0F0F8BC1B98A42C00DB30B0 /* Localizable-framework.strings */; };
+		B0F0F8C11B98A42C00DB30B0 /* Localizable-project.strings in Resources */ = {isa = PBXBuildFile; fileRef = B0F0F8BE1B98A42C00DB30B0 /* Localizable-project.strings */; };
+		B0F0F8C31B98A6F900DB30B0 /* MFSecurityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F0F8C21B98A6F900DB30B0 /* MFSecurityTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -637,6 +641,10 @@
 		B0AAFB6B1AD41A7200463F7F /* Pods.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B0AAFB751AD41C4500463F7F /* MFCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MFCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0AAFB781AD41C4500463F7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0F0F8B91B989C9900DB30B0 /* MFI18nTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFI18nTests.m; sourceTree = "<group>"; };
+		B0F0F8BD1B98A42C00DB30B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "Localizable-framework.strings"; sourceTree = "<group>"; };
+		B0F0F8BF1B98A42C00DB30B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "Localizable-project.strings"; sourceTree = "<group>"; };
+		B0F0F8C21B98A6F900DB30B0 /* MFSecurityTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFSecurityTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1282,6 +1290,7 @@
 		B08800451B983B1600A49B59 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B0F0F8BB1B98A42C00DB30B0 /* en.lproj */,
 				B088004F1B983BB500A49B59 /* Model.xcdatamodeld */,
 			);
 			path = Resources;
@@ -1295,6 +1304,8 @@
 				B08800491B983B1600A49B59 /* MFCoreTests.m */,
 				B088004A1B983B1600A49B59 /* MFPropertyTests.m */,
 				B08800591B983C9000A49B59 /* MFCoreDataTests.m */,
+				B0F0F8B91B989C9900DB30B0 /* MFI18nTests.m */,
+				B0F0F8C21B98A6F900DB30B0 /* MFSecurityTests.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -1327,6 +1338,15 @@
 				B0AAFB781AD41C4500463F7F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B0F0F8BB1B98A42C00DB30B0 /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				B0F0F8BC1B98A42C00DB30B0 /* Localizable-framework.strings */,
+				B0F0F8BE1B98A42C00DB30B0 /* Localizable-project.strings */,
+			);
+			path = en.lproj;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1596,6 +1616,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0F0F8C11B98A42C00DB30B0 /* Localizable-project.strings in Resources */,
+				B0F0F8C01B98A42C00DB30B0 /* Localizable-framework.strings in Resources */,
 				B088005B1B983FBE00A49B59 /* Model.xcdatamodeld in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1803,10 +1825,12 @@
 				B08800581B983C6900A49B59 /* LinkEntity.m in Sources */,
 				B088004B1B983B1600A49B59 /* MFContextTests.m in Sources */,
 				B088004E1B983B1600A49B59 /* MFPropertyTests.m in Sources */,
+				B0F0F8BA1B989C9900DB30B0 /* MFI18nTests.m in Sources */,
 				B08800441B983AE200A49B59 /* MFTestAssembly.m in Sources */,
 				B08800511B983BB500A49B59 /* Model.xcdatamodeld in Sources */,
 				B08800431B983AE200A49B59 /* MFEmptyAction.m in Sources */,
 				B088004D1B983B1600A49B59 /* MFCoreTests.m in Sources */,
+				B0F0F8C31B98A6F900DB30B0 /* MFSecurityTests.m in Sources */,
 				B088004C1B983B1600A49B59 /* MFCoreActionTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1820,6 +1844,25 @@
 			targetProxy = B06868FF1AD6B20300D6B529 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B0F0F8BC1B98A42C00DB30B0 /* Localizable-framework.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B0F0F8BD1B98A42C00DB30B0 /* en */,
+			);
+			name = "Localizable-framework.strings";
+			sourceTree = "<group>";
+		};
+		B0F0F8BE1B98A42C00DB30B0 /* Localizable-project.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B0F0F8BF1B98A42C00DB30B0 /* en */,
+			);
+			name = "Localizable-project.strings";
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		B04172571A70F5350045C268 /* Debug */ = {

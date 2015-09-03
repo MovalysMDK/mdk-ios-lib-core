@@ -1,0 +1,11 @@
+/* 
+  Localizable-Framework.strings
+  MFCore
+
+  Created by Lagarde Quentin on 03/09/2015.
+  Copyright (c) 2015 Sopra. All rights reserved.
+*/
+
+"chaine_test_1" = "ABC";
+
+"chaine_test_2" = "GHI";
