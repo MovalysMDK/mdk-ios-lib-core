@@ -11,6 +11,7 @@
 #import <MFCore/MFCore.h>
 #import <CoreData/CoreData.h>
 #import <MagicalRecord/CoreData+MagicalRecord.h>
+#import "LinkEntity.h"
 
 
 @interface MFContextTests : XCTestCase
@@ -24,8 +25,8 @@
 - (void)setUp {
     [super setUp];
     self.context = [[MFContext alloc] init];
-    [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"aName"];
-    
+    [MagicalRecord setupCoreDataStackWithInMemoryStore];
+    [MagicalRecord setDefaultModelFromClass:[self class]];
 }
 
 - (void)tearDown {

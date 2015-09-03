@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		B041724C1A70F5350045C268 /* MFCore.h in Headers */ = {isa = PBXBuildFile; fileRef = B041724B1A70F5350045C268 /* MFCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B0585EF11B1E072200BA2647 /* MFCoreActionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0585EF01B1E072200BA2647 /* MFCoreActionTests.m */; };
-		B0585EF71B1E07A200BA2647 /* MFTestAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = B0585EF61B1E07A200BA2647 /* MFTestAssembly.m */; };
-		B0585EFA1B1E07C000BA2647 /* MFEmptyAction.m in Sources */ = {isa = PBXBuildFile; fileRef = B0585EF91B1E07C000BA2647 /* MFEmptyAction.m */; };
 		B06483B11A70F5CB0077A855 /* MFCoreLog.h in Headers */ = {isa = PBXBuildFile; fileRef = B06482191A70F5CB0077A855 /* MFCoreLog.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06483B21A70F5CB0077A855 /* MFCoreLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = B064821A1A70F5CB0077A855 /* MFCoreLogging.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06483B31A70F5CB0077A855 /* MFLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = B064821B1A70F5CB0077A855 /* MFLogging.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -295,9 +292,17 @@
 		B068690D1AD6BBC600D6B529 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B068690C1AD6BBC600D6B529 /* CFNetwork.framework */; };
 		B068690F1AD6BBEB00D6B529 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B068690E1AD6BBEB00D6B529 /* SystemConfiguration.framework */; };
 		B068691A1AD6C40400D6B529 /* MFCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B04172461A70F5350045C268 /* MFCore.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		B0AAFB7A1AD41C4500463F7F /* MFCoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0AAFB791AD41C4500463F7F /* MFCoreTests.m */; };
-		B0D72C8E1B971EA300473993 /* MFPropertyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0D72C8D1B971EA300473993 /* MFPropertyTests.m */; };
-		B0D72C901B97249800473993 /* MFContextTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0D72C8F1B97249800473993 /* MFContextTests.m */; };
+		B08800431B983AE200A49B59 /* MFEmptyAction.m in Sources */ = {isa = PBXBuildFile; fileRef = B088003F1B983AE200A49B59 /* MFEmptyAction.m */; };
+		B08800441B983AE200A49B59 /* MFTestAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = B08800421B983AE200A49B59 /* MFTestAssembly.m */; };
+		B088004B1B983B1600A49B59 /* MFContextTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B08800471B983B1600A49B59 /* MFContextTests.m */; };
+		B088004C1B983B1600A49B59 /* MFCoreActionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B08800481B983B1600A49B59 /* MFCoreActionTests.m */; };
+		B088004D1B983B1600A49B59 /* MFCoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B08800491B983B1600A49B59 /* MFCoreTests.m */; };
+		B088004E1B983B1600A49B59 /* MFPropertyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B088004A1B983B1600A49B59 /* MFPropertyTests.m */; };
+		B08800511B983BB500A49B59 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B088004F1B983BB500A49B59 /* Model.xcdatamodeld */; };
+		B08800571B983C6900A49B59 /* Entity.m in Sources */ = {isa = PBXBuildFile; fileRef = B08800541B983C6900A49B59 /* Entity.m */; };
+		B08800581B983C6900A49B59 /* LinkEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B08800561B983C6900A49B59 /* LinkEntity.m */; };
+		B088005A1B983C9000A49B59 /* MFCoreDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B08800591B983C9000A49B59 /* MFCoreDataTests.m */; };
+		B088005B1B983FBE00A49B59 /* Model.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = B088004F1B983BB500A49B59 /* Model.xcdatamodeld */; };
 		B0D72C911B97311A00473993 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B06869061AD6BB8100D6B529 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
@@ -315,11 +320,6 @@
 		B04172461A70F5350045C268 /* MFCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MFCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B041724A1A70F5350045C268 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B041724B1A70F5350045C268 /* MFCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MFCore.h; sourceTree = "<group>"; };
-		B0585EF01B1E072200BA2647 /* MFCoreActionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFCoreActionTests.m; sourceTree = "<group>"; };
-		B0585EF51B1E07A200BA2647 /* MFTestAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFTestAssembly.h; sourceTree = "<group>"; };
-		B0585EF61B1E07A200BA2647 /* MFTestAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFTestAssembly.m; sourceTree = "<group>"; };
-		B0585EF81B1E07C000BA2647 /* MFEmptyAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFEmptyAction.h; sourceTree = "<group>"; };
-		B0585EF91B1E07C000BA2647 /* MFEmptyAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFEmptyAction.m; sourceTree = "<group>"; };
 		B06482181A70F5CB0077A855 /* deps */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = deps; sourceTree = "<group>"; };
 		B06482191A70F5CB0077A855 /* MFCoreLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFCoreLog.h; sourceTree = "<group>"; };
 		B064821A1A70F5CB0077A855 /* MFCoreLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFCoreLogging.h; sourceTree = "<group>"; };
@@ -619,13 +619,24 @@
 		B068690A1AD6BBAE00D6B529 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		B068690C1AD6BBC600D6B529 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		B068690E1AD6BBEB00D6B529 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		B088003E1B983AE200A49B59 /* MFEmptyAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFEmptyAction.h; sourceTree = "<group>"; };
+		B088003F1B983AE200A49B59 /* MFEmptyAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFEmptyAction.m; sourceTree = "<group>"; };
+		B08800411B983AE200A49B59 /* MFTestAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFTestAssembly.h; sourceTree = "<group>"; };
+		B08800421B983AE200A49B59 /* MFTestAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFTestAssembly.m; sourceTree = "<group>"; };
+		B08800471B983B1600A49B59 /* MFContextTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFContextTests.m; sourceTree = "<group>"; };
+		B08800481B983B1600A49B59 /* MFCoreActionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFCoreActionTests.m; sourceTree = "<group>"; };
+		B08800491B983B1600A49B59 /* MFCoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFCoreTests.m; sourceTree = "<group>"; };
+		B088004A1B983B1600A49B59 /* MFPropertyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFPropertyTests.m; sourceTree = "<group>"; };
+		B08800501B983BB500A49B59 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		B08800531B983C6900A49B59 /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = "<group>"; };
+		B08800541B983C6900A49B59 /* Entity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entity.m; sourceTree = "<group>"; };
+		B08800551B983C6900A49B59 /* LinkEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkEntity.h; sourceTree = "<group>"; };
+		B08800561B983C6900A49B59 /* LinkEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkEntity.m; sourceTree = "<group>"; };
+		B08800591B983C9000A49B59 /* MFCoreDataTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFCoreDataTests.m; sourceTree = "<group>"; };
 		B0AAFB6A1AD41A7200463F7F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B0AAFB6B1AD41A7200463F7F /* Pods.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B0AAFB751AD41C4500463F7F /* MFCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MFCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0AAFB781AD41C4500463F7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B0AAFB791AD41C4500463F7F /* MFCoreTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MFCoreTests.m; sourceTree = "<group>"; };
-		B0D72C8D1B971EA300473993 /* MFPropertyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFPropertyTests.m; sourceTree = "<group>"; };
-		B0D72C8F1B97249800473993 /* MFContextTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFContextTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -738,10 +749,9 @@
 		B0585EF41B1E07A200BA2647 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				B0585EF51B1E07A200BA2647 /* MFTestAssembly.h */,
-				B0585EF61B1E07A200BA2647 /* MFTestAssembly.m */,
-				B0585EF81B1E07C000BA2647 /* MFEmptyAction.h */,
-				B0585EF91B1E07C000BA2647 /* MFEmptyAction.m */,
+				B08800521B983C6900A49B59 /* coredata */,
+				B088003D1B983AE200A49B59 /* action */,
+				B08800401B983AE200A49B59 /* beans */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -1251,13 +1261,60 @@
 			path = message;
 			sourceTree = "<group>";
 		};
+		B088003D1B983AE200A49B59 /* action */ = {
+			isa = PBXGroup;
+			children = (
+				B088003E1B983AE200A49B59 /* MFEmptyAction.h */,
+				B088003F1B983AE200A49B59 /* MFEmptyAction.m */,
+			);
+			path = action;
+			sourceTree = "<group>";
+		};
+		B08800401B983AE200A49B59 /* beans */ = {
+			isa = PBXGroup;
+			children = (
+				B08800411B983AE200A49B59 /* MFTestAssembly.h */,
+				B08800421B983AE200A49B59 /* MFTestAssembly.m */,
+			);
+			path = beans;
+			sourceTree = "<group>";
+		};
+		B08800451B983B1600A49B59 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B088004F1B983BB500A49B59 /* Model.xcdatamodeld */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B08800461B983B1600A49B59 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				B08800471B983B1600A49B59 /* MFContextTests.m */,
+				B08800481B983B1600A49B59 /* MFCoreActionTests.m */,
+				B08800491B983B1600A49B59 /* MFCoreTests.m */,
+				B088004A1B983B1600A49B59 /* MFPropertyTests.m */,
+				B08800591B983C9000A49B59 /* MFCoreDataTests.m */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		B08800521B983C6900A49B59 /* coredata */ = {
+			isa = PBXGroup;
+			children = (
+				B08800531B983C6900A49B59 /* Entity.h */,
+				B08800541B983C6900A49B59 /* Entity.m */,
+				B08800551B983C6900A49B59 /* LinkEntity.h */,
+				B08800561B983C6900A49B59 /* LinkEntity.m */,
+			);
+			path = coredata;
+			sourceTree = "<group>";
+		};
 		B0AAFB761AD41C4500463F7F /* MFCoreTests */ = {
 			isa = PBXGroup;
 			children = (
-				B0D72C8F1B97249800473993 /* MFContextTests.m */,
-				B0585EF01B1E072200BA2647 /* MFCoreActionTests.m */,
-				B0AAFB791AD41C4500463F7F /* MFCoreTests.m */,
-				B0D72C8D1B971EA300473993 /* MFPropertyTests.m */,
+				B08800451B983B1600A49B59 /* Resources */,
+				B08800461B983B1600A49B59 /* Tests */,
 				B0585EF41B1E07A200BA2647 /* Sources */,
 				B0AAFB771AD41C4500463F7F /* Supporting Files */,
 			);
@@ -1539,6 +1596,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B088005B1B983FBE00A49B59 /* Model.xcdatamodeld in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1740,12 +1798,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0D72C901B97249800473993 /* MFContextTests.m in Sources */,
-				B0AAFB7A1AD41C4500463F7F /* MFCoreTests.m in Sources */,
-				B0585EFA1B1E07C000BA2647 /* MFEmptyAction.m in Sources */,
-				B0585EF71B1E07A200BA2647 /* MFTestAssembly.m in Sources */,
-				B0585EF11B1E072200BA2647 /* MFCoreActionTests.m in Sources */,
-				B0D72C8E1B971EA300473993 /* MFPropertyTests.m in Sources */,
+				B08800571B983C6900A49B59 /* Entity.m in Sources */,
+				B088005A1B983C9000A49B59 /* MFCoreDataTests.m in Sources */,
+				B08800581B983C6900A49B59 /* LinkEntity.m in Sources */,
+				B088004B1B983B1600A49B59 /* MFContextTests.m in Sources */,
+				B088004E1B983B1600A49B59 /* MFPropertyTests.m in Sources */,
+				B08800441B983AE200A49B59 /* MFTestAssembly.m in Sources */,
+				B08800511B983BB500A49B59 /* Model.xcdatamodeld in Sources */,
+				B08800431B983AE200A49B59 /* MFEmptyAction.m in Sources */,
+				B088004D1B983B1600A49B59 /* MFCoreTests.m in Sources */,
+				B088004C1B983B1600A49B59 /* MFCoreActionTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2008,6 +2070,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B088004F1B983BB500A49B59 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B08800501B983BB500A49B59 /* Model.xcdatamodel */,
+			);
+			currentVersion = B08800501B983BB500A49B59 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B041723D1A70F5350045C268 /* Project object */;
 }

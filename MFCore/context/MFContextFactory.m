@@ -72,6 +72,7 @@
     mfContext.entityContext = [NSManagedObjectContext MR_contextWithParent:
                                [[MFApplication getInstance] movalysContext]];
     [mfContext.entityContext MR_setWorkingName:@"Default MDK Context child"];
+    [mfContext.entityContext.parentContext MR_setWorkingName:@"Default MDK Context"];
     return mfContext;
 }
 

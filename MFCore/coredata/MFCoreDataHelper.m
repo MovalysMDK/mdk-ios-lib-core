@@ -23,6 +23,7 @@
 
 #import "MFCoreDataHelper.h"
 #import "MFFetchOptions.h"
+#import "MFHelperBOOL.h"
 
 @implementation MFCoreDataHelper
 
@@ -66,44 +67,35 @@
 }
 
 - (void) saveWithOptions:(MRSaveContextOptions)mask entityContext:(NSManagedObjectContext *) entityContext
-        completion:(MRSaveCompletionHandler)completion
-
-{
+        completion:(MRSaveCompletionHandler)completion {
     BOOL syncSave           = ((mask & MRSaveSynchronously) == MRSaveSynchronously);
     BOOL saveParentContexts = ((mask & MRSaveParentContexts) == MRSaveParentContexts);
     
     if (![entityContext hasChanges]) {
         MRLog(@"NO CHANGES IN ** %@ ** CONTEXT - NOT SAVING", [entityContext MR_workingName]);
-        
-        if (completion)
-        {
+        if (completion) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 completion(NO, nil);
             });
         }
-        
         return;
     }
     
-    MRLog(@"→ Saving %@", [entityContext MR_description]);
-    MRLog(@"→ Save Parents? %@", @(saveParentContexts));
-    MRLog(@"→ Save Synchronously? %@", @(syncSave));
+    MRLog(@"→ Saving %@, and its parent context:%@, synchronously:%@",
+          [entityContext MR_description], [MFHelperBOOL asString:saveParentContexts], [MFHelperBOOL asString:syncSave]);
     
     id saveBlock = ^{
         NSError *error = nil;
-        BOOL     saved = NO;
+        BOOL saved = NO;
         
-        @try
-        {
+        @try {
             saved = [entityContext save:&error];
         }
-        @catch(NSException *exception)
-        {
+        @catch(NSException *exception) {
             MRLog(@"Unable to perform save: %@", (id)[exception userInfo] ? : (id)[exception reason]);
         }
         
-        @finally
-        {
+        @finally {
             if (!saved) {
                 [MagicalRecord handleErrors:error];
                 
@@ -112,7 +104,8 @@
                         completion(saved, error);
                     });
                 }
-            } else {
+            }
+            else {
                 // If we're the default context, save to disk too (the user expects it to persist)
                 BOOL isDefaultContext = (entityContext == [[entityContext class] MR_defaultContext]);
                 BOOL shouldSaveParentContext = ((YES == saveParentContexts) || isDefaultContext);
@@ -123,7 +116,6 @@
                 // If we should not save the parent context, or there is not a parent context to save (root context), call the completion block
                 else {
                     MRLog(@"→ Finished saving: %@", [entityContext MR_description]);
-                    
                     if (completion) {
                         
                         runOnMainQueueWithoutDeadlocking( ^{
@@ -153,27 +145,22 @@
 
 
 - (void)logChanges:(id<MFContextProtocol>)mfContext withDetails:(BOOL)details {
-    MFCoreLogInfo(@"** Context changes :");
-    
-    MFCoreLogInfo(@"inserted objects: %lu", (unsigned long)[[[mfContext entityContext] insertedObjects] count]);
-    MFCoreLogInfo(@"deleted objects: %lu", (unsigned long)[[[mfContext entityContext] deletedObjects] count]);
-    MFCoreLogInfo(@"updated objects: %lu", (unsigned long)[[[mfContext entityContext] updatedObjects] count]);
-    
+    NSLog(@"** Context changes :");
+    NSLog(@"inserted objects: %lu", (unsigned long)[[[mfContext entityContext] insertedObjects] count]);
+    NSLog(@"deleted objects: %lu", (unsigned long)[[[mfContext entityContext] deletedObjects] count]);
+    NSLog(@"updated objects: %lu", (unsigned long)[[[mfContext entityContext] updatedObjects] count]);
     if ( details ) {
-    
         for( NSManagedObject *entity in [[mfContext entityContext] insertedObjects]) {
             MFCoreLogInfo(@"new object: %@", entity);
         }
-    
         for( NSManagedObject *entity in [[mfContext entityContext] deletedObjects]) {
             MFCoreLogInfo(@"deleted object: %@", entity);
         }
-    
         for( NSManagedObject *entity in [[mfContext entityContext] updatedObjects]) {
             MFCoreLogInfo(@"updated object: %@", entity);
         }
     }
-    MFCoreLogInfo(@"****");
+    NSLog(@"****");
 }
 
 void runOnMainQueueWithoutDeadlocking(void (^block)(void))

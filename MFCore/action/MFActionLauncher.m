@@ -458,13 +458,9 @@ NSString *const mf_registerActionListener = @"mf_registerActionListener";
 
 #pragma mark - Context
 - (id<MFContextProtocol>) createMFContext:(NSString *)actionName {
-    
     id<MFContextFactoryProtocol> contextFactory = [[MFBeanLoader getInstance] getBeanWithType:@protocol(MFContextFactoryProtocol)];
-    
     id<MFContextProtocol> mfContext = [contextFactory createMFContextWithChildCoreDataContext];
-    
-    //MFCoreLogInfo(@"FOR action: %@, createMFContext: %@", actionName, mfContext.entityContext );
-    //MFCoreLogInfo(@"    parentContext: %@", mfContext.entityContext.parentContext );
+
     
     return mfContext;
 }

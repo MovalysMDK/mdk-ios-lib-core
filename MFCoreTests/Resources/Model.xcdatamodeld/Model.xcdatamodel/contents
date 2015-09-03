@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14D136" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Entity" representedClassName="Entity" syncable="YES">
+        <attribute name="bAttribute" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="dAttribute" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="fAttribute" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="iAttribute" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="sAttribute" attributeType="String" minValueString="5" maxValueString="25" syncable="YES"/>
+        <relationship name="linkedEntities" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="LinkEntity" inverseName="baseEntity" inverseEntity="LinkEntity" syncable="YES"/>
+    </entity>
+    <entity name="LinkEntity" representedClassName="LinkEntity" syncable="YES">
+        <attribute name="sAttribute" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="baseEntity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Entity" inverseName="linkedEntities" inverseEntity="Entity" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Entity" positionX="-360" positionY="-126" width="128" height="133"/>
+        <element name="LinkEntity" positionX="-54" positionY="27" width="128" height="73"/>
+    </elements>
+</model>

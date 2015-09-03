@@ -35,7 +35,6 @@
   * Return the date time prefix of the new files
  */
 -(id) doAction:(id) parameterIn withContext: (id<MFContextProtocol>) context withQualifier:(id<MFActionQualifierProtocol>) qualifier withDispatcher:(MFActionProgressMessageDispatcher*) dispatch {
-
     MFCoreLogVerbose(@" MFExportLogsAction doAction parameterIn '%@' ", parameterIn ) ;
     NSError *error;
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
