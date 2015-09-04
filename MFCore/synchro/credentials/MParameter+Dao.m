@@ -13,11 +13,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
-//
-//  MParameter+Dao.m
-//  MFCore
-//
-//
+
 
 #import "MParameter+Dao.h"
 #import "NSManagedObject+MFCommonDao.h"

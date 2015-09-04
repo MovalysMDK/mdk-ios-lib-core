@@ -13,11 +13,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
-//
-//  MFCoreBeans.h
-//  MFCore
-//
-//
+
 
 #import "MFBeanLoader.h"
 #import "MFBeansKeys.h"

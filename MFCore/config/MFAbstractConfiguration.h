@@ -13,11 +13,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
-//
-//  MFAbstractConfiguration.h
-//  MFCore
-//
-//
+
 
 /*! type de configuration Propriété */
 #define CONF_PROPERTY @"property_"

@@ -13,10 +13,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
-//
-//
-//  MFCSVParser.m
-//  MFCore
+
 /**
  
  Permission is hereby granted, free of charge, to any person obtaining a copy

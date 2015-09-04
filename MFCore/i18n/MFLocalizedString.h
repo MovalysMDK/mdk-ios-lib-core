@@ -13,11 +13,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
-//
-//  MFLocalizedString.h
-//  MFCore
-//
-//
+
 
 FOUNDATION_EXPORT NSString *const CONST_FRAMEWORK_LOCALIZED_STRING;
 FOUNDATION_EXPORT NSString *const CONST_PROJECT_LOCALIZED_STRING;

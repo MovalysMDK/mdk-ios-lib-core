@@ -1,17 +1,29 @@
-//
-//  MFEmptyAction.h
-//  MFCore
-//
-//  Created by Lagarde Quentin on 02/06/2015.
-//  Copyright (c) 2015 Sopra. All rights reserved.
-//
+/**
+ * Copyright (C) 2010 Sopra (support_movalys@sopra.com)
+ *
+ * This file is part of Movalys MDK.
+ * Movalys MDK is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * Movalys MDK is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Lesser General Public License for more details.
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
+ */
 
 #import <Foundation/Foundation.h>
 #import "MFActionProtocol.h"
 
 FOUNDATION_EXPORT NSString *const MFAction_MFEmptyAction ;
 
-
+/*!
+ * @class MFEmptyAction
+ * @brief This class is an action that does nothing
+ * @discussion It could be used to test action mecansime like listeners implementation
+ */
 @interface MFEmptyAction : NSObject <MFActionProtocol>
 
 @end

@@ -541,7 +541,7 @@
 		B06482FB1A70F5CB0077A855 /* NSPredicate+MFPredicateHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPredicate+MFPredicateHelper.m"; sourceTree = "<group>"; };
 		B06482FD1A70F5CB0077A855 /* deps */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = deps; sourceTree = "<group>"; };
 		B06482FE1A70F5CB0077A855 /* MFAbstractCsvLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFAbstractCsvLoader.h; sourceTree = "<group>"; };
-		B06482FF1A70F5CB0077A855 /* MFAbstractCsvLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MFAbstractCsvLoader.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		B06482FF1A70F5CB0077A855 /* MFAbstractCsvLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MFAbstractCsvLoader.m; sourceTree = "<group>"; };
 		B06483001A70F5CB0077A855 /* MFCoreCsvloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFCoreCsvloader.h; sourceTree = "<group>"; };
 		B06483011A70F5CB0077A855 /* MFCsvFileDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFCsvFileDescriptor.h; sourceTree = "<group>"; };
 		B06483021A70F5CB0077A855 /* MFCsvFileDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFCsvFileDescriptor.m; sourceTree = "<group>"; };
@@ -558,7 +558,7 @@
 		B064830D1A70F5CB0077A855 /* MFUserCsvLoaderRunInit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFUserCsvLoaderRunInit.m; sourceTree = "<group>"; };
 		B064830F1A70F5CB0077A855 /* deps */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = deps; sourceTree = "<group>"; };
 		B06483101A70F5CB0077A855 /* MFAbstractDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFAbstractDataLoader.h; sourceTree = "<group>"; };
-		B06483111A70F5CB0077A855 /* MFAbstractDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MFAbstractDataLoader.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		B06483111A70F5CB0077A855 /* MFAbstractDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MFAbstractDataLoader.m; sourceTree = "<group>"; };
 		B06483121A70F5CB0077A855 /* MFCoreDataloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFCoreDataloader.h; sourceTree = "<group>"; };
 		B06483131A70F5CB0077A855 /* MFDataLoaderActionParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDataLoaderActionParameter.h; sourceTree = "<group>"; };
 		B06483141A70F5CB0077A855 /* MFDataLoaderActionParameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFDataLoaderActionParameter.m; sourceTree = "<group>"; };

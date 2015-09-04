@@ -13,11 +13,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
-//
-//  NSString+MD5.m
-//  MFCore
-//
-//
+
 
 #import <CommonCrypto/CommonDigest.h>
 #import "MFmd5.h"

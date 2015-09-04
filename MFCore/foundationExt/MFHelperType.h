@@ -13,11 +13,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
-//
-//  MFHelperType.h
-//  MFCore
-//
-//
+
 
 /*!
  * @brief Cette classe de type Helper permet de détecter le type d'un objet dans une classe

@@ -13,11 +13,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
-//
-//  MFImportDatabaseAction.h
-//  MFCore
-//
-//
+
 #import "MFCoreAction.h"
 
 @interface MFImportDatabaseAction : NSObject<MFActionProtocol>
