@@ -13,11 +13,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
-//
-//  MFStarter.h
-//  MFCore
-//
-//
+
 
 #import "MFSettingsValidationManager.h"
 
@@ -51,7 +47,13 @@ typedef void (^MFStarterEndCallBack)();
 
 //------------------------------------
 
+/*!
+ * @class MFStarter
+ * @brief This class starts all the necessary modules of MDK iOS to make a generated application working.
+ */
 @interface MFStarter : NSObject
+
+#pragma mark - Properties
 
 /*!
  * @brief Type de callback appelé lorsque l'appli sait combien elle possède de classe de démarrage
@@ -98,11 +100,13 @@ typedef void (^MFStarterEndCallBack)();
  */
 @property (strong, nonatomic) MFSettingsValidationManager *settingsValidationManager;
 
+
+#pragma mark - Methods
+
 /*!
  * @brief donne l'unique instance du starter
  */
 +(instancetype) getInstance;
-
 
 /*!
  * @brief demarre l'application, en premier les classes de démarrage framework puis les classes de démarrage projet
@@ -117,8 +121,14 @@ typedef void (^MFStarterEndCallBack)();
  */
 - (void) setInitCallBack:(MFStarterInitCallBack) initCallBack withProgressCallBack:(MFStarterProgressCallBack) progressCallBack withEndCallBack:(MFStarterEndCallBack) endCallBack;
 
+/*!
+ * @brief Save that this launch is the first launch of the application
+ */
 - (void) saveFirstLaunching;
 
+/*!
+ * @brief Register in the application if this launch is the first launch or not.
+ */
 - (void) setupFirstLaunching;
 
 @end

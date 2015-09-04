@@ -30,7 +30,6 @@
 {
     if (self = [super init]) {
         self.ProcessorClass = processorClass;
-//        self.ResponseClass = responseClass;
     }
     
     return self;

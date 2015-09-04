@@ -13,14 +13,17 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
-//
-//  MFCsvFileDescriptor.h
-//  MFCore
-//
-//
 
+/*!
+ * @class MFCsvFileDescriptor
+ * @brief This class is a descriptor that allows to describes a CSV file
+ * @discussion CSV files are used in generated application with MDK iOS to load some initialized datas.
+ * This class allows to describes those files.
+ */
 @interface MFCsvFileDescriptor : NSObject
 
+
+#pragma mark - Properties
 /*!
  * Object used to have the entity datas
  */
@@ -34,7 +37,8 @@
 /*!
   * Simple class to instanciate
   */
-@property(nonatomic,weak) Class  modelClass ;
+@property(nonatomic,weak) Class  modelClass;
+
 /*!
  * Selector in the factory category to affect the dictionary to the object whe the class in not a many to many association
  */
@@ -70,6 +74,12 @@
 @property(nonatomic,strong) NSString *filePrefix ;
 
 
--(id) initWithFileName:(NSString *)p_sFileName ;
+#pragma mark - Methods
+/*!
+ * @brief Buils a new instance of this descriptor given a CSV file name and returns it to the caller
+ * @param fileName The CSV file name to be described by this object
+ * @return The new instance of MFCsvFileDescriptor
+ */
+-(id) initWithFileName:(NSString *)fileName ;
 
 @end

@@ -13,23 +13,25 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
-//
-//  MFAbstractDataLoader.h
-//  MFCore
-//
-//
+
 
 #import "MFCoreContext.h"
-
 #import "MFDataLoaderProtocol.h"
 
 @class MFContextProtocol ;
 
-@interface MFAbstractDataLoader : NSObject<MFDataLoaderProtocol>
-
 FOUNDATION_EXPORT NSString *const MFAbstractDataLoader_MFilterParametersDepth2;
 FOUNDATION_EXPORT NSString *const MFAbstractDataLoader_MFilterParametersDepth3;
 FOUNDATION_EXPORT NSString *const MFAbstractDataLoader_MParametersTag;
+
+
+/*!
+ * @class MFAbstractDataLoader
+ * @brief The abstract data laoder
+ * @discussion This class does any common treatment to all dataloader used by genarted
+ * applications with MDK iOS
+ */
+@interface MFAbstractDataLoader : NSObject<MFDataLoaderProtocol>
 
 
 #pragma mark - Properties

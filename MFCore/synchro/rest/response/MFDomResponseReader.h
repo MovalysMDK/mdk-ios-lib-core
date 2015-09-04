@@ -13,31 +13,48 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
-//
-//  MFDomResponseReader.h
-//  MFCore
-//
-//
+
 
 #import <Foundation/Foundation.h>
 #import "MFRestResponseReaderProtocol.h"
 
+/*!
+ * @class MFDomResponseReader
+ * @brief The Dom Response Reader used by synchronization action
+ */
 @interface MFDomResponseReader : NSObject<MFRestResponseReaderProtocol>
+
 
 #pragma mark - Properties
 
 @property (nonatomic, retain) Class ProcessorClass;
-//@property (nonatomic, retain) Class ResponseClass;
 @property (nonatomic, retain) NSMutableDictionary *modelsDictionary;
 @property (nonatomic, retain) NSMutableDictionary *mapStreamResponseProcessors;
 @property (nonatomic, retain) id localresponse;
 
+
 #pragma mark - Methods
 
+/*!
+ * @brief Builds an new instance of Dom Response Reader and returns it initialized with the given parameters
+ * @param processorClass The processor Class of the response reader
+ * @param responseClass The response Class of the response reader
+ * @return A new instance initialized of MFDomResponseReader
+ */
 -(id) initWithProcessorClass:(Class) processorClass withResponseClass:(Class) responseClass;
 
--(id) getMessage;
+/*!
+ * @brief Returns the response as a message
+ * @return The response value as a message
+ */
+-(id)getMessage;
 
+/*!
+ * @brief Process the Json response
+ * @param dict The JSON response as a dictionary object
+ * @param path The base path of the JSON object
+ * @return The context used by the synchronization action
+ */
 -(void) processJson:(NSDictionary *) dict withPath:(NSString *) path withContext:(id<MFContextProtocol>) context ;
 
 @end
