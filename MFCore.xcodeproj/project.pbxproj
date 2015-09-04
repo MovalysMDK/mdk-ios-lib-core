@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B01086011B998F97004368B8 /* MFActionLauncher+Listeners.h in Headers */ = {isa = PBXBuildFile; fileRef = B01085FF1B998F97004368B8 /* MFActionLauncher+Listeners.h */; };
+		B01086021B998F97004368B8 /* MFActionLauncher+Listeners.m in Sources */ = {isa = PBXBuildFile; fileRef = B01086001B998F97004368B8 /* MFActionLauncher+Listeners.m */; };
 		B041724C1A70F5350045C268 /* MFCore.h in Headers */ = {isa = PBXBuildFile; fileRef = B041724B1A70F5350045C268 /* MFCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06483B11A70F5CB0077A855 /* MFCoreLog.h in Headers */ = {isa = PBXBuildFile; fileRef = B06482191A70F5CB0077A855 /* MFCoreLog.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06483B21A70F5CB0077A855 /* MFCoreLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = B064821A1A70F5CB0077A855 /* MFCoreLogging.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -321,6 +323,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B01085FF1B998F97004368B8 /* MFActionLauncher+Listeners.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MFActionLauncher+Listeners.h"; sourceTree = "<group>"; };
+		B01086001B998F97004368B8 /* MFActionLauncher+Listeners.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MFActionLauncher+Listeners.m"; sourceTree = "<group>"; };
 		B04172461A70F5350045C268 /* MFCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MFCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B041724A1A70F5350045C268 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B041724B1A70F5350045C268 /* MFCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MFCore.h; sourceTree = "<group>"; };
@@ -786,6 +790,8 @@
 				B06482231A70F5CB0077A855 /* deps */,
 				B06482241A70F5CB0077A855 /* MFActionLauncher.h */,
 				B06482251A70F5CB0077A855 /* MFActionLauncher.m */,
+				B01085FF1B998F97004368B8 /* MFActionLauncher+Listeners.h */,
+				B01086001B998F97004368B8 /* MFActionLauncher+Listeners.m */,
 				B06482261A70F5CB0077A855 /* MFActionNotFound.h */,
 				B06482271A70F5CB0077A855 /* MFActionNotFound.m */,
 				B06482281A70F5CB0077A855 /* MFActionPostTreatmentProtocol.h */,
@@ -1501,6 +1507,7 @@
 				B06484A21A70F5CB0077A855 /* MFDataAccessTechnicalError.h in Headers */,
 				B06484491A70F5CB0077A855 /* MFObjectToSyncProtocol.h in Headers */,
 				B06484201A70F5CB0077A855 /* MFRestInvoker.h in Headers */,
+				B01086011B998F97004368B8 /* MFActionLauncher+Listeners.h in Headers */,
 				B06484C41A70F5CB0077A855 /* NSData+Utilities.h in Headers */,
 				B06483EF1A70F5CB0077A855 /* MFSynchroProperty.h in Headers */,
 				B06483CC1A70F5CB0077A855 /* MFExportLogsAction.h in Headers */,
@@ -1743,6 +1750,7 @@
 				B06484011A70F5CB0077A855 /* MFReachability.m in Sources */,
 				B06484751A70F5CB0077A855 /* MFCoreDataHelper.m in Sources */,
 				B06484831A70F5CB0077A855 /* MFCsvFileDescriptor.m in Sources */,
+				B01086021B998F97004368B8 /* MFActionLauncher+Listeners.m in Sources */,
 				B06483CB1A70F5CB0077A855 /* MFExportDatabaseAction.m in Sources */,
 				B06483CD1A70F5CB0077A855 /* MFExportLogsAction.m in Sources */,
 				B06483FF1A70F5CB0077A855 /* APLViewController.m in Sources */,
