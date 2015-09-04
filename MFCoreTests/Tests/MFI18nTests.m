@@ -28,18 +28,31 @@
     [super tearDown];
 }
 
+/**
+ * @test Checks a Localizable-framework string is retrieved
+ */
 -(void) testFrameworkString {
     XCTAssertEqualObjects(@"GHI", TestLocalizedStringFromKey(@"chaine_test_2", [self class]));
 }
 
+/**
+ * @test Checks a Localizable-project string is retrieved
+ */
 -(void) testProjectString {
     XCTAssertEqualObjects(@"JKL", TestLocalizedStringFromKey(@"chaine_test_3", [self class]));
 }
 
+/**
+ * @test Checks a Localizable-project string is retrieved, for a 
+ * string declared both in Localizable-framework AND in Localizable-project
+ */
 -(void) testOverloadedString {
     XCTAssertEqualObjects(@"DEF", TestLocalizedStringFromKey(@"chaine_test_1", [self class]));
 }
 
+/**
+ * @test Checks an unexisting Localizable string returns the key value
+ */
 -(void) testUnexistingString {
     XCTAssertEqualObjects(@"chaine_test_4", TestLocalizedStringFromKey(@"chaine_test_4", [self class]));
 }

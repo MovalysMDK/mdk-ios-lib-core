@@ -53,12 +53,15 @@ extern void __gcov_flush();
 }
 
 
--(void) testLocalizedString {
-    XCTAssertEqual(MFLocalizedStringFromKey(@"BasicTest"), @"BasicTest");
-}
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
+
+/**
+ * @test Retrieves a singleton from Beans Assembly, and a nil object from an unexisting bean name.
+ * Checks if the singleton is not nil, if the unexisting bean returns a nil object, and that
+ * the singleton is really a singleton.
+ */
 -(void) testBeanSingleton {
     MFBeanLoader *beanLoaderInstance = [MFBeanLoader getInstance];
     [beanLoaderInstance performSelector:@selector(registerComponentsFromAssembly:) withObject:[MFTestAssembly class]];
@@ -73,17 +76,10 @@ extern void __gcov_flush();
     @catch (NSException *exception) {
         XCTAssertNil(singletonBadTest);
     }
+    
+    XCTAssertEqualObjects([beanLoaderInstance getBeanWithKey:@"csvLoaderHelper"], singletonTest);
 }
 #pragma clang diagnostic pop
-
-
--(void) testURL {
-    
-    XCTAssertEqual(MFLocalizedStringFromKey(@"BasicTest"), @"BasicTest");
-}
-
-
-
 
 
 @end

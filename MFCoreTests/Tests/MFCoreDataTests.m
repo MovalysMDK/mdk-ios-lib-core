@@ -24,6 +24,13 @@
 
 @implementation MFCoreDataTests
 
+/**
+ * ATTENTION : A faire :
+ * Normalement il doit être possible de tester CoreData dans XCTest, mais à vérifier que c'est
+ * éagelement le cas, dans le cas d'un Cocoa Touch Framework.
+ * Regarder peut-être du coté de OCMock.
+ */
+
 - (void)setUp {
     [super setUp];
 

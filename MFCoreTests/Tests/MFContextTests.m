@@ -36,11 +36,17 @@
 
 }
 
+/**
+ * @test Checks if the created context is not nil
+ */
 - (void)testCreateContext {
     XCTAssertNotNil(self.context);
     XCTAssertNil(self.context.entityContext);
 }
 
+/**
+ * @test Add a message in the context and checks it's not considered as an error
+ */
 - (void)testMessages {
     MFMessage *newMessage = [[MFMessage alloc] initWithLocalizedDescription:@"localizedDescription" andCode:23 andLevel:1];
     [self.context addMessages:@[newMessage]];
@@ -49,6 +55,9 @@
     XCTAssertFalse([self.context errors].count > 0);
 }
 
+/**
+ * @test Add an error to the context and checks that it's considered as an error
+ */
 - (void)testErrors {
     MFError *newError = [[MFError alloc] initWithCode:234 localizedDescriptionKey:@"localizedDescriptionKey" localizedFailureReasonErrorKey:@"failureReasonKey"];
     [self.context addErrors:@[newError]];
@@ -57,6 +66,9 @@
     XCTAssertTrue([self.context errors].count > 0);
 }
 
+/**
+ * @test Creates a simple context from the MFContextFactory
+ */
 -(void) testCreateFromFactory {
     self.context = nil;
     XCTAssertNil(self.context);
@@ -67,6 +79,9 @@
     
 }
 
+/**
+ * @test Creates a context with child Core Data context from the MFContextFactory
+ */
 -(void) testCreateMFContextWithChildCoreDataContextWithParent {
     self.context = nil;
     XCTAssertNil(self.context);

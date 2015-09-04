@@ -18,6 +18,13 @@
 
 @implementation MFCoreActionTests
 
+
+/**
+ * A FAIRE : 
+ * Le test du retour d'action est exécuté quand il n'a pas lieu d'être.
+ * Trouver un moyen de vérifier le retour d'actions. 
+ * Plus globalement tester les actions dans cette classe
+ */
 - (void)setUp {
     [super setUp];
     MFBeanLoader *beanLoaderInstance = [MFBeanLoader getInstance];
@@ -33,11 +40,11 @@
 //    [[MFActionLauncher getInstance] launchAction:MFAction_MFEmptyAction withCaller:self withInParameter:nil];
 //}
 
-MFRegister_ActionListenerOnSuccess(MFAction_MFEmptyAction, testSimpleExampleActionSuccess)
--(void)testSimpleExampleActionSuccess:(id<MFContextProtocol>)context withCaller:(id)caller andResult:(id)result
-{
-    XCTAssertEqual(result, @"EMPTY ACTION");
-}
+//MFRegister_ActionListenerOnSuccess(MFAction_MFEmptyAction, testSimpleExampleActionSuccess)
+//-(void)testSimpleExampleActionSuccess:(id<MFContextProtocol>)context withCaller:(id)caller andResult:(id)result
+//{
+//    XCTAssertEqual(result, @"EMPTY ACTION");
+//}
 
 
 @end

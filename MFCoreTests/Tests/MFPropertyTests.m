@@ -29,6 +29,9 @@
     self.property.value = nil;
 }
 
+/**
+ * @test Test a number MFProperty
+ */
 - (void)testNumber {
     NSNumber *number = @3;
     self.property.value = number;
@@ -39,7 +42,9 @@
     XCTAssertTrue([self.property getBOOLValue]);
 }
 
-
+/**
+ * @test Test a dictionary MFProperty
+ */
 - (void)testDictionary {
     NSDictionary *dict = @{@3:@"3", @"deux":@2};
     self.property.value = dict;
@@ -50,7 +55,9 @@
     XCTAssertTrue([self.property getBOOLValue]);
 }
 
-
+/**
+ * @test Test an array MFProperty
+ */
 - (void)testArray {
     NSArray *array = @[@1, @"deux", @(3.0)];
     self.property.value = array;
@@ -61,6 +68,9 @@
     XCTAssertTrue([self.property getBOOLValue]);
 }
 
+/**
+ * @test Test a string MFProperty
+ */
 - (void)testString {
     NSString *string= @"2";
     self.property.value = string;
@@ -71,7 +81,9 @@
     XCTAssertTrue([self.property getBOOLValue]);
 }
 
-
+/**
+ * @test Test a BOOL MFProperty
+ */
 - (void)testBool {
     self.property.value = @(YES);
     XCTAssertEqualObjects([self.property getNumberValue], @1);
