@@ -25,11 +25,6 @@
 @implementation MFDomResponseReader
 @synthesize responseClass = _responseClass;
 
--(id) init {
-    if (self = [self init]) {
-    }
-    return self ;
-}
 
 -(id) initWithProcessorClass:(Class) processorClass withResponseClass:(Class) responseClass
 {

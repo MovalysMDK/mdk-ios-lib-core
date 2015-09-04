@@ -13,34 +13,41 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
-//
-//  MFJsonReadHelper.h
-//  MFCore
-//
-//
 
 #import <Foundation/Foundation.h>
 #import "MFJsonObject.h"
 
 /*!
- * @brief classe de lecture du flux json
+ * @class MFJsonReader
+ * @brief The JSON Reader used by Synchronization actions
  */
 @interface MFJsonReader : NSObject
 
-@property (nonatomic, retain) MFJsonObject *object;
+#pragma mark - Properties
 
 /*!
- * @brief indique à l'instance le flux partiel qui va être traité
+ * @brief The Json object to read
+ */
+@property (nonatomic, retain) MFJsonObject *object;
+
+#pragma mark - Methods
+
+/*!
+ * @brief Indicated to the flow the message that will be treat
+ * @param p_message The message to treat
+ * @return YES if the message has been treat, NO otherwhise.
  */
 -(BOOL) processMessagePart:(NSString *) p_message;
 
 /*!
- * @brief parcourt le flux à la recherche d'un objet json, et indique si le résultat est positif
+ * @brief Read the flow to search a JSON object and return YES if an JSON object has been found.
+ * @return YES if a JSON object has been found, NO otherwhise.
  */
 -(BOOL) hasNext;
 
 /*!
- * @brief renvoie le chemin courant atteint dans le flux
+ * @brief Returns the current path on the flow.
+ * @return The current path on the flow
  */
 -(NSString *) getCurrentPath;
 

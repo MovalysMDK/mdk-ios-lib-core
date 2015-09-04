@@ -100,7 +100,6 @@
 - (MFSynchronizationActionParameterOUT *) doSynchronization:(id) parameterIn withContext: (id<MFContextProtocol>) context withQualifier:(id<MFActionQualifierProtocol>) qualifier withDispatcher:(MFActionProgressMessageDispatcher*) dispatch
 {
     MFSynchronizationActionParameterOUT *result = nil;
-    
     // on envoie un message de progression
     [dispatch dispatchProgressMessage:@"before prepare synchro" withParam:nil andContext:context];
     
@@ -114,28 +113,11 @@
     
     // liste des invocations, méthode de récupération
     NSArray *invocationsList = [(id <MFSynchronizationActionProtocol>)self getInvocationConfigs:currentObjectsToSync];
-    
+    MFConfigurationHandler* config = [[MFBeanLoader getInstance] getBeanWithKey:BEAN_KEY_CONFIGURATION_HANDLER];
+
     if ([invocationsList count] > 0) {
-        // récupère la configuration
-        MFConfigurationHandler* config = [[MFBeanLoader getInstance] getBeanWithKey:BEAN_KEY_CONFIGURATION_HANDLER];
         
-        
-        MFRestConnectionConfig *restConnectionConfig = [[MFBeanLoader getInstance] getBeanWithKey:@"MFRestConnectionConfig"];
-        
-        [restConnectionConfig initializeWithHost:[[MFApplication getInstance] preferenceWithKey:SYNCHRO_CONFIG_HOST_USERDEFAULTS_KEY]
-                                            port:[[MFApplication getInstance] intPreferenceWithKey:SYNCHRO_CONFIG_PORT_USERDEFAULTS_KEY]
-                                            path:[[MFApplication getInstance] preferenceWithKey:SYNCHRO_CONFIG_PATH_USERDEFAULTS_KEY]
-                                    wsEntryPoint:[[MFApplication getInstance] preferenceWithKey:SYNCHRO_CONFIG_WSENTRYPOINT_USERDEFAULTS_KEY]
-                                         command:[[MFApplication getInstance] preferenceWithKey:SYNCHRO_CONFIG_COMMAND_USERDEFAULTS_KEY]
-                                            user:[[MFApplication getInstance] preferenceWithKey:SYNCHRO_CONFIG_USER_USERDEFAULTS_KEY]
-                                        password:[[MFApplication getInstance] preferenceWithKey:SYNCHRO_CONFIG_PASSWORD_USERDEFAULTS_KEY]
-                                       proxyHost:[[MFApplication getInstance] preferenceWithKey:SYNCHRO_CONFIG_PROXYHOST_USERDEFAULTS_KEY]
-                                       proxyPort:[[MFApplication getInstance] intPreferenceWithKey:SYNCHRO_CONFIG_PROXYPORT_USERDEFAULTS_KEY]
-                                       proxyUser:[[MFApplication getInstance] preferenceWithKey:SYNCHRO_CONFIG_PROXYUSER_USERDEFAULTS_KEY]
-                                   proxyPassword:[[MFApplication getInstance] preferenceWithKey:SYNCHRO_CONFIG_PROXYPASSWORD_USERDEFAULTS_KEY]];
-        
-        [restConnectionConfig setMockMode:[config getBooleanProperty:sync_mock_mode withDefault:NO]];
-        [restConnectionConfig setMockStatusCode:[[config getNumberProperty:sync_mock_testid] integerValue]];
+        MFRestConnectionConfig *restConnectionConfig = [self retrieveRestConfiguration];
         
         // initialise une instance de la classe invoquant le serveur
         id<MFRestInvokerProtocol> restInvoker = [[MFBeanLoader getInstance] getBeanWithKey:@"RestInvoker"];
@@ -217,6 +199,27 @@
     }
     
     return result;
+}
+
+-(MFRestConnectionConfig *)retrieveRestConfiguration {
+    // récupère la configuration
+    MFConfigurationHandler* config = [[MFBeanLoader getInstance] getBeanWithKey:BEAN_KEY_CONFIGURATION_HANDLER];
+    MFRestConnectionConfig *restConnectionConfig = [[MFBeanLoader getInstance] getBeanWithKey:@"MFRestConnectionConfig"];
+    [restConnectionConfig initializeWithHost:[[MFApplication getInstance] preferenceWithKey:SYNCHRO_CONFIG_HOST_USERDEFAULTS_KEY]
+                                        port:[[MFApplication getInstance] intPreferenceWithKey:SYNCHRO_CONFIG_PORT_USERDEFAULTS_KEY]
+                                        path:[[MFApplication getInstance] preferenceWithKey:SYNCHRO_CONFIG_PATH_USERDEFAULTS_KEY]
+                                wsEntryPoint:[[MFApplication getInstance] preferenceWithKey:SYNCHRO_CONFIG_WSENTRYPOINT_USERDEFAULTS_KEY]
+                                     command:[[MFApplication getInstance] preferenceWithKey:SYNCHRO_CONFIG_COMMAND_USERDEFAULTS_KEY]
+                                        user:[[MFApplication getInstance] preferenceWithKey:SYNCHRO_CONFIG_USER_USERDEFAULTS_KEY]
+                                    password:[[MFApplication getInstance] preferenceWithKey:SYNCHRO_CONFIG_PASSWORD_USERDEFAULTS_KEY]
+                                   proxyHost:[[MFApplication getInstance] preferenceWithKey:SYNCHRO_CONFIG_PROXYHOST_USERDEFAULTS_KEY]
+                                   proxyPort:[[MFApplication getInstance] intPreferenceWithKey:SYNCHRO_CONFIG_PROXYPORT_USERDEFAULTS_KEY]
+                                   proxyUser:[[MFApplication getInstance] preferenceWithKey:SYNCHRO_CONFIG_PROXYUSER_USERDEFAULTS_KEY]
+                               proxyPassword:[[MFApplication getInstance] preferenceWithKey:SYNCHRO_CONFIG_PROXYPASSWORD_USERDEFAULTS_KEY]];
+    
+    [restConnectionConfig setMockMode:[config getBooleanProperty:sync_mock_mode withDefault:NO]];
+    [restConnectionConfig setMockStatusCode:[[config getNumberProperty:sync_mock_testid] integerValue]];
+    return restConnectionConfig;
 }
 
 /**

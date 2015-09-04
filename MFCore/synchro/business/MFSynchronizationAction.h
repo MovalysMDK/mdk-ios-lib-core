@@ -13,10 +13,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
-//
-//  MFAbstractSynchonizationAction.h
-//
-//
+
 
 #import <Foundation/Foundation.h>
 #import "MFSyncRestResponseProtocol.h"
@@ -29,21 +26,41 @@
 @class MFRestInvoker;
 @class MFRestInvocationConfig;
 
+
+/*!
+ * @protocol MFSynchronizationActionProtocol
+ * @brief The default protocol to define synchronization actions
+ */
 @protocol MFSynchronizationActionProtocol
 
 /*!
- * @brief renvoie les invocations à exécuter lors de la synchronisation
+ * @brief Returns the invocation to invoke during the synchronization
  */
 - (NSArray *) getInvocationConfigs:(NSDictionary *) objectsToSynchronize;
 
 @end
 
 
-/*! interface */
+/*!
+ * @class MFSynchronizationAction
+ * @brief The base default synchronization action
+ * @discussion It contains the base code to execute an action of synchronization.
+ */
 @interface MFSynchronizationAction : NSObject<MFActionProtocol>
 
+/*!
+ * @brief The class that will get the response
+ */
 @property (nonatomic, retain) Class ResponseClass;
+
+/*!
+ * @brief an object that describes the response treatment informations
+ */
 @property (nonatomic, retain) MFSynchronisationResponseTreatmentInformation *information;
+
+/*!
+ * @brief the command to execute to synchronize
+ */
 @property (nonatomic, retain) NSString *command;
 
 @end

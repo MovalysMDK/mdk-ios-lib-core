@@ -13,14 +13,14 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
-//
-//  MFLoggingFormatter.h
-//  Step2
-//
-//
 
 #import <CocoaLumberjack/CocoaLumberjack.h>
 
+/*!
+ * @class MFLoggingFormatter
+ * @brief This class helps to format logs for MFCore
+ * @see DDLogFormatter
+ */
 @interface MFLoggingFormatter : NSObject <DDLogFormatter>
 
 @end

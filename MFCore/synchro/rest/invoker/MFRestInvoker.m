@@ -73,16 +73,14 @@ CFHTTPMessageRef httpResponse;
     url = [self newUrl];
     request = CFHTTPMessageCreateRequest(kCFAllocatorDefault, CFSTR("POST"), url, kCFHTTPVersion1_1);
     
-    if ([self.connectionConfig isProxy]) {
-        if ([self.connectionConfig isProxyAuth]) {
-            CFStringRef usr = CFBridgingRetain([self.connectionConfig proxyUser]);
-            CFStringRef pass = CFBridgingRetain([self.connectionConfig proxyPassword]);
-            
-            CFHTTPMessageAddAuthentication(request, NULL, usr, pass, NULL, true);
-            
-            CFRelease(usr);
-            CFRelease(pass);
-        }
+    if ([self.connectionConfig isProxy] && [self.connectionConfig isProxyAuth]) {
+        CFStringRef usr = CFBridgingRetain([self.connectionConfig proxyUser]);
+        CFStringRef pass = CFBridgingRetain([self.connectionConfig proxyPassword]);
+        
+        CFHTTPMessageAddAuthentication(request, NULL, usr, pass, NULL, true);
+        
+        CFRelease(usr);
+        CFRelease(pass);
     }
 }
 
@@ -111,21 +109,19 @@ CFHTTPMessageRef httpResponse;
     
 }
 
--(Class <MFSyncRestResponseProtocol>) processWithDispatcher:(MFActionProgressMessageDispatcher*) dispatcher withContext:(MFContext *) context
-{
+-(Class <MFSyncRestResponseProtocol>) processWithDispatcher:(MFActionProgressMessageDispatcher*) dispatcher withContext:(MFContext *) context {
     refToContext = context;
     id response = [[self.ResponseClass alloc] init];
     responseBytes = [[NSMutableData alloc] init];
-
+    
     // on initialise l'objet réponse
     [[self.invocationConfig responseReader] initializeResponse];
     
     // on prépare le readstream
     readStream = [self newReadStream];
     [self configureReadstreamBeforeInvocation:readStream];
-
-    CFStreamClientContext dataStreamContext = {0, (__bridge void *)(self), NULL, NULL, NULL};
     
+    CFStreamClientContext dataStreamContext = {0, (__bridge void *)(self), NULL, NULL, NULL};
     CFOptionFlags registeredEvents = kCFStreamEventHasBytesAvailable | kCFStreamEventErrorOccurred | kCFStreamEventEndEncountered;
     
     runLoop = CFRunLoopGetCurrent();
@@ -140,27 +136,21 @@ CFHTTPMessageRef httpResponse;
         [context addErrors:[NSArray arrayWithObject:[[MFTechnicalError alloc] initWithCode:HTTP_CONNECTION_ERROR localizedDescriptionKey:@"Could not open http stream reader"]]];
         CFRelease(readStream);
     } else {
-        // on démarre le détecteur de timeouts
+        // on démarre le détecteur de timeouts et on lance la requête serveur
         timeoutChecker = [[MFConnectionTimeout alloc] initWithConnectionTimeout:(int)self.connectionConfig.timeout withDataTimeout:(int)self.connectionConfig.soTimeout withDelegate:self withContext:context];
-        
-        // on lance la requête serveur
         CFRunLoopRun();
         
-        // on arrête le détecteur de timeouts
+        // on arrête le détecteur de timeouts et on lit la répose reçue
         [timeoutChecker invalidate];
-        
-        // on lit la réponse reçue
         NSError* error = (NSError*)CFBridgingRelease(CFReadStreamCopyError(readStream));
         if (error) {
             [context addErrors:[NSArray arrayWithObject:[[MFTechnicalError alloc] initWithCode:[error code] localizedDescriptionKey:[NSHTTPURLResponse localizedStringForStatusCode:(NSInteger)error]]]];
         } else {
             response = [[self.invocationConfig responseReader] getResponse];
         }
-        
         CFReadStreamClose(readStream);
         CFRelease(readStream);
     }
-    
     CFRelease(request);
     CFRelease(url);
     

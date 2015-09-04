@@ -51,7 +51,6 @@
         case DDLogFlagInfo  : logLevel = @"INFO"; break;
         case DDLogFlagDebug  : logLevel = @"DEBUG"; break;
         case DDLogFlagVerbose  : logLevel = @"VERBOSE"; break;
-        default             : logLevel = @"VERBOSE"; break;
     }
     
     NSString *dateAndTime = [threadUnsafeDateFormatter stringFromDate:(logMessage->_timestamp)];

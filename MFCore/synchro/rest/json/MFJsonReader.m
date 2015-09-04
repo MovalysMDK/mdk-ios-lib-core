@@ -13,11 +13,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
-//
-//  MFJsonReadHelper.m
-//  MFCore
-//
-//
 
 #import "MFJsonReader.h"
 #import "MFBeanLoader.h"
@@ -88,143 +83,40 @@ BOOL firstOpener;
 -(void) processObject
 {
     BOOL done = false;
-    
     if ([self.object isComplete]) {
         lastObjectType = self.object.type;
         self.object = [[MFJsonObject alloc] init];
     }
-
     if ([leftToProcess length] <= lastReachedPosition) return;
     
     while (!done) {
         [self read];
         switch (lastChar) {
             case '{':
-                if (firstOpener) {
-                    // on est sur le premier chevron du message
-                    firstOpener = false;
-                    self.object.type = JSonObjectTypes.CLASS;
-                    self.object.contentCompleted = true;
-                    self.object.nameCompleted = true;
-                    done = true;
-                } else {
-                    if (self.object.type == JSonObjectTypes.ROW) {
-                        // si on est sur une ligne d'un tableau, le caractère doit être traité comme n'importe quel autre
-                        self.object.content = [NSString stringWithFormat:@"%@%c", self.object.content, currentChar];
-                        self.object.depth++;
-                    } else {
-                        if ([self.object.name length] == 0) {
-                            // on est sur une ligne d'un tableau
-                            self.object.type = JSonObjectTypes.ROW;
-                            lastObjectType =  JSonObjectTypes.ROW;
-                            self.object.nameCompleted = true; // l'objet n'aura pas de nom
-                            self.object.content = [NSString stringWithFormat:@"%@%c", self.object.content, currentChar];
-                            self.object.depth++; // on avance d'un cran dans la "profondeur"
-                        } else {
-                            // on devrait être dans une classe et donc avoir "xxxx":{
-                            self.object.type = JSonObjectTypes.CLASS;
-                            self.object.contentCompleted = true;
-                            done = true;
-                        }
-                    }
-                }
+                done = [self treatLeftBraceAndIsDone:done];
                 break;
-                
             case '}':
-                if (self.object.type == JSonObjectTypes.ROW) {
-                    // si on est sur une ligne d'un tableau, le caractère doit être traité comme n'importe quel autre
-                    self.object.content = [NSString stringWithFormat:@"%@%c", self.object.content, currentChar];
-                    self.object.depth--;
-                    if (self.object.depth == 0) {
-                        // dans ce cas la ligne du tableau est traitée
-                        self.object.contentCompleted = true;
-                        done = true;
-                    }
-                } else {
-                    if ([self.object isNew]) {
-                        // on cloture un objet qui n'est pas le précédent
-                        // on indique qu'un a traité un objet pour cloturer un chemin éventuel
-                        lastObjectType = JSonObjectTypes.CLASS;
-                    } else {
-                        // on doit etre dans une ligne d'un tableau
-                        self.object.contentCompleted = true;
-                        done = true;
-                    }
-                }
+                done = [self treatRightBraceAndIsDone:done];
                 break;
             case '[':
-                if (self.object.type == JSonObjectTypes.ROW) {
-                    // si on est sur une ligne d'un tableau, le caractère doit être traité comme n'importe quel autre
-                    self.object.content = [NSString stringWithFormat:@"%@%c", self.object.content, currentChar];
-                    self.object.depth++;
-                } else {
-                    if ([self.object isNew]) {
-                        // on ne devrait jamais arriver ici
-                    } else {
-                        // on entre dans le tableau, on va maintenant traiter ses lignes
-                        self.object.type = JSonObjectTypes.ARRAY;
-                        self.object.contentCompleted = true;
-                        done = true;
-                    }
-                }
+                done = [self treatLeftBrackedAndIsDone:done];
                 break;
-                
             case ']':
-                if (self.object.type == JSonObjectTypes.ROW) {
-                    // si on est sur une ligne d'un tableau, le caractère doit être traité comme n'importe quel autre
-                    self.object.content = [NSString stringWithFormat:@"%@%c", self.object.content, currentChar];
-                    self.object.depth--;
-                } else {
-                    // on indique qu'un a traité un objet pour cloturer un chemin éventuel
-                    lastObjectType = JSonObjectTypes.ARRAY;
-                }
+                done = [self treatRightBrackedAndIsDone:done];
                 break;
-                
             case ':':
-                if (self.object.type == JSonObjectTypes.ROW) {
-                    // si on est sur une ligne d'un tableau, le caractère doit être traité comme n'importe quel autre
-                    self.object.content = [NSString stringWithFormat:@"%@%c", self.object.content, currentChar];
-                } else {
-                    // on a fini de traiter le nom de l'objet
-                    self.object.inName = false;
-                }
+                done = [self treatColonAndIsDone:done];
                 break;
-                
             case ',':
-                if (self.object.type == JSonObjectTypes.ROW) {
-                    // si on est sur une ligne d'un tableau, le caractère doit être traité comme n'importe quel autre
-                    self.object.content = [NSString stringWithFormat:@"%@%c", self.object.content, currentChar];
-                }
-                // sinon on ne fait rien
+                done = [self treatCommaAndIsDone:done];
                 break;
-                
             case '"':
-                if (self.object.type == JSonObjectTypes.ROW) {
-                    // si on est sur une ligne d'un tableau, le caractère doit être traité comme n'importe quel autre
-                    self.object.content = [NSString stringWithFormat:@"%@%c", self.object.content, currentChar];
-                } else {
-                    if ([self.object.name length] == 0) {
-                        self.object.inName = true;
-                    } else {
-                        self.object.inName = false;
-                        self.object.nameCompleted = true;
-                    }
-                }
+                done = [self treatQuotationMarkAndIsDone:done];
                 break;
-                
             default:
-                if (currentChar != '\0') {
-                    if (self.object.inName && self.object.type != JSonObjectTypes.ROW) {
-                        self.object.name = [NSString stringWithFormat:@"%@%c", self.object.name, currentChar];
-                    } else {
-                        if (self.object.type == -1)
-                            self.object.type = JSonObjectTypes.PROPERTY;
-                        self.object.content = [NSString stringWithFormat:@"%@%c", self.object.content, currentChar];
-                    }
-                }
+                done = [self treatDefaultCharAndIsDone:done];
                 break;
         }
-        
         if (done) {
             // on a composé l'objet
             self.object.path = [self getCurrentPath];
@@ -238,6 +130,140 @@ BOOL firstOpener;
     }
 }
 
+#pragma mark - Char treating
+-(BOOL) treatLeftBraceAndIsDone:(BOOL)done {
+    if (firstOpener) {
+        // on est sur le premier chevron du message
+        firstOpener = false;
+        self.object.type = JSonObjectTypes.CLASS;
+        self.object.contentCompleted = true;
+        self.object.nameCompleted = true;
+        done = true;
+    } else {
+        if (self.object.type == JSonObjectTypes.ROW) {
+            // si on est sur une ligne d'un tableau, le caractère doit être traité comme n'importe quel autre
+            self.object.content = [NSString stringWithFormat:@"%@%c", self.object.content, currentChar];
+            self.object.depth++;
+        } else {
+            if ([self.object.name length] == 0) {
+                // on est sur une ligne d'un tableau
+                self.object.type = JSonObjectTypes.ROW;
+                lastObjectType =  JSonObjectTypes.ROW;
+                self.object.nameCompleted = true; // l'objet n'aura pas de nom
+                self.object.content = [NSString stringWithFormat:@"%@%c", self.object.content, currentChar];
+                self.object.depth++; // on avance d'un cran dans la "profondeur"
+            } else {
+                // on devrait être dans une classe et donc avoir "xxxx":{
+                self.object.type = JSonObjectTypes.CLASS;
+                self.object.contentCompleted = true;
+                done = true;
+            }
+        }
+    }
+    return done;
+}
+
+-(BOOL) treatRightBraceAndIsDone:(BOOL)done {
+    if (self.object.type == JSonObjectTypes.ROW) {
+        // si on est sur une ligne d'un tableau, le caractère doit être traité comme n'importe quel autre
+        self.object.content = [NSString stringWithFormat:@"%@%c", self.object.content, currentChar];
+        self.object.depth--;
+        if (self.object.depth == 0) {
+            // dans ce cas la ligne du tableau est traitée
+            self.object.contentCompleted = true;
+            done = true;
+        }
+    } else {
+        if ([self.object isNew]) {
+            // on cloture un objet qui n'est pas le précédent
+            // on indique qu'un a traité un objet pour cloturer un chemin éventuel
+            lastObjectType = JSonObjectTypes.CLASS;
+        } else {
+            // on doit etre dans une ligne d'un tableau
+            self.object.contentCompleted = true;
+            done = true;
+        }
+    }
+    return done;
+}
+
+-(BOOL)treatLeftBrackedAndIsDone:(BOOL)done {
+    if (self.object.type == JSonObjectTypes.ROW) {
+        // si on est sur une ligne d'un tableau, le caractère doit être traité comme n'importe quel autre
+        self.object.content = [NSString stringWithFormat:@"%@%c", self.object.content, currentChar];
+        self.object.depth++;
+    } else {
+        if (![self.object isNew]) {
+            // on entre dans le tableau, on va maintenant traiter ses lignes
+            self.object.type = JSonObjectTypes.ARRAY;
+            self.object.contentCompleted = true;
+            done = true;
+        }
+    }
+    return done;
+}
+
+-(BOOL)treatRightBrackedAndIsDone:(BOOL)done {
+    if (self.object.type == JSonObjectTypes.ROW) {
+        // si on est sur une ligne d'un tableau, le caractère doit être traité comme n'importe quel autre
+        self.object.content = [NSString stringWithFormat:@"%@%c", self.object.content, currentChar];
+        self.object.depth--;
+    } else {
+        // on indique qu'un a traité un objet pour cloturer un chemin éventuel
+        lastObjectType = JSonObjectTypes.ARRAY;
+    }
+    
+    return done;
+}
+
+-(BOOL)treatColonAndIsDone:(BOOL)done {
+    if (self.object.type == JSonObjectTypes.ROW) {
+        // si on est sur une ligne d'un tableau, le caractère doit être traité comme n'importe quel autre
+        self.object.content = [NSString stringWithFormat:@"%@%c", self.object.content, currentChar];
+    } else {
+        // on a fini de traiter le nom de l'objet
+        self.object.inName = false;
+    }
+    return done;
+}
+
+-(BOOL) treatCommaAndIsDone:(BOOL)done {
+    if (self.object.type == JSonObjectTypes.ROW) {
+        // si on est sur une ligne d'un tableau, le caractère doit être traité comme n'importe quel autre
+        self.object.content = [NSString stringWithFormat:@"%@%c", self.object.content, currentChar];
+    }
+    return done;
+}
+
+-(BOOL) treatQuotationMarkAndIsDone:(BOOL)done {
+    if (self.object.type == JSonObjectTypes.ROW) {
+        // si on est sur une ligne d'un tableau, le caractère doit être traité comme n'importe quel autre
+        self.object.content = [NSString stringWithFormat:@"%@%c", self.object.content, currentChar];
+    } else {
+        if ([self.object.name length] == 0) {
+            self.object.inName = true;
+        } else {
+            self.object.inName = false;
+            self.object.nameCompleted = true;
+        }
+    }
+    return done;
+}
+
+-(BOOL) treatDefaultCharAndIsDone:(BOOL)done {
+    if (currentChar != '\0') {
+        if (self.object.inName && self.object.type != JSonObjectTypes.ROW) {
+            self.object.name = [NSString stringWithFormat:@"%@%c", self.object.name, currentChar];
+        } else {
+            if (self.object.type == -1)
+                self.object.type = JSonObjectTypes.PROPERTY;
+            self.object.content = [NSString stringWithFormat:@"%@%c", self.object.content, currentChar];
+        }
+    }
+    return done;
+}
+
+#pragma mark - Reading
 /**
  * @brief lit un caractère et reconstitue le cas échéant le "chemin" en cours dans le flux json
  */

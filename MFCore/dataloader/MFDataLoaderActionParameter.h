@@ -13,32 +13,33 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
-//
-//  MFDataLoaderParameter.h
-//  MFCore
-//
-//
 
 #import "MFDataLoaderActionParameterProtocol.h"
 
+
+/*!
+ * @class MFDataLoaderActionParameter
+ * @brief An parameter object for DataLoader actions
+ * @discussion This objet allows to define some parameteras to pass for data loader actions
+ */
 @interface MFDataLoaderActionParameter : NSObject<MFDataLoaderActionParameterProtocol>
 /*!
- * @brief loading parameters of the loading
+ * @brief Loading parameters of the loading
  */
 @property (strong, nonatomic,getter=getLoadingOptions) NSDictionary *loadingOptions;
 
 /*!
- * @brief loaded datas after the loading
+ * @brief Loaded datas after the loading
  */
 @property (strong, nonatomic,getter=getLoadedData) NSArray *loadedData ;
 
 /*!
- * @brief identifiers of the data to load
+ * @brief Identifiers of the data to load
  */
 @property (strong, nonatomic,getter=getDataIdentifiers) NSArray *dataIdentifiers ;
 
 /*!
- * @brief identifiers of the data to load
+ * @brief Identifiers of the data to load
  */
 @property (strong, nonatomic,getter=getDataLoaderClassName) NSString *dataLoaderClassName ;
 

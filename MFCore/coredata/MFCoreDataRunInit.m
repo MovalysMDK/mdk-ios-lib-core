@@ -47,7 +47,6 @@
 
 #pragma mark - Initialization
 - (void) startUsingContext:(id<MFContextProtocol>)mfContext firstLaunch:(BOOL)firstLaunch {
-    
     //Initialisation de CoreData avec MagicalRecord
     MFCoreLogInfo(@"init magical record");
     _configurationHandler = [[MFBeanLoader getInstance] getBeanWithKey:BEAN_KEY_CONFIGURATION_HANDLER];
@@ -57,25 +56,15 @@
     MFCoreLogInfo(@"  database name: %@", databaseName);
     [MFCoreDataRunInit setupPersistentStoresWithDbName:databaseName andMovalysDefaultModelName:movalysDefaultModelName];
     
-    MFCoreLogInfo(@"count persistent stores: %lu", (unsigned long)[[[NSPersistentStoreCoordinator MR_defaultStoreCoordinator] persistentStores] count]);
-    
     NSPersistentStore *sqliteStore = [[[NSPersistentStoreCoordinator MR_defaultStoreCoordinator] persistentStores] objectAtIndex:0];
-    /*NSPersistentStore *memoryStore = [[[NSPersistentStoreCoordinator MR_defaultStoreCoordinator] persistentStores] objectAtIndex:1];*/
     
     MFCoreDataHelper *coreDataHelper = [[MFBeanLoader getInstance] getBeanWithKey:BEAN_KEY_CORE_DATA_HELPER];
     [coreDataHelper registerStore:sqliteStore];
     
-    MFCoreLogInfo(@"starter mfContext.entityContext = [NSManagedObjectContext MR_defaultContext]");
     mfContext.entityContext = [[MFApplication getInstance] movalysContext];
 
-    MFCoreLogInfo(@"start %@", mfContext.entityContext);
     [self initSequencesUsingContext: mfContext withMovalysModelName:[movalysDefaultModelName stringByAppendingString:@".momd"]];
-    
-    
-    MFCoreLogInfo(@"init magical record done");
-    
-    //    [((MFAppDelegate *)[[UIApplication sharedApplication] delegate]) initializeMenuController];
-}
+    }
 
 
 - (void) initSequencesUsingContext:(id<MFContextProtocol>) mfContext withMovalysModelName:(NSString *)modelName {

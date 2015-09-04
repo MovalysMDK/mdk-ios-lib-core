@@ -39,8 +39,8 @@ const void *extANCKey = &extANCKey;
 /**
  * @brief affecte les attributs supplémentaire de la catégorie
  */
-- (void) setExtendANC:(MFActionNotificationCenter_Private *) n {
-    objc_setAssociatedObject(self, &extANCKey, n,  OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void) setExtendANC:(MFActionNotificationCenter_Private *) extendANC {
+    objc_setAssociatedObject(self, &extANCKey, extendANC,  OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 
@@ -213,8 +213,6 @@ const void *extANCKey = &extANCKey;
             break;
         case MFActionEventTypeProgress:
             appendix = @"OnProgress";
-            break;
-        default:
             break;
     }
     name = [name stringByAppendingString:appendix];

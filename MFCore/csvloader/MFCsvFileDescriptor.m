@@ -29,7 +29,6 @@ static NSString *const CONST_CSV_DATAS_FILE_NAME_SEPARATOR = @"_";
 
 static NSString *const CONST_CSV_DATAS_ATTRIBUTE_SEPARATOR = @"-";
 
-@synthesize isFileOK ;
 @synthesize isManyToManyAssociation ;
 
 /**
@@ -39,21 +38,18 @@ static NSString *const CONST_CSV_DATAS_ATTRIBUTE_SEPARATOR = @"-";
   * @param  p_sFileName file name to parse
   */
 -(id) initWithFileName:(NSString *)p_sFileName {
-    
-    if (self = [super init]) {
-        isFileOK = true ;
+    self = [super init];
+    if (self) {
+        self.isFileOK = YES ;
         [self findSimpleModelClassOfFile:p_sFileName];
-    
+        // Cherche relation many-to ?
         if(nil != self.modelClass) {
-            // cas simple de classe (pas many to many )
-            [self findFactorySelectorOfClass:[_modelClass description]];            
+            [self findFactorySelectorOfClass:[_modelClass description]];
         } else{
-            // Chercher les 2 noms de classes liées
             NSArray* parsedFileName = [p_sFileName componentsSeparatedByString:CONST_CSV_DATAS_FILE_NAME_SEPARATOR];
             if ( [parsedFileName count] == 3 ){
                 NSString *sClassName1 = [parsedFileName objectAtIndex:1] ;
                 NSString *sClassName2 = [parsedFileName objectAtIndex:2] ;
-                MFCoreLogVerbose(@" Nom des classes à parser %@ %@ " , sClassName1 , sClassName2 );
                 self.leftAssociationClass = [self findClassWithName:sClassName1];
                 self.rightAssociationClass = [self findClassWithName:sClassName2];
                                     
@@ -62,10 +58,9 @@ static NSString *const CONST_CSV_DATAS_ATTRIBUTE_SEPARATOR = @"-";
                 self.isManyToManyAssociation = YES ;
             } else{
                 MFCoreLogInfo(@"File '%@' is ignored  ", p_sFileName );
-                isFileOK = false ;
+                self.isFileOK = NO ;
             }
         }
-    
         MFCoreLogInfo(@"File '%@' is initialized  ", self.description );
     }
     return self ;
@@ -94,9 +89,10 @@ static NSString *const CONST_CSV_DATAS_ATTRIBUTE_SEPARATOR = @"-";
         }
     } else {
         MFCoreLogInfo(@" File Name %@ doesn't content the separator '%@' to distinguish the class name ", p_sFileName,CONST_CSV_DATAS_FILE_NAME_SEPARATOR );
-        isFileOK = FALSE ;
+        self.isFileOK = FALSE ;
     }
 }
+
 /**
   * Find the class with the file name given : M%@
   * @param p_sFileName containing a separator CONST_CSV_DATAS_ATTRIBUTE_SEPARATOR and after the name used to search the class 
@@ -111,7 +107,7 @@ static NSString *const CONST_CSV_DATAS_ATTRIBUTE_SEPARATOR = @"-";
         r_oModelClass = NSClassFromString( [@"M" stringByAppendingString:sClassName ]) ;
         if(nil == r_oModelClass) {
             MFCoreLogVerbose(@"Many to many Class Name %@ not found ", p_sFileName  );
-            isFileOK = FALSE ;
+            self.isFileOK = FALSE ;
         } else {
             //MFCoreLogVerbose(@"oModelClass %@  trouvé ", r_oModelClass);
         }
@@ -128,7 +124,7 @@ static NSString *const CONST_CSV_DATAS_ATTRIBUTE_SEPARATOR = @"-";
     self.factorySelectorForEntity = NSSelectorFromString(sMethodFactoryClassName);
     
     if( self.factorySelectorForEntity == nil){
-        isFileOK  = false ;
+        self.isFileOK  = false ;
     }
 }
 /**
@@ -172,7 +168,7 @@ static NSString *const CONST_CSV_DATAS_ATTRIBUTE_SEPARATOR = @"-";
   */
 -(NSString *)description{
     NSMutableString *desc = [[NSMutableString alloc] initWithCapacity:100] ;
-    [desc appendFormat:@"isFileOK %d \n" , isFileOK ];
+    [desc appendFormat:@"isFileOK %d \n" , self.isFileOK ];
     [desc appendFormat:@"isManyToManyAssociation %d\n" , isManyToManyAssociation ];
     [desc appendFormat:@"modelClass %@\n" , _modelClass ];
     if ( isManyToManyAssociation ) {

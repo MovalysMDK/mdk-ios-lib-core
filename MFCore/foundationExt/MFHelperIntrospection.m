@@ -37,6 +37,7 @@ static const char *getPropertyType(objc_property_t property) {
 //    printf("attributes=%s\n", attributes);
     char buffer[1 + strlen(attributes)];
     strcpy(buffer, attributes);
+    
     char *state = buffer, *attribute;
     while ((attribute = strsep(&state, ",")) != NULL) {
         if (attribute[0] == 'T' && attribute[1] != '@') {

@@ -73,7 +73,7 @@
     if([self.value isKindOfClass:[NSNumber class]]) {
         return [self.value boolValue];
     }
-    return !!self.value;
+    return (self.value != nil);
 }
 
 @end

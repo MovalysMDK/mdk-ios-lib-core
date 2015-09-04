@@ -28,14 +28,6 @@
 @synthesize dataIdentifiers;
 @synthesize dataLoaderClassName;
 
--(id) init {
-    self = [super init];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 -(id) initWithDataIds:(NSArray *)dataIds andDataLoader:(NSString *)dataLoader
 {
     self = [super init];
