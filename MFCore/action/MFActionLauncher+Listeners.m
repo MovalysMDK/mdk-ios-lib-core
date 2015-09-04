@@ -16,6 +16,8 @@
 #import "MFActionLauncher+Listeners.h"
 #import <objc/runtime.h>
 
+
+NSString *const mf_registerActionListener = @"mf_registerActionListener";
 const void *extANCKey = &extANCKey;
 
 @implementation MFActionLauncher (Listeners)
@@ -130,6 +132,94 @@ const void *extANCKey = &extANCKey;
     }
 }
 
+
+
+#pragma mark - Class Introspection
+
+- (void) objectToAnalyseByInstance:(id) elementToAnalyse {
+    // Vérification si la classe à déjà été traité dans un cache
+    Class classToAnalyse = [elementToAnalyse class];
+    NSString *className = NSStringFromClass([elementToAnalyse class]);
+    MFActionClassDefinition* def = [[self extendANC].classCache objectForKey:className];
+    if (def == nil) {
+        def = [[MFActionClassDefinition alloc] init];
+        [[self extendANC].classCache setObject:def forKey:className];
+        
+        // Analyse de la classe pour trouver les méthodes d'enregistrement
+        while(classToAnalyse!=nil) {
+            if ([className hasPrefix:@"MF"] || !(
+                                                 [className hasPrefix:@"NS"] || [className hasPrefix:@"DD"]
+                                                 || [className hasPrefix:@"JR"] || [className hasPrefix:@"JSON"]
+                                                 || [className hasPrefix:@"AF"] || [className hasPrefix:@"Magical"]
+                                                 || [className hasPrefix:@"RAC"]
+                                                 || [className hasPrefix:@"Typhoon"])) {
+                [self objectToAnalyseByInstance:elementToAnalyse andByClass:classToAnalyse inDefinition:def];
+                classToAnalyse = [classToAnalyse superclass];
+                className = NSStringFromClass([classToAnalyse class]);
+            }
+            else {
+                classToAnalyse = nil;
+            }
+        }
+    }
+    else {
+        //on boucle sur les méthodes de la définition et on les invoques
+        for(MFActionMethodDefinition* mDef in def.methods) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+            [elementToAnalyse performSelector:mDef.selector withObject:[NSNumber numberWithBool:YES]];
+#pragma clang diagnostic pop
+        }
+    }
+}
+
+-(void)objectToAnalyseByInstance:(id) elementToAnalyse andByClass:(Class) classToAnalyse inDefinition:(MFActionClassDefinition*) def{
+    unsigned int numMethods = 0;
+    Method *methods = class_copyMethodList(classToAnalyse, &numMethods);
+    SEL selector = nil;
+    NSString *mName = nil;
+    MFActionMethodDefinition* mDef = nil;
+    for(int i=0;i<numMethods;++i){
+        selector = method_getName(methods[i]);
+        mName = NSStringFromSelector(selector);
+        if ([mName hasPrefix:mf_registerActionListener]) {
+            selector = method_getName(methods[i]);
+            mDef = [[MFActionMethodDefinition alloc] init];
+            mDef.selector = selector;
+            [def.methods addObject:mDef];
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+            [elementToAnalyse performSelector:selector withObject:[NSNumber numberWithBool:YES]];
+#pragma clang diagnostic pop
+        }
+    }
+    free(methods);
+}
+
+
+#pragma mark - Context
+
+- (NSString *) getEventNameForAction:(NSString *) actionName ofType:(MFActionEventType) eventType{
+    NSString *name = @"";
+    name = [name stringByAppendingString:actionName];
+    
+    NSString *appendix = nil;
+    switch (eventType) {
+        case MFActionEventTypeFail:
+            appendix = @"OnFailed";
+            break;
+        case MFActionEventTypeSuccess:
+            appendix = @"OnSuccess";
+            break;
+        case MFActionEventTypeProgress:
+            appendix = @"OnProgress";
+            break;
+        default:
+            break;
+    }
+    name = [name stringByAppendingString:appendix];
+    return name;
+}
 
 
 @end

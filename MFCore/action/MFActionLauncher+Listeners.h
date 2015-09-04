@@ -206,6 +206,21 @@ if (false) {NSLog(@"%@",actionName);block(nil, nil, nil, nil);} \
  * @param context le context à utiliser
  */
 - (void) notifyListenerOnSuccessOfAction:(NSString *) actionName withResult: (id) result andCaller: (id) caller andContext:(id<MFContextProtocol>) context;
+
+
+/*!
+ * @brief analyse un objet en cherchant les méthodes "listener"
+ */
+- (void) objectToAnalyseByInstance:(id) elementToAnalyse;
+
+/*!
+ * @brief donne le nom d'un évènement de type success
+ * @param le nom d'une action
+ * @param eventType Le type de l'évènement
+ * @result le nom de l'évênement associé
+ */
+- (NSString *) getEventNameForAction:(NSString *) actionName ofType:(MFActionEventType) eventType;
+
 @end
 
 

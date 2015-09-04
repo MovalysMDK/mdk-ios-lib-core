@@ -183,18 +183,7 @@ typedef NS_ENUM(NSInteger, MFActionEventType) {
  */
 -(void) launchAction:(NSString *) actionName withCaller:(id) caller withInParameter:(id) parameterIn andContext:(id<MFContextProtocol>) context andChainActions:(NSArray*) chainActions andInOutTransformers:(NSArray*) chainTransformers andParameters:(NSMutableDictionary*) parameters andQualifier:(id<MFActionQualifierProtocol>)qualifier withWaitingView:(BOOL)showWaitingView;
 
-/*!
- * @brief analyse un objet en cherchant les méthodes "listener"
- */
-- (void) objectToAnalyseByInstance:(id) elementToAnalyse;
 
-/*!
- * @brief donne le nom d'un évènement de type success
- * @param le nom d'une action
- * @param eventType Le type de l'évènement
- * @result le nom de l'évênement associé
- */
-- (NSString *) getEventNameForAction:(NSString *) actionName ofType:(MFActionEventType) eventType;
 
 
 
