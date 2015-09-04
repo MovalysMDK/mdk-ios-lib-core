@@ -71,9 +71,9 @@
 -(BOOL) getBOOLValue
 {
     if([self.value isKindOfClass:[NSNumber class]]) {
-        return (BOOL) [self.value boolValue];
+        return [self.value boolValue];
     }
-    return self.value;
+    return !!self.value;
 }
 
 @end

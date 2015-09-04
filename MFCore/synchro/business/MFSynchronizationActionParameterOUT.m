@@ -25,23 +25,23 @@
 -(id) init
 {
     if ((self = [super init])) {
-        self.resetObjectToSynchronise = false;
+        self.resetObjectToSynchronise = NO;
         
-        self.localAuthentication = false;
+        self.localAuthentication = NO;
         
-        self.emptyDBSynchronizationFailure = false;
+        self.emptyDBSynchronizationFailure = NO;
         
-        self.noConnectionSynchronizationFailure = false;
+        self.noConnectionSynchronizationFailure = NO;
         
-        self.brokenSynchronizationFailure = false;
+        self.brokenSynchronizationFailure = NO;
         
-        self.errorInSynchronizationFailure = false;
+        self.errorInSynchronizationFailure = NO;
         
-        self.authenticationFailure = false;
+        self.authenticationFailure = NO;
         
-        self.waitedTooLongBeforeSync = false;
+        self.waitedTooLongBeforeSync = NO;
         
-        self.incompatibleServerMobileTimeFailure = false;
+        self.incompatibleServerMobileTimeFailure = NO;
     }
     return self;
 }
