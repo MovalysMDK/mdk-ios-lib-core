@@ -14,18 +14,15 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-//
-//  MFActionLauncher.m
-//  MFCore
-//
-//
 
 #import <objc/runtime.h>
 
+#import "MFActionObjectsDefinitions.h"
 #import "MFCoreBean.h"
 #import "MFCoreCoredata.h"
 #import "MFCoreFoundationExt.h"
-
+#import "MFActionLauncher+Listeners.h"
+#import "MFActionLauncher+WaitingView.h"
 #import "MFActionLauncher.h"
 #import "MFActionNotFound.h"
 #import "MFActionQualifier.h"
@@ -34,158 +31,15 @@
 #import "MFActionPreTreatmentProtocol.h"
 #import "MFActionPostTreatmentProtocol.h"
 
-const void *extANCKey = &extANCKey;
 NSString *const mf_registerActionListener = @"mf_registerActionListener";
 
-//---------------------------------------------------------
 
-/**
- * @brief permet de définir les attributs privés du notification center
- */
-@interface MFActionNotificationCenter_Private : NSObject
-
-/**
- * @brief le compteur d'actions lancées nécessitant un sablier
- */
-@property (strong, nonatomic) NSNumber *launchedAction;
-
-/**
- * @brief la queue d'exécution des actions
- */
-@property (nonatomic, readonly) dispatch_queue_t actionQueue;
-
-/**
- * @brief la queue d'execution des notifications
- */
-@property (nonatomic, readonly) dispatch_queue_t notifQueue;
-
-/**
- * @brief le cache de définition des classes
- */
-@property (strong, nonatomic, readonly) NSMutableDictionary *classCache;
-
-/**
- * @brief contient les objets "listener" par évênement
- */
-@property (strong, nonatomic, readonly) NSMutableDictionary *registredElementsByEvent;
-
-@end
-
-//---------------------------------------------------------
-
-@implementation MFActionNotificationCenter_Private
-
--(id) init {
-    if (self = [super init]) {
-        self.launchedAction = [NSNumber numberWithInt:0];
-        _actionQueue = dispatch_queue_create("actionQueue",  DISPATCH_QUEUE_CONCURRENT);
-        _notifQueue = dispatch_queue_create("notifQueue",  DISPATCH_QUEUE_CONCURRENT);
-        _classCache = [[NSMutableDictionary alloc] init];
-        _registredElementsByEvent= [[NSMutableDictionary alloc] init];
-    }
-    return self;
-}
-
-@end
-
-//---------------------------------------------------------
-
-/**
- * @brief permet de stocker des informations sur une méthode
- */
-@interface MFActionMethodDefinition : NSObject
-
-/**
- * @brief la méthode donc on stocke des informations
- */
-@property (nonatomic) SEL selector;
-
-@end
-
-//---------------------------------------------------------
-
-@implementation MFActionMethodDefinition
-
-@end
-
-//---------------------------------------------------------
-
-/**
- * @brief permet de sotcker des informations sur un évênement
- */
-@interface MFActionEventDefinition : NSObject
-
-/**
- * @brief l'objet demandant le callback
- */
-@property (weak, nonatomic) id objectWithCallBack;
-
-/**
- * @brief le callback a appeler
- */
-@property (copy) MFActionListenerBlock callBack;
-
-@end
-
-//---------------------------------------------------------
-
-/**
- * @brief permet de stocker des informations sur une classe
- */
-@interface MFActionClassDefinition : NSObject
-
-/**
- * @brief contient l'ensemble des informations de méthodes (listener) qui nous intéresse
- */
-@property (strong, nonatomic, readonly) NSMutableArray *methods;
-
-/**
- * @brief l'ensemble des évênements supportés par une classe
- */
-@property (strong, nonatomic, readonly) NSMutableArray *events;
-
-@end
-
-//---------------------------------------------------------
-
-@implementation MFActionClassDefinition
-
--(id) init {
-    if (self = [super init]) {
-        _methods = [[NSMutableArray alloc ]init];
-        _events = [[NSMutableArray alloc ]init];
-    }
-    return self;
-}
-
-@end
-
-//---------------------------------------------------------
-
-@implementation MFActionEventDefinition
-
-- (BOOL)isEqual:(id)other {
-    if ([other isMemberOfClass:[self class]]) {
-        BOOL returnValue = NO;
-        if([other objectWithCallBack] == [self objectWithCallBack]) {
-            returnValue = YES;
-        }
-        return returnValue;
-    }
-    return NO;
-}
-
-@end
-
-//---------------------------------------------------------
 
 @interface MFActionNotificationCenter
 
 @property(strong, nonatomic) MFActionNotificationCenter_Private *extendANC;
 
 @end
-
-//---------------------------------------------------------
 
 
 
@@ -204,25 +58,6 @@ NSString *const mf_registerActionListener = @"mf_registerActionListener";
 }
 
 
-#pragma mark - Category retained properties
-/**
- * @brief permet de récuperer les attributs supplémentaires de la catégorie
- */
--(MFActionNotificationCenter_Private *)extendANC {
-    MFActionNotificationCenter_Private* ext = objc_getAssociatedObject(self, &extANCKey);
-    if (ext==nil) {
-        ext = [[MFActionNotificationCenter_Private alloc] init];
-        [self setExtendANC:ext];
-    }
-    return ext;
-}
-
-/**
- * @brief affecte les attributs supplémentaire de la catégorie
- */
-- (void) setExtendANC:(MFActionNotificationCenter_Private *) n {
-    objc_setAssociatedObject(self, &extANCKey, n,  OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
 
 
 
@@ -448,13 +283,6 @@ NSString *const mf_registerActionListener = @"mf_registerActionListener";
     }
 }
 
--(void) showWaitingView {
-    //overload in ui project
-}
-
--(void) dismissWaitingView {
-    // overload in ui project
-}
 
 #pragma mark - Context
 - (id<MFContextProtocol>) createMFContext:(NSString *)actionName {
@@ -463,96 +291,6 @@ NSString *const mf_registerActionListener = @"mf_registerActionListener";
 
     
     return mfContext;
-}
-
-
-
-#pragma mark - Register / Unregister Actions events
-
-- (void) MF_register:(id) elementToRegister withBlock:(MFActionListenerBlock) block andInitEventList:(NSNumber*) initEventList onEvent:(NSString *) eventName {
-    if ((BOOL) initEventList){
-        MFActionClassDefinition* def = [[self extendANC].classCache objectForKey:NSStringFromClass([elementToRegister class])];
-        [def.events addObject:eventName];
-    }
-    NSMutableSet* objectsLists = [[self extendANC].registredElementsByEvent objectForKey:eventName];
-    if (objectsLists == nil) {
-        objectsLists = [[NSMutableSet alloc] init];
-        [[self extendANC].registredElementsByEvent setObject:objectsLists forKey:eventName];
-    }
-    MFActionEventDefinition* eventDef = [[MFActionEventDefinition alloc] init];
-    eventDef.objectWithCallBack = elementToRegister;
-    eventDef.callBack = (MFActionListenerBlock) block;
-    [objectsLists addObject:eventDef];
-    [[self extendANC].registredElementsByEvent setObject:objectsLists forKey:eventName];
-    
-}
-
-- (void) MF_register:(id) elementToRegister {
-    [self objectToAnalyseByInstance:elementToRegister];
-}
-
-- (void) MF_unregister:(id) elementToUnRegister {
-    MFActionClassDefinition* def = [[self extendANC].classCache objectForKey:NSStringFromClass([elementToUnRegister class])];
-    NSMutableSet* objectsLists = nil;
-    for(NSString *eventName in def.events) {
-        objectsLists = [[self extendANC].registredElementsByEvent objectForKey:eventName];
-        NSMutableArray* objectsToDelete = [NSMutableArray array];
-        for(id object in objectsLists) {
-            if([object isKindOfClass:[MFActionEventDefinition class]]) {
-                MFActionEventDefinition* eventDef = object;
-                [objectsToDelete addObject:eventDef];
-                eventDef.callBack = nil;
-                eventDef.objectWithCallBack = nil;
-                eventDef = nil;
-            }
-        }
-        
-        [objectsLists minusSet:[NSSet setWithArray:objectsToDelete]];
-        [[self extendANC].registredElementsByEvent setObject:objectsLists forKey:eventName];
-        
-    }
-    
-    [objectsLists removeObject:elementToUnRegister];
-    elementToUnRegister = nil;
-    
-}
-
-
-#pragma mark - Notifying actions events
-
-//par defaut s'execute dans la queue action
-- (void) notifyListenerOnSuccessOfAction:(NSString *) actionName withResult: (id) result andCaller: (id) caller andContext:(id<MFContextProtocol>) context {
-    NSSet* listeners = [[self extendANC].registredElementsByEvent objectForKey:[self getEventNameForAction:actionName ofType:MFActionEventTypeSuccess]];
-    for(MFActionEventDefinition* eventDef in listeners) {
-        dispatch_async([self extendANC].notifQueue, ^{
-            if (eventDef && eventDef.callBack && eventDef.objectWithCallBack) {
-                eventDef.callBack(context, caller, result, nil);
-            }
-            
-        });
-    }
-}
-
-- (void) notifyListenerOnFailedOfAction:(NSString *) actionName withResult: (id) result andCaller: (id) caller andContext:(id<MFContextProtocol>) context {
-    NSSet* listeners = [[self extendANC].registredElementsByEvent objectForKey:[self getEventNameForAction:actionName ofType:MFActionEventTypeFail]];
-    for(MFActionEventDefinition* eventDef in listeners) {
-        dispatch_async([self extendANC].notifQueue, ^{
-            if (eventDef && eventDef.callBack && eventDef.objectWithCallBack) {
-                eventDef.callBack(context, caller, result, nil);
-            }
-        });
-    }
-}
-
--(void) notifyListenerOnProgressOfAction:(NSString *) actionName withStep: (NSString *) step withObject: (id) result andCaller: (id) caller andContext:(id<MFContextProtocol>) context {
-    NSSet* listeners = [[self extendANC].registredElementsByEvent objectForKey:[self getEventNameForAction:actionName ofType:MFActionEventTypeProgress]];
-    for(MFActionEventDefinition* eventDef in listeners) {
-        dispatch_async([self extendANC].notifQueue, ^{
-            if (eventDef && eventDef.callBack && eventDef.objectWithCallBack) {
-                eventDef.callBack(context, caller, result, nil);
-            }
-        });
-    }
 }
 
 

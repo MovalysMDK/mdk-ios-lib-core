@@ -13,21 +13,11 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
-//
-//  MFActionLauncher.h
-//  MFCore
-//
-//
+
 
 #import "MFCoreContext.h"
 #import "MFActionQualifierProtocol.h"
 
-
-/*!
- * @brief Définit un bloc permettant de lancer l'enregistrement d'une action en tant que listener
- * Les paramètres dépendent des macros, (à voir dans les 3 macros précédentes)
- */
-typedef void (^MFActionListenerBlock)(id, id, id, id);
 
 
 /*!
@@ -46,8 +36,6 @@ typedef NS_ENUM(NSInteger, MFActionEventType) {
     MFActionEventTypeFail,
     MFActionEventTypeProgress
 };
-
-
 
 @interface MFActionLauncher : NSObject
 
@@ -196,34 +184,6 @@ typedef NS_ENUM(NSInteger, MFActionEventType) {
 -(void) launchAction:(NSString *) actionName withCaller:(id) caller withInParameter:(id) parameterIn andContext:(id<MFContextProtocol>) context andChainActions:(NSArray*) chainActions andInOutTransformers:(NSArray*) chainTransformers andParameters:(NSMutableDictionary*) parameters andQualifier:(id<MFActionQualifierProtocol>)qualifier withWaitingView:(BOOL)showWaitingView;
 
 /*!
- * @brief Permet de faire apparaître le sablier
- */
--(void) showWaitingView;
-
-/*!
- * @brief Permet de faire disparaître le sablier
- */
--(void) dismissWaitingView;
-
-/*!
- * @brief enregistre un objet en tant qu'écouteur
- * @param elementToRegister l'élément à enregistrer
- * @param block le code à executer pour l'enregistrmeent
- * @param initEventList indique si l'enregistrement est partiel ou complet (ie un enregistrement est partiel si il a déjà été executé une fois de manière complète)
- */
-- (void) MF_register:(id) elementToRegister withBlock:(MFActionListenerBlock) block andInitEventList:(NSNumber*) initEventList onEvent:(NSString *) eventName;
-
-/*!
- * @brief désenregistre un objet en tant qu'écouteur
- */
-- (void) MF_unregister:(id) elementToUnRegister;
-
-/*!
- * @brief enregistre en tant que listener d'action un objet
- */
-- (void) MF_register:(id) elementToRegister;
-
-/*!
  * @brief analyse un objet en cherchant les méthodes "listener"
  */
 - (void) objectToAnalyseByInstance:(id) elementToAnalyse;
@@ -236,14 +196,6 @@ typedef NS_ENUM(NSInteger, MFActionEventType) {
  */
 - (NSString *) getEventNameForAction:(NSString *) actionName ofType:(MFActionEventType) eventType;
 
-/*!
- * @brief notify la progression d'une action
- * @param actionName le nom de l'action
- * @param l'étape de l'action
- * @param un paramètre quelconqie
- * @param caller l'objet qui a lancé la première action
- * @param context le context à utiliser
- */
--(void) notifyListenerOnProgressOfAction:(NSString *) actionName withStep: (NSString *) step withObject: (id) result andCaller: (id) caller andContext:(id<MFContextProtocol>) context;
+
 
 @end

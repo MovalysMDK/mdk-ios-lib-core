@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		B01086011B998F97004368B8 /* MFActionLauncher+Listeners.h in Headers */ = {isa = PBXBuildFile; fileRef = B01085FF1B998F97004368B8 /* MFActionLauncher+Listeners.h */; };
 		B01086021B998F97004368B8 /* MFActionLauncher+Listeners.m in Sources */ = {isa = PBXBuildFile; fileRef = B01086001B998F97004368B8 /* MFActionLauncher+Listeners.m */; };
+		B01086051B999420004368B8 /* MFActionLauncher+WaitingView.h in Headers */ = {isa = PBXBuildFile; fileRef = B01086031B999420004368B8 /* MFActionLauncher+WaitingView.h */; };
+		B01086061B999420004368B8 /* MFActionLauncher+WaitingView.m in Sources */ = {isa = PBXBuildFile; fileRef = B01086041B999420004368B8 /* MFActionLauncher+WaitingView.m */; };
+		B01086091B9995D8004368B8 /* MFActionObjectsDefinitions.h in Headers */ = {isa = PBXBuildFile; fileRef = B01086071B9995D8004368B8 /* MFActionObjectsDefinitions.h */; };
+		B010860A1B9995D8004368B8 /* MFActionObjectsDefinitions.m in Sources */ = {isa = PBXBuildFile; fileRef = B01086081B9995D8004368B8 /* MFActionObjectsDefinitions.m */; };
 		B041724C1A70F5350045C268 /* MFCore.h in Headers */ = {isa = PBXBuildFile; fileRef = B041724B1A70F5350045C268 /* MFCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06483B11A70F5CB0077A855 /* MFCoreLog.h in Headers */ = {isa = PBXBuildFile; fileRef = B06482191A70F5CB0077A855 /* MFCoreLog.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06483B21A70F5CB0077A855 /* MFCoreLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = B064821A1A70F5CB0077A855 /* MFCoreLogging.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -325,6 +329,10 @@
 /* Begin PBXFileReference section */
 		B01085FF1B998F97004368B8 /* MFActionLauncher+Listeners.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MFActionLauncher+Listeners.h"; sourceTree = "<group>"; };
 		B01086001B998F97004368B8 /* MFActionLauncher+Listeners.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MFActionLauncher+Listeners.m"; sourceTree = "<group>"; };
+		B01086031B999420004368B8 /* MFActionLauncher+WaitingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MFActionLauncher+WaitingView.h"; sourceTree = "<group>"; };
+		B01086041B999420004368B8 /* MFActionLauncher+WaitingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MFActionLauncher+WaitingView.m"; sourceTree = "<group>"; };
+		B01086071B9995D8004368B8 /* MFActionObjectsDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFActionObjectsDefinitions.h; sourceTree = "<group>"; };
+		B01086081B9995D8004368B8 /* MFActionObjectsDefinitions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFActionObjectsDefinitions.m; sourceTree = "<group>"; };
 		B04172461A70F5350045C268 /* MFCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MFCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B041724A1A70F5350045C268 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B041724B1A70F5350045C268 /* MFCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MFCore.h; sourceTree = "<group>"; };
@@ -788,10 +796,14 @@
 			isa = PBXGroup;
 			children = (
 				B06482231A70F5CB0077A855 /* deps */,
+				B01086071B9995D8004368B8 /* MFActionObjectsDefinitions.h */,
+				B01086081B9995D8004368B8 /* MFActionObjectsDefinitions.m */,
 				B06482241A70F5CB0077A855 /* MFActionLauncher.h */,
 				B06482251A70F5CB0077A855 /* MFActionLauncher.m */,
 				B01085FF1B998F97004368B8 /* MFActionLauncher+Listeners.h */,
 				B01086001B998F97004368B8 /* MFActionLauncher+Listeners.m */,
+				B01086031B999420004368B8 /* MFActionLauncher+WaitingView.h */,
+				B01086041B999420004368B8 /* MFActionLauncher+WaitingView.m */,
 				B06482261A70F5CB0077A855 /* MFActionNotFound.h */,
 				B06482271A70F5CB0077A855 /* MFActionNotFound.m */,
 				B06482281A70F5CB0077A855 /* MFActionPostTreatmentProtocol.h */,
@@ -1426,6 +1438,7 @@
 				B06484001A70F5CB0077A855 /* MFReachability.h in Headers */,
 				B06484261A70F5CB0077A855 /* MFJSonNode.h in Headers */,
 				B06484841A70F5CB0077A855 /* MFCsvLoaderHelper.h in Headers */,
+				B01086091B9995D8004368B8 /* MFActionObjectsDefinitions.h in Headers */,
 				B06484051A70F5CB0077A855 /* MFAESUtil.h in Headers */,
 				B06484441A70F5CB0077A855 /* MFRestResponseReaderProtocol.h in Headers */,
 				B06483D71A70F5CB0077A855 /* MFContextFactoryProtocol.h in Headers */,
@@ -1490,6 +1503,7 @@
 				B064842F1A70F5CB0077A855 /* MFDomRequestBuilderProtocol.h in Headers */,
 				B06483D31A70F5CB0077A855 /* MFContext.h in Headers */,
 				B06484591A70F5CB0077A855 /* MFSettingsValidationManager.h in Headers */,
+				B01086051B999420004368B8 /* MFActionLauncher+WaitingView.h in Headers */,
 				B06483C11A70F5CB0077A855 /* MFActionProgressMessageDispatcher.h in Headers */,
 				B06483D51A70F5CB0077A855 /* MFContextFactory.h in Headers */,
 				B06484C61A70F5CB0077A855 /* NSString+Utilities.h in Headers */,
@@ -1715,6 +1729,7 @@
 				B064842E1A70F5CB0077A855 /* MFAbstractDomEntityRequestBuilder.m in Sources */,
 				B06484AE1A70F5CB0077A855 /* MFLocalDataAccessTechnicalError.m in Sources */,
 				B06484311A70F5CB0077A855 /* MFDomRequestWriter.m in Sources */,
+				B01086061B999420004368B8 /* MFActionLauncher+WaitingView.m in Sources */,
 				B064848C1A70F5CB0077A855 /* MFProjectCsvLoaderRunInit.m in Sources */,
 				B064849E1A70F5CB0077A855 /* MFBusinessError.m in Sources */,
 				B06484151A70F5CB0077A855 /* MFBasicRestAuth.m in Sources */,
@@ -1787,6 +1802,7 @@
 				B06483C51A70F5CB0077A855 /* MFActionQualifier.m in Sources */,
 				B06484B41A70F5CB0077A855 /* MFUnexpectedTypeNameException.m in Sources */,
 				B06484771A70F5CB0077A855 /* MFCoreDataRunInit.m in Sources */,
+				B010860A1B9995D8004368B8 /* MFActionObjectsDefinitions.m in Sources */,
 				B06484B91A70F5CB0077A855 /* MFHelperBOOL.m in Sources */,
 				B06484611A70F5CB0077A855 /* MFBeanLoaderWithTyphoon.m in Sources */,
 				B064842B1A70F5CB0077A855 /* MFJsonReader.m in Sources */,

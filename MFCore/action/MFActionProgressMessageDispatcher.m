@@ -19,8 +19,7 @@
 //
 //
 
-#import "MFActionLauncher.h"
-
+#import "MFActionLauncher+Listeners.h"
 #import "MFActionProgressMessageDispatcher.h"
 
 @implementation MFActionProgressMessageDispatcher

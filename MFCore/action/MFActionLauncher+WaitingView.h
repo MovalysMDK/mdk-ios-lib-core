@@ -13,19 +13,23 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
-//
-//  MFCoreAction.h
-//  MFCore
-//
-//
 
-#import "MFActionProtocol.h"
-#import "MFActionNotFound.h"
-#import "MFActionPreTreatmentProtocol.h"
-#import "MFActionPostTreatmentProtocol.h"
+#import <MFCore/MFCore.h>
 
+/*!
+ * @category WaitingView
+ * @brief This category declares method for the waiting view management during actions
+ */
+@interface MFActionLauncher (WaitingView)
 
-#import "MFActionLauncher.h"
-#import "MFActionObjectsDefinitions.h"
-#import "MFActionLauncher+Listeners.h"
-#import "MFActionLauncher+WaitingView.h"
+/*!
+ * @brief Shows the waiting view
+ */
+-(void) showWaitingView;
+
+/*!
+ * @brief Dismisses the wiating view
+ */
+-(void) dismissWaitingView;
+
+@end

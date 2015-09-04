@@ -13,19 +13,18 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
-//
-//  MFCoreAction.h
-//  MFCore
-//
-//
 
-#import "MFActionProtocol.h"
-#import "MFActionNotFound.h"
-#import "MFActionPreTreatmentProtocol.h"
-#import "MFActionPostTreatmentProtocol.h"
-
-
-#import "MFActionLauncher.h"
-#import "MFActionObjectsDefinitions.h"
-#import "MFActionLauncher+Listeners.h"
 #import "MFActionLauncher+WaitingView.h"
+
+
+
+@implementation MFActionLauncher (WaitingView)
+
+-(void) showWaitingView {
+    //overloaded in ui project
+}
+
+-(void) dismissWaitingView {
+    //overloaded in ui project
+}
+@end

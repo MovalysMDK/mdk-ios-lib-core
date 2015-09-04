@@ -16,6 +16,7 @@
 
 
 #import <MFCore/MFCore.h>
+#import "MFActionObjectsDefinitions.h"
 
 //dans les macros le bloc code if false sert à voir si les paramètres de la macro existe
 // sinon erreur de compilation
@@ -106,10 +107,105 @@ if (false) {NSLog(@"%@",actionName);block(nil, nil, nil, nil);} \
 } \
 
 
+
+/*!
+ * @class MFActionNotificationCenter_Private
+ * @brief The Action Notification Center
+ */
+@interface MFActionNotificationCenter_Private : NSObject
+
+/**
+ * @brief le compteur d'actions lancées nécessitant un sablier
+ */
+@property (strong, nonatomic) NSNumber *launchedAction;
+
+/**
+ * @brief la queue d'exécution des actions
+ */
+@property (nonatomic, readonly) dispatch_queue_t actionQueue;
+
+/**
+ * @brief la queue d'execution des notifications
+ */
+@property (nonatomic, readonly) dispatch_queue_t notifQueue;
+
+/**
+ * @brief le cache de définition des classes
+ */
+@property (strong, nonatomic, readonly) NSMutableDictionary *classCache;
+
+/**
+ * @brief contient les objets "listener" par évênement
+ */
+@property (strong, nonatomic, readonly) NSMutableDictionary *registredElementsByEvent;
+
+@end
+
+
+
 /*!
  * @category Listeners
  * @brief This category does nothing else declaring Macro for actions listeners
  */
 @interface MFActionLauncher (Listeners)
 
+/**
+ * @brief Gets the private Action Notification Center
+ * @return The private Action Notification Center
+ */
+-(MFActionNotificationCenter_Private *)extendANC;
+
+/**
+ * @brief Sets the private Action Notification Center
+ * @param The private Action Notification Center
+ */
+- (void) setExtendANC:(MFActionNotificationCenter_Private *)extendANC ;
+
+/*!
+ * @brief enregistre un objet en tant qu'écouteur
+ * @param elementToRegister l'élément à enregistrer
+ * @param block le code à executer pour l'enregistrmeent
+ * @param initEventList indique si l'enregistrement est partiel ou complet (ie un enregistrement est partiel si il a déjà été executé une fois de manière complète)
+ */
+- (void) MF_register:(id) elementToRegister withBlock:(MFActionListenerBlock) block andInitEventList:(NSNumber*) initEventList onEvent:(NSString *) eventName;
+
+/*!
+ * @brief désenregistre un objet en tant qu'écouteur
+ */
+- (void) MF_unregister:(id) elementToUnRegister;
+
+/*!
+ * @brief enregistre en tant que listener d'action un objet
+ */
+- (void) MF_register:(id) elementToRegister;
+
+/*!
+ * @brief notify la progression d'une action
+ * @param actionName le nom de l'action
+ * @param step l'étape de l'action
+ * @param result un paramètre quelconque
+ * @param caller l'objet qui a lancé la première action
+ * @param context le context à utiliser
+ */
+-(void) notifyListenerOnProgressOfAction:(NSString *) actionName withStep: (NSString *) step withObject: (id) result andCaller: (id) caller andContext:(id<MFContextProtocol>) context;
+
+/*!
+ * @brief notify l'échec d'une action
+ * @param actionName le nom de l'action
+ * @param result un paramètre quelconque
+ * @param caller l'objet qui a lancé la première action
+ * @param context le context à utiliser
+ */
+- (void) notifyListenerOnFailedOfAction:(NSString *) actionName withResult: (id) result andCaller: (id) caller andContext:(id<MFContextProtocol>) context;
+
+/*!
+ * @brief notify le succès d'une action
+ * @param actionName le nom de l'action
+ * @param result un paramètre quelconque
+ * @param caller l'objet qui a lancé la première action
+ * @param context le context à utiliser
+ */
+- (void) notifyListenerOnSuccessOfAction:(NSString *) actionName withResult: (id) result andCaller: (id) caller andContext:(id<MFContextProtocol>) context;
 @end
+
+
