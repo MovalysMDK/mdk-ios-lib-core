@@ -15,9 +15,17 @@
  */
 
 
+/*!
+ * @protocol MFErrorProtocol
+ * @brief This protocol identifies a MDK Error
+ */
 @protocol MFErrorProtocol <NSObject>
 
 @required
+/*!
+ * @brief Gets the domain base of the error
+ * @return The domain base of the error
+ */
 + (NSString *) getDomainBase;
 
 @end

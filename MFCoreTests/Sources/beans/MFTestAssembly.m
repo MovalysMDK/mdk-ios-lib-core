@@ -60,7 +60,7 @@
     [singletons setObject:[MFEmptyAction class] forKey:@"MFEmptyAction"];
     [singletons setObject:[MFCsvLoaderHelper class] forKey:@"csvLoaderHelper"];
     [singletons setObject:[MFSecurityHelper class] forKey:@"MFSecurityHelper"];
-    
+
     [prototypes setObject:[MFContext class] forKey:@"MFContext"];
     [prototypes setObject:[MFContext class] forKey:@"MFContextProtocol"];
     [prototypes setObject:[MFWaitRunInit class] forKey:@"MFWaitRunInit"];

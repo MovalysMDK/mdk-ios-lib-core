@@ -3,6 +3,7 @@ platform :ios, '7.0'
 
 
 use_frameworks!
+inhibit_all_warnings!
 
 source 'gitmovalys@git.ptx.fr.sopra:podspecs.git'
 source 'https://github.com/CocoaPods/Specs.git'

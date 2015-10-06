@@ -125,7 +125,6 @@
         // réponse et réponse précédentes, lues en retour du serveur
         id<MFSyncRestResponseProtocol> response;
         id<MFSyncRestResponseProtocol> oldResponse;
-        
         NSMutableArray *synchronizedObjects = [[NSMutableArray alloc] init];
         
         // on parcourt les invocations

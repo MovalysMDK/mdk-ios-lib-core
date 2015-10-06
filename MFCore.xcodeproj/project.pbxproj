@@ -307,7 +307,6 @@
 		B08800511B983BB500A49B59 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B088004F1B983BB500A49B59 /* Model.xcdatamodeld */; };
 		B08800571B983C6900A49B59 /* Entity.m in Sources */ = {isa = PBXBuildFile; fileRef = B08800541B983C6900A49B59 /* Entity.m */; };
 		B08800581B983C6900A49B59 /* LinkEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B08800561B983C6900A49B59 /* LinkEntity.m */; };
-		B088005A1B983C9000A49B59 /* MFCoreDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B08800591B983C9000A49B59 /* MFCoreDataTests.m */; };
 		B088005B1B983FBE00A49B59 /* Model.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = B088004F1B983BB500A49B59 /* Model.xcdatamodeld */; };
 		B0D72C911B97311A00473993 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B06869061AD6BB8100D6B529 /* CoreData.framework */; };
 		B0F0F8BA1B989C9900DB30B0 /* MFI18nTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F0F8B91B989C9900DB30B0 /* MFI18nTests.m */; };
@@ -648,7 +647,6 @@
 		B08800541B983C6900A49B59 /* Entity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entity.m; sourceTree = "<group>"; };
 		B08800551B983C6900A49B59 /* LinkEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkEntity.h; sourceTree = "<group>"; };
 		B08800561B983C6900A49B59 /* LinkEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkEntity.m; sourceTree = "<group>"; };
-		B08800591B983C9000A49B59 /* MFCoreDataTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFCoreDataTests.m; sourceTree = "<group>"; };
 		B0AAFB6A1AD41A7200463F7F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B0AAFB6B1AD41A7200463F7F /* Pods.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B0AAFB751AD41C4500463F7F /* MFCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MFCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1321,7 +1319,6 @@
 				B08800481B983B1600A49B59 /* MFCoreActionTests.m */,
 				B08800491B983B1600A49B59 /* MFCoreTests.m */,
 				B088004A1B983B1600A49B59 /* MFPropertyTests.m */,
-				B08800591B983C9000A49B59 /* MFCoreDataTests.m */,
 				B0F0F8B91B989C9900DB30B0 /* MFI18nTests.m */,
 				B0F0F8C21B98A6F900DB30B0 /* MFSecurityTests.m */,
 			);
@@ -1845,7 +1842,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B08800571B983C6900A49B59 /* Entity.m in Sources */,
-				B088005A1B983C9000A49B59 /* MFCoreDataTests.m in Sources */,
 				B08800581B983C6900A49B59 /* LinkEntity.m in Sources */,
 				B088004B1B983B1600A49B59 /* MFContextTests.m in Sources */,
 				B088004E1B983B1600A49B59 /* MFPropertyTests.m in Sources */,
