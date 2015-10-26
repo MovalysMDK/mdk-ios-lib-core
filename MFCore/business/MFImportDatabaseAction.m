@@ -98,7 +98,6 @@
 }
 
 -(NSString *)databaseFileName {
-    NSString *databaseName = [self databaseName];
     NSString *fileName = [[self databaseFileFullPath] substringFromIndex:[[self databaseFileFullPath] rangeOfString:@"/" options:NSBackwardsSearch].location +1];
     MFCoreLogVerbose(@"  short file Name '%@'" , fileName ) ;
     return fileName;
