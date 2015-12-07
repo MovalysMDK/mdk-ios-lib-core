@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   }
 
   s.author       = "Sopra Steria"
-  s.source       = { :git => "", :tag => "2.0.0" }
+  s.source       = { :git => "gitmovalys@git.ptx.fr.sopra:mdk-ios-lib-core.git", :tag => "2.0.0" }
   s.platform     = :ios, '8.0'
   s.header_mappings_dir = '.'
   s.requires_arc = true
