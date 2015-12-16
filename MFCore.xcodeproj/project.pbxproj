@@ -261,7 +261,6 @@
 		B06484B31A70F5CB0077A855 /* MFUnexpectedTypeNameException.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483341A70F5CB0077A855 /* MFUnexpectedTypeNameException.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06484B41A70F5CB0077A855 /* MFUnexpectedTypeNameException.m in Sources */ = {isa = PBXBuildFile; fileRef = B06483351A70F5CB0077A855 /* MFUnexpectedTypeNameException.m */; };
 		B06484B61A70F5CB0077A855 /* MFCoreFoundationExt.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483381A70F5CB0077A855 /* MFCoreFoundationExt.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B06484B71A70F5CB0077A855 /* MFEnumHelperProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B06483391A70F5CB0077A855 /* MFEnumHelperProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06484B81A70F5CB0077A855 /* MFHelperBOOL.h in Headers */ = {isa = PBXBuildFile; fileRef = B064833A1A70F5CB0077A855 /* MFHelperBOOL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B06484B91A70F5CB0077A855 /* MFHelperBOOL.m in Sources */ = {isa = PBXBuildFile; fileRef = B064833B1A70F5CB0077A855 /* MFHelperBOOL.m */; };
 		B06484BA1A70F5CB0077A855 /* MFHelperIntrospection.h in Headers */ = {isa = PBXBuildFile; fileRef = B064833C1A70F5CB0077A855 /* MFHelperIntrospection.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -595,7 +594,6 @@
 		B06483351A70F5CB0077A855 /* MFUnexpectedTypeNameException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFUnexpectedTypeNameException.m; sourceTree = "<group>"; };
 		B06483371A70F5CB0077A855 /* deps */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = deps; sourceTree = "<group>"; };
 		B06483381A70F5CB0077A855 /* MFCoreFoundationExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFCoreFoundationExt.h; sourceTree = "<group>"; };
-		B06483391A70F5CB0077A855 /* MFEnumHelperProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFEnumHelperProtocol.h; sourceTree = "<group>"; };
 		B064833A1A70F5CB0077A855 /* MFHelperBOOL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFHelperBOOL.h; sourceTree = "<group>"; };
 		B064833B1A70F5CB0077A855 /* MFHelperBOOL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFHelperBOOL.m; sourceTree = "<group>"; };
 		B064833C1A70F5CB0077A855 /* MFHelperIntrospection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFHelperIntrospection.h; sourceTree = "<group>"; };
@@ -1229,7 +1227,6 @@
 			children = (
 				B06483371A70F5CB0077A855 /* deps */,
 				B06483381A70F5CB0077A855 /* MFCoreFoundationExt.h */,
-				B06483391A70F5CB0077A855 /* MFEnumHelperProtocol.h */,
 				B064833A1A70F5CB0077A855 /* MFHelperBOOL.h */,
 				B064833B1A70F5CB0077A855 /* MFHelperBOOL.m */,
 				B064833C1A70F5CB0077A855 /* MFHelperIntrospection.h */,
@@ -1424,7 +1421,6 @@
 				B06484101A70F5CB0077A855 /* MFAESRestAuth.h in Headers */,
 				B06484B11A70F5CB0077A855 /* MFTechnicalError.h in Headers */,
 				B06484D31A70F5CB0077A855 /* MFMessage.h in Headers */,
-				B06484B71A70F5CB0077A855 /* MFEnumHelperProtocol.h in Headers */,
 				B06483CE1A70F5CB0077A855 /* MFImportDatabaseAction.h in Headers */,
 				B06483C91A70F5CB0077A855 /* MFCoreBusiness.h in Headers */,
 				B06483B11A70F5CB0077A855 /* MFCoreLog.h in Headers */,

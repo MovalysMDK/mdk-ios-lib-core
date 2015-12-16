@@ -25,7 +25,6 @@
 #import "MFHelperType.h"
 #import "MFHelperIntrospection.h"
 #import "MFHelperQueue.h"
-#import "MFEnumHelperProtocol.h"
 
 
 #define MFNonEqual(oldValue, newValue, block) \
