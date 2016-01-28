@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "MFCore"
-  s.version      = "2.0.1"
+  s.version      = "2.1.0"
   s.summary      = "Movalys Framework MFCore."
   s.homepage     = "http://nansrvintc1.adeuza.fr/mfdocs-5.1.0/"
   s.license      = {
@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   }
 
   s.author       = "Sopra Steria"
-  s.source       = { :git => "", :tag => "2.0.1" }
+  s.source       = { :git => "gitmovalys@git.ptx.fr.sopra:mdk-ios-lib-core.git", :tag => "2.1.0" }
   s.platform     = :ios, '8.0'
   s.header_mappings_dir = '.'
   s.requires_arc = true
