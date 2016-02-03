@@ -15,7 +15,7 @@
  */
 
 
-#import "JSONKit.h"
+#import "MDKJSONKit.h"
 #import "MFRestInvoker.h"
 #import "MFRestInvocationConfig.h"
 #import "MFRestConnectionConfig.h"
