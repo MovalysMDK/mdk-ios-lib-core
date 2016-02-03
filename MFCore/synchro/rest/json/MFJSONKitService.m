@@ -15,7 +15,7 @@
  */
 
 
-#import <JSONKit/JSONKit.h>
+#import <MDKJSONKit/MDKJSONKit.h>
 #import <objc/runtime.h>
 #import "MFJSONKitService.h"
 #import "MFAbstractDomEntityRequestBuilder.h"
