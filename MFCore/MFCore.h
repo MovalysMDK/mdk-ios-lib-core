@@ -41,3 +41,4 @@ FOUNDATION_EXPORT const unsigned char MFCoreVersionString[];
 #import <MFCore/MFCoreBusiness.h>
 #import <MFCore/MFCoreSynchro.h>
 #import <MFCore/MFCoreSecurity.h>
+#import <MFCore/MFCoreNotification.h>

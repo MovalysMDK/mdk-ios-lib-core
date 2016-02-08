@@ -307,6 +307,11 @@
 		B08800571B983C6900A49B59 /* Entity.m in Sources */ = {isa = PBXBuildFile; fileRef = B08800541B983C6900A49B59 /* Entity.m */; };
 		B08800581B983C6900A49B59 /* LinkEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B08800561B983C6900A49B59 /* LinkEntity.m */; };
 		B088005B1B983FBE00A49B59 /* Model.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = B088004F1B983BB500A49B59 /* Model.xcdatamodeld */; };
+		B0B395BB1C68DC24004B0E5A /* NSNotification+Identifiable.h in Headers */ = {isa = PBXBuildFile; fileRef = B0B395B91C68DC24004B0E5A /* NSNotification+Identifiable.h */; };
+		B0B395BC1C68DC24004B0E5A /* NSNotification+Identifiable.m in Sources */ = {isa = PBXBuildFile; fileRef = B0B395BA1C68DC24004B0E5A /* NSNotification+Identifiable.m */; };
+		B0B395BF1C68DCFC004B0E5A /* NSNotificationCenter+Identifiable.h in Headers */ = {isa = PBXBuildFile; fileRef = B0B395BD1C68DCFC004B0E5A /* NSNotificationCenter+Identifiable.h */; };
+		B0B395C01C68DCFC004B0E5A /* NSNotificationCenter+Identifiable.m in Sources */ = {isa = PBXBuildFile; fileRef = B0B395BE1C68DCFC004B0E5A /* NSNotificationCenter+Identifiable.m */; };
+		B0B395C11C68E018004B0E5A /* MFCoreNotification.h in Headers */ = {isa = PBXBuildFile; fileRef = B0B395B81C68D9B6004B0E5A /* MFCoreNotification.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B0D72C911B97311A00473993 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B06869061AD6BB8100D6B529 /* CoreData.framework */; };
 		B0F0F8BA1B989C9900DB30B0 /* MFI18nTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F0F8B91B989C9900DB30B0 /* MFI18nTests.m */; };
 		B0F0F8C01B98A42C00DB30B0 /* Localizable-framework.strings in Resources */ = {isa = PBXBuildFile; fileRef = B0F0F8BC1B98A42C00DB30B0 /* Localizable-framework.strings */; };
@@ -649,6 +654,11 @@
 		B0AAFB6B1AD41A7200463F7F /* Pods.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B0AAFB751AD41C4500463F7F /* MFCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MFCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0AAFB781AD41C4500463F7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0B395B81C68D9B6004B0E5A /* MFCoreNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MFCoreNotification.h; sourceTree = "<group>"; };
+		B0B395B91C68DC24004B0E5A /* NSNotification+Identifiable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotification+Identifiable.h"; sourceTree = "<group>"; };
+		B0B395BA1C68DC24004B0E5A /* NSNotification+Identifiable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNotification+Identifiable.m"; sourceTree = "<group>"; };
+		B0B395BD1C68DCFC004B0E5A /* NSNotificationCenter+Identifiable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+Identifiable.h"; sourceTree = "<group>"; };
+		B0B395BE1C68DCFC004B0E5A /* NSNotificationCenter+Identifiable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNotificationCenter+Identifiable.m"; sourceTree = "<group>"; };
 		B0F0F8B91B989C9900DB30B0 /* MFI18nTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFI18nTests.m; sourceTree = "<group>"; };
 		B0F0F8BD1B98A42C00DB30B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "Localizable-framework.strings"; sourceTree = "<group>"; };
 		B0F0F8BF1B98A42C00DB30B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "Localizable-project.strings"; sourceTree = "<group>"; };
@@ -730,6 +740,7 @@
 		B04172481A70F5350045C268 /* MFCore */ = {
 			isa = PBXGroup;
 			children = (
+				B0B395AF1C68D74F004B0E5A /* notification */,
 				B06482221A70F5CB0077A855 /* action */,
 				B06482CF1A70F5CB0077A855 /* application */,
 				B06482D81A70F5CB0077A855 /* bean */,
@@ -1352,6 +1363,18 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		B0B395AF1C68D74F004B0E5A /* notification */ = {
+			isa = PBXGroup;
+			children = (
+				B0B395B81C68D9B6004B0E5A /* MFCoreNotification.h */,
+				B0B395B91C68DC24004B0E5A /* NSNotification+Identifiable.h */,
+				B0B395BA1C68DC24004B0E5A /* NSNotification+Identifiable.m */,
+				B0B395BD1C68DCFC004B0E5A /* NSNotificationCenter+Identifiable.h */,
+				B0B395BE1C68DCFC004B0E5A /* NSNotificationCenter+Identifiable.m */,
+			);
+			path = notification;
+			sourceTree = "<group>";
+		};
 		B0F0F8BB1B98A42C00DB30B0 /* en.lproj */ = {
 			isa = PBXGroup;
 			children = (
@@ -1388,6 +1411,7 @@
 				B041724C1A70F5350045C268 /* MFCore.h in Headers */,
 				B06484971A70F5CB0077A855 /* MFEntityLoaderProtocol.h in Headers */,
 				B06483BF1A70F5CB0077A855 /* MFActionPostTreatmentProtocol.h in Headers */,
+				B0B395BB1C68DC24004B0E5A /* NSNotification+Identifiable.h in Headers */,
 				B064849D1A70F5CB0077A855 /* MFBusinessError.h in Headers */,
 				B064848D1A70F5CB0077A855 /* MFUserCsvLoaderRunInit.h in Headers */,
 				B06484C01A70F5CB0077A855 /* MFStack.h in Headers */,
@@ -1412,6 +1436,7 @@
 				B064844F1A70F5CB0077A855 /* MObjectToSynchronize+Dao.h in Headers */,
 				B06484921A70F5CB0077A855 /* MFCoreDataloader.h in Headers */,
 				B06483DE1A70F5CB0077A855 /* MFKeychainRunInit.h in Headers */,
+				B0B395BF1C68DCFC004B0E5A /* NSNotificationCenter+Identifiable.h in Headers */,
 				B06483B91A70F5CB0077A855 /* MFCore-Prefix.pch in Headers */,
 				B06484651A70F5CB0077A855 /* MFCoreBean.h in Headers */,
 				B06484C21A70F5CB0077A855 /* MFURL.h in Headers */,
@@ -1473,6 +1498,7 @@
 				B06484461A70F5CB0077A855 /* MFStreamResponseReader.h in Headers */,
 				B06483E61A70F5CB0077A855 /* MFSyncBusiness.h in Headers */,
 				B064844D1A70F5CB0077A855 /* MFSyncTimestampService.h in Headers */,
+				B0B395C11C68E018004B0E5A /* MFCoreNotification.h in Headers */,
 				B06484891A70F5CB0077A855 /* MFFwkCsvLoaderRunInit.h in Headers */,
 				B064845E1A70F5CB0077A855 /* MFBeanLoader.h in Headers */,
 				B06483F41A70F5CB0077A855 /* MFSyncCredentials.h in Headers */,
@@ -1732,6 +1758,7 @@
 				B06484391A70F5CB0077A855 /* MFAck.m in Sources */,
 				B06483CF1A70F5CB0077A855 /* MFImportDatabaseAction.m in Sources */,
 				B06484041A70F5CB0077A855 /* Reachability.m in Sources */,
+				B0B395C01C68DCFC004B0E5A /* NSNotificationCenter+Identifiable.m in Sources */,
 				B064845F1A70F5CB0077A855 /* MFBeanLoader.m in Sources */,
 				B06484941A70F5CB0077A855 /* MFDataLoaderActionParameter.m in Sources */,
 				B06484C31A70F5CB0077A855 /* MFURL.m in Sources */,
@@ -1818,6 +1845,7 @@
 				B06484791A70F5CB0077A855 /* MFFetchOptions.m in Sources */,
 				B06483F21A70F5CB0077A855 /* MFLocalCredentialService.m in Sources */,
 				B064841F1A70F5CB0077A855 /* MFRestInvocationConfig.m in Sources */,
+				B0B395BC1C68DC24004B0E5A /* NSNotification+Identifiable.m in Sources */,
 				B064840F1A70F5CB0077A855 /* MFAbstractRestAuth.m in Sources */,
 				B06484241A70F5CB0077A855 /* MFJSONKitService.m in Sources */,
 				B06483B41A70F5CB0077A855 /* MFLogging.m in Sources */,
