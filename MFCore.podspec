@@ -14,7 +14,7 @@ Pod::Spec.new do |spec|
   spec.license      = { :type => 'LGPLv3', :file => 'LGPLv3-LICENSE.txt' }
 
   spec.author               = "Sopra Steria Group"
-  spec.source               = { :git => "", :tag => "2.2.0" }
+  spec.source               = { :git => "https://github.com/MovalysMDK/mdk-ios-lib-core.git", :tag => "2.2.0" }
   spec.platform             = :ios, '8.0'
   spec.header_mappings_dir  = '.'
   spec.requires_arc         = true

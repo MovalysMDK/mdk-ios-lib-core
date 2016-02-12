@@ -5,7 +5,6 @@ platform :ios, '8.0'
 use_frameworks!
 inhibit_all_warnings!
 
-source 'gitmovalys@git.ptx.fr.sopra:podspecs.git'
 source 'https://github.com/CocoaPods/Specs.git'
 
 pod 'CocoaLumberjack', '2.0.0'
