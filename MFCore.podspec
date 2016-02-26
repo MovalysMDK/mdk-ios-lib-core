@@ -8,13 +8,13 @@
 
 Pod::Spec.new do |spec|
   spec.name         = "MFCore"
-  spec.version      = "2.2.0-RC4"
+  spec.version      = "2.2.0"
   spec.summary      = "Movalys Framework MFCore."
   spec.homepage     = "http://www.movalys.org"
   spec.license      = { :type => 'LGPLv3', :file => 'LGPLv3-LICENSE.txt' }
 
   spec.author               = "Sopra Steria Group"
-  spec.source               = { :git => "https://github.com/MovalysMDK/mdk-ios-lib-core.git", :tag => "2.2.0-RC4" }
+  spec.source               = { :git => "https://github.com/MovalysMDK/mdk-ios-lib-core.git", :tag => "2.2.0" }
   spec.platform             = :ios, '8.0'
   spec.header_mappings_dir  = '.'
   spec.requires_arc         = true
