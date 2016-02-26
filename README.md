@@ -1,9 +1,18 @@
 # mdk-ios-lib-core
-**Movalys MDK: IOS library's description**
 
 ## What?
 
-It is a library part of the IOS framework and dedicated to the low level features such as notfication, action, bean...
+mdk-ios-lib-core is part of Movalys MDK iOS framework and is dedicated to the core features.
+It handles :
+* Persistence with Coredata
+* Business action
+* Business events
+* Application configuration and initialization
+* Error management
+* Internationalization
+* Log
+* Synchronization
+* Security
 
 ## Documentation
 
