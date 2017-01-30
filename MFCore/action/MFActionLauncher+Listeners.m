@@ -77,16 +77,17 @@ const void *extANCKey = &extANCKey;
         for(id object in objectsLists) {
             if([object isKindOfClass:[MFActionEventDefinition class]]) {
                 MFActionEventDefinition* eventDef = object;
-                [objectsToDelete addObject:eventDef];
-                eventDef.callBack = nil;
-                eventDef.objectWithCallBack = nil;
-                eventDef = nil;
+                if([eventDef.objectWithCallBack isEqual:elementToUnRegister]) {
+                    [objectsToDelete addObject:eventDef];
+                    eventDef.callBack = nil;
+                    eventDef.objectWithCallBack = nil;
+                    eventDef = nil;
+                }
             }
         }
         
         [objectsLists minusSet:[NSSet setWithArray:objectsToDelete]];
         [[self extendANC].registredElementsByEvent setObject:objectsLists forKey:eventName];
-        
     }
     
     [objectsLists removeObject:elementToUnRegister];
