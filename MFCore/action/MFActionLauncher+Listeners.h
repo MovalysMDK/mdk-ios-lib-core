@@ -15,7 +15,7 @@
  */
 
 
-#import <MFCore/MFCore.h>
+#import "MFCore/MFCore.h"
 #import "MFActionObjectsDefinitions.h"
 
 //dans les macros le bloc code if false sert à voir si les paramètres de la macro existe
